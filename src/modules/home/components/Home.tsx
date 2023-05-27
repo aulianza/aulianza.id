@@ -14,7 +14,6 @@ const Home: FC = () => {
 			<BlogPreview />
 			<Breakline className="my-8" />
 			<Services />
-			{/* <Breakline className="my-8" /> */}
 		</>
 	);
 };

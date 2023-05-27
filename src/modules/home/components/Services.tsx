@@ -5,7 +5,7 @@ import { CLIENT_IMAGES } from "@/common/constant/clients";
 const Services: FC = () => {
 	return (
 		<div className="space-y-3">
-			<h2 className="font-medium text-xl">What I've been working on</h2>
+			<h2 className="font-medium text-xl">What I&apos;ve been working on</h2>
 			<p className="leading-loose">
 				I assist brands, companies, institutions, and startups in creating
 				exceptional digital experiences for their businesses through strategic

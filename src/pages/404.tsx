@@ -10,7 +10,7 @@ const Custom404: NextPage = () => {
 			data-aos="fade-up"
 		>
 			<h2 className="text-xl lg:text-2xl animate-pulse">
-				Whoops, there doesn't seem to be anything here!
+				Whoops, there doesn&apos;t seem to be anything here!
 			</h2>
 		</Container>
 	);

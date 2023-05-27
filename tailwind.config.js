@@ -8,7 +8,7 @@ module.exports = {
 				emoji: ["Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
 			},
 			colors: {
-				darkText: "#FFFFFF",
+				darkText: "#E4E6EB",
 				dark: "#171717",
 				light: "#fafafa",
 			},

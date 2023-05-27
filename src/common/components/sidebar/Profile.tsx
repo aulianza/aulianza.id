@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 import ProfileHeader from "./ProfileHeader";
 import Status from "../elements/Status";
 
-import useIsMobile from "@/common/hooks/useIsMobile";
+import useIsMobile from "@/common/hooks/use-is-mobile";
 import { MenuContext } from "@/common/context/MenuContext";
 
 const Profile: FC = () => {

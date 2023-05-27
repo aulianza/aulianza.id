@@ -8,7 +8,7 @@ const Navigation: FC = () => {
 		<>
 			<Menu list={MENU_ITEMS} />
 			<Breakline />
-			<Menu list={SOCIAL_MEDIA} />
+			<Menu title="Let's Connect" list={SOCIAL_MEDIA} />
 		</>
 	);
 };

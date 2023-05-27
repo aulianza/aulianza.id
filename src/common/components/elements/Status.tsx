@@ -10,7 +10,7 @@ const Status: FC = () => {
 				transition={{ duration: 0.5, repeat: Infinity }}
 			/>
 			<span className="font-medium text-sm animate-pulse">
-				available for hire.
+				Available for hire.
 			</span>
 		</div>
 	);

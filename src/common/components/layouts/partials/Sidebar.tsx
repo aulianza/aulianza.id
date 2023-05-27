@@ -5,7 +5,7 @@ import Profile from "../../sidebar/Profile";
 import Breakline from "../../elements/Breakline";
 import Navigation from "../../sidebar/Navigation";
 
-import useIsMobile from "@/common/hooks/useIsMobile";
+import useIsMobile from "@/common/hooks/use-is-mobile";
 import ToogleModeButton from "../../elements/ToogleModeButton";
 
 const Sidebar = () => {

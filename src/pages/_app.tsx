@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import { ChakraProvider } from "@chakra-ui/react";
 
-import theme from "@/common/styles/theme";
 import Layout from "@/common/components/layouts";
+import { jakartaSans } from "@/common/styles/fonts";
 
 import type { AppProps } from "next/app";
 
@@ -20,13 +19,20 @@ const App = ({ Component, pageProps }: AppProps) => {
 	}, []);
 
 	return (
-		<div className="bg-white dark:bg-dark">
-			<ChakraProvider theme={theme}>
+		<>
+			<style jsx global>
+				{`
+					html {
+						--jakartaSans-font: ${jakartaSans.style.fontFamily};
+					}
+				`}
+			</style>
+			<div className="bg-white dark:bg-dark">
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
-			</ChakraProvider>
-		</div>
+			</div>
+		</>
 	);
 };
 

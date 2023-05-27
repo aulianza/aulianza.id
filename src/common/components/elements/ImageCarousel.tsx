@@ -86,7 +86,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
 						src={image}
 						alt={`Image ${index + 1}`}
 						width={isMobile ? 130 : 145}
-						className="px-3 bg-white rounded-full hover:shadow-xl"
+						className="px-3 bg-light rounded-full hover:shadow-xl"
 					/>
 				</div>
 			))}

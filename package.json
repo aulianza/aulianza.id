@@ -1,25 +1,35 @@
 {
-  "name": "aulianza.id",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "20.1.7",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.40.0",
-    "eslint-config-next": "13.4.2",
-    "next": "13.4.2",
-    "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
-  }
+	"name": "aulianza.id",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.6.1",
+		"@emotion/react": "^11.11.0",
+		"@emotion/styled": "^11.11.0",
+		"@types/aos": "^3.0.4",
+		"@types/node": "20.1.7",
+		"@types/react": "18.2.6",
+		"@types/react-dom": "18.2.4",
+		"aos": "^3.0.0-beta.6",
+		"autoprefixer": "10.4.14",
+		"clsx": "^1.2.1",
+		"eslint": "8.40.0",
+		"eslint-config-next": "13.4.2",
+		"framer-motion": "^10.12.16",
+		"next": "13.4.2",
+		"postcss": "8.4.23",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"supercons": "^0.0.1",
+		"tailwindcss": "3.3.2",
+		"typescript": "5.0.4",
+		"usehooks-ts": "^2.9.1",
+		"zustand": "^4.3.8"
+	}
 }

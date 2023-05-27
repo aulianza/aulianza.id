@@ -2,14 +2,14 @@ import React from "react";
 import { NextPage } from "next";
 
 import Container from "@/common/components/elements/Container";
-import Home from "@/modules/home/components/Home";
+import Portfolio from "@/modules/portfolio/components/Portfolio";
 
-const HomePage: NextPage = () => {
+const PortfolioPage: NextPage = () => {
 	return (
 		<Container data-aos="fade-up">
-			<Home />
+			<Portfolio />
 		</Container>
 	);
 };
 
-export default HomePage;
+export default PortfolioPage;

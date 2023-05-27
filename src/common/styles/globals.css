@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--color-dark: #171717;
+	--color-light: #fafafa;
+}
+
+html {
+	scroll-behavior: smooth;
+	letter-spacing: 0.3px;
+}
+
+.dark {
+	--foreground-rgb: 255, 255, 255;
+	background-color: var(--color-dark);
+	color: rgb(var(--foreground-rgb));
+}
+
+.light {
+	--foreground-rgb: 0, 0, 0;
+	background-color: var(--color-light);
+	color: rgb(var(--foreground-rgb));
+}
+
+::-webkit-scrollbar {
+	@apply h-2 w-1 bg-white dark:bg-dark;
+}
+
+::-webkit-scrollbar-track {
+	@apply rounded-[3px] bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply rounded-[3px] border-2 border-zinc-300 bg-zinc-600 dark:bg-zinc-400;
+}

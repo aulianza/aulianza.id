@@ -4,9 +4,9 @@ import clsx from "clsx";
 import Profile from "../../sidebar/Profile";
 import Breakline from "../../elements/Breakline";
 import Navigation from "../../sidebar/Navigation";
+import ToggleMode from "../../elements/ToggleMode";
 
 import useIsMobile from "@/common/hooks/use-is-mobile";
-import ToogleModeButton from "../../elements/ToogleModeButton";
 
 const Sidebar = () => {
 	const isMobile = useIsMobile();
@@ -42,7 +42,7 @@ const Sidebar = () => {
 					<Breakline />
 					<Navigation />
 					<Breakline />
-					<ToogleModeButton />
+					<ToggleMode />
 				</>
 			)}
 		</div>

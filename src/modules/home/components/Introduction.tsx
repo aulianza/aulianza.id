@@ -11,7 +11,7 @@ const Introduction: FC = () => {
 			<h2 className="text-2xl lg:text-3xl font-semibold">
 				Hey, I&apos;m Ryan 👋
 			</h2>
-			<div className="space-y-3 bg-white dark:bg-dark">
+			<div className="space-y-3 bg-light dark:bg-dark">
 				<>
 					<ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
 						<li>life-long learner</li>

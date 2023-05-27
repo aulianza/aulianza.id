@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { ThemeProvider } from "next-themes";
 import AOS from "aos";
 
 import Layout from "@/common/components/layouts";
@@ -27,11 +28,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 					}
 				`}
 			</style>
-			<div className="bg-white dark:bg-dark">
+			<ThemeProvider attribute="class" defaultTheme="dark">
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
-			</div>
+			</ThemeProvider>
 		</>
 	);
 };

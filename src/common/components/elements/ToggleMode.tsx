@@ -1,23 +1,29 @@
 import React, { FC } from "react";
 import Icon from "supercons";
+import { useTheme } from "next-themes";
 
-type ToggleModeProps = {
-	onToggleChange: () => void;
-	isDarkMode: boolean;
-};
+import useHasMounted from "@/common/hooks/use-has-mounted";
 
-const ToggleMode: FC<ToggleModeProps> = ({ onToggleChange, isDarkMode }) => {
+const ToggleMode: FC = () => {
+	const { resolvedTheme, theme, setTheme } = useTheme();
+	const hasMounted = useHasMounted();
+
+	const isDarkTheme =
+		hasMounted && (resolvedTheme === "dark" || resolvedTheme === "system");
+	const toggleTheme = () =>
+		setTheme(resolvedTheme === "light" ? "dark" : "light");
+
 	const switchText = "Switch to ";
 
 	return (
 		<button
-			onClick={onToggleChange}
+			onClick={toggleTheme}
 			className="flex items-center gap-2 py-2 px-3 w-full lg:hover:dark:bg-zinc-800 lg:hover:bg-gray-200 lg:hover:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300"
 		>
-			<Icon glyph={isDarkMode ? "idea" : "moon-fill"} size={22} />
+			<Icon glyph={isDarkTheme ? "idea" : "moon-fill"} size={22} />
 			<div className="flex lg:text-[15px]">
 				<span className="hidden xl:block xl:mr-1">{switchText}</span>
-				{isDarkMode ? "Light Mode" : "Dark Mode"}
+				{isDarkTheme ? "Light Mode" : "Dark Mode"}
 			</div>
 		</button>
 	);

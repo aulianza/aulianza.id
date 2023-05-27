@@ -4,8 +4,15 @@
 
 :root {
 	--foreground-rgb: 0, 0, 0;
+	--background: #fafafa;
+	--foreground: #171717;
 	--color-dark: #171717;
 	--color-light: #fafafa;
+}
+
+[data-theme="dark"] {
+	--background: #171717;
+	--foreground: #fafafa;
 }
 
 html {

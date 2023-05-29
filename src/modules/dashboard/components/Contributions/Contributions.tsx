@@ -41,7 +41,7 @@ const Contributions: FC<ContributionsProps> = ({
 					href={`https://github.com/${username}`}
 					target="_blank"
 					passHref
-					className="text-sm font-code text-neutral-400 dark:text-neutral-600"
+					className="text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400"
 				>
 					@{username}
 				</Link>

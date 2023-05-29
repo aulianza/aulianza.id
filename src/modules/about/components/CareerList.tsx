@@ -1,7 +1,45 @@
 import React, { FC } from "react";
+import Link from "next/link";
+import { HiOutlineBriefcase as CareerIcon } from "react-icons/hi";
+import { LuDownload as DownloadIcon } from "react-icons/lu";
+
+import CareerCard from "./CareerCard";
+
+import { CAREERS } from "@/common/constant/careers";
+
+const RESUME_URL = "https://api.aulianza.id/files/resume.pdf";
 
 const CareerList: FC = () => {
-	return <div>CareerList</div>;
+	return (
+		<div className="space-y-6">
+			<div className="space-y-2">
+				<h2 className="flex items-center gap-2 text-xl">
+					<CareerIcon />
+					<span>Career</span>
+				</h2>
+				<div className="flex flex-col lg:flex-row justify-between lg:items-center gap-3">
+					<p className="dark:text-neutral-400">
+						My professional career journey.
+					</p>
+					<Link
+						href={RESUME_URL}
+						target="_blank"
+						passHref
+						className="flex gap-2 hover:gap-3 transition-all duration-300 items-center text-neutral-600 dark:text-neutral-500 hover:text-neutral-700 hover:dark:text-neutral-300"
+					>
+						<DownloadIcon />
+						<span>Download Resume</span>
+					</Link>
+				</div>
+			</div>
+
+			<div className="grid md:grid-cols-2 gap-3 md:gap-4">
+				{CAREERS?.map((career, index) => (
+					<CareerCard key={index} {...career} />
+				))}
+			</div>
+		</div>
+	);
 };
 
 export default CareerList;

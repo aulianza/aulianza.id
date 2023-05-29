@@ -22,7 +22,7 @@ const ProfileHeader: FC<ProfileHeaderProps> = ({ expandMenu, imageSize }) => {
 				height={expandMenu ? 75 : imageSize}
 				rounded="rounded-full"
 			/>
-			<h1 className="flex-grow text-lg lg:text-xl font-medium">Ryan Aulia</h1>
+			<h2 className="flex-grow text-lg lg:text-xl font-medium">Ryan Aulia</h2>
 		</div>
 	);
 };

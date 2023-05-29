@@ -8,9 +8,9 @@ const Introduction: FC = () => {
 
 	return (
 		<StyledSection className="space-y-5">
-			<h2 className="text-2xl lg:text-3xl font-semibold">
+			<h1 className="text-2xl lg:text-3xl font-semibold">
 				Hey, I&apos;m Ryan 👋
-			</h2>
+			</h1>
 			<div className="space-y-3 bg-light dark:bg-dark">
 				<>
 					<ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
@@ -20,7 +20,7 @@ const Introduction: FC = () => {
 						</li>
 					</ul>
 				</>
-				<p className="leading-loose">
+				<p className="leading-loose dark:text-neutral-300">
 					Experienced Software Engineer, specializing in frontend development,
 					with {currentyear - workStart} years of professional experience and a
 					total of {currentyear - codingStart} years in web development since{" "}

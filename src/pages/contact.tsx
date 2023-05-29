@@ -2,25 +2,24 @@ import React from "react";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-import Portfolio from "@/modules/portfolio";
+import Contact from "@/modules/contact";
 
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 
-const PAGE_TITLE = "Portfolio";
-const PAGE_DESCRIPTION =
-	"Exploring my passion for technology, design, and problem-solving through code.";
+const PAGE_TITLE = "Contact";
+const PAGE_DESCRIPTION = "Let's get in touch!";
 
-const PortfolioPage: NextPage = () => {
+const ContactPage: NextPage = () => {
 	return (
 		<>
 			<NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
 			<Container data-aos="fade-up">
 				<PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-				<Portfolio />
+				<Contact />
 			</Container>
 		</>
 	);
 };
 
-export default PortfolioPage;
+export default ContactPage;

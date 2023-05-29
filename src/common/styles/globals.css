@@ -15,19 +15,15 @@ html {
 .dark {
 	background-color: var(--color-dark);
 	color: var(--color-light);
-
-	::-webkit-scrollbar {
-		@apply bg-dark h-2 w-1;
-	}
 }
 
 .light {
 	background-color: var(--color-light);
 	color: var(--color-dark);
+}
 
-	::-webkit-scrollbar {
-		@apply bg-light h-2 w-1;
-	}
+::-webkit-scrollbar {
+	@apply w-1;
 }
 
 ::-webkit-scrollbar-track {

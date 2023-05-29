@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
+import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 
@@ -22,6 +23,12 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 	return (
 		<>
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, user-scalable=no"
+				/>
+			</Head>
 			<style jsx global>
 				{`
 					html {

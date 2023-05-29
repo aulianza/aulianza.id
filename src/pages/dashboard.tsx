@@ -3,8 +3,9 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
 
+import Dashboard from "@/modules/dashboard";
+
 import Container from "@/common/components/elements/Container";
-import Dashboard from "@/modules/dashboard/components/Dashboard";
 import PageHeading from "@/common/components/elements/PageHeading";
 
 import { getGithubUser } from "@/services/github";

@@ -34,7 +34,7 @@ const BlogCard: FC<BlogItemProps> = ({
 					/>
 				</div>
 				<div className="flex flex-col w-full md:w-4/5 flex-grow space-y-2 px-5 md:p-0 mb-5 md:mb-0">
-					<h3 className="md:text-[17px] font-medium hover:text-sky-800 dark:hover:text-sky-400">
+					<h3 className="md:text-[17px] font-medium lg:hover:text-sky-800 dark:hover:text-sky-400">
 						{title}
 					</h3>
 					<div className="flex gap-5">

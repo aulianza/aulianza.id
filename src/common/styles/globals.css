@@ -3,14 +3,8 @@
 @tailwind utilities;
 
 :root {
-	--foreground-rgb: 0, 0, 0;
-	--color-dark: #171717;
+	--color-dark: #121212;
 	--color-light: #fafafa;
-}
-
-[data-theme="dark"] {
-	--background: #171717;
-	--foreground: #fafafa;
 }
 
 html {
@@ -19,19 +13,21 @@ html {
 }
 
 .dark {
-	--foreground-rgb: 255, 255, 255;
 	background-color: var(--color-dark);
-	color: rgb(var(--foreground-rgb));
+	color: var(--color-light);
+
+	::-webkit-scrollbar {
+		@apply bg-dark h-2 w-1;
+	}
 }
 
 .light {
-	--foreground-rgb: 0, 0, 0;
 	background-color: var(--color-light);
-	color: rgb(var(--foreground-rgb));
-}
+	color: var(--color-dark);
 
-::-webkit-scrollbar {
-	@apply h-2 w-1 bg-light dark:bg-dark;
+	::-webkit-scrollbar {
+		@apply bg-light h-2 w-1;
+	}
 }
 
 ::-webkit-scrollbar-track {
@@ -39,5 +35,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply rounded-[3px] border-2 border-zinc-300 bg-zinc-600 dark:bg-zinc-400;
+	@apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-400;
 }

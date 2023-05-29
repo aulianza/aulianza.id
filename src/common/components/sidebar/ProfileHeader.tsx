@@ -1,5 +1,6 @@
 import { FC } from "react";
 import clsx from "clsx";
+import Link from "next/link";
 import Image from "../elements/Image";
 
 interface ProfileHeaderProps {
@@ -22,7 +23,9 @@ const ProfileHeader: FC<ProfileHeaderProps> = ({ expandMenu, imageSize }) => {
 				height={expandMenu ? 75 : imageSize}
 				rounded="rounded-full"
 			/>
-			<h2 className="flex-grow text-lg lg:text-xl font-medium">Ryan Aulia</h2>
+			<Link href="/" passHref>
+				<h2 className="flex-grow text-lg lg:text-xl font-medium">Ryan Aulia</h2>
+			</Link>
 		</div>
 	);
 };

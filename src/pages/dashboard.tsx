@@ -34,13 +34,15 @@ export default DashboardPage;
 
 export async function getStaticProps() {
 	const readStats = await getReadStats();
-	const githubUser = await getGithubUser();
+	const githubUserPersonal = await getGithubUser("personal");
+	const githubUserWork = await getGithubUser("work");
 
 	return {
 		props: {
 			fallback: {
 				"/api/read-stats": readStats.data,
-				"/api/github": githubUser?.data,
+				"/api/github?type=personal": githubUserPersonal?.data,
+				"/api/github?type=work": githubUserWork?.data,
 			},
 		},
 		revalidate: 1,

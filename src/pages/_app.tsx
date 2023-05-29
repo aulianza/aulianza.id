@@ -4,7 +4,7 @@ import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 
 import Layout from "@/common/components/layouts";
-import { jakartaSans } from "@/common/styles/fonts";
+import { firaCode, jakartaSans } from "@/common/styles/fonts";
 
 import type { AppProps } from "next/app";
 
@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 				{`
 					html {
 						--jakartaSans-font: ${jakartaSans.style.fontFamily};
+						--firaCode-font: ${firaCode.style.fontFamily};
 					}
 				`}
 			</style>

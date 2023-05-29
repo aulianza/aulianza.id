@@ -8,7 +8,7 @@ import PageHeading from "@/common/components/elements/PageHeading";
 
 const PAGE_TITLE = "Portfolio";
 const PAGE_DESCRIPTION =
-	"Exploring my passion for technology, design, and problem-solving through code";
+	"Exploring my passion for technology, design, and problem-solving through code.";
 
 const PortfolioPage: NextPage = () => {
 	return (

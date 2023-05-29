@@ -38,7 +38,7 @@ const CodingActive: FC = () => {
 					</Link>
 					<span> last 7 days stats. </span>
 				</div>
-				<div>
+				<div className="text-sm text-neutral-600 dark:text-neutral-500">
 					Last update: <span>{formatLastUpdate()}</span>
 				</div>
 			</div>

@@ -24,7 +24,7 @@ const BlogCard: FC<BlogItemProps> = ({
 
 	return (
 		<Link href={`/blog/${slug}`}>
-			<div className="flex items-center flex-col sm:flex-row gap-6 sm:p-5 border border-neutral-300 dark:border-neutral-700  rounded-xl cursor-pointer transition-all duration-300 hover:scale-[103%] hover:shadow-sm">
+			<div className="flex items-center flex-col sm:flex-row gap-6 sm:p-5 border border-neutral-300 dark:border-neutral-800 rounded-xl cursor-pointer transition-all duration-300 hover:scale-[103%] hover:shadow-sm  dark:bg-neutral-800">
 				<div className="w-fit">
 					<Image
 						src={image}

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { ThemeProvider } from "next-themes";
 import AOS from "aos";
+import { DefaultSeo } from "next-seo";
+import { ThemeProvider } from "next-themes";
 
 import Layout from "@/common/components/layouts";
 import { jakartaSans } from "@/common/styles/fonts";
@@ -28,6 +29,21 @@ const App = ({ Component, pageProps }: AppProps) => {
 					}
 				`}
 			</style>
+			<DefaultSeo
+				title="Ryan Aulia - Personal Website"
+				description="Experienced Software Engineer, specializing in frontend development. aulianza."
+				openGraph={{
+					type: "website",
+					locale: "en_EN",
+					url: "https://aulianza.id",
+					siteName: "Ryan Aulia",
+				}}
+				twitter={{
+					handle: "@handle",
+					site: "@aulianzaa",
+					cardType: "summary_large_image",
+				}}
+			/>
 			<ThemeProvider attribute="class" defaultTheme="dark">
 				<Layout>
 					<Component {...pageProps} />

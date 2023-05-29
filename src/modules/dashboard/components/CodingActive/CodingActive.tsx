@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import moment from "moment";
 import useSWR from "swr";
@@ -11,10 +11,6 @@ import { fetcher } from "@/services/fetcher";
 
 const CodingActive: FC = () => {
 	const { data } = useSWR("/api/read-stats", fetcher);
-
-	useEffect(() => {
-		document.title = "Weekly Statistics | Coding Active";
-	}, []);
 
 	const formatLastUpdate = (): string => {
 		const lastUpdate = moment(data?.last_update);

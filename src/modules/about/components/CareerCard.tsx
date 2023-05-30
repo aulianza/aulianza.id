@@ -34,7 +34,7 @@ const CareerCard: FC<CareerProps> = ({
   return (
     <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800">
       {logo ? (
-        <Image src={logo} width={50} height={50} alt={company} />
+        <Image src={logo} width={55} height={55} alt={company} />
       ) : (
         <CompanyIcon size={30} />
       )}

@@ -11,7 +11,6 @@ const ProjectCard: FC<ProjectItemProps> = ({
   slug,
   description,
   image,
-  links,
   stacks,
 }) => {
   return (

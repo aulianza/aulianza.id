@@ -2,8 +2,6 @@ import React from "react";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-import Projects from "@/modules/projects";
-
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 

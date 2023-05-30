@@ -8,7 +8,7 @@ import Overview from "./Overview";
 import CodingActiveList from "./CodingActiveList";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
-import SectionSubHeading from "@/common/components/elements/SectionSubheading";
+import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
 import { fetcher } from "@/services/fetcher";
 

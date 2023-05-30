@@ -6,7 +6,7 @@ import { LuDownload as DownloadIcon } from "react-icons/lu";
 import CareerCard from "./CareerCard";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
-import SectionSubHeading from "@/common/components/elements/SectionSubheading";
+import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
 import { CAREERS } from "@/common/constant/careers";
 

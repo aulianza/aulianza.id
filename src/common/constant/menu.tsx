@@ -13,13 +13,13 @@ export const MENU_ITEMS: MenuItemProps[] = [
 	{
 		name: "Dashboard",
 		href: "/dashboard",
-		icon: <Icon glyph="explore" size={iconSize} />,
+		icon: <Icon glyph="grid" size={iconSize} />,
 		is_show: true,
 	},
 	{
-		name: "Portfolio",
-		href: "/portfolio",
-		icon: <Icon glyph="tv" size={iconSize} />,
+		name: "Projects",
+		href: "/projects",
+		icon: <Icon glyph="explore" size={iconSize} />,
 		is_show: true,
 	},
 	{

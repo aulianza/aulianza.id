@@ -5,19 +5,19 @@ import { LuDownload as DownloadIcon } from "react-icons/lu";
 
 import CareerCard from "./CareerCard";
 
+import SectionHeading from "@/common/components/elements/SectionHeading";
+import SectionSubHeading from "@/common/components/elements/SectionSubheading";
+
 import { CAREERS } from "@/common/constant/careers";
 
 const RESUME_URL = "https://api.aulianza.id/files/resume.pdf";
 
 const CareerList: FC = () => {
 	return (
-		<div className="space-y-6">
+		<section className="space-y-6">
 			<div className="space-y-2">
-				<h2 className="flex items-center gap-2 text-xl">
-					<CareerIcon />
-					<span>Career</span>
-				</h2>
-				<div className="flex flex-col lg:flex-row justify-between lg:items-center gap-3">
+				<SectionHeading title="Career" icon={<CareerIcon className="mr-1" />} />
+				<SectionSubHeading>
 					<p className="dark:text-neutral-400">
 						My professional career journey.
 					</p>
@@ -30,7 +30,7 @@ const CareerList: FC = () => {
 						<DownloadIcon />
 						<span>Download Resume</span>
 					</Link>
-				</div>
+				</SectionSubHeading>
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-4">
@@ -38,7 +38,7 @@ const CareerList: FC = () => {
 					<CareerCard key={index} {...career} />
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 

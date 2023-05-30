@@ -6,6 +6,9 @@ import { BsGithub as GithubIcon } from "react-icons/bs";
 import Overview from "./Overview";
 import Calendar from "./Calendar";
 
+import SectionHeading from "@/common/components/elements/SectionHeading";
+import SectionSubHeading from "@/common/components/elements/SectionSubheading";
+
 import { fetcher } from "@/services/fetcher";
 
 type ContributionsProps = {
@@ -25,15 +28,12 @@ const Contributions: FC<ContributionsProps> = ({
 		data?.contributionsCollection?.contributionCalendar;
 
 	return (
-		<div className="flex flex-col gap-y-2">
-			<h2 className="flex items-center gap-2 text-xl lg:text-xl font-medium">
-				<GithubIcon />
-				<div>
-					<span className="capitalize">{type} </span>
-					<span>Contributions</span>
-				</div>
-			</h2>
-			<div className="flex flex-col lg:flex-row justify-between lg:items-center gap-2">
+		<section className="flex flex-col gap-y-2">
+			<SectionHeading
+				title={`${type} Contributions`}
+				icon={<GithubIcon className="mr-1" />}
+			/>
+			<SectionSubHeading>
 				<p className="dark:text-neutral-400">
 					My contributions from last year on my {type} account.
 				</p>
@@ -45,7 +45,7 @@ const Contributions: FC<ContributionsProps> = ({
 				>
 					@{username}
 				</Link>
-			</div>
+			</SectionSubHeading>
 
 			{!data && <div className="dark:text-neutral-400">No Data</div>}
 
@@ -55,7 +55,7 @@ const Contributions: FC<ContributionsProps> = ({
 					<Calendar data={contributionCalendar} />
 				</div>
 			)}
-		</div>
+		</section>
 	);
 };
 

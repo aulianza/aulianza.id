@@ -1,11 +1,14 @@
 import React, { FC } from "react";
+
 import ImageCarousel from "@/common/components/elements/ImageCarousel";
+import SectionHeading from "@/common/components/elements/SectionHeading";
+
 import { CLIENT_IMAGES } from "@/common/constant/clients";
 
 const Services: FC = () => {
 	return (
-		<div className="space-y-3">
-			<h2 className="font-medium text-xl">What I&apos;ve been working on</h2>
+		<section className="space-y-3">
+			<SectionHeading title="What I've been working on" />
 			<p className="leading-loose dark:text-neutral-300">
 				I assist brands, companies, institutions, and startups in creating
 				exceptional digital experiences for their businesses through strategic
@@ -13,7 +16,7 @@ const Services: FC = () => {
 				with.
 			</p>
 			<ImageCarousel images={CLIENT_IMAGES} interval={4000} />
-		</div>
+		</section>
 	);
 };
 

@@ -1,12 +1,16 @@
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 
-type ContainerProps = {
+interface ContainerProps {
 	children: ReactNode;
 	className?: string;
 	[propName: string]: any;
-};
+}
 
-const Container = ({ children, className = "", ...others }: ContainerProps) => {
+const Container: FC<ContainerProps> = ({
+	children,
+	className = "",
+	...others
+}) => {
 	return (
 		<div className={`mt-20 mb-10 lg:mt-0 p-8 ${className} `} {...others}>
 			{children}

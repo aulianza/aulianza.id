@@ -1,44 +1,55 @@
 {
-	"name": "aulianza.id",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@emotion/react": "^11.11.0",
-		"@emotion/styled": "^11.11.0",
-		"@types/aos": "^3.0.4",
-		"@types/node": "20.1.7",
-		"@types/react": "18.2.6",
-		"@types/react-dom": "18.2.4",
-		"@types/react-slick": "^0.23.10",
-		"aos": "^3.0.0-beta.6",
-		"clsx": "^1.2.1",
-		"framer-motion": "^10.12.16",
-		"moment": "^2.29.4",
-		"next": "13.4.2",
-		"next-seo": "^6.0.0",
-		"next-themes": "^0.2.1",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"react-icons": "^4.9.0",
-		"react-slick": "^0.29.0",
-		"slick-carousel": "^1.8.1",
-		"supercons": "^0.0.1",
-		"swr": "^2.1.5",
-		"typescript": "5.0.4",
-		"usehooks-ts": "^2.9.1",
-		"zustand": "^4.3.8"
-	},
-	"devDependencies": {
-		"autoprefixer": "10.4.14",
-		"eslint": "8.40.0",
-		"eslint-config-next": "13.4.2",
-		"postcss": "8.4.23",
-		"tailwindcss": "3.3.2"
-	}
+  "name": "aulianza.id",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@types/aos": "^3.0.4",
+    "@types/node": "20.1.7",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@types/react-slick": "^0.23.10",
+    "aos": "^3.0.0-beta.6",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.12.16",
+    "moment": "^2.29.4",
+    "next": "13.4.2",
+    "next-seo": "^6.0.0",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.9.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "supercons": "^0.0.1",
+    "swr": "^2.1.5",
+    "typescript": "5.0.4",
+    "usehooks-ts": "^2.9.1",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "postcss": "8.4.23",
+    "prettier": "^2.8.8",
+    "tailwindcss": "3.3.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,html,css,json}": [
+      "yarn prettier --write"
+    ]
+  }
 }

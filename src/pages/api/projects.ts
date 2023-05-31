@@ -1,4 +1,4 @@
-import { prismaClient } from "@/common/lib/prisma";
+import prisma from "@/common/lib/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
@@ -11,7 +11,9 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    const response = await prismaClient.projects.findMany();
+    const response = await prisma.projects.findMany();
+    console.log("🚀 aulianza ~ response => ", response);
+
     res.status(200).json({ success: true, data: response });
   } catch (error) {
     res.status(200).json({ success: false });

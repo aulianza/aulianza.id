@@ -2,8 +2,9 @@ import prisma from "@/common/lib/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  success: boolean;
+  status: boolean;
   data?: any;
+  error?: any;
 };
 
 export default async function handler(
@@ -12,8 +13,8 @@ export default async function handler(
 ) {
   try {
     const response = await prisma.projects.findMany();
-    res.status(200).json({ success: true, data: response });
+    res.status(200).json({ status: true, data: response });
   } catch (error) {
-    res.status(200).json({ success: false });
+    res.status(200).json({ status: false, error: error });
   }
 }

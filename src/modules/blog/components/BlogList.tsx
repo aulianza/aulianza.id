@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import useSWR from "swr";
 import Icon from "supercons";
@@ -6,6 +6,7 @@ import { useWindowSize } from "usehooks-ts";
 
 import BlogCard from "./BlogCard";
 import ViewOptions from "./ViewOptions";
+import Pagination from "./Pagination";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import EmptyState from "@/common/components/elements/EmptyState";
 
@@ -16,11 +17,16 @@ import { useBlogViewStore } from "@/common/stores/useBlogViewStore";
 
 type BlogList = {
   showHeader?: boolean;
+  showPagination?: boolean;
   view?: string;
   perPage?: number;
 };
 
-const BlogList: FC<BlogList> = ({ perPage = 6, showHeader = true, view }) => {
+const BlogList: FC<BlogList> = ({
+  perPage = 6,
+  showHeader = true,
+  showPagination = true,
+}) => {
   const { width } = useWindowSize();
   const isMobile = width < 468;
 
@@ -34,7 +40,23 @@ const BlogList: FC<BlogList> = ({ perPage = 6, showHeader = true, view }) => {
     fetcher
   );
 
-  const blogData: BlogItemProps[] = data?.data?.posts || [];
+  const blogData: BlogItemProps[] = useMemo(() => {
+    return data?.data?.posts || [];
+  }, [data]);
+
+  const handleNextPage = () => {
+    setPage(page + 1);
+    scrollToTop();
+  };
+
+  const handlePrevPage = () => {
+    setPage(page - 1);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   if (!isLoading && blogData.length === 0) {
     return <EmptyState message="No Data" />;
@@ -62,6 +84,7 @@ const BlogList: FC<BlogList> = ({ perPage = 6, showHeader = true, view }) => {
           </div>
         </div>
       )}
+
       <div
         className={clsx(
           "gap-5 sm:gap-4",
@@ -74,6 +97,16 @@ const BlogList: FC<BlogList> = ({ perPage = 6, showHeader = true, view }) => {
           <BlogCard key={index} view={viewOption} {...item} />
         ))}
       </div>
+
+      {showPagination && (
+        <Pagination
+          page={page}
+          onPrevPage={handlePrevPage}
+          onNextPage={handleNextPage}
+          blogData={blogData}
+          pageSize={pageSize}
+        />
+      )}
     </>
   );
 };

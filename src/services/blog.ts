@@ -7,7 +7,7 @@ type ParamsProps = {
 
 export const getBlogData = async ({
   page = 1,
-  per_page = 10,
+  per_page = 6,
 }: ParamsProps): Promise<{ status: number; data: any }> => {
   const params = new URLSearchParams({
     username: "naucode",
@@ -31,7 +31,7 @@ export const getBlogData = async ({
     posts: getData,
     page: page,
     per_page: per_page,
-    has_next: getData?.length >= 5,
+    has_next: getData?.length === per_page,
   };
 
   return {

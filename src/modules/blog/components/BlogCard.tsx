@@ -28,6 +28,10 @@ const BlogCard: FC<BlogCardProps> = ({
   const { width } = useWindowSize();
   const isMobile = width < 468;
 
+  const trimmedTitle =
+    viewOption === "grid"
+      ? title.slice(0, 70) + (title.length > 70 ? "..." : "")
+      : title;
   const trimmedContent =
     description.slice(0, 100) + (description.length > 100 ? "..." : "");
 
@@ -59,14 +63,14 @@ const BlogCard: FC<BlogCardProps> = ({
             height={100}
             alt={title}
             className={clsx(
-              "sm:rounded-xl sm:h-28 object-cover",
+              "sm:rounded-xl sm:h-32 object-cover",
               viewOption === "grid" ? "!rounded-t-xl !rounded-b-none !h-48" : ""
             )}
           />
         </div>
         <article className={contentContainerClasses}>
           <h3 className="md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
-            {title}
+            {trimmedTitle}
           </h3>
           <div className="flex gap-5">
             <div className="flex gap-1 items-center dark:text-neutral-400">

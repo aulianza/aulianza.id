@@ -12,9 +12,7 @@ const PAGE_TITLE = "Projects";
 const PAGE_DESCRIPTION =
   "Showcasing my passion for technology, design, and problem-solving through code.";
 
-const ProjectsPage: NextPage = (props) => {
-  console.log("🚀 aulianza ~ props => ", props);
-
+const ProjectsPage: NextPage = () => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />

@@ -4,17 +4,22 @@ import ProjectCard from "./ProjectCard";
 import { ProjectItemProps } from "@/common/types/projects";
 import { fetcher } from "@/services/fetcher";
 
+import ProductCardSkeleton from "@/common/components/skeleton/ProductCardSkeleton";
+
 const Projects: FC = () => {
-  const { data } = useSWR("/api/projects", fetcher);
+  const { data, isLoading } = useSWR("/api/projects", fetcher);
+
   const projects: ProjectItemProps[] = data?.data || [];
+  const fiteredProjects = projects.filter((project) => project?.is_show);
+  const emptyArray = new Array(2).fill(" ");
 
   return (
     <div className="grid sm:grid-cols-2 gap-5 pt-2">
-      {projects
-        ?.filter((project) => project?.is_show)
-        .map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+      {!isLoading
+        ? fiteredProjects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))
+        : emptyArray.map((_, index) => <ProductCardSkeleton key={index} />)}
     </div>
   );
 };

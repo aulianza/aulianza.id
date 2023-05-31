@@ -10,7 +10,7 @@ export const getBlogData = async ({
   per_page = 10,
 }: ParamsProps): Promise<{ status: number; data: any }> => {
   const params = new URLSearchParams({
-    username: "novu",
+    username: "naucode",
     page: page.toString(),
     per_page: per_page.toString(),
   });

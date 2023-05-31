@@ -7,6 +7,7 @@ import { useWindowSize } from "usehooks-ts";
 import BlogCard from "./BlogCard";
 import ViewOptions from "./ViewOptions";
 import SectionHeading from "@/common/components/elements/SectionHeading";
+import EmptyState from "@/common/components/elements/EmptyState";
 
 import { BlogItemProps } from "@/common/types/blog";
 import { fetcher } from "@/services/fetcher";
@@ -28,12 +29,16 @@ const BlogList: FC<BlogList> = ({ perPage = 6, showHeader = true, view }) => {
   const [page, setPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(perPage);
 
-  const { data } = useSWR(
+  const { data, isLoading } = useSWR(
     `/api/blog?page=${page}&per_page=${pageSize}`,
     fetcher
   );
 
   const blogData: BlogItemProps[] = data?.data?.posts || [];
+
+  if (!isLoading && blogData.length === 0) {
+    return <EmptyState message="No Data" />;
+  }
 
   return (
     <>

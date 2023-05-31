@@ -9,14 +9,13 @@ import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 
 import { ProjectItemProps } from "@/common/types/projects";
+import BackButton from "@/common/components/elements/BackButton";
 
 interface ProjectsDetailPageProps {
   project: ProjectItemProps;
 }
 
 const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
-  console.log("🚀 aulianza ~ project => ", project);
-
   const PAGE_TITLE = project?.title;
   const PAGE_DESCRIPTION = project?.description;
 
@@ -24,6 +23,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
     <>
       <NextSeo title={`${PAGE_TITLE} - Projects Ryan Aulia`} />
       <Container data-aos="fade-up">
+        <BackButton url="/projects" />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <ProjectDetail {...project} />
       </Container>

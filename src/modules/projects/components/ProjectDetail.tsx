@@ -1,19 +1,35 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
+import Link from "next/link";
+
 import Image from "@/common/components/elements/Image";
 import { ProjectItemProps } from "@/common/types/projects";
+import ProjectLink from "./ProjectLink";
 
 const ProjectDetail: FC<ProjectItemProps> = ({
   title,
-  description,
   image,
-  slug,
   stacks,
   link_demo,
   link_github,
-  updated_at,
 }) => {
+  const stacksArray = JSON.parse(stacks);
+
   return (
-    <div>
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row gap-5 justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-[15px]">Tech Stack :</span>
+          {stacksArray?.map((stack: string, index: number) => (
+            <span
+              key={index}
+              className="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400 rounded-full px-3 py-1 text-xs font-medium"
+            >
+              {stack}
+            </span>
+          ))}
+        </div>
+        <ProjectLink link_demo={link_demo} link_github={link_github} />
+      </div>
       <Image
         src={image}
         width={800}

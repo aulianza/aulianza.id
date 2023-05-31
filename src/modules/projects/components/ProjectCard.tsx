@@ -34,7 +34,7 @@ const ProjectCard: FC<ProjectItemProps> = ({
           <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">
             {description}
           </p>
-          <div className="flex gap-2 pt-2">
+          <div className="flex flex-wrap gap-2 pt-2">
             {stacksArray?.map((stack: string, index: number) => (
               <span
                 key={index}

@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -27,7 +26,7 @@
     "next": "13.4.2",
     "next-seo": "^6.0.0",
     "next-themes": "^0.2.1",
-    "prisma": "^4.14.1",
+    "prisma": "^4.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",

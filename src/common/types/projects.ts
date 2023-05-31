@@ -7,7 +7,7 @@ export interface ProjectItemProps {
   link_github?: string;
   stacks: string;
   is_show: boolean;
-  updated_at: string;
+  updated_at: Date;
 }
 
 export interface ProjectsProps {

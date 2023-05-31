@@ -2,9 +2,10 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Icon from "supercons";
 
+import BlogList from "@/modules/blog/components/BlogList";
+
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import BlogList from "@/modules/blog/components/BlogList";
 
 const BlogPreview: FC = () => {
   return (
@@ -25,7 +26,7 @@ const BlogPreview: FC = () => {
           </Link>
         </SectionSubHeading>
       </div>
-      <BlogList />
+      <BlogList perPage={2} showHeader={false} view="list" />
     </section>
   );
 };

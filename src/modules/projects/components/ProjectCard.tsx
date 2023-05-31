@@ -27,7 +27,7 @@ const ProjectCard: FC<ProjectItemProps> = ({
         />
         <div className="p-5 space-y-2">
           <div className="flex justify-between">
-            <div className="text-lg font-medium cursor-pointer text-neutral-700 dark:text-neutral-300 hover:dark:text-neutral-50">
+            <div className="text-lg font-medium cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
               {title}
             </div>
           </div>

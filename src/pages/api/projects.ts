@@ -12,8 +12,6 @@ export default async function handler(
 ) {
   try {
     const response = await prisma.projects.findMany();
-    console.log("🚀 aulianza ~ response => ", response);
-
     res.status(200).json({ success: true, data: response });
   } catch (error) {
     res.status(200).json({ success: false });

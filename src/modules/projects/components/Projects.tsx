@@ -6,8 +6,6 @@ import { fetcher } from "@/services/fetcher";
 
 const Projects: FC = () => {
   const { data } = useSWR("/api/projects", fetcher);
-  console.log("🚀 aulianza ~ data => ", data);
-
   const projects: ProjectItemProps[] = data?.data || [];
 
   return (

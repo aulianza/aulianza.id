@@ -7,15 +7,13 @@ import Projects from "@/modules/projects";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 
-interface ProjectsPageProps {
-  fallback: any;
-}
+import { ProjectsProps } from "@/common/types/projects";
 
 const PAGE_TITLE = "Projects";
 const PAGE_DESCRIPTION =
   "Showcasing my passion for technology, design, and problem-solving through code.";
 
-const ProjectsPage: NextPage<ProjectsPageProps> = ({ fallback }) => {
+const ProjectsPage: NextPage = () => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />

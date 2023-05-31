@@ -3,12 +3,11 @@ export interface ProjectItemProps {
   slug: string;
   description: string;
   image: string;
-  links: {
-    demo?: string;
-    github?: string;
-  };
+  link_demo?: string;
+  link_github?: string;
   stacks: string;
   is_show: boolean;
+  updated_at: string;
 }
 
 export interface ProjectsProps {

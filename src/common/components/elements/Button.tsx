@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`flex gap-2 items-center bg-cyan-900 hover:bg-cyan-950 text-white font-medium shadow-md py-2 px-4 rounded-lg transition-all duration-300 ${className}`}
+      className={`flex gap-2 items-center bg-teal-900 hover:bg-teal-950 text-white font-medium shadow-md py-2 px-4 rounded-lg transition-all duration-300 hover:scale-[101%] ${className}`}
       {...rest}
     >
       {icon && <>{icon}</>}

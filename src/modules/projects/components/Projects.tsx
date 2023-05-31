@@ -5,13 +5,16 @@ import { ProjectItemProps } from "@/common/types/projects";
 import { fetcher } from "@/services/fetcher";
 
 const Projects: FC = () => {
-  const { data } = useSWR("/api/landing?query=projects", fetcher);
+  const { data } = useSWR("/api/projects", fetcher);
+  const projects: ProjectItemProps[] = data?.data || [];
 
   return (
     <div className="grid sm:grid-cols-2 gap-5 pt-2">
-      {data?.map((project: ProjectItemProps, index: number) => (
-        <ProjectCard key={index} {...project} />
-      ))}
+      {projects
+        ?.filter((project) => project?.is_show)
+        .map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
     </div>
   );
 };

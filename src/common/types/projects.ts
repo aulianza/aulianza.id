@@ -7,7 +7,8 @@ export interface ProjectItemProps {
     demo?: string;
     github?: string;
   };
-  stacks: string[];
+  stacks: string;
+  is_show: boolean;
 }
 
 export interface ProjectsProps {

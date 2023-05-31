@@ -13,6 +13,8 @@ const ProjectCard: FC<ProjectItemProps> = ({
   image,
   stacks,
 }) => {
+  const stacksArray = JSON.parse(stacks);
+
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="border border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
@@ -33,7 +35,7 @@ const ProjectCard: FC<ProjectItemProps> = ({
             {description}
           </p>
           <div className="flex gap-2 pt-2">
-            {stacks?.map((stack, index) => (
+            {stacksArray?.map((stack: string, index: number) => (
               <span
                 key={index}
                 className="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400 rounded-full px-3 py-1 text-xs font-medium"

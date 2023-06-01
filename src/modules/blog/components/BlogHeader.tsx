@@ -20,7 +20,7 @@ const BlogHeader: FC<BlogHeaderProps> = ({
   return (
     <>
       <h1 className="text-2xl font-semibold">{title}</h1>
-      <div className="flex flex-col sm:flex-row gap-2 justify-between mb-6 pt-3 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]">
+      <div className="flex flex-col sm:flex-row gap-2 justify-between mb-6 pt-5 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]">
         <div>
           Published on
           <span className="px-1 font-medium">

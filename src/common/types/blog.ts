@@ -33,6 +33,7 @@ export type BlogItemProps = {
     profile_image: string;
     profile_image_90: string;
   };
+  body_markdown?: string;
 };
 
 export type BlogProps = {

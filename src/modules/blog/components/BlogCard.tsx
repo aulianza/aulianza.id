@@ -15,6 +15,7 @@ interface BlogCardProps extends BlogItemProps {
 }
 
 const BlogCard: FC<BlogCardProps> = ({
+  id,
   title,
   cover_image,
   created_at,
@@ -47,7 +48,7 @@ const BlogCard: FC<BlogCardProps> = ({
   }, [isMobile, view]);
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/${slug}?id=${id}`}>
       <Card
         className={clsx(
           "flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%]",

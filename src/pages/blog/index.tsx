@@ -9,18 +9,18 @@ import PageHeading from "@/common/components/elements/PageHeading";
 
 const PAGE_TITLE = "Blog";
 const PAGE_DESCRIPTION =
-	"Exploring the world of code, creativity, and constant learning.";
+  "Exploring the world of code, creativity, and constant learning.";
 
 const BlogPage: NextPage = () => {
-	return (
-		<>
-			<NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
-			<Container data-aos="fade-up">
-				<PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-				<BlogList />
-			</Container>
-		</>
-	);
+  return (
+    <>
+      <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
+      <Container data-aos="fade-up">
+        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        <BlogList />
+      </Container>
+    </>
+  );
 };
 
 export default BlogPage;

@@ -1,9 +1,7 @@
-import React, { FC, ReactNode } from "react";
-import Link from "next/link";
-
+import React, { FC } from "react";
+import ProjectLink from "./ProjectLink";
 import Image from "@/common/components/elements/Image";
 import { ProjectItemProps } from "@/common/types/projects";
-import ProjectLink from "./ProjectLink";
 
 const ProjectDetail: FC<ProjectItemProps> = ({
   title,

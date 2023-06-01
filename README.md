@@ -2,7 +2,7 @@
   <h1>aulianza.id</h1>
   <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR and Prisma with MySQL</p>
 </div>
-<br /><br />
+<br />
 
 ## Introduction
 

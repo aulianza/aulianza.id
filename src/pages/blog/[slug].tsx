@@ -47,11 +47,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
-  const blogDetail = await getBlogDetail({ id: parseInt(blogId) });
+  const response = await getBlogDetail({ id: parseInt(blogId) });
+
+  if (response?.status === 404) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
-      blog: blogDetail,
+      blog: response,
     },
   };
 };

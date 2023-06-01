@@ -6,9 +6,11 @@ import BlogDetail from "@/modules/blog/components/BlogDetail";
 
 import BackButton from "@/common/components/elements/BackButton";
 import Container from "@/common/components/elements/Container";
+import Loading from "@/common/components/elements/Loading";
 
 import { BlogItemProps } from "@/common/types/blog";
 
+import useLoading from "@/common/hooks/use-loading";
 import { getBlogDetail } from "@/services/blog";
 
 interface BlogDetailPageProps {
@@ -18,9 +20,13 @@ interface BlogDetailPageProps {
 }
 
 const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
+  const isLoading = useLoading();
+
   const blogData = blog?.data || {};
 
   const PAGE_TITLE = blogData?.title;
+
+  if (isLoading) return <Loading />;
 
   return (
     <>

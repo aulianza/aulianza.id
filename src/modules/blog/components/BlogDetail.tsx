@@ -35,6 +35,8 @@ const BlogDetail: FC<BlogItemProps> = ({
         />
         {body_markdown && <MarkdownRenderer>{body_markdown}</MarkdownRenderer>}
       </div>
+
+      {/* RY: todo: add blog tags, comment */}
     </>
   );
 };

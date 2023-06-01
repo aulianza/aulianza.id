@@ -9,6 +9,7 @@ import ViewOptions from "./ViewOptions";
 import Pagination from "./Pagination";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import EmptyState from "@/common/components/elements/EmptyState";
+import Loading from "@/common/components/elements/Loading";
 
 import { BlogItemProps } from "@/common/types/blog";
 import { fetcher } from "@/services/fetcher";
@@ -57,6 +58,8 @@ const BlogList: FC<BlogList> = ({
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  if (isLoading) return <Loading />;
 
   if (!isLoading && blogData.length === 0) {
     return <EmptyState message="No Data" />;

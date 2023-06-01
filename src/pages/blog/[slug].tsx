@@ -26,7 +26,7 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
   const PAGE_TITLE = blogData?.title;
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading isFullScreen />;
 
   return (
     <>

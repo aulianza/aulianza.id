@@ -3,33 +3,38 @@
 @tailwind utilities;
 
 :root {
-	--color-dark: #121212;
-	--color-light: #fafafa;
+  --color-dark: #121212;
+  --color-light: #fafafa;
 }
 
 html {
-	scroll-behavior: smooth;
-	letter-spacing: 0.3px;
+  scroll-behavior: smooth;
+  letter-spacing: 0.3px;
 }
 
 .dark {
-	background-color: var(--color-dark);
-	color: var(--color-light);
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 .light {
-	background-color: var(--color-light);
-	color: var(--color-dark);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+#nprogress .bar {
+  background: #15b8a6 !important;
+  height: 3px !important;
 }
 
 ::-webkit-scrollbar {
-	@apply w-1;
+  @apply w-1;
 }
 
 ::-webkit-scrollbar-track {
-	@apply rounded-[3px] bg-transparent;
+  @apply rounded-[3px] bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-400;
+  @apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-400;
 }

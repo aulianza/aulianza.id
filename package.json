@@ -11,8 +11,6 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
     "@prisma/client": "^4.15.0",
     "@types/aos": "^3.0.4",
     "@types/node": "20.1.7",

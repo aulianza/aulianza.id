@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import styled from "@emotion/styled";
 
 const Introduction: FC = () => {
   const currentyear = new Date().getFullYear();
@@ -7,7 +6,10 @@ const Introduction: FC = () => {
   const codingStart = 2014;
 
   return (
-    <StyledSection className="space-y-5">
+    <section
+      className="bg-cover bg-no-repeat space-y-5"
+      style={{ backgroundImage: "url('/images/background.svg')" }}
+    >
       <h1 className="text-2xl lg:text-3xl font-semibold">
         Hey, I&apos;m Ryan 👋
       </h1>
@@ -29,18 +31,8 @@ const Introduction: FC = () => {
           Node.js, and Laravel.
         </p>
       </div>
-    </StyledSection>
+    </section>
   );
 };
 
 export default Introduction;
-
-const StyledSection = styled.section`
-  background-image: url("/images/background.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  @media screen and (max-width: 480px) {
-    background-image: unset;
-  }
-`;

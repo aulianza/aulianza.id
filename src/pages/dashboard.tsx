@@ -12,40 +12,40 @@ import { getGithubUser } from "@/services/github";
 import { getReadStats } from "@/services/wakatime";
 
 interface DashboardPageProps {
-	fallback: any;
+  fallback: any;
 }
 
 const PAGE_TITLE = "Dashboard";
 const PAGE_DESCRIPTION =
-	"This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
+  "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
 
 const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
-	return (
-		<SWRConfig value={{ fallback }}>
-			<NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
-			<Container data-aos="fade-up">
-				<PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-				<Dashboard />
-			</Container>
-		</SWRConfig>
-	);
+  return (
+    <SWRConfig value={{ fallback }}>
+      <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
+      <Container data-aos="fade-up">
+        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        <Dashboard />
+      </Container>
+    </SWRConfig>
+  );
 };
 
 export default DashboardPage;
 
 export async function getStaticProps() {
-	const readStats = await getReadStats();
-	const githubUserPersonal = await getGithubUser("personal");
-	const githubUserWork = await getGithubUser("work");
+  const readStats = await getReadStats();
+  const githubUserPersonal = await getGithubUser("personal");
+  const githubUserWork = await getGithubUser("work");
 
-	return {
-		props: {
-			fallback: {
-				"/api/read-stats": readStats.data,
-				"/api/github?type=personal": githubUserPersonal?.data,
-				"/api/github?type=work": githubUserWork?.data,
-			},
-		},
-		revalidate: 1,
-	};
+  return {
+    props: {
+      fallback: {
+        "/api/read-stats": readStats.data,
+        "/api/github?type=personal": githubUserPersonal?.data,
+        "/api/github?type=work": githubUserWork?.data,
+      },
+    },
+    revalidate: 1,
+  };
 }

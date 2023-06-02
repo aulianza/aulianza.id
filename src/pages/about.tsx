@@ -11,15 +11,15 @@ const PAGE_TITLE = "About";
 const PAGE_DESCRIPTION = "A short story of me";
 
 const AboutPage: NextPage = () => {
-	return (
-		<>
-			<NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
-			<Container data-aos="fade-up">
-				<PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-				<About />
-			</Container>
-		</>
-	);
+  return (
+    <>
+      <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
+      <Container data-aos="fade-up">
+        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        <About />
+      </Container>
+    </>
+  );
 };
 
 export default AboutPage;

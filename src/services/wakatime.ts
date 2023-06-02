@@ -1,21 +1,22 @@
-import querystring from 'querystring';
+import querystring from "querystring";
 
 const client_id = process.env.WAKATIME_CLIENT_ID;
 const client_secret = process.env.WAKATIME_CLIENT_SECRET;
 const refresh_token = process.env.WAKATIME_CLIENT_REFRESH_TOKEN;
 
-const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
-const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time_since_today';
-const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
+const STATS_ENDPOINT = "https://wakatime.com/api/v1/users/current/stats";
+const ALL_TIME_SINCE_TODAY =
+  "https://wakatime.com/api/v1/users/current/all_time_since_today";
+const TOKEN_ENDPOINT = "https://wakatime.com/oauth/token";
 
 export const getAccessToken = async (): Promise<string> => {
   const response = await fetch(TOKEN_ENDPOINT, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Type": "application/x-www-form-urlencoded",
     },
     body: querystring.stringify({
-      grant_type: 'refresh_token',
+      grant_type: "refresh_token",
       client_id,
       client_secret,
       refresh_token,
@@ -25,12 +26,18 @@ export const getAccessToken = async (): Promise<string> => {
   return response.text();
 };
 
-export const getReadStats = async (): Promise<{ status: number; data: any }> => {
+export const getReadStats = async (): Promise<{
+  status: number;
+  data: any;
+}> => {
   const res = await getAccessToken();
-  const access_token = res.substring(res.indexOf('=') + 1, res.lastIndexOf('&refresh_token'));
+  const access_token = res.substring(
+    res.indexOf("=") + 1,
+    res.lastIndexOf("&refresh_token")
+  );
 
   const request = await fetch(`${STATS_ENDPOINT}/last_7_days`, {
-    method: 'GET',
+    method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
@@ -54,7 +61,8 @@ export const getReadStats = async (): Promise<{ status: number; data: any }> => 
   };
   const human_readable_daily_average =
     getData?.data?.human_readable_daily_average_including_other_language;
-  const human_readable_total = getData?.data?.human_readable_total_including_other_language;
+  const human_readable_total =
+    getData?.data?.human_readable_total_including_other_language;
 
   const languages = getData?.data?.languages?.slice(0, 3);
   const editors = getData?.data?.editors;
@@ -75,12 +83,18 @@ export const getReadStats = async (): Promise<{ status: number; data: any }> => 
   };
 };
 
-export const getALLTimeSinceToday = async (): Promise<{ status: number; data: any }> => {
+export const getALLTimeSinceToday = async (): Promise<{
+  status: number;
+  data: any;
+}> => {
   const res = await getAccessToken();
-  const access_token = res.substring(res.indexOf('=') + 1, res.lastIndexOf('&refresh_token'));
+  const access_token = res.substring(
+    res.indexOf("=") + 1,
+    res.lastIndexOf("&refresh_token")
+  );
 
   const request = await fetch(ALL_TIME_SINCE_TODAY, {
-    method: 'GET',
+    method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
     },

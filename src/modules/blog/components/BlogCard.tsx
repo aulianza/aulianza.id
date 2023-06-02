@@ -2,7 +2,10 @@ import React, { FC, useEffect, useState } from "react";
 import clsx from "clsx";
 import moment from "moment";
 import Link from "next/link";
-import Icon from "supercons";
+import {
+  HiOutlineCalendar as CalendarIcon,
+  HiOutlineClock as ClockIcon,
+} from "react-icons/hi";
 
 import Card from "@/common/components/elements/Card";
 import Image from "@/common/components/elements/Image";
@@ -20,7 +23,7 @@ const BlogCard: FC<BlogCardProps> = ({
   cover_image,
   created_at,
   description,
-  comments_count,
+  reading_time_minutes,
   slug,
   view = "list",
 }) => {
@@ -75,17 +78,14 @@ const BlogCard: FC<BlogCardProps> = ({
           </h3>
           <div className="flex gap-5">
             <div className="flex gap-1 items-center dark:text-neutral-400">
-              <Icon glyph="clock" size={16} />
+              <CalendarIcon size={14} />
               <span className="text-xs">
-                {moment(created_at).format("DD MMM YYYY")}
+                {moment(created_at).format("MMM DD, YYYY")}
               </span>
             </div>
             <div className="flex gap-1 items-center dark:text-neutral-400">
-              <Icon glyph="message" size={20} />
-              <span className="text-xs">{comments_count}</span>
-              <span className="text-xs">
-                Comment{comments_count > 1 && "s"}
-              </span>
+              <ClockIcon size={14} />
+              <span className="text-xs">{reading_time_minutes} min read</span>
             </div>
           </div>
           <p className="hidden sm:block leading-relaxed text-sm text-neutral-600 dark:text-neutral-400">

@@ -1,3 +1,14 @@
+export type UserProps = {
+  name: string;
+  username: string;
+  twitter_username: string;
+  github_username: string;
+  user_id: number;
+  website_url: string;
+  profile_image: string;
+  profile_image_90: string;
+};
+
 export type BlogItemProps = {
   type_of: string;
   id: number;
@@ -23,19 +34,19 @@ export type BlogItemProps = {
   reading_time_minutes: number;
   tag_list: string[];
   tags: string;
-  user: {
-    name: string;
-    username: string;
-    twitter_username: string;
-    github_username: string;
-    user_id: number;
-    website_url: string;
-    profile_image: string;
-    profile_image_90: string;
-  };
+  user: UserProps;
   body_markdown?: string;
 };
 
 export type BlogProps = {
   blogs: BlogItemProps[];
+};
+
+export type CommentItemProps = {
+  type_of: string;
+  id_code: string;
+  created_at: string;
+  body_html: string;
+  user: UserProps;
+  children: Comment[];
 };

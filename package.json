@@ -11,12 +11,14 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@giscus/react": "^2.2.8",
     "@prisma/client": "^4.15.0",
     "@types/aos": "^3.0.4",
     "@types/node": "20.1.7",
     "@types/nprogress": "^0.2.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "@types/react-scroll": "^1.8.7",
     "@types/react-slick": "^0.23.10",
     "@types/react-syntax-highlighter": "^15.5.7",
     "@vercel/analytics": "^1.0.1",
@@ -35,6 +37,7 @@
     "react-icons": "^4.9.0",
     "react-loading-skeleton": "^3.3.1",
     "react-markdown": "^8.0.7",
+    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.8",
     "react-syntax-highlighter": "^15.5.0",

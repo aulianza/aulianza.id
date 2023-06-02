@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import moment from "moment";
-import Icon from "supercons";
-
-import { BsGithub as GithubIcon } from "react-icons/bs";
+import { HiOutlineClock as ClockIcon } from "react-icons/hi";
+import { TbMessage2 as CommentIcon } from "react-icons/tb";
+import { scroller } from "react-scroll";
 
 interface BlogHeaderProps {
   title: string;
@@ -17,6 +17,14 @@ const BlogHeader: FC<BlogHeaderProps> = ({
   published_at,
   reading_time_minutes,
 }) => {
+  const scrollToSection = () => {
+    scroller.scrollTo("comments", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <>
       <h1 className="text-2xl font-semibold">{title}</h1>
@@ -29,14 +37,17 @@ const BlogHeader: FC<BlogHeaderProps> = ({
         </div>
         <div className="flex items-center gap-5">
           <div className="flex gap-1 items-center font-medium">
-            <Icon glyph="clock" size={18} />
+            <ClockIcon size={18} />
             <div className="flex gap-1">
               <span>{reading_time_minutes}</span>
               <span>min read</span>
             </div>
           </div>
-          <div className="flex gap-1 items-center font-medium">
-            <Icon glyph="message" size={22} />
+          <div
+            className="flex gap-1 items-center font-medium cursor-pointer hover:dark:text-neutral-300"
+            onClick={scrollToSection}
+          >
+            <CommentIcon size={20} />
             <div className="flex gap-1">
               <span>{comments_count}</span>
               <span>Comment{comments_count > 1 && "s"}</span>

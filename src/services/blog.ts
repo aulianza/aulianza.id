@@ -1,15 +1,20 @@
 const BLOG_URL = "https://dev.to/api/articles";
+const COMMENT_URL = "https://dev.to/api/comments";
 const USERNAME = "naucode";
 
-type ParamsProps = {
+type BlogParamsProps = {
   page?: number;
   per_page?: number;
+};
+
+type CommentParamsProps = {
+  a_id?: number;
 };
 
 export const getBlogData = async ({
   page = 1,
   per_page = 6,
-}: ParamsProps): Promise<{ status: number; data: any }> => {
+}: BlogParamsProps): Promise<{ status: number; data: any }> => {
   const params = new URLSearchParams({
     username: USERNAME,
     page: page.toString(),
@@ -49,6 +54,29 @@ export const getBlogDetail = async ({
   const params = new URLSearchParams({ username: USERNAME });
 
   const response = await fetch(`${BLOG_URL}/${id}?${params.toString()}`, {
+    method: "GET",
+  });
+
+  const status = response?.status;
+
+  if (status >= 400) {
+    return { status, data: {} };
+  }
+
+  const data = await response.json();
+
+  return {
+    status,
+    data,
+  };
+};
+
+export const getBlogComment = async ({
+  post_id,
+}: {
+  post_id: string;
+}): Promise<{ status: number; data: any }> => {
+  const response = await fetch(`${COMMENT_URL}/?a_id=${post_id}`, {
     method: "GET",
   });
 

@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 
 import BlogHeader from "./BlogHeader";
+
+import Breakline from "@/common/components/elements/Breakline";
 import Image from "@/common/components/elements/Image";
 import MarkdownRenderer from "@/common/components/elements/MarkdownRenderer";
 
 import { BlogItemProps } from "@/common/types/blog";
 
 const BlogDetail: FC<BlogItemProps> = ({
-  type_of,
   cover_image,
   title,
   body_markdown,
@@ -25,7 +26,7 @@ const BlogDetail: FC<BlogItemProps> = ({
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
       />
-      <div className="space-y-6 leading-[1.8] dark:text-neutral-400">
+      <div className="space-y-6 leading-[1.8] dark:text-neutral-400 break-all">
         <Image
           src={cover_image}
           width={800}
@@ -35,8 +36,7 @@ const BlogDetail: FC<BlogItemProps> = ({
         />
         {body_markdown && <MarkdownRenderer>{body_markdown}</MarkdownRenderer>}
       </div>
-
-      {/* RY: todo: add blog tags, comment */}
+      <Breakline className="!my-10" />
     </>
   );
 };

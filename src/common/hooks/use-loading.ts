@@ -7,7 +7,7 @@ const useLoading = () => {
 
   useEffect(() => {
     router.isReady && setIsLoading(false);
-  }, []);
+  }, [router.isReady]);
 
   return isLoading;
 };

@@ -1,9 +1,22 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import moment from "moment";
 import Image from "@/common/components/elements/Image";
 import { CommentItemProps } from "@/common/types/blog";
 
 const CommentItem: FC<CommentItemProps> = ({ body_html, created_at, user }) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const codeElements = contentRef.current.getElementsByTagName("code");
+      for (let i = 0; i < codeElements.length; i++) {
+        const codeElement = codeElements[i];
+        codeElement.classList.add("break-words");
+        codeElement.classList.add("text-xs");
+      }
+    }
+  }, [body_html]);
+
   return (
     <div className="flex gap-5 dark:text-neutral-400 break-all">
       <div className="flex-shrink-0">
@@ -25,7 +38,8 @@ const CommentItem: FC<CommentItemProps> = ({ body_html, created_at, user }) => {
           </div>
         </div>
         <div
-          className="leading-[1.8]"
+          ref={contentRef}
+          className="leading-[1.8] max-w-[600px]"
           dangerouslySetInnerHTML={{ __html: body_html }}
         />
       </div>

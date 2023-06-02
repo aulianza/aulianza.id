@@ -33,7 +33,7 @@ export type BlogItemProps = {
   last_comment_at: string;
   reading_time_minutes: number;
   tag_list: string[];
-  tags: string;
+  tags: string[];
   user: UserProps;
   body_markdown?: string;
 };

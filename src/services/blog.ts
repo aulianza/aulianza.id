@@ -1,14 +1,11 @@
-const BLOG_URL = "https://dev.to/api/articles";
-const COMMENT_URL = "https://dev.to/api/comments";
+const BASE_URL = "https://dev.to/api/";
+const BLOG_URL = `${BASE_URL}articles`;
+const COMMENT_URL = `${BASE_URL}comments`;
 const USERNAME = "naucode";
 
 type BlogParamsProps = {
   page?: number;
   per_page?: number;
-};
-
-type CommentParamsProps = {
-  a_id?: number;
 };
 
 export const getBlogData = async ({

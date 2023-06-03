@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "yarn prettier --write .",
     "prepare": "husky install",
     "postinstall": "prisma generate"
   },
@@ -25,6 +26,7 @@
     "add": "^2.0.6",
     "aos": "^3.0.0-beta.6",
     "clsx": "^1.2.1",
+    "eslint-config-prettier": "^8.8.0",
     "framer-motion": "^10.12.16",
     "moment": "^2.29.4",
     "next": "13.4.2",

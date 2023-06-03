@@ -23,7 +23,7 @@ const ProjectCard: FC<ProjectItemProps> = ({
           width={400}
           height={200}
           alt={title}
-          className="rounded-t-xl h-48 object-cover"
+          className="rounded-t-xl h-48 object-cover object-top"
         />
         <div className="p-5 space-y-2">
           <div className="flex justify-between">

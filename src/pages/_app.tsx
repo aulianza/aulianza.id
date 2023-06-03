@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import Head from "next/head";
-import { DefaultSeo } from "next-seo";
-import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/react";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import Head from 'next/head';
+import { DefaultSeo } from 'next-seo';
+import { ThemeProvider } from 'next-themes';
+import { Analytics } from '@vercel/analytics/react';
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-import Layout from "@/common/components/layouts";
-import { firaCode, jakartaSans } from "@/common/styles/fonts";
+import Layout from '@/common/components/layouts';
+import { firaCode, jakartaSans } from '@/common/styles/fonts';
 
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
 
-import "tailwindcss/tailwind.css";
-import "aos/dist/aos.css";
-import "@/common/styles/globals.css";
+import 'tailwindcss/tailwind.css';
+import 'aos/dist/aos.css';
+import '@/common/styles/globals.css';
 
 const ProgressBar = dynamic(
-  () => import("src/common/components/elements/ProgressBar"),
+  () => import('src/common/components/elements/ProgressBar'),
   { ssr: false }
 );
 
@@ -33,8 +33,8 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no"
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, user-scalable=no'
         />
       </Head>
       <style jsx global>
@@ -46,21 +46,21 @@ const App = ({ Component, pageProps }: AppProps) => {
         `}
       </style>
       <DefaultSeo
-        title="Ryan Aulia - Personal Website"
-        description="Experienced Software Engineer, specializing in frontend development. aulianza."
+        title='Ryan Aulia - Personal Website'
+        description='Experienced Software Engineer, specializing in frontend development. aulianza.'
         openGraph={{
-          type: "website",
-          locale: "en_EN",
-          url: "https://aulianza.id",
-          siteName: "Ryan Aulia",
+          type: 'website',
+          locale: 'en_EN',
+          url: 'https://aulianza.id',
+          siteName: 'Ryan Aulia',
         }}
         twitter={{
-          handle: "@handle",
-          site: "@aulianzaa",
-          cardType: "summary_large_image",
+          handle: '@handle',
+          site: '@aulianzaa',
+          cardType: 'summary_large_image',
         }}
       />
-      <ThemeProvider attribute="class" defaultTheme="dark">
+      <ThemeProvider attribute='class' defaultTheme='dark'>
         <Layout>
           <ProgressBar />
           <Component {...pageProps} />

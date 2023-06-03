@@ -1,15 +1,15 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import CareerList from "./CareerList";
-import Story from "./Story";
+import CareerList from './CareerList';
+import Story from './Story';
 
-import Breakline from "@/common/components/elements/Breakline";
+import Breakline from '@/common/components/elements/Breakline';
 
 const About: FC = () => {
   return (
     <>
       <Story />
-      <Breakline className="my-8" />
+      <Breakline className='my-8' />
       <CareerList />
     </>
   );

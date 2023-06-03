@@ -1,29 +1,29 @@
-import React from "react";
-import { GetStaticProps, NextPage } from "next";
-import { NextSeo } from "next-seo";
-import { SWRConfig } from "swr";
+import React from 'react';
+import { GetStaticProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
+import { SWRConfig } from 'swr';
 
-import Dashboard from "@/modules/dashboard";
+import Dashboard from '@/modules/dashboard';
 
-import Container from "@/common/components/elements/Container";
-import PageHeading from "@/common/components/elements/PageHeading";
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
 
-import { getGithubUser } from "@/services/github";
-import { getReadStats } from "@/services/wakatime";
+import { getGithubUser } from '@/services/github';
+import { getReadStats } from '@/services/wakatime';
 
 interface DashboardPageProps {
   fallback: any;
 }
 
-const PAGE_TITLE = "Dashboard";
+const PAGE_TITLE = 'Dashboard';
 const PAGE_DESCRIPTION =
-  "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
+  'This is my personal dashboard, built with Next.js API routes deployed as serverless functions.';
 
 const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
   return (
     <SWRConfig value={{ fallback }}>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
-      <Container data-aos="fade-up">
+      <Container data-aos='fade-up'>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Dashboard />
       </Container>
@@ -35,15 +35,15 @@ export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const readStats = await getReadStats();
-  const githubUserPersonal = await getGithubUser("personal");
-  const githubUserWork = await getGithubUser("work");
+  const githubUserPersonal = await getGithubUser('personal');
+  const githubUserWork = await getGithubUser('work');
 
   return {
     props: {
       fallback: {
-        "/api/read-stats": readStats.data,
-        "/api/github?type=personal": githubUserPersonal?.data,
-        "/api/github?type=work": githubUserWork?.data,
+        '/api/read-stats': readStats.data,
+        '/api/github?type=personal': githubUserPersonal?.data,
+        '/api/github?type=work': githubUserWork?.data,
       },
     },
     revalidate: 1,

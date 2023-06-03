@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 type BlogViewState = {
   viewOption: string;
@@ -10,11 +10,11 @@ export const useBlogViewStore = create<BlogViewState>()(
   devtools(
     persist(
       (set) => ({
-        viewOption: "list",
+        viewOption: 'list',
         setViewOption: (option) => set(() => ({ viewOption: option })),
       }),
       {
-        name: "blog-view",
+        name: 'blog-view',
       }
     )
   )

@@ -1,5 +1,5 @@
-import prisma from "@/common/lib/prisma";
-import type { NextApiRequest, NextApiResponse } from "next";
+import prisma from '@/common/lib/prisma';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
   status: boolean;

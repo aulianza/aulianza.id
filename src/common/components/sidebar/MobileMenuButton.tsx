@@ -1,5 +1,5 @@
-import { FC } from "react";
-import Icon from "supercons";
+import { FC } from 'react';
+import Icon from 'supercons';
 
 interface MobileMenuButtonProps {
   expandMenu: boolean;
@@ -11,15 +11,15 @@ const MobileMenuButton: FC<MobileMenuButtonProps> = ({
   setExpandMenu,
 }) => {
   return (
-    <div className="lg:hidden flex items-center justify-end">
+    <div className='lg:hidden flex items-center justify-end'>
       <button
-        className="block hover:text-gray-900 dark:text-white"
+        className='block hover:text-gray-900 dark:text-white'
         onClick={() => setExpandMenu(!expandMenu)}
       >
         {!expandMenu ? (
-          <Icon glyph="menu" size={40} />
+          <Icon glyph='menu' size={40} />
         ) : (
-          <Icon glyph="view-close" size={40} />
+          <Icon glyph='view-close' size={40} />
         )}
       </button>
     </div>

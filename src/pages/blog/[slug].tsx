@@ -1,18 +1,18 @@
-import React from "react";
-import { GetServerSideProps, NextPage } from "next";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import { GetServerSideProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
-import BlogDetail from "@/modules/blog/components/BlogDetail";
-import GiscusComment from "@/modules/blog/components/GiscusComment";
+import BlogDetail from '@/modules/blog/components/BlogDetail';
+import GiscusComment from '@/modules/blog/components/GiscusComment';
 
-import BackButton from "@/common/components/elements/BackButton";
-import Container from "@/common/components/elements/Container";
+import BackButton from '@/common/components/elements/BackButton';
+import Container from '@/common/components/elements/Container';
 
-import { BlogItemProps } from "@/common/types/blog";
+import { BlogItemProps } from '@/common/types/blog';
 
-import { getBlogDetail } from "@/services/blog";
-import CommentList from "@/modules/blog/components/CommentList";
-import { Tabs, Tab } from "@/common/components/elements/Tabs";
+import { getBlogDetail } from '@/services/blog';
+import CommentList from '@/modules/blog/components/CommentList';
+import { Tabs, Tab } from '@/common/components/elements/Tabs';
 
 interface BlogDetailPageProps {
   blog: {
@@ -33,15 +33,15 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Blog Ryan Aulia`} />
-      <Container data-aos="fade-up">
-        <BackButton url="/blog" />
+      <Container data-aos='fade-up'>
+        <BackButton url='/blog' />
         <BlogDetail {...blogData} />
-        <section id="comments">
+        <section id='comments'>
           <Tabs>
-            <Tab label="DEV.to Comment">
+            <Tab label='DEV.to Comment'>
               <CommentList id={blogData?.id} />
             </Tab>
-            <Tab label="Github Comment">
+            <Tab label='Github Comment'>
               <GiscusComment
                 repo={repo}
                 repoId={repoId}
@@ -64,7 +64,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!blogId) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };
@@ -75,7 +75,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (response?.status === 404) {
     return {
       redirect: {
-        destination: "/404",
+        destination: '/404',
         permanent: false,
       },
     };

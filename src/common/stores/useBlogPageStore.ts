@@ -1,5 +1,5 @@
-import create, { State } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import create, { State } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 type BlogPageStore = {
   page: number;
@@ -18,7 +18,7 @@ export const useBlogPageStore = create<BlogPageStore>()(
         setPageSize: (pageSize) => set({ pageSize }),
       }),
       {
-        name: "blog-page-store",
+        name: 'blog-page-store',
       }
     )
   )

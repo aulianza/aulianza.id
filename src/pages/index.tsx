@@ -1,16 +1,16 @@
-import React from "react";
-import { NextPage } from "next";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
-import Home from "@/modules/home";
+import Home from '@/modules/home';
 
-import Container from "@/common/components/elements/Container";
+import Container from '@/common/components/elements/Container';
 
 const HomePage: NextPage = () => {
   return (
     <>
-      <NextSeo title="Ryan Aulia - Personal Website" />
-      <Container data-aos="fade-up">
+      <NextSeo title='Ryan Aulia - Personal Website' />
+      <Container data-aos='fade-up'>
         <Home />
       </Container>
     </>

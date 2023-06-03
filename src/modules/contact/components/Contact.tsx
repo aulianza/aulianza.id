@@ -1,19 +1,19 @@
-import React, { FC, ReactNode } from "react";
-import { FaTelegramPlane as TelegramIcon } from "react-icons/fa";
-import { HiOutlineMail as EmailIcon } from "react-icons/hi";
+import React, { FC, ReactNode } from 'react';
+import { FaTelegramPlane as TelegramIcon } from 'react-icons/fa';
+import { HiOutlineMail as EmailIcon } from 'react-icons/hi';
 
-import Button from "@/common/components/elements/Button";
+import Button from '@/common/components/elements/Button';
 
 const CONTACTS = [
   {
-    title: "hello@aulianza.id",
+    title: 'hello@aulianza.id',
     icon: <EmailIcon size={18} />,
-    link: "mailto:hello@aulianza.id",
+    link: 'mailto:hello@aulianza.id',
   },
   {
-    title: "Telegram",
+    title: 'Telegram',
     icon: <TelegramIcon size={18} />,
-    link: "https://t.me/aulianza",
+    link: 'https://t.me/aulianza',
   },
 ];
 
@@ -24,15 +24,15 @@ interface ContactProps {
 }
 
 const Contact: FC = () => {
-  const handleAction = (link: string) => window.open(link, "_blank");
+  const handleAction = (link: string) => window.open(link, '_blank');
 
   return (
-    <section className="space-y-5">
-      <p className="dark:text-neutral-300">
+    <section className='space-y-5'>
+      <p className='dark:text-neutral-300'>
         You can reach out to me directly by sending an email, texting on
         Telegram, or connecting on social media.
       </p>
-      <div className="flex gap-3">
+      <div className='flex gap-3'>
         {CONTACTS?.map((contact: ContactProps, index: number) => (
           <Button
             key={index}

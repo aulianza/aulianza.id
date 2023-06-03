@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import OverviewItem from "./OverviewItem";
+import React, { FC } from 'react';
+import OverviewItem from './OverviewItem';
 
 interface OverviewProps {
   data: {
@@ -35,11 +35,11 @@ const Overview: FC<OverviewProps> = ({ data }) => {
   const averageContribution = totalContributions / totalContributionList.length;
 
   return (
-    <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-4">
-      <OverviewItem label="Total" value={totalContributions} />
-      <OverviewItem label="This Week" value={totalThisWeekContribution} />
-      <OverviewItem label="Best Day" value={bestContribution} />
-      <OverviewItem label="Average" value={averageContribution} unit="/ day" />
+    <div className='grid grid-cols-2 gap-3 py-2 sm:grid-cols-4'>
+      <OverviewItem label='Total' value={totalContributions} />
+      <OverviewItem label='This Week' value={totalThisWeekContribution} />
+      <OverviewItem label='Best Day' value={bestContribution} />
+      <OverviewItem label='Average' value={averageContribution} unit='/ day' />
     </div>
   );
 };

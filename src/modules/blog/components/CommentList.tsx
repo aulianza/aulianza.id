@@ -1,12 +1,12 @@
-import React, { FC, useMemo } from "react";
-import useSWR from "swr";
+import React, { FC, useMemo } from 'react';
+import useSWR from 'swr';
 
-import CommentItem from "./CommentItem";
-import Loading from "@/common/components/elements/Loading";
-import EmptyState from "@/common/components/elements/EmptyState";
+import CommentItem from './CommentItem';
+import Loading from '@/common/components/elements/Loading';
+import EmptyState from '@/common/components/elements/EmptyState';
 
-import { CommentItemProps } from "@/common/types/blog";
-import { fetcher } from "@/services/fetcher";
+import { CommentItemProps } from '@/common/types/blog';
+import { fetcher } from '@/services/fetcher';
 
 type CommentListProps = {
   id: number;
@@ -24,18 +24,18 @@ const CommentList: FC<CommentListProps> = ({ id }) => {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="space-y-5 pt-4 pb-6">
+    <section className='space-y-5 pt-4 pb-6'>
       {totalComments >= 1 ? (
         <>
-          <div className="font-semibold text-xl pb-5">
-            {totalComments} Comment{totalComments > 1 && "s"}
+          <div className='font-semibold text-xl pb-5'>
+            {totalComments} Comment{totalComments > 1 && 's'}
           </div>
           {commentsData?.map((comment) => (
             <CommentItem key={comment?.id_code} {...comment} />
           ))}
         </>
       ) : (
-        <EmptyState message="No Comment." />
+        <EmptyState message='No Comment.' />
       )}
     </section>
   );

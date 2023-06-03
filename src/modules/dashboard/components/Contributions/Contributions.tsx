@@ -1,15 +1,15 @@
-import React, { FC } from "react";
-import useSWR from "swr";
-import Link from "next/link";
-import { BsGithub as GithubIcon } from "react-icons/bs";
+import React, { FC } from 'react';
+import useSWR from 'swr';
+import Link from 'next/link';
+import { BsGithub as GithubIcon } from 'react-icons/bs';
 
-import Overview from "./Overview";
-import Calendar from "./Calendar";
+import Overview from './Overview';
+import Calendar from './Calendar';
 
-import SectionHeading from "@/common/components/elements/SectionHeading";
-import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
+import SectionHeading from '@/common/components/elements/SectionHeading';
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 
-import { fetcher } from "@/services/fetcher";
+import { fetcher } from '@/services/fetcher';
 
 type ContributionsProps = {
   username: string;
@@ -28,29 +28,29 @@ const Contributions: FC<ContributionsProps> = ({
     data?.contributionsCollection?.contributionCalendar;
 
   return (
-    <section className="flex flex-col gap-y-2">
+    <section className='flex flex-col gap-y-2'>
       <SectionHeading
         title={`${type} Contributions`}
-        icon={<GithubIcon className="mr-1" />}
+        icon={<GithubIcon className='mr-1' />}
       />
       <SectionSubHeading>
-        <p className="dark:text-neutral-400">
+        <p className='dark:text-neutral-400'>
           My contributions from last year on my {type} account.
         </p>
         <Link
           href={`https://github.com/${username}`}
-          target="_blank"
+          target='_blank'
           passHref
-          className="text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400"
+          className='text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400'
         >
           @{username}
         </Link>
       </SectionSubHeading>
 
-      {!data && <div className="dark:text-neutral-400">No Data</div>}
+      {!data && <div className='dark:text-neutral-400'>No Data</div>}
 
       {data && (
-        <div className="space-y-3">
+        <div className='space-y-3'>
           <Overview data={contributionCalendar} />
           <Calendar data={contributionCalendar} />
         </div>

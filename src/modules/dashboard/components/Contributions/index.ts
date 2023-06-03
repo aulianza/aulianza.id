@@ -1,3 +1,3 @@
-import Contributions from "./Contributions";
+import Contributions from './Contributions';
 
 export default Contributions;

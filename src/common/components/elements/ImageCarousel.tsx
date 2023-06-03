@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useWindowSize } from "usehooks-ts";
-import Image from "./Image";
+import React, { useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useWindowSize } from 'usehooks-ts';
+import Image from './Image';
 
 interface ImageCarouselProps {
   images: string[];
@@ -47,8 +47,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
     };
 
     if (slider && slider.innerSlider && slider.innerSlider.list) {
-      slider.innerSlider.list.addEventListener("mouseenter", stopScrolling);
-      slider.innerSlider.list.addEventListener("mouseleave", startScrolling);
+      slider.innerSlider.list.addEventListener('mouseenter', stopScrolling);
+      slider.innerSlider.list.addEventListener('mouseleave', startScrolling);
 
       startScrolling();
     }
@@ -56,11 +56,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
     return () => {
       if (slider && slider.innerSlider && slider.innerSlider.list) {
         slider.innerSlider.list.removeEventListener(
-          "mouseenter",
+          'mouseenter',
           stopScrolling
         );
         slider.innerSlider.list.removeEventListener(
-          "mouseleave",
+          'mouseleave',
           startScrolling
         );
       }
@@ -76,11 +76,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: interval,
-    cssEase: "linear",
+    cssEase: 'linear',
   };
 
   return (
-    <Slider ref={sliderRef} {...settings} className="pt-5">
+    <Slider ref={sliderRef} {...settings} className='pt-5'>
       {images?.map((image, index) => (
         <div key={index}>
           <Image
@@ -88,8 +88,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             alt={`Image ${index + 1}`}
             width={isMobile ? 130 : 145}
             height={50}
-            rounded="rounded-full"
-            className="px-3 bg-light rounded-full hover:shadow-xl"
+            rounded='rounded-full'
+            className='px-3 bg-light rounded-full hover:shadow-xl'
           />
         </div>
       ))}

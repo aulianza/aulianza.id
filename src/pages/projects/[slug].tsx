@@ -1,15 +1,15 @@
-import React from "react";
-import prisma from "@/common/lib/prisma";
-import { GetServerSideProps, NextPage } from "next";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import prisma from '@/common/lib/prisma';
+import { GetServerSideProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
-import ProjectDetail from "@/modules/projects/components/ProjectDetail";
+import ProjectDetail from '@/modules/projects/components/ProjectDetail';
 
-import Container from "@/common/components/elements/Container";
-import PageHeading from "@/common/components/elements/PageHeading";
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
 
-import { ProjectItemProps } from "@/common/types/projects";
-import BackButton from "@/common/components/elements/BackButton";
+import { ProjectItemProps } from '@/common/types/projects';
+import BackButton from '@/common/components/elements/BackButton';
 
 interface ProjectsDetailPageProps {
   project: ProjectItemProps;
@@ -22,8 +22,8 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Projects Ryan Aulia`} />
-      <Container data-aos="fade-up">
-        <BackButton url="/projects" />
+      <Container data-aos='fade-up'>
+        <BackButton url='/projects' />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <ProjectDetail {...project} />
       </Container>
@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   if (response === null) {
     return {
       redirect: {
-        destination: "/404",
+        destination: '/404',
         permanent: false,
       },
     };

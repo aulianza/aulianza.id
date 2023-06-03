@@ -1,7 +1,7 @@
-import React, { FC, ReactNode } from "react";
-import Link from "next/link";
-import { BsGithub as GithubIcon } from "react-icons/bs";
-import { FiExternalLink as LinkIcon } from "react-icons/fi";
+import React, { FC, ReactNode } from 'react';
+import Link from 'next/link';
+import { BsGithub as GithubIcon } from 'react-icons/bs';
+import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 
 interface LinkComponentProps {
   url: string;
@@ -17,10 +17,10 @@ interface ProjectLinkProps {
 const ProjectLink: FC<ProjectLinkProps> = ({ link_github, link_demo }) => {
   const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
     return (
-      <Link href={url} target="_blank" passHref>
-        <div className="flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 ">
+      <Link href={url} target='_blank' passHref>
+        <div className='flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 '>
           {icon}
-          <span className="text-[15px] dark:text-teal-500 hover:dark:text-teal-400 transition-all duration-300">
+          <span className='text-[15px] dark:text-teal-500 hover:dark:text-teal-400 transition-all duration-300'>
             {text}
           </span>
         </div>
@@ -29,21 +29,21 @@ const ProjectLink: FC<ProjectLinkProps> = ({ link_github, link_demo }) => {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className='flex gap-4'>
       {link_github && (
         <LinkComponent
           url={link_github}
-          text="Source Code"
+          text='Source Code'
           icon={<GithubIcon size={22} />}
         />
       )}
       {link_github && link_demo && (
-        <span className="text-neutral-400 dark:text-neutral-600">|</span>
+        <span className='text-neutral-400 dark:text-neutral-600'>|</span>
       )}
       {link_demo && (
         <LinkComponent
           url={link_demo}
-          text="Live Demo"
+          text='Live Demo'
           icon={<LinkIcon size={22} />}
         />
       )}

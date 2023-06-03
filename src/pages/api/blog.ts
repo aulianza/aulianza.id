@@ -1,5 +1,5 @@
-import { getBlogData } from "@/services/blog";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { getBlogData } from '@/services/blog';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,8 +7,8 @@ export default async function handler(
 ): Promise<void> {
   try {
     res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=60, stale-while-revalidate=30"
+      'Cache-Control',
+      'public, s-maxage=60, stale-while-revalidate=30'
     );
 
     const { page, per_page } = req.query;

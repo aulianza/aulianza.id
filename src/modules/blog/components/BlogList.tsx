@@ -1,20 +1,20 @@
-import React, { FC, useEffect, useMemo, useState } from "react";
-import clsx from "clsx";
-import useSWR from "swr";
-import Icon from "supercons";
-import { useWindowSize } from "usehooks-ts";
+import React, { FC, useEffect, useMemo, useState } from 'react';
+import clsx from 'clsx';
+import useSWR from 'swr';
+import Icon from 'supercons';
+import { useWindowSize } from 'usehooks-ts';
 
-import BlogCard from "./BlogCard";
-import ViewOptions from "./ViewOptions";
-import Pagination from "./Pagination";
-import SectionHeading from "@/common/components/elements/SectionHeading";
-import EmptyState from "@/common/components/elements/EmptyState";
-import Loading from "@/common/components/elements/Loading";
+import BlogCard from './BlogCard';
+import ViewOptions from './ViewOptions';
+import Pagination from './Pagination';
+import SectionHeading from '@/common/components/elements/SectionHeading';
+import EmptyState from '@/common/components/elements/EmptyState';
+import Loading from '@/common/components/elements/Loading';
 
-import { BlogItemProps } from "@/common/types/blog";
-import { fetcher } from "@/services/fetcher";
+import { BlogItemProps } from '@/common/types/blog';
+import { fetcher } from '@/services/fetcher';
 
-import { useBlogViewStore } from "@/common/stores/useBlogViewStore";
+import { useBlogViewStore } from '@/common/stores/useBlogViewStore';
 
 type BlogList = {
   showHeader?: boolean;
@@ -56,33 +56,33 @@ const BlogList: FC<BlogList> = ({
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (isLoading) return <Loading />;
 
   if (!isLoading && blogData.length === 0) {
-    return <EmptyState message="No Data" />;
+    return <EmptyState message='No Data' />;
   }
 
   return (
     <>
       {showHeader && !isMobile && (
-        <div className="flex items-center justify-between text-[15px] mb-5">
+        <div className='flex items-center justify-between text-[15px] mb-5'>
           <SectionHeading
-            title="Latest Articles"
-            icon={<Icon glyph="rss" size={32} />}
+            title='Latest Articles'
+            icon={<Icon glyph='rss' size={32} />}
           />
-          <div className="flex gap-2 px-1 cursor-pointer">
+          <div className='flex gap-2 px-1 cursor-pointer'>
             <ViewOptions
               option={viewOption}
               setViewOption={setViewOption}
-              icon="grid"
+              icon='grid'
             />
             <ViewOptions
               option={viewOption}
               setViewOption={setViewOption}
-              icon="list"
+              icon='list'
             />
           </div>
         </div>
@@ -90,10 +90,10 @@ const BlogList: FC<BlogList> = ({
 
       <div
         className={clsx(
-          "gap-5 sm:gap-4",
-          viewOption === "list" || isMobile
-            ? "flex flex-col"
-            : "grid grid-cols-2 sm:!gap-5"
+          'gap-5 sm:gap-4',
+          viewOption === 'list' || isMobile
+            ? 'flex flex-col'
+            : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
         {blogData?.map((item: BlogItemProps, index: number) => (

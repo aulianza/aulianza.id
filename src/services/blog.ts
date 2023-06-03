@@ -1,7 +1,7 @@
-const BASE_URL = "https://dev.to/api/";
+const BASE_URL = 'https://dev.to/api/';
 const BLOG_URL = `${BASE_URL}articles`;
 const COMMENT_URL = `${BASE_URL}comments`;
-const USERNAME = "aulianza";
+const USERNAME = 'aulianza';
 
 type BlogParamsProps = {
   page?: number;
@@ -19,7 +19,7 @@ export const getBlogData = async ({
   });
 
   const response = await fetch(`${BLOG_URL}?${params.toString()}`, {
-    method: "GET",
+    method: 'GET',
   });
 
   const status = response?.status;
@@ -51,7 +51,7 @@ export const getBlogDetail = async ({
   const params = new URLSearchParams({ username: USERNAME });
 
   const response = await fetch(`${BLOG_URL}/${id}?${params.toString()}`, {
-    method: "GET",
+    method: 'GET',
   });
 
   const status = response?.status;
@@ -74,7 +74,7 @@ export const getBlogComment = async ({
   post_id: string;
 }): Promise<{ status: number; data: any }> => {
   const response = await fetch(`${COMMENT_URL}/?a_id=${post_id}`, {
-    method: "GET",
+    method: 'GET',
   });
 
   const status = response?.status;

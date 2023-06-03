@@ -1,6 +1,6 @@
-import { FC, useState } from "react";
-import { motion } from "framer-motion";
-import clsx from "clsx";
+import { FC, useState } from 'react';
+import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 interface Contribution {
   date: string;
@@ -60,12 +60,12 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
 
   return (
     <>
-      <div className="relative flex flex-col">
-        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
+      <div className='relative flex flex-col'>
+        <ul className='flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start'>
           {months.map((month) => (
             <li
               key={month.firstDay}
-              className={clsx(`${month.totalWeeks < 2 ? "invisible" : ""}`)}
+              className={clsx(`${month.totalWeeks < 2 ? 'invisible' : ''}`)}
               style={{ minWidth: 14.3 * month.totalWeeks }}
             >
               {month.name}
@@ -73,7 +73,7 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
           ))}
         </ul>
 
-        <div className="flex justify-start gap-[3px] overflow-hidden">
+        <div className='flex justify-start gap-[3px] overflow-hidden'>
           {weeks?.map((week) => (
             <div key={week.firstDay}>
               {week.contributionDays.map((contribution) => {
@@ -86,8 +86,8 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
                 return (
                   <motion.span
                     key={contribution.date}
-                    initial="initial"
-                    animate="animate"
+                    initial='initial'
+                    animate='animate'
                     variants={{
                       initial: { opacity: 0, translateY: -20 },
                       animate: {
@@ -96,7 +96,7 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
                         transition: { delay: getRandomDelayAnimate },
                       },
                     }}
-                    className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
+                    className='my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800'
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
@@ -115,16 +115,16 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-sm">
-          <span className="dark:text-neutral-400">Less</span>
-          <ul className="flex gap-1">
-            <motion.li className="h-[10px] w-[10px] rounded-sm bg-neutral-300 dark:bg-neutral-800" />
+      <div className='flex flex-wrap items-center justify-between gap-2'>
+        <div className='flex items-center gap-2 text-sm'>
+          <span className='dark:text-neutral-400'>Less</span>
+          <ul className='flex gap-1'>
+            <motion.li className='h-[10px] w-[10px] rounded-sm bg-neutral-300 dark:bg-neutral-800' />
             {contributionColors.map((item, index) => (
               <motion.li
                 key={item}
-                initial="initial"
-                animate="animate"
+                initial='initial'
+                animate='animate'
                 variants={{
                   initial: { opacity: 0 },
                   animate: {
@@ -132,7 +132,7 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
                     transition: { delay: index * 0.3 },
                   },
                 }}
-                className="h-[10px] w-[10px] rounded-sm"
+                className='h-[10px] w-[10px] rounded-sm'
                 style={{ backgroundColor: item }}
               />
             ))}
@@ -142,11 +142,11 @@ const Calendar: FC<CalendarProps> = ({ data }) => {
 
         <div
           className={clsx(
-            `${selectContribution?.date ? "opacity-100" : "opacity-0"}`,
-            "rounded bg-neutral-200 px-2 text-sm dark:bg-neutral-700"
+            `${selectContribution?.date ? 'opacity-100' : 'opacity-0'}`,
+            'rounded bg-neutral-200 px-2 text-sm dark:bg-neutral-700'
           )}
         >
-          {selectContribution?.count} contributions on{" "}
+          {selectContribution?.count} contributions on{' '}
           {selectContribution?.date}
         </div>
       </div>

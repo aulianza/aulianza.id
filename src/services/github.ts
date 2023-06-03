@@ -1,6 +1,6 @@
-import { GITHUB_ACCOUNTS } from "@/common/constant/github";
+import { GITHUB_ACCOUNTS } from '@/common/constant/github';
 
-const GITHUB_USER_ENDPOINT: string = "https://api.github.com/graphql";
+const GITHUB_USER_ENDPOINT: string = 'https://api.github.com/graphql';
 
 const GITHUB_USER_QUERY: string = `query($username: String!) {
   user(login: $username) {
@@ -31,7 +31,7 @@ export const fetchGithubData = async (
   token: string | undefined
 ) => {
   const response = await fetch(GITHUB_USER_ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     headers: {
       Authorization: `bearer ${token}`,
     },
@@ -59,7 +59,7 @@ export const getGithubUser = async (type: string) => {
   );
 
   if (!account) {
-    throw new Error("Invalid user type");
+    throw new Error('Invalid user type');
   }
 
   const { username, token } = account;

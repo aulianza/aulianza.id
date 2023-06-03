@@ -1,5 +1,5 @@
 import React from "react";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
 
@@ -33,7 +33,7 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 
 export default DashboardPage;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const readStats = await getReadStats();
   const githubUserPersonal = await getGithubUser("personal");
   const githubUserWork = await getGithubUser("work");
@@ -48,4 +48,4 @@ export async function getStaticProps() {
     },
     revalidate: 1,
   };
-}
+};

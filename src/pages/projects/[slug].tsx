@@ -1,6 +1,6 @@
 import React from "react";
 import prisma from "@/common/lib/prisma";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
 import ProjectDetail from "@/modules/projects/components/ProjectDetail";
@@ -33,7 +33,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
 
 export default ProjectsDetailPage;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const response = await prisma.projects.findUnique({
     where: {
       slug: String(params?.slug),
@@ -44,18 +44,33 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       project: JSON.parse(JSON.stringify(response)),
     },
-    revalidate: 10,
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await prisma.projects.findMany();
-  const paths = response.map((project) => ({
-    params: { slug: project.slug },
-  }));
+// RY: moved from SSG to SSR since data updated frequently from DB
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const response = await prisma.projects.findUnique({
+//     where: {
+//       slug: String(params?.slug),
+//     },
+//   });
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     props: {
+//       project: JSON.parse(JSON.stringify(response)),
+//     },
+//     revalidate: 10,
+//   };
+// };
+
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const response = await prisma.projects.findMany();
+//   const paths = response.map((project) => ({
+//     params: { slug: project.slug },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };

@@ -40,6 +40,15 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     },
   });
 
+  if (response === null) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       project: JSON.parse(JSON.stringify(response)),

@@ -33,7 +33,11 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
 export default ProjectsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await prisma.projects.findMany();
+  const response = await prisma.projects.findMany({
+    orderBy: {
+      id: "desc",
+    },
+  });
 
   return {
     props: {

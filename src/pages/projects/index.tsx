@@ -35,7 +35,7 @@ export default ProjectsPage;
 export const getStaticProps: GetStaticProps = async () => {
   const response = await prisma.projects.findMany({
     orderBy: {
-      id: 'desc',
+      updated_at: 'desc',
     },
   });
 

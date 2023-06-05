@@ -27,7 +27,7 @@ const BlogDetail: FC<BlogItemProps> = ({
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
       />
-      <div className='space-y-6 leading-[1.8] dark:text-neutral-300 break-all'>
+      <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
         <Image
           src={cover_image}
           width={800}

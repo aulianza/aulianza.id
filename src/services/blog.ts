@@ -15,7 +15,7 @@ export const getBlogData = async ({
   const params = new URLSearchParams({
     username: USERNAME,
     page: page.toString(),
-    per_page: per_page.toString(),
+    // per_page: per_page.toString(),
   });
 
   const response = await fetch(`${BLOG_URL}?${params.toString()}`, {

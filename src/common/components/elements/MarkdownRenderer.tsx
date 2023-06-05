@@ -26,6 +26,12 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
             {...props}
           />
         ),
+        h3: (props) => (
+          <h3
+            className='text-[18px] leading-snug pt-4 font-medium dark:text-neutral-300'
+            {...props}
+          />
+        ),
         ol: (props) => (
           <ol className='pl-10 space-y-3 list-decimal pb-5' {...props} />
         ),

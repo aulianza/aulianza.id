@@ -23,7 +23,7 @@ interface BlogDetailPageProps {
 const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   const blogData = blog?.data || {};
 
-  const PAGE_TITLE = blogData?.title;
+  const canonicalUrl = `https://aulianza.id/blog/${blogData?.slug}?id=${blogData?.id}`;
 
   const repo = process.env.COMMENTS_REPO as `${string}/${string}`;
   const repoId = process.env.COMMENTS_REPO_ID as string;
@@ -32,7 +32,26 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
   return (
     <>
-      <NextSeo title={`${PAGE_TITLE} - Blog Ryan Aulia`} />
+      <NextSeo
+        title={`${blogData?.title} - Blog Ryan Aulia`}
+        description={blogData?.description}
+        canonical={canonicalUrl}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: blogData?.published_at,
+            modifiedTime: blogData?.edited_at,
+            authors: ['Ryan Aulia'],
+          },
+          url: canonicalUrl,
+          images: [
+            {
+              url: blogData?.cover_image,
+            },
+          ],
+          siteName: 'Blog Ryan Aulia',
+        }}
+      />
       <Container data-aos='fade-up'>
         <BackButton url='/blog' />
         <BlogDetail {...blogData} />

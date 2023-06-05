@@ -27,7 +27,7 @@ const BlogDetail: FC<BlogItemProps> = ({
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
       />
-      <div className='space-y-6 leading-[1.8] dark:text-neutral-400 break-all'>
+      <div className='space-y-6 leading-[1.8] dark:text-neutral-300 break-all'>
         <Image
           src={cover_image}
           width={800}
@@ -37,19 +37,21 @@ const BlogDetail: FC<BlogItemProps> = ({
         />
         {body_markdown && <MarkdownRenderer>{body_markdown}</MarkdownRenderer>}
       </div>
-      <div className='my-10 space-y-2'>
-        <h6 className='text-lg font-medium'>Tags:</h6>
-        <div className='flex flex-wrap gap-2 pt-2'>
-          {tags?.map((stack: string, index: number) => (
-            <span
-              key={index}
-              className='bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 rounded-full px-4 py-1 text-[14px] font-medium'
-            >
-              {stack}
-            </span>
-          ))}
+      {tags?.length >= 1 && (
+        <div className='my-10 space-y-2'>
+          <h6 className='text-lg font-medium'>Tags:</h6>
+          <div className='flex flex-wrap gap-2 pt-2'>
+            {tags?.map((stack: string, index: number) => (
+              <span
+                key={index}
+                className='bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 rounded-full px-4 py-1 text-[14px] font-medium'
+              >
+                {stack}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <div className='my-10'>
         <h6 className='text-lg font-medium mb-2'>Original Post:</h6>
         <Link href={url} target='_blank'>

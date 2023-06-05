@@ -20,4 +20,5 @@ model Projects {
   is_show     Boolean  @default(true)
   updated_at  DateTime @default(now())
   content     String?  @db.Text
+  is_featured Boolean  @default(false)
 }

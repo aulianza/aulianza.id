@@ -63,11 +63,11 @@ const BlogCard: FC<BlogCardProps> = ({
         <div className='w-fit'>
           <Image
             src={cover_image || defaultImage}
-            width={isMobile || viewOption === 'grid' ? 400 : 200}
+            width={isMobile || viewOption === 'grid' ? 400 : 240}
             height={100}
             alt={title}
             className={clsxm(
-              'sm:rounded-xl sm:h-32 object-cover',
+              'sm:rounded-xl sm:h-[8.5rem] object-cover',
               viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
             )}
           />

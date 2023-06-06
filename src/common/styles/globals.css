@@ -12,6 +12,12 @@ html {
   letter-spacing: 0.3px;
 }
 
+body {
+  background-image: url('/images/bg.png');
+  background-repeat: no-repeat;
+  background-position: -200px -330px;
+}
+
 .dark {
   background-color: var(--color-dark);
   color: var(--color-light);

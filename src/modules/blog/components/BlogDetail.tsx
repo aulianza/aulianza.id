@@ -33,7 +33,7 @@ const BlogDetail: FC<BlogItemProps> = ({
           width={800}
           height={500}
           alt={title}
-          className='hover:scale-105 mb-6'
+          className='hover:scale-105'
         />
         {body_markdown && <MarkdownRenderer>{body_markdown}</MarkdownRenderer>}
       </div>

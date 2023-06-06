@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import clsx from 'clsx';
 import moment from 'moment';
 import Link from 'next/link';
 import {
@@ -10,6 +9,7 @@ import {
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 
+import clsxm from '@/common/lib/clsxm';
 import { BlogItemProps } from '@/common/types/blog';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -41,7 +41,7 @@ const BlogCard: FC<BlogCardProps> = ({
 
   const defaultImage = '/images/placeholder.png';
 
-  const contentContainerClasses = clsx(
+  const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
     view === 'grid' ? 'sm:w-full sm:!px-6' : ''
   );
@@ -53,7 +53,7 @@ const BlogCard: FC<BlogCardProps> = ({
   return (
     <Link href={`/blog/${slug}?id=${id}`}>
       <Card
-        className={clsx(
+        className={clsxm(
           'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%]',
           viewOption === 'grid'
             ? '!flex-col sm:h-[400px]'
@@ -66,7 +66,7 @@ const BlogCard: FC<BlogCardProps> = ({
             width={isMobile || viewOption === 'grid' ? 400 : 200}
             height={100}
             alt={title}
-            className={clsx(
+            className={clsxm(
               'sm:rounded-xl sm:h-32 object-cover',
               viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
             )}

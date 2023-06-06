@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -10,13 +11,25 @@ import {
 
 import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
+import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff';
 
-SyntaxHighlighter.registerLanguage('jsx', jsx);
-SyntaxHighlighter.registerLanguage('javascript', javascript);
-SyntaxHighlighter.registerLanguage('typescript', typescript);
+const languages = {
+  javascript: 'javascript',
+  typescript: 'typescript',
+  diff: 'diff',
+  tsx: 'tsx',
+  css: 'css',
+};
+
+SyntaxHighlighter.registerLanguage(languages.javascript, javascript);
+SyntaxHighlighter.registerLanguage(languages.typescript, typescript);
+SyntaxHighlighter.registerLanguage(languages.diff, diff);
+SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
+SyntaxHighlighter.registerLanguage(languages.css, css);
 
 const CodeBlock = ({ className, children, inline, ...props }: CodeProps) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
@@ -79,4 +92,9 @@ const CodeBlock = ({ className, children, inline, ...props }: CodeProps) => {
   );
 };
 
-export default CodeBlock;
+const LoadingPlaceholder = () => <div className='w-full mt-12 mb-12 h-36' />;
+
+export default dynamic(() => Promise.resolve(CodeBlock), {
+  ssr: false,
+  loading: LoadingPlaceholder,
+});

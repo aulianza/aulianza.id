@@ -12,15 +12,27 @@ import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 
 import { fetcher } from '@/services/fetcher';
 
-const CodingActive: FC = () => {
+interface CodingActiveProps {
+  lastUpdate?: string;
+}
+
+const CodingActive: FC<CodingActiveProps> = ({ lastUpdate }) => {
   const { data } = useSWR('/api/read-stats', fetcher);
 
   const formatLastUpdate = (): string => {
-    const lastUpdate = moment(data?.last_update);
-    if (lastUpdate.isValid()) {
-      return lastUpdate.startOf('hour').fromNow();
+    const lastUpdateDate = moment(lastUpdate || data?.last_update);
+    if (lastUpdateDate.isValid()) {
+      return lastUpdateDate.startOf('hour').fromNow();
     }
     return '';
+  };
+
+  const renderLastUpdate = () => {
+    const formattedLastUpdate = formatLastUpdate();
+    if (formattedLastUpdate) {
+      return <span>{formattedLastUpdate}</span>;
+    }
+    return null;
   };
 
   return (
@@ -41,7 +53,7 @@ const CodingActive: FC = () => {
           <span> last 7 days stats.</span>
         </div>
         <div className='text-sm text-neutral-600 dark:text-neutral-500'>
-          Last update: <span>{formatLastUpdate()}</span>
+          Last update: {renderLastUpdate()}
         </div>
       </SectionSubHeading>
 

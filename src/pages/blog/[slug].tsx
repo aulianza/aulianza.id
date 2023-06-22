@@ -13,6 +13,7 @@ import { BlogItemProps } from '@/common/types/blog';
 import { getBlogDetail } from '@/services/blog';
 import CommentList from '@/modules/blog/components/CommentList';
 import { Tabs, Tab } from '@/common/components/elements/Tabs';
+import Link from 'next/link';
 
 interface BlogDetailPageProps {
   blog: {
@@ -58,6 +59,16 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
         <section id='comments'>
           <Tabs>
             <Tab label='DEV.to Comment'>
+              <div className='my-2 items-center text-sm mb-3'>
+                <span className='font-medium text-neutral-600 dark:text-neutral-300'>
+                  Post URL:{' '}
+                </span>
+                <Link href={blogData?.url} target='_blank'>
+                  <div className='text-teal-600 dark:text-teal-500 hover:underline mt-1'>
+                    {blogData?.url}
+                  </div>
+                </Link>
+              </div>
               <CommentList id={blogData?.id} />
             </Tab>
             <Tab label='Github Comment'>

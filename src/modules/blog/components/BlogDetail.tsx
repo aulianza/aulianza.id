@@ -7,7 +7,6 @@ import Image from '@/common/components/elements/Image';
 import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
 
 import { BlogItemProps } from '@/common/types/blog';
-import Link from 'next/link';
 
 const BlogDetail: FC<BlogItemProps> = ({
   cover_image,
@@ -15,7 +14,6 @@ const BlogDetail: FC<BlogItemProps> = ({
   body_markdown,
   comments_count,
   published_at,
-  url,
   tags,
   reading_time_minutes,
 }) => {
@@ -52,12 +50,6 @@ const BlogDetail: FC<BlogItemProps> = ({
           </div>
         </div>
       )}
-      <div className='my-10'>
-        <h6 className='text-lg font-medium mb-2'>Original Post:</h6>
-        <Link href={url} target='_blank'>
-          <div className='text-teal-500 hover:underline'>{url}</div>
-        </Link>
-      </div>
       <Breakline className='!my-10' />
     </>
   );

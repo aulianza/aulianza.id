@@ -30,12 +30,12 @@ const Contributions: FC<ContributionsProps> = ({
   return (
     <section className='flex flex-col gap-y-2'>
       <SectionHeading
-        title={`${type} Contributions`}
+        title={`Contributions`}
         icon={<GithubIcon className='mr-1' />}
       />
       <SectionSubHeading>
         <p className='dark:text-neutral-400'>
-          My contributions from last year on my {type} account.
+          My contributions from last year on github.
         </p>
         <Link
           href={`https://github.com/${username}`}

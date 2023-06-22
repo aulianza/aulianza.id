@@ -1,10 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
-import {
-  HiOutlineCalendar as CalendarIcon,
-  HiOutlineClock as ClockIcon,
-} from 'react-icons/hi';
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
+import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
@@ -25,6 +23,7 @@ const BlogCard: FC<BlogCardProps> = ({
   description,
   reading_time_minutes,
   slug,
+  comments_count,
   view = 'list',
 }) => {
   const [viewOption, setViewOption] = useState<string>(view);
@@ -78,16 +77,26 @@ const BlogCard: FC<BlogCardProps> = ({
           <h3 className='md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300'>
             {trimmedTitle}
           </h3>
-          <div className='flex gap-5'>
-            <div className='flex gap-1 items-center dark:text-neutral-400'>
-              <CalendarIcon size={14} />
+          <div className='flex gap-5 text-neutral-600 dark:text-neutral-400'>
+            <div className='flex gap-1 items-center '>
               <span className='text-xs'>
                 {moment(created_at).format('MMM DD, YYYY')}
               </span>
             </div>
-            <div className='flex gap-1 items-center dark:text-neutral-400'>
+            <div className='flex gap-1 items-center'>
               <ClockIcon size={14} />
               <span className='text-xs'>{reading_time_minutes} min read</span>
+            </div>
+            <div className='flex gap-1 items-center'>
+              <CommentIcon size={16} />
+              <span className='text-xs'>
+                <div className='flex gap-1'>
+                  <span>{comments_count}</span>
+                  <span className='hidden lg:block'>
+                    Comment{comments_count > 1 && 's'}
+                  </span>
+                </div>
+              </span>
             </div>
           </div>
           <p className='hidden sm:block leading-relaxed text-sm text-neutral-600 dark:text-neutral-400'>

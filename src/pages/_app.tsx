@@ -3,7 +3,6 @@ import AOS from 'aos';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
-import { Analytics } from '@vercel/analytics/react';
 
 import dynamic from 'next/dynamic';
 
@@ -64,7 +63,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <Layout>
           <ProgressBar />
           <Component {...pageProps} />
-          <Analytics />
         </Layout>
       </ThemeProvider>
     </>

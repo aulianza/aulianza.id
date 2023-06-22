@@ -32,6 +32,8 @@ const BlogCard: FC<BlogCardProps> = ({
   const { width } = useWindowSize();
   const isMobile = width < 468;
 
+  const newSlug = slug?.slice(0, -5);
+
   const trimmedTitle =
     viewOption === 'grid'
       ? title.slice(0, 70) + (title.length > 70 ? '...' : '')
@@ -51,7 +53,7 @@ const BlogCard: FC<BlogCardProps> = ({
   }, [isMobile, view]);
 
   return (
-    <Link href={`/blog/${slug}?id=${id}`}>
+    <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
           'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%]',

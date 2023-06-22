@@ -23,7 +23,6 @@
     "@types/react-scroll": "^1.8.7",
     "@types/react-slick": "^0.23.10",
     "@types/react-syntax-highlighter": "^15.5.7",
-    "@vercel/analytics": "^1.0.1",
     "add": "^2.0.6",
     "aos": "^3.0.0-beta.6",
     "clsx": "^1.2.1",

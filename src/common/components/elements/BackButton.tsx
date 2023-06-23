@@ -11,7 +11,7 @@ const BackButton: FC<BackButtonProps> = ({ url }) => {
     <div className='w-fit'>
       <Link href={url} passHref>
         <div className='flex gap-1 w-max hover:gap-2 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400'>
-          <Icon glyph='back' size={32} />
+          <Icon glyph='back' size={32} data-testid='back-icon' />
           <span>Back</span>
         </div>
       </Link>

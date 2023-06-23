@@ -1,13 +1,11 @@
-import React, { FC, useEffect, useMemo, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import useSWR from 'swr';
-import Icon from 'supercons';
 import { useWindowSize } from 'usehooks-ts';
 
 import BlogCard from './BlogCard';
-import ViewOptions from './ViewOptions';
 import Pagination from './Pagination';
-import SectionHeading from '@/common/components/elements/SectionHeading';
+import BlogListHeader from './BlogListHeader';
 import EmptyState from '@/common/components/elements/EmptyState';
 import Loading from '@/common/components/elements/Loading';
 
@@ -19,7 +17,6 @@ import { useBlogViewStore } from '@/common/stores/useBlogViewStore';
 type BlogList = {
   showHeader?: boolean;
   showPagination?: boolean;
-  view?: string;
   perPage?: number;
 };
 
@@ -68,24 +65,7 @@ const BlogList: FC<BlogList> = ({
   return (
     <>
       {showHeader && !isMobile && (
-        <div className='flex items-center justify-between text-[15px] mb-5'>
-          <SectionHeading
-            title='Latest Articles'
-            icon={<Icon glyph='rss' size={32} />}
-          />
-          <div className='flex gap-2 px-1 cursor-pointer'>
-            <ViewOptions
-              option={viewOption}
-              setViewOption={setViewOption}
-              icon='grid'
-            />
-            <ViewOptions
-              option={viewOption}
-              setViewOption={setViewOption}
-              icon='list'
-            />
-          </div>
-        </div>
+        <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />
       )}
 
       <div

@@ -26,12 +26,7 @@ const BlogPreview: FC = () => {
           </Link>
         </SectionSubHeading>
       </div>
-      <BlogList
-        perPage={2}
-        showHeader={false}
-        showPagination={false}
-        view='list'
-      />
+      <BlogList perPage={2} showHeader={false} showPagination={false} />
     </section>
   );
 };

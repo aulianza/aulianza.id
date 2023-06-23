@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Router from 'next/router';
-import { motion } from 'framer-motion';
+import Icon from 'supercons';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import Button from '@/common/components/elements/Button';
@@ -17,8 +17,11 @@ const Services: FC = () => {
         </p>
       </div>
       <div className='p-8 bg-neutral-100 dark:bg-neutral-800 border dark:border-none rounded-xl space-y-4'>
-        <h3 className='text-xl font-medium'>Lets work together!</h3>
-        <p className='leading-loose text-neutral-800 dark:text-neutral-300'>
+        <div className='flex gap-1 items-center'>
+          <Icon glyph='send-fill' size={28} className='pt-1' />
+          <h3 className='text-xl font-medium'>Lets work together!</h3>
+        </div>
+        <p className='leading-loose text-neutral-800 dark:text-neutral-300 pl-2'>
           i&apos;m open for freelance projects, feel free to email me to see how
           can we collaborate.
         </p>

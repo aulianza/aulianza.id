@@ -7,7 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
 
 import Layout from '@/common/components/layouts';
-import { firaCode, jakartaSans } from '@/common/styles/fonts';
+import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
 
 import type { AppProps } from 'next/app';
 
@@ -40,6 +40,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         {`
           html {
             --jakartaSans-font: ${jakartaSans.style.fontFamily};
+            --soraSans-font: ${soraSans.style.fontFamily};
             --firaCode-font: ${firaCode.style.fontFamily};
           }
         `}

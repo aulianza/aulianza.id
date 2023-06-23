@@ -10,7 +10,7 @@ export const useBlogViewStore = create<BlogViewState>()(
   devtools(
     persist(
       (set) => ({
-        viewOption: 'list',
+        viewOption: 'grid',
         setViewOption: (option) => set(() => ({ viewOption: option })),
       }),
       {

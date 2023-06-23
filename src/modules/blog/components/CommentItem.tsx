@@ -13,6 +13,7 @@ const CommentItem: FC<CommentItemProps> = ({ body_html, created_at, user }) => {
         const codeElement = codeElements[i];
         codeElement.classList.add('break-words');
         codeElement.classList.add('text-xs');
+        codeElement.classList.add('whitespace-pre-wrap');
       }
     }
   }, [body_html]);

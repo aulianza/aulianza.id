@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 
 import Sidebar from './partials/Sidebar';
-// import Footer from "./partials/Footer";
+// import Footer from './partials/Footer';
 
 import useHasMounted from '@/common/hooks/use-has-mounted';
 

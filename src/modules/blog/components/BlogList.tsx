@@ -2,6 +2,7 @@ import React, { FC, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import useSWR from 'swr';
 import { useWindowSize } from 'usehooks-ts';
+import { motion } from 'framer-motion';
 
 import BlogCard from './BlogCard';
 import Pagination from './Pagination';
@@ -77,7 +78,14 @@ const BlogList: FC<BlogList> = ({
         )}
       >
         {blogData?.map((item: BlogItemProps, index: number) => (
-          <BlogCard key={index} view={viewOption} {...item} />
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
+          >
+            <BlogCard view={viewOption} {...item} />
+          </motion.div>
         ))}
       </div>
 

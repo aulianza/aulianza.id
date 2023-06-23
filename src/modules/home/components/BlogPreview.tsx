@@ -3,11 +3,16 @@ import Link from 'next/link';
 import Icon from 'supercons';
 
 import BlogList from '@/modules/blog/components/BlogList';
+import BlogCarousel from './BlogCarousel';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
+import { useWindowSize } from 'usehooks-ts';
 
 const BlogPreview: FC = () => {
+  const { width } = useWindowSize();
+  const isMobile = width < 480;
+
   return (
     <section className='space-y-6'>
       <div className='flex items-center justify-between'>
@@ -26,7 +31,11 @@ const BlogPreview: FC = () => {
           </Link>
         </SectionSubHeading>
       </div>
-      <BlogList perPage={2} showHeader={false} showPagination={false} />
+      {isMobile ? (
+        <BlogList perPage={2} showHeader={false} showPagination={false} />
+      ) : (
+        <BlogCarousel />
+      )}
     </section>
   );
 };

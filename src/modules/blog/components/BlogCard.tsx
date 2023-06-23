@@ -13,6 +13,8 @@ import { useWindowSize } from 'usehooks-ts';
 
 interface BlogCardProps extends BlogItemProps {
   view?: string;
+  isExcerpt?: boolean;
+  isCarousel?: boolean;
 }
 
 const BlogCard: FC<BlogCardProps> = ({
@@ -25,6 +27,8 @@ const BlogCard: FC<BlogCardProps> = ({
   slug,
   comments_count,
   view = 'list',
+  isExcerpt = true,
+  isCarousel = false,
 }) => {
   const [viewOption, setViewOption] = useState<string>(view);
 
@@ -55,10 +59,12 @@ const BlogCard: FC<BlogCardProps> = ({
     <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
-          'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%]',
+          'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%] w-full',
           viewOption === 'grid'
-            ? '!flex-col sm:h-[400px]'
-            : '!flex-row sm:p-5 sm:px-6 '
+            ? '!flex-col sm:h-[400px] w-full'
+            : '!flex-row sm:p-5 sm:px-6',
+          isCarousel && 'min-w-[350px]',
+          !isExcerpt && 'sm:h-[320px]'
         )}
       >
         <div className='w-fit'>
@@ -99,9 +105,11 @@ const BlogCard: FC<BlogCardProps> = ({
               </span>
             </div>
           </div>
-          <p className='hidden sm:block leading-relaxed text-sm text-neutral-600 dark:text-neutral-400'>
-            {trimmedContent}
-          </p>
+          {isExcerpt && (
+            <p className='hidden sm:block leading-relaxed text-sm text-neutral-600 dark:text-neutral-400'>
+              {trimmedContent}
+            </p>
+          )}
         </article>
       </Card>
     </Link>

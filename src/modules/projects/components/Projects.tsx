@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import { ProjectsProps } from '@/common/types/projects';
 
@@ -14,7 +15,14 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
   return (
     <div className='grid sm:grid-cols-2 gap-5 pt-2'>
       {fiteredProjects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: index * 0.1 }}
+        >
+          <ProjectCard {...project} />
+        </motion.div>
       ))}
     </div>
   );

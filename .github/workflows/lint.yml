@@ -27,7 +27,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 🔬 Lint
-        run: yarn lint:fix
+        run: yarn lint
 
   typecheck:
     name: ʦ TypeScript

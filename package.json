@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit --incremental false",
     "format": "prettier --write .",
     "format:check": "prettier -c .",
-    "test": "jest --watch",
+    "test:watch": "jest --watch",
+    "test": "jest",
     "test:ci": "jest --ci",
     "prepare": "husky install",
     "postinstall": "prisma generate"

@@ -1,11 +1,11 @@
 import { animate, AnimationPlaybackControls } from 'framer-motion';
-import { FC, HTMLProps, useEffect, useRef } from 'react';
+import { HTMLProps, useEffect, useRef } from 'react';
 
 interface AnimateCounterProps extends HTMLProps<HTMLSpanElement> {
   total: number;
 }
 
-const AnimateCounter: FC<AnimateCounterProps> = ({ total, ...rest }) => {
+const AnimateCounter = ({ total, ...rest }: AnimateCounterProps) => {
   const countRef = useRef<HTMLSpanElement>(null);
   const initialCount = 0;
 

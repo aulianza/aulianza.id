@@ -1,5 +1,3 @@
-import React, { FC } from 'react';
-
 import { MenuItemProps } from '@/common/types/menu';
 
 import MenuItem from './MenuItem';
@@ -9,7 +7,7 @@ type MenuProps = {
   list: MenuItemProps[];
 };
 
-const Menu: FC<MenuProps> = ({ title, list }) => {
+const Menu = ({ title, list }: MenuProps) => {
   return (
     <div className='flex flex-col space-y-1'>
       {title && (

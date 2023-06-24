@@ -1,6 +1,5 @@
 import Giscus from '@giscus/react';
 import { useTheme } from 'next-themes';
-import React, { FC } from 'react';
 
 interface GiscusComment {
   repo: `${string}/${string}`;
@@ -9,12 +8,12 @@ interface GiscusComment {
   categoryId?: string;
 }
 
-const GiscusComment: FC<GiscusComment> = ({
+const GiscusComment = ({
   repo,
   repoId,
   category,
   categoryId,
-}) => {
+}: GiscusComment) => {
   const { theme } = useTheme();
 
   return (

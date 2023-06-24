@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
-import React, { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 // import Footer from './partials/Footer';
 import useHasMounted from '@/common/hooks/use-has-mounted';
@@ -11,7 +11,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const { resolvedTheme } = useTheme();
   const hasMounted = useHasMounted();
 

@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FC, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import Icon from 'supercons';
 
 import { MenuContext } from '@/common/context/MenuContext';
 import { MenuItemProps } from '@/common/types/menu';
 
-const MenuItem: FC<MenuItemProps> = ({ name, href, icon }) => {
+const MenuItem = ({ name, href, icon }: MenuItemProps) => {
   const { hideNavbar } = useContext(MenuContext);
 
   const router = useRouter();

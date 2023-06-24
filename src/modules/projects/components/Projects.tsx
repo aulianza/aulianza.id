@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
-import React, { FC } from 'react';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import { ProjectsProps } from '@/common/types/projects';
 
 import ProjectCard from './ProjectCard';
 
-const Projects: FC<ProjectsProps> = ({ projects }) => {
+const Projects = ({ projects }: ProjectsProps) => {
   const fiteredProjects = projects.filter((project) => project?.is_show);
 
   if (fiteredProjects.length === 0) {

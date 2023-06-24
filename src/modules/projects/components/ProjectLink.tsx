@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { BsGithub as GithubIcon } from 'react-icons/bs';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 
@@ -14,7 +14,7 @@ interface ProjectLinkProps {
   link_demo?: string;
 }
 
-const ProjectLink: FC<ProjectLinkProps> = ({ link_github, link_demo }) => {
+const ProjectLink = ({ link_github, link_demo }: ProjectLinkProps) => {
   const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
     return (
       <Link href={url} target='_blank' passHref>

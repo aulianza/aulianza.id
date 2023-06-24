@@ -1,12 +1,10 @@
-import React, { FC } from 'react';
-
 import Breakline from '@/common/components/elements/Breakline';
 import { GITHUB_ACCOUNTS } from '@/common/constant/github';
 
 import CodingActive from './CodingActive';
 import Contributions from './Contributions';
 
-const Dashboard: FC = () => {
+const Dashboard = () => {
   return (
     <>
       <CodingActive />

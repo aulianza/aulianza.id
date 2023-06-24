@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
 import { BsGithub as GithubIcon } from 'react-icons/bs';
 import useSWR from 'swr';
 
@@ -16,11 +15,7 @@ type ContributionsProps = {
   endpoint: string;
 };
 
-const Contributions: FC<ContributionsProps> = ({
-  username,
-  type,
-  endpoint,
-}) => {
+const Contributions = ({ username, type, endpoint }: ContributionsProps) => {
   const { data } = useSWR(endpoint, fetcher);
 
   const contributionCalendar =

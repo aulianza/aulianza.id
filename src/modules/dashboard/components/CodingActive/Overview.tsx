@@ -1,5 +1,4 @@
 import moment from 'moment';
-import { FC } from 'react';
 
 import OverviewItem from './OverviewItem';
 
@@ -19,7 +18,7 @@ interface OverviewProps {
   };
 }
 
-const Overview: FC<OverviewProps> = ({ data }) => {
+const Overview = ({ data }: OverviewProps) => {
   const dailyTotal = data?.human_readable_total || 'N/A';
   const dailyAverage = data?.human_readable_daily_average || 'N/A';
   const bestDayText = data?.best_day?.text || 'N/A';

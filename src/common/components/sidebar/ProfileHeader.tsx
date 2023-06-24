@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { FC } from 'react';
 
 import Image from '../elements/Image';
 
@@ -9,7 +8,7 @@ interface ProfileHeaderProps {
   imageSize: number;
 }
 
-const ProfileHeader: FC<ProfileHeaderProps> = ({ expandMenu, imageSize }) => {
+const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
   return (
     <div
       className={clsx(

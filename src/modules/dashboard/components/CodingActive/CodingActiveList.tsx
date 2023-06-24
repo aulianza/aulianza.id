@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React, { FC } from 'react';
 
 import Progress from './Progress';
 
@@ -29,7 +28,7 @@ const sumTotalFromArray = <T extends { hours: number; minutes: number }>(
   );
 };
 
-const CodingActiveList: FC<CodingActiveListProps> = ({ data }) => {
+const CodingActiveList = ({ data }: CodingActiveListProps) => {
   const getLanguagesTotalHours = sumTotalFromArray<ItemProps>(
     data?.languages || [],
     'hours'

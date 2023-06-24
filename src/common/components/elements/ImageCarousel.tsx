@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -12,10 +12,7 @@ interface ImageCarouselProps {
   interval?: number;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({
-  images,
-  interval = 3000,
-}) => {
+const ImageCarousel = ({ images, interval = 3000 }: ImageCarouselProps) => {
   const sliderRef = useRef<Slider>(null);
 
   const { width } = useWindowSize();

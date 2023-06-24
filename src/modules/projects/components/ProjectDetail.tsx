@@ -1,17 +1,15 @@
-import React, { FC } from 'react';
-
 import Image from '@/common/components/elements/Image';
 import { ProjectItemProps } from '@/common/types/projects';
 
 import ProjectLink from './ProjectLink';
 
-const ProjectDetail: FC<ProjectItemProps> = ({
+const ProjectDetail = ({
   title,
   image,
   stacks,
   link_demo,
   link_github,
-}) => {
+}: ProjectItemProps) => {
   const stacksArray = JSON.parse(stacks);
 
   return (

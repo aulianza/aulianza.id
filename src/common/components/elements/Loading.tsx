@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React, { FC } from 'react';
 import { HashLoader } from 'react-spinners';
 
 type LoadingProps = {
@@ -7,7 +6,7 @@ type LoadingProps = {
   text?: string;
 };
 
-const Loading: FC<LoadingProps> = ({ isFullScreen = false, text }) => {
+const Loading = ({ isFullScreen = false, text }: LoadingProps) => {
   return (
     <div
       className={clsx(

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import moment from 'moment';
-import React, { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { scroller } from 'react-scroll';
@@ -12,12 +12,12 @@ interface BlogHeaderProps {
   published_at?: string;
 }
 
-const BlogHeader: FC<BlogHeaderProps> = ({
+const BlogHeader = ({
   title,
   comments_count = 0,
   published_at,
   reading_time_minutes,
-}) => {
+}: BlogHeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection = () => {

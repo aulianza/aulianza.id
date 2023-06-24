@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
 import Icon from 'supercons';
 
 type BackButtonProps = {
   url: string;
 };
 
-const BackButton: FC<BackButtonProps> = ({ url }) => {
+const BackButton = ({ url }: BackButtonProps) => {
   return (
     <div className='w-fit'>
       <Link href={url} passHref>

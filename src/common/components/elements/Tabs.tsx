@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface TabProps {
   label: string;
@@ -9,11 +9,11 @@ interface TabsProps {
   children: React.ReactElement<TabProps>[];
 }
 
-export const Tab: React.FC<TabProps> = ({ label, children }) => {
+export const Tab = ({ label, children }: TabProps) => {
   return <>{children}</>;
 };
 
-export const Tabs: React.FC<TabsProps> = ({ children }) => {
+export const Tabs = ({ children }: TabsProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index: number) => {

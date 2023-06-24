@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import React from 'react';
+import { useState } from 'react';
 
 type ImageProps = {
   rounded?: string;
@@ -10,7 +10,7 @@ type ImageProps = {
 
 const Image = (props: ImageProps) => {
   const { alt, src, className, rounded, ...rest } = props;
-  const [isLoading, setLoading] = React.useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   return (
     <div

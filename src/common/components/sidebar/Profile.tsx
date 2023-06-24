@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
-import React, { FC, useState } from 'react';
+import { useState } from 'react';
 
 import { MenuContext } from '@/common/context/MenuContext';
 import useIsMobile from '@/common/hooks/use-is-mobile';
@@ -10,7 +10,7 @@ import MobileMenuButton from './MobileMenuButton';
 import ProfileHeader from './ProfileHeader';
 import Status from '../elements/Status';
 
-const Profile: FC = () => {
+const Profile = () => {
   const isMobile = useIsMobile();
   const imageSize = isMobile ? 40 : 100;
 

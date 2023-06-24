@@ -1,11 +1,10 @@
 import Router from 'next/router';
-import React, { FC } from 'react';
 import Icon from 'supercons';
 
 import Button from '@/common/components/elements/Button';
 import SectionHeading from '@/common/components/elements/SectionHeading';
 
-const Services: FC = () => {
+const Services = () => {
   return (
     <section className='space-y-5'>
       <div className='space-y-3'>

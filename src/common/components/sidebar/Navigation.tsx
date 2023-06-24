@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
-
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
 
 import Menu from './Menu';
 import Breakline from '../elements/Breakline';
 
-const Navigation: FC = () => {
+const Navigation = () => {
   const filterdMenu = MENU_ITEMS?.filter((item) => item?.is_show);
   const filteredSocialMedia = SOCIAL_MEDIA?.filter((item) => item?.is_show);
 

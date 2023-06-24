@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { FaTelegramPlane as TelegramIcon } from 'react-icons/fa';
 import { HiOutlineMail as EmailIcon } from 'react-icons/hi';
 
@@ -23,7 +23,7 @@ interface ContactProps {
   link: string;
 }
 
-const Contact: FC = () => {
+const Contact = () => {
   const handleAction = (link: string) => window.open(link, '_blank');
 
   return (

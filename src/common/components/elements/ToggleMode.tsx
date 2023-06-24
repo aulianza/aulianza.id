@@ -1,10 +1,9 @@
 import { useTheme } from 'next-themes';
-import React, { FC } from 'react';
 import Icon from 'supercons';
 
 import useHasMounted from '@/common/hooks/use-has-mounted';
 
-const ToggleMode: FC = () => {
+const ToggleMode = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const hasMounted = useHasMounted();
 

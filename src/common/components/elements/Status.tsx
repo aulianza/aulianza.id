@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import React, { FC } from 'react';
 
-const Status: FC = () => {
+const Status = () => {
   return (
     <div className='flex items-center gap-2 pb-2 '>
       <motion.div

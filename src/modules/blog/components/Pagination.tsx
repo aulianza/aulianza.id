@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import PaginationButton from './PaginationButton';
+
 import { BlogItemProps } from '@/common/types/blog';
+
+import PaginationButton from './PaginationButton';
 
 type PaginationProps = {
   page: number;

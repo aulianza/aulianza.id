@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import Icon from 'supercons';
-
-import BlogList from '@/modules/blog/components/BlogList';
-import BlogCarousel from './BlogCarousel';
+import { useWindowSize } from 'usehooks-ts';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { useWindowSize } from 'usehooks-ts';
+import BlogList from '@/modules/blog/components/BlogList';
+
+import BlogCarousel from './BlogCarousel';
 
 const BlogPreview: FC = () => {
   const { width } = useWindowSize();

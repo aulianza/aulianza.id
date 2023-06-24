@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
 import Link from 'next/link';
+import React, { FC } from 'react';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
-
 import { ProjectItemProps } from '@/common/types/projects';
 
 const ProjectCard: FC<ProjectItemProps> = ({

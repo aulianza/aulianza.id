@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+
 import { ABOUT } from '@/common/constant/about';
 
 const Story: FC = () => {

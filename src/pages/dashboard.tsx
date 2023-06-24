@@ -1,13 +1,11 @@
-import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
+import React from 'react';
 import { SWRConfig } from 'swr';
-
-import Dashboard from '@/modules/dashboard';
 
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
-
+import Dashboard from '@/modules/dashboard';
 import { getGithubUser } from '@/services/github';
 import { getReadStats } from '@/services/wakatime';
 

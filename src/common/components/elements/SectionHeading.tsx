@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-import Icon from 'supercons';
 
 interface SectionHeadingProps {
   title: string;

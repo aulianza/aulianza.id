@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useRef } from 'react';
 import moment from 'moment';
+import React, { FC, useEffect, useRef } from 'react';
+
 import Image from '@/common/components/elements/Image';
 import { CommentItemProps } from '@/common/types/blog';
 

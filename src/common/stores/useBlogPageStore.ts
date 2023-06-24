@@ -1,4 +1,4 @@
-import create, { State } from 'zustand';
+import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 type BlogPageStore = {

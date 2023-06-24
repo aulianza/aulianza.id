@@ -1,11 +1,10 @@
-import React, { FC } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
-
 import { CareerProps } from '@/common/types/careers';
 
 const CareerCard: FC<CareerProps> = ({

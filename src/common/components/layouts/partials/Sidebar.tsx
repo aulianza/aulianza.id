@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import clsx from 'clsx';
-
-import Profile from '../../sidebar/Profile';
-import Breakline from '../../elements/Breakline';
-import Navigation from '../../sidebar/Navigation';
-import ToggleMode from '../../elements/ToggleMode';
+import React from 'react';
 
 import useIsMobile from '@/common/hooks/use-is-mobile';
+
+import Breakline from '../../elements/Breakline';
+import ToggleMode from '../../elements/ToggleMode';
+import Navigation from '../../sidebar/Navigation';
+import Profile from '../../sidebar/Profile';
 
 const Sidebar = () => {
   const isMobile = useIsMobile();

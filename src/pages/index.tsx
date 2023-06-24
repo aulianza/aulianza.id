@@ -1,10 +1,9 @@
-import React from 'react';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-
-import Home from '@/modules/home';
+import React from 'react';
 
 import Container from '@/common/components/elements/Container';
+import Home from '@/modules/home';
 
 const HomePage: NextPage = () => {
   return (

@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { CodeProps } from 'react-markdown/lib/ast-to-react';
-
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { useCopyToClipboard } from 'usehooks-ts';
+import React, { useEffect, useState } from 'react';
 import {
-  HiOutlineClipboardCopy as CopyIcon,
   HiCheckCircle as CheckIcon,
+  HiOutlineClipboardCopy as CopyIcon,
 } from 'react-icons/hi';
-
-import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-
-import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
-import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import { CodeProps } from 'react-markdown/lib/ast-to-react';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff';
+import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
+import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { useCopyToClipboard } from 'usehooks-ts';
 
 const languages = {
   javascript: 'javascript',

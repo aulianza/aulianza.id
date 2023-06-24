@@ -1,14 +1,14 @@
-import React, { FC, useState } from 'react';
 import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
+import React, { FC, useState } from 'react';
 
-import MobileMenuButton from './MobileMenuButton';
+import { MenuContext } from '@/common/context/MenuContext';
+import useIsMobile from '@/common/hooks/use-is-mobile';
+
 import MobileMenu from './MobileMenu';
+import MobileMenuButton from './MobileMenuButton';
 import ProfileHeader from './ProfileHeader';
 import Status from '../elements/Status';
-
-import useIsMobile from '@/common/hooks/use-is-mobile';
-import { MenuContext } from '@/common/context/MenuContext';
 
 const Profile: FC = () => {
   const isMobile = useIsMobile();

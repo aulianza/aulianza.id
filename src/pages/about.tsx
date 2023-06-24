@@ -1,11 +1,10 @@
-import React from 'react';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-
-import About from '@/modules/about';
+import React from 'react';
 
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
+import About from '@/modules/about';
 
 const PAGE_TITLE = 'About';
 const PAGE_DESCRIPTION = 'A short story of me';

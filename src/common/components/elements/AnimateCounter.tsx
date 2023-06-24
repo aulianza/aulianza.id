@@ -1,5 +1,5 @@
 import { animate, AnimationPlaybackControls } from 'framer-motion';
-import { useEffect, useRef, FC, HTMLProps } from 'react';
+import { FC, HTMLProps, useEffect, useRef } from 'react';
 
 interface AnimateCounterProps extends HTMLProps<HTMLSpanElement> {
   total: number;

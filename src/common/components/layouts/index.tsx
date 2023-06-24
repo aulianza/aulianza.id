@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from 'react';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
+import React, { FC, ReactNode } from 'react';
+
+// import Footer from './partials/Footer';
+import useHasMounted from '@/common/hooks/use-has-mounted';
 
 import Sidebar from './partials/Sidebar';
-// import Footer from './partials/Footer';
-
-import useHasMounted from '@/common/hooks/use-has-mounted';
 
 interface LayoutProps {
   children: ReactNode;

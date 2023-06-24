@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import Menu from './Menu';
+
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
+
+import Menu from './Menu';
 import Breakline from '../elements/Breakline';
 
 const Navigation: FC = () => {

@@ -1,12 +1,12 @@
 import React, { FC, useMemo } from 'react';
 import useSWR from 'swr';
 
-import CommentItem from './CommentItem';
-import Loading from '@/common/components/elements/Loading';
 import EmptyState from '@/common/components/elements/EmptyState';
-
+import Loading from '@/common/components/elements/Loading';
 import { CommentItemProps } from '@/common/types/blog';
 import { fetcher } from '@/services/fetcher';
+
+import CommentItem from './CommentItem';
 
 type CommentListProps = {
   id: number;

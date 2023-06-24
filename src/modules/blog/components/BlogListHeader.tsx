@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import Icon from 'supercons';
+
 import SectionHeading from '@/common/components/elements/SectionHeading';
+
 import ViewOptions from './ViewOptions';
 
 interface BlogListHeaderProps {

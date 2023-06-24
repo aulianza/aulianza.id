@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi';
 import { LuDownload as DownloadIcon } from 'react-icons/lu';
 
-import CareerCard from './CareerCard';
-
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-
 import { CAREERS } from '@/common/constant/careers';
+
+import CareerCard from './CareerCard';
 
 const RESUME_URL = 'https://api.aulianza.id/files/resume.pdf';
 

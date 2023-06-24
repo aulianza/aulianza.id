@@ -1,5 +1,5 @@
 import React from 'react';
-import prisma from '@/common/lib/prisma';
+import prisma from '@/common/libs/prisma';
 import { GetServerSideProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 

@@ -7,7 +7,7 @@ import { useWindowSize } from 'usehooks-ts';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
-import clsxm from '@/common/lib/clsxm';
+import clsxm from '@/common/libs/clsxm';
 import { BlogItemProps } from '@/common/types/blog';
 
 interface BlogCardProps extends BlogItemProps {

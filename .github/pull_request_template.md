@@ -1,7 +1,3 @@
-## Pull Request Title
-
-[//]: # 'Add a concise and descriptive title for your pull request'
-
 ## Description
 
 [//]: # 'Provide a detailed description of the changes made in this pull request'

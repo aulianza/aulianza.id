@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import React, { FC, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import useSWR from 'swr';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -20,11 +20,11 @@ type BlogList = {
   perPage?: number;
 };
 
-const BlogList: FC<BlogList> = ({
+const BlogList = ({
   perPage = 6,
   showHeader = true,
   showPagination = true,
-}) => {
+}: BlogList) => {
   const { width } = useWindowSize();
   const isMobile = width < 468;
 

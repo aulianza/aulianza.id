@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
 import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi';
 import { LuDownload as DownloadIcon } from 'react-icons/lu';
 
@@ -11,7 +10,7 @@ import CareerCard from './CareerCard';
 
 const RESUME_URL = 'https://api.aulianza.id/files/resume.pdf';
 
-const CareerList: FC = () => {
+const CareerList = () => {
   return (
     <section className='space-y-6'>
       <div className='space-y-2'>

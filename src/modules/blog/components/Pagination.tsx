@@ -1,5 +1,3 @@
-import React, { FC } from 'react';
-
 import { BlogItemProps } from '@/common/types/blog';
 
 import PaginationButton from './PaginationButton';
@@ -12,13 +10,13 @@ type PaginationProps = {
   pageSize: number;
 };
 
-const Pagination: FC<PaginationProps> = ({
+const Pagination = ({
   page,
   onPrevPage,
   onNextPage,
   blogData,
   pageSize,
-}) => {
+}: PaginationProps) => {
   return (
     <div className='flex items-center justify-between gap-5 my-6 text-neutral-400 dark:text-neutral-600 text-sm'>
       {page !== 1 && (

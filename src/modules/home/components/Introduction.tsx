@@ -1,6 +1,4 @@
-import React, { FC } from 'react';
-
-const Introduction: FC = () => {
+const Introduction = () => {
   const currentyear = new Date().getFullYear();
   const workStart = 2019;
   const codingStart = 2014;

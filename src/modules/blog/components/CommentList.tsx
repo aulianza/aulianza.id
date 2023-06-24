@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import { useMemo } from 'react';
 import useSWR from 'swr';
 
 import EmptyState from '@/common/components/elements/EmptyState';
@@ -12,7 +12,7 @@ type CommentListProps = {
   id: number;
 };
 
-const CommentList: FC<CommentListProps> = ({ id }) => {
+const CommentList = ({ id }: CommentListProps) => {
   const { data, isLoading } = useSWR(`/api/comments?post_id=${id}`, fetcher);
 
   const commentsData: CommentItemProps[] = useMemo(() => {

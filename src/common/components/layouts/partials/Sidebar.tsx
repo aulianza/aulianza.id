@@ -1,5 +1,3 @@
-import React from 'react';
-
 import useIsMobile from '@/common/hooks/use-is-mobile';
 
 import Breakline from '../../elements/Breakline';

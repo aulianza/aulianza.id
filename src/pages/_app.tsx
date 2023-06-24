@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import 'tailwindcss/tailwind.css';
 import 'aos/dist/aos.css';

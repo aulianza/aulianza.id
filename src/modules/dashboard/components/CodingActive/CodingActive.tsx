@@ -1,6 +1,5 @@
 import moment from 'moment';
 import Link from 'next/link';
-import React, { FC } from 'react';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import useSWR from 'swr';
 
@@ -15,7 +14,7 @@ interface CodingActiveProps {
   lastUpdate?: string;
 }
 
-const CodingActive: FC<CodingActiveProps> = ({ lastUpdate }) => {
+const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR('/api/read-stats', fetcher);
 
   const formatLastUpdate = (): string => {

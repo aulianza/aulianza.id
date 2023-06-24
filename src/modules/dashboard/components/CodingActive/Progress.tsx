@@ -1,13 +1,12 @@
 import clsx from 'clsx';
 import { motion, Variants } from 'framer-motion';
-import { FC } from 'react';
 
 interface ProgressProps {
   data: { name: string; percent?: number };
   className?: string;
 }
 
-const Progress: FC<ProgressProps> = ({ data, className }) => {
+const Progress = ({ data, className }: ProgressProps) => {
   const { name, percent = 0 } = data;
 
   const progressVariants: Variants = {

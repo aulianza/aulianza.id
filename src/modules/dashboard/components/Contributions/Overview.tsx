@@ -1,5 +1,3 @@
-import React, { FC } from 'react';
-
 import OverviewItem from './OverviewItem';
 
 interface OverviewProps {
@@ -13,7 +11,7 @@ interface OverviewProps {
   };
 }
 
-const Overview: FC<OverviewProps> = ({ data }) => {
+const Overview = ({ data }: OverviewProps) => {
   const totalContributions = data?.totalContributions || 0;
   const weeks = data?.weeks || [];
 

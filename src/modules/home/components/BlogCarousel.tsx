@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { FC, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
 import useSWR from 'swr';
 
@@ -8,7 +8,7 @@ import { BlogItemProps } from '@/common/types/blog';
 import BlogCard from '@/modules/blog/components/BlogCard';
 import { fetcher } from '@/services/fetcher';
 
-const BlogCarousel: FC = () => {
+const BlogCarousel = () => {
   const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);
 
   const blogData: BlogItemProps[] = useMemo(() => {

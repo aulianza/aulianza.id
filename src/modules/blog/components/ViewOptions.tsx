@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React, { FC } from 'react';
 import Icon from 'supercons';
 
 type ViewOptionsProps = {
@@ -8,7 +7,7 @@ type ViewOptionsProps = {
   icon: string;
 };
 
-const ViewOptions: FC<ViewOptionsProps> = ({ option, setViewOption, icon }) => {
+const ViewOptions = ({ option, setViewOption, icon }: ViewOptionsProps) => {
   const isActive = option === icon;
 
   return (

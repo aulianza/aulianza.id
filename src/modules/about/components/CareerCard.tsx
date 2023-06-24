@@ -1,13 +1,12 @@
 import moment from 'moment';
 import Link from 'next/link';
-import React, { FC } from 'react';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { CareerProps } from '@/common/types/careers';
 
-const CareerCard: FC<CareerProps> = ({
+const CareerCard = ({
   position,
   company,
   logo,
@@ -15,7 +14,7 @@ const CareerCard: FC<CareerProps> = ({
   start_date,
   end_date,
   link,
-}) => {
+}: CareerProps) => {
   const startDate = moment(start_date);
   const endDate = end_date ? moment(end_date) : moment();
 

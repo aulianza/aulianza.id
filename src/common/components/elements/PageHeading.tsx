@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
-
 interface PageHeadingProps {
   title: string;
   description?: string;
 }
 
-const PageHeading: FC<PageHeadingProps> = ({ title, description }) => {
+const PageHeading = ({ title, description }: PageHeadingProps) => {
   return (
     <>
       <h1 className='text-2xl font-semibold'>{title}</h1>

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
 import Icon from 'supercons';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -9,7 +8,7 @@ import BlogList from '@/modules/blog/components/BlogList';
 
 import BlogCarousel from './BlogCarousel';
 
-const BlogPreview: FC = () => {
+const BlogPreview = () => {
   const { width } = useWindowSize();
   const isMobile = width < 480;
 

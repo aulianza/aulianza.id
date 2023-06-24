@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Icon from 'supercons';
 
 interface MobileMenuButtonProps {
@@ -6,10 +5,10 @@ interface MobileMenuButtonProps {
   setExpandMenu: (expand: boolean) => void;
 }
 
-const MobileMenuButton: FC<MobileMenuButtonProps> = ({
+const MobileMenuButton = ({
   expandMenu,
   setExpandMenu,
-}) => {
+}: MobileMenuButtonProps) => {
   return (
     <div className='lg:hidden flex items-center justify-end'>
       <button

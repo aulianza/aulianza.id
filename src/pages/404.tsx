@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import React from 'react';
 
 import Container from '@/common/components/elements/Container';
 

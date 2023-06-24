@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import Icon from 'supercons';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
@@ -10,10 +9,7 @@ interface BlogListHeaderProps {
   setViewOption: (option: string) => void;
 }
 
-const BlogListHeader: FC<BlogListHeaderProps> = ({
-  viewOption,
-  setViewOption,
-}) => {
+const BlogListHeader = ({ viewOption, setViewOption }: BlogListHeaderProps) => {
   return (
     <div className='flex items-center justify-between text-[15px] mb-5'>
       <SectionHeading

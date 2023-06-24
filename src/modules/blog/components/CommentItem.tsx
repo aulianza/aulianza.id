@@ -1,10 +1,10 @@
 import moment from 'moment';
-import React, { FC, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Image from '@/common/components/elements/Image';
 import { CommentItemProps } from '@/common/types/blog';
 
-const CommentItem: FC<CommentItemProps> = ({ body_html, created_at, user }) => {
+const CommentItem = ({ body_html, created_at, user }: CommentItemProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

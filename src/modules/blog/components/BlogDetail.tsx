@@ -1,5 +1,3 @@
-import React, { FC } from 'react';
-
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
 import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
@@ -7,7 +5,7 @@ import { BlogItemProps } from '@/common/types/blog';
 
 import BlogHeader from './BlogHeader';
 
-const BlogDetail: FC<BlogItemProps> = ({
+const BlogDetail = ({
   cover_image,
   title,
   body_markdown,
@@ -15,7 +13,7 @@ const BlogDetail: FC<BlogItemProps> = ({
   published_at,
   tags,
   reading_time_minutes,
-}) => {
+}: BlogItemProps) => {
   return (
     <>
       <BlogHeader

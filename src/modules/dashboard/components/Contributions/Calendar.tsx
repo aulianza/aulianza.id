@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 
 interface Contribution {
   date: string;
@@ -26,7 +26,7 @@ interface CalendarProps {
   };
 }
 
-const Calendar: FC<CalendarProps> = ({ data }) => {
+const Calendar = ({ data }: CalendarProps) => {
   const [selectContribution, setSelectContribution] = useState<{
     count: number | null;
     date: string | null;

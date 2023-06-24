@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import React, { ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 
 interface TooltipProps {
   title: string;
   children: ReactNode;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ title, children }) => {
+const Tooltip = ({ title, children }: TooltipProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
   const handleMouseEnter = () => {

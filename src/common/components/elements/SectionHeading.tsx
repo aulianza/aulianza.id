@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface SectionHeadingProps {
   title: string;
   icon?: ReactNode;
 }
 
-const SectionHeading: FC<SectionHeadingProps> = ({ title, icon }) => {
+const SectionHeading = ({ title, icon }: SectionHeadingProps) => {
   return (
     <div className='flex items-center gap-1 text-xl font-medium text-neutral-800 dark:text-neutral-300'>
       {icon && <>{icon}</>}

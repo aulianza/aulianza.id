@@ -1,6 +1,6 @@
 import moment from 'moment';
 import Link from 'next/link';
-import React, { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { useWindowSize } from 'usehooks-ts';
@@ -16,7 +16,7 @@ interface BlogCardProps extends BlogItemProps {
   isCarousel?: boolean;
 }
 
-const BlogCard: FC<BlogCardProps> = ({
+const BlogCard = ({
   id,
   title,
   cover_image,
@@ -28,7 +28,7 @@ const BlogCard: FC<BlogCardProps> = ({
   view = 'list',
   isExcerpt = true,
   isCarousel = false,
-}) => {
+}: BlogCardProps) => {
   const [viewOption, setViewOption] = useState<string>(view);
 
   const { width } = useWindowSize();

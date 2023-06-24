@@ -1,6 +1,7 @@
-import React, { FC, ReactNode } from 'react';
 import { useTheme } from 'next-themes';
+import React, { FC, ReactNode } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
+
 import 'react-loading-skeleton/dist/skeleton.css';
 
 type SkeletonLoaderProps = {

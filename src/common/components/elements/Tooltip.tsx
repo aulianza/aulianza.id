@@ -1,5 +1,5 @@
-import React, { useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import React, { ReactNode, useState } from 'react';
 
 interface TooltipProps {
   title: string;

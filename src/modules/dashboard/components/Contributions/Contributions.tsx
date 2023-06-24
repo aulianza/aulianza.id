@@ -1,15 +1,14 @@
-import React, { FC } from 'react';
-import useSWR from 'swr';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import { BsGithub as GithubIcon } from 'react-icons/bs';
-
-import Overview from './Overview';
-import Calendar from './Calendar';
+import useSWR from 'swr';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-
 import { fetcher } from '@/services/fetcher';
+
+import Calendar from './Calendar';
+import Overview from './Overview';
 
 type ContributionsProps = {
   username: string;
@@ -30,7 +29,7 @@ const Contributions: FC<ContributionsProps> = ({
   return (
     <section className='flex flex-col gap-y-2'>
       <SectionHeading
-        title={`Contributions`}
+        title='Contributions'
         icon={<GithubIcon className='mr-1' />}
       />
       <SectionSubHeading>

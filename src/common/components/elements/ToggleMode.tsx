@@ -1,6 +1,6 @@
+import { useTheme } from 'next-themes';
 import React, { FC } from 'react';
 import Icon from 'supercons';
-import { useTheme } from 'next-themes';
 
 import useHasMounted from '@/common/hooks/use-has-mounted';
 

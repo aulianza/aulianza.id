@@ -1,11 +1,10 @@
-import React from 'react';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-
-import BlogList from '@/modules/blog';
+import React from 'react';
 
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
+import BlogList from '@/modules/blog';
 
 const PAGE_TITLE = 'Blog';
 const PAGE_DESCRIPTION =

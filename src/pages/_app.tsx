@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
 import AOS from 'aos';
+import type { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
-
-import dynamic from 'next/dynamic';
-
-import Layout from '@/common/components/layouts';
-import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
-
-import type { AppProps } from 'next/app';
+import React, { useEffect } from 'react';
 
 import 'tailwindcss/tailwind.css';
 import 'aos/dist/aos.css';
 import '@/common/styles/globals.css';
+
+import Layout from '@/common/components/layouts';
+import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),

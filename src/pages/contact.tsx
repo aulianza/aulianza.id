@@ -1,11 +1,10 @@
-import React from 'react';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-
-import Contact from '@/modules/contact';
+import React from 'react';
 
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
+import Contact from '@/modules/contact';
 
 const PAGE_TITLE = 'Contact';
 const PAGE_DESCRIPTION =

@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 
 import Breakline from '@/common/components/elements/Breakline';
 
+import BlogPreview from './BlogPreview';
 import Introduction from './Introduction';
 import Services from './Services';
-import BlogPreview from './BlogPreview';
 
 const Home: FC = () => {
   return (

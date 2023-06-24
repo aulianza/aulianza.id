@@ -1,5 +1,6 @@
-import { getBlogData } from '@/services/blog';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+import { getBlogData } from '@/services/blog';
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,19 +1,16 @@
-import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-
-import BlogDetail from '@/modules/blog/components/BlogDetail';
-import GiscusComment from '@/modules/blog/components/GiscusComment';
+import React from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
-
+import { Tab, Tabs } from '@/common/components/elements/Tabs';
 import { BlogItemProps } from '@/common/types/blog';
-
-import { getBlogDetail } from '@/services/blog';
+import BlogDetail from '@/modules/blog/components/BlogDetail';
 import CommentList from '@/modules/blog/components/CommentList';
-import { Tabs, Tab } from '@/common/components/elements/Tabs';
-import Link from 'next/link';
+import GiscusComment from '@/modules/blog/components/GiscusComment';
+import { getBlogDetail } from '@/services/blog';
 
 interface BlogDetailPageProps {
   blog: {

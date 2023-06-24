@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 
-import BlogHeader from './BlogHeader';
-
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
 import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
-
 import { BlogItemProps } from '@/common/types/blog';
+
+import BlogHeader from './BlogHeader';
 
 const BlogDetail: FC<BlogItemProps> = ({
   cover_image,

@@ -1,16 +1,15 @@
-import React, { FC } from 'react';
-import Link from 'next/link';
 import moment from 'moment';
-import useSWR from 'swr';
+import Link from 'next/link';
+import React, { FC } from 'react';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
-
-import Overview from './Overview';
-import CodingActiveList from './CodingActiveList';
+import useSWR from 'swr';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-
 import { fetcher } from '@/services/fetcher';
+
+import CodingActiveList from './CodingActiveList';
+import Overview from './Overview';
 
 interface CodingActiveProps {
   lastUpdate?: string;

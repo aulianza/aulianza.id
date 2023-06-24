@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { motion } from 'framer-motion';
-import MenuItem from './MenuItem';
+
 import { MenuItemProps } from '@/common/types/menu';
+
+import MenuItem from './MenuItem';
 
 type MenuProps = {
   title?: string;

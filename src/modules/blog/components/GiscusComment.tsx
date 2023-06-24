@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
 import Giscus from '@giscus/react';
 import { useTheme } from 'next-themes';
+import React, { FC } from 'react';
 
 interface GiscusComment {
   repo: `${string}/${string}`;

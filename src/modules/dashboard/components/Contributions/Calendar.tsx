@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
-import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { FC, useState } from 'react';
 
 interface Contribution {
   date: string;

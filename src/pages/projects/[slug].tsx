@@ -1,15 +1,13 @@
-import React from 'react';
-import prisma from '@/common/libs/prisma';
 import { GetServerSideProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
+import React from 'react';
 
-import ProjectDetail from '@/modules/projects/components/ProjectDetail';
-
+import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
-
+import prisma from '@/common/libs/prisma';
 import { ProjectItemProps } from '@/common/types/projects';
-import BackButton from '@/common/components/elements/BackButton';
+import ProjectDetail from '@/modules/projects/components/ProjectDetail';
 
 interface ProjectsDetailPageProps {
   project: ProjectItemProps;

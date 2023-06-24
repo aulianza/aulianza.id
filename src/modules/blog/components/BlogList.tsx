@@ -1,19 +1,18 @@
-import React, { FC, useMemo, useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import React, { FC, useMemo, useState } from 'react';
 import useSWR from 'swr';
 import { useWindowSize } from 'usehooks-ts';
-import { motion } from 'framer-motion';
 
-import BlogCard from './BlogCard';
-import Pagination from './Pagination';
-import BlogListHeader from './BlogListHeader';
 import EmptyState from '@/common/components/elements/EmptyState';
 import Loading from '@/common/components/elements/Loading';
-
+import { useBlogViewStore } from '@/common/stores/useBlogViewStore';
 import { BlogItemProps } from '@/common/types/blog';
 import { fetcher } from '@/services/fetcher';
 
-import { useBlogViewStore } from '@/common/stores/useBlogViewStore';
+import BlogCard from './BlogCard';
+import BlogListHeader from './BlogListHeader';
+import Pagination from './Pagination';
 
 type BlogList = {
   showHeader?: boolean;

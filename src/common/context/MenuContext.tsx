@@ -5,5 +5,6 @@ type MenuContextType = {
 };
 
 export const MenuContext = createContext<MenuContextType>({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   hideNavbar: () => {},
 });

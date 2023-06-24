@@ -1,10 +1,10 @@
-import React, { FC, useContext, useState } from 'react';
 import Link from 'next/link';
-import Icon from 'supercons';
 import { useRouter } from 'next/router';
+import React, { FC, useContext, useState } from 'react';
+import Icon from 'supercons';
 
-import { MenuItemProps } from '@/common/types/menu';
 import { MenuContext } from '@/common/context/MenuContext';
+import { MenuItemProps } from '@/common/types/menu';
 
 const MenuItem: FC<MenuItemProps> = ({ name, href, icon }) => {
   const { hideNavbar } = useContext(MenuContext);

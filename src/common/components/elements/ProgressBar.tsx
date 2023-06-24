@@ -1,6 +1,7 @@
-import { FC } from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { FC } from 'react';
+
 import 'nprogress/nprogress.css';
 
 NProgress.configure({

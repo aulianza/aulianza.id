@@ -1,15 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
+import React, { FC, useEffect, useState } from 'react';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
+import { useWindowSize } from 'usehooks-ts';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
-
 import clsxm from '@/common/libs/clsxm';
 import { BlogItemProps } from '@/common/types/blog';
-import { useWindowSize } from 'usehooks-ts';
 
 interface BlogCardProps extends BlogItemProps {
   view?: string;

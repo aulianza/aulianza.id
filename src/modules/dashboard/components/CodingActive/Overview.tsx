@@ -1,5 +1,6 @@
-import { FC } from 'react';
 import moment from 'moment';
+import { FC } from 'react';
+
 import OverviewItem from './OverviewItem';
 
 interface OverviewProps {

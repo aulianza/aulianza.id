@@ -1,13 +1,12 @@
-import React, { FC, useMemo, useRef } from 'react';
-import useSWR from 'swr';
-import { useDraggable } from 'react-use-draggable-scroll';
 import { motion } from 'framer-motion';
+import React, { FC, useMemo, useRef } from 'react';
+import { useDraggable } from 'react-use-draggable-scroll';
+import useSWR from 'swr';
 
-import BlogCard from '@/modules/blog/components/BlogCard';
 import BlogCardSkeleton from '@/common/components/skeleton/BlogCardSkeleton';
-
-import { fetcher } from '@/services/fetcher';
 import { BlogItemProps } from '@/common/types/blog';
+import BlogCard from '@/modules/blog/components/BlogCard';
+import { fetcher } from '@/services/fetcher';
 
 const BlogCarousel: FC = () => {
   const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);

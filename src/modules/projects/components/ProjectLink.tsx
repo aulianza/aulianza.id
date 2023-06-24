@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react';
 import Link from 'next/link';
+import React, { FC, ReactNode } from 'react';
 import { BsGithub as GithubIcon } from 'react-icons/bs';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 

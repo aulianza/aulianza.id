@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
 import Router from 'next/router';
+import React, { FC } from 'react';
 import Icon from 'supercons';
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
 import Button from '@/common/components/elements/Button';
+import SectionHeading from '@/common/components/elements/SectionHeading';
 
 const Services: FC = () => {
   return (

@@ -1,4 +1,5 @@
-import Icon from 'supercons';
+import { HiMenu as MenuIcon } from 'react-icons/hi';
+import { MdClose as CloseIcon } from 'react-icons/md';
 
 interface MobileMenuButtonProps {
   expandMenu: boolean;
@@ -15,11 +16,7 @@ const MobileMenuButton = ({
         className='block hover:text-gray-900 dark:text-white'
         onClick={() => setExpandMenu(!expandMenu)}
       >
-        {!expandMenu ? (
-          <Icon glyph='menu' size={40} />
-        ) : (
-          <Icon glyph='view-close' size={40} />
-        )}
+        {!expandMenu ? <MenuIcon size={30} /> : <CloseIcon size={30} />}
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Icon from 'supercons';
+import { BsArrowRightShort as ViewAllIcon } from 'react-icons/bs';
+import { HiRss as RSSIcon } from 'react-icons/hi';
 import { useWindowSize } from 'usehooks-ts';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
@@ -17,7 +18,7 @@ const BlogPreview = () => {
       <div className='flex items-center justify-between'>
         <SectionHeading
           title='Latest Articles'
-          icon={<Icon glyph='rss' size={32} />}
+          icon={<RSSIcon size={24} className='ml-1' />}
         />
         <SectionSubHeading>
           <Link href='/blog'>
@@ -25,7 +26,7 @@ const BlogPreview = () => {
               <div className='flex'>
                 View All <span className='hidden sm:block ml-1'>Articles</span>
               </div>
-              <Icon glyph='enter' size={22} />
+              <ViewAllIcon size={22} />
             </div>
           </Link>
         </SectionSubHeading>

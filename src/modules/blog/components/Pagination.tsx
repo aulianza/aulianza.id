@@ -1,3 +1,8 @@
+import {
+  BsArrowLeftShort as BackIcon,
+  BsArrowRightShort as NextIcon,
+} from 'react-icons/bs';
+
 import { BlogItemProps } from '@/common/types/blog';
 
 import PaginationButton from './PaginationButton';
@@ -23,8 +28,7 @@ const Pagination = ({
         <PaginationButton
           onClick={onPrevPage}
           text='Previous'
-          icon='back'
-          size={28}
+          icon={<BackIcon size={22} />}
         />
       )}
       <div>Page {page}</div>
@@ -32,8 +36,7 @@ const Pagination = ({
         <PaginationButton
           onClick={onNextPage}
           text='Next'
-          icon='enter'
-          size={28}
+          icon={<NextIcon size={22} />}
         />
       )}
     </div>

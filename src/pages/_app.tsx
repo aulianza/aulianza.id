@@ -10,7 +10,6 @@ import 'aos/dist/aos.css';
 import '@/common/styles/globals.css';
 
 import CommandPalette from '@/common/components/elements/CommandPalette';
-// import CommandMenu from '@/common/components/elements/CommandMenu';
 import Layout from '@/common/components/layouts';
 import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext';
 import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
@@ -45,7 +44,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <ThemeProvider attribute='class' defaultTheme='dark'>
         <CommandPaletteProvider>
           <Layout>
-            {/* <CommandMenu /> */}
             <CommandPalette />
             <ProgressBar />
             <Component {...pageProps} />

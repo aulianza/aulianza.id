@@ -1,4 +1,5 @@
-import Icon from 'supercons';
+import { BsGrid as GridIcon, BsListUl as ListIcon } from 'react-icons/bs';
+import { HiRss as RSSIcon } from 'react-icons/hi';
 
 import SectionHeading from '@/common/components/elements/SectionHeading';
 
@@ -14,18 +15,20 @@ const BlogListHeader = ({ viewOption, setViewOption }: BlogListHeaderProps) => {
     <div className='flex items-center justify-between text-[15px] mb-5'>
       <SectionHeading
         title='Latest Articles'
-        icon={<Icon glyph='rss' size={32} />}
+        icon={<RSSIcon size={24} className='ml-1' />}
       />
       <div className='flex gap-2 px-1 cursor-pointer'>
         <ViewOptions
           option={viewOption}
           setViewOption={setViewOption}
-          icon='list'
+          type='list'
+          icon={<ListIcon size={24} className='p-0.5' />}
         />{' '}
         <ViewOptions
           option={viewOption}
           setViewOption={setViewOption}
-          icon='grid'
+          type='grid'
+          icon={<GridIcon size={24} className='p-0.5' />}
         />
       </div>
     </div>

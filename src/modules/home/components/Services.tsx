@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import Icon from 'supercons';
+import { BiRocket as RocketIcon } from 'react-icons/bi';
 
 import Button from '@/common/components/elements/Button';
 import SectionHeading from '@/common/components/elements/SectionHeading';
@@ -16,8 +16,8 @@ const Services = () => {
         </p>
       </div>
       <div className='p-8 bg-neutral-100 dark:bg-neutral-800 border dark:border-none rounded-xl space-y-4'>
-        <div className='flex gap-1 items-center'>
-          <Icon glyph='send-fill' size={28} className='pt-1' />
+        <div className='flex gap-2 items-center'>
+          <RocketIcon size={24} />
           <h3 className='text-xl font-medium'>Lets work together!</h3>
         </div>
         <p className='leading-loose text-neutral-800 dark:text-neutral-300 pl-2'>

@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 import { MenuContext } from '@/common/context/MenuContext';
-import useIsMobile from '@/common/hooks/use-is-mobile';
+import useIsMobile from '@/common/hooks/useIsMobile';
 
 import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';

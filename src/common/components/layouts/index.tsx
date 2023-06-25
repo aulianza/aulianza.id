@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 import { ReactNode } from 'react';
 
 // import Footer from './partials/Footer';
-import useHasMounted from '@/common/hooks/use-has-mounted';
+import useHasMounted from '@/common/hooks/useHasMounted';
 
 import Sidebar from './partials/Sidebar';
 

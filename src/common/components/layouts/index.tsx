@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div
       className={clsx(
-        'max-w-6xl mx-auto lg:px-8 lg:py-4 xl:py-10',
+        'max-w-6xl mx-auto lg:px-8 lg:py-4 xl:py-8',
         isDarkTheme ? 'dark:text-darkText' : ''
       )}
     >

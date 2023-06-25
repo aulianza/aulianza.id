@@ -30,7 +30,12 @@ body {
 
 #nprogress .bar {
   background: #15b8a6 !important;
-  height: 3px !important;
+  height: 2px !important;
+  z-index: 9999999 !important;
+}
+
+#nprogress .bar {
+  position: fixed !important;
 }
 
 ::-webkit-scrollbar {

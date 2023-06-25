@@ -9,6 +9,7 @@ import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';
 import ProfileHeader from './ProfileHeader';
 import Status from '../elements/Status';
+import ThemeToggleButton from '../elements/ThemeToggleButton';
 
 const Profile = () => {
   const isMobile = useIsMobile();
@@ -28,16 +29,48 @@ const Profile = () => {
           expandMenu && 'pb-0'
         )}
       >
-        <div className='flex items-center lg:items-start justify-between lg:flex-col lg:space-y-3'>
+        <div className='flex items-start justify-between lg:flex-col lg:space-y-3'>
           <ProfileHeader expandMenu={expandMenu} imageSize={imageSize} />
 
-          {!isMobile && <Status />}
+          {!isMobile && (
+            <div className='flex items-center w-full justify-between'>
+              <Status />
+              <ThemeToggleButton />
+            </div>
+          )}
+
+          {/* RY: new profile avatar design idea  */}
+          {/* {!isMobile && (
+            <div className='fixed top-0 flex flex-col gap-2 px-6 py-8 max-w-[214px] xl:min-w-[214px] items-center text-center rounded-b-2xl bg-neutral-100 border dark:border-none dark:bg-neutral-800'>
+              <Image
+                src='/images/aulianza.png'
+                alt='Ryan Aulia'
+                width={expandMenu ? 75 : imageSize}
+                height={expandMenu ? 75 : imageSize}
+                rounded='rounded-full'
+                className='lg:hover:scale-105 mb-3'
+              />
+              <h2 className='flex-grow text-lg lg:text-xl font-medium'>
+                Ryan Aulia
+              </h2>
+              <Status />
+            </div>
+          )} */}
 
           {isMobile && (
-            <MobileMenuButton
-              expandMenu={expandMenu}
-              setExpandMenu={setExpandMenu}
-            />
+            <div
+              className={clsx(
+                'flex items-center gap-5',
+                expandMenu &&
+                  '!items-end flex-col-reverse justify-between h-[120px]'
+              )}
+            >
+              <ThemeToggleButton />
+              <MobileMenuButton
+                expandMenu={expandMenu}
+                setExpandMenu={setExpandMenu}
+              />
+            </div>
           )}
         </div>
         {isMobile && (

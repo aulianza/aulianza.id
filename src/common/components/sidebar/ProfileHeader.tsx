@@ -12,7 +12,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
   return (
     <div
       className={clsx(
-        'flex items-center gap-4 flex-grow lg:flex-col',
+        'flex items-center xl:items-start gap-4 flex-grow lg:flex-col w-full',
         expandMenu && 'flex-col !items-start'
       )}
     >

@@ -8,7 +8,7 @@ const Status = () => {
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 0.5, repeat: Infinity }}
       />
-      <span className='font-medium text-sm animate-pulse'>
+      <span className='font-medium text-sm animate-pulse text-neutral-600 dark:text-neutral-400'>
         Available for hire.
       </span>
     </div>

@@ -1,3 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.BUNDLE_ANALYZER === 'true',
+  openAnalyzer: false, // disable automatically opening the report in default browser
+});
+
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+});
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -18,4 +30,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(withPWA(nextConfig));

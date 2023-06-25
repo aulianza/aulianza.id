@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
@@ -40,6 +41,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           }
         `}
       </style>
+      <Head>
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+        />
+      </Head>
       <DefaultSeo {...defaultSEOConfig} />
       <ThemeProvider attribute='class' defaultTheme='dark'>
         <CommandPaletteProvider>

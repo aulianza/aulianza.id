@@ -130,13 +130,13 @@ export default function CommandPalette() {
           <Combobox
             onChange={(menu: MenuOptionItemProps) => handleSelect(menu)}
             as='div'
-            className='relative mx-auto max-w-lg overflow-hidden rounded-xl border-2 border-neutral-300 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800  dark:bg-neutral-950 '
+            className='relative mx-auto max-w-lg overflow-hidden rounded-xl border-2 border-neutral-300 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
           >
             <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
               <SearchIcon size={22} />
               <Combobox.Input
                 onChange={handleSearch}
-                className='h-12 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
+                className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
                 placeholder='Press Cmd + K anytime to access this command palette'
               />
             </div>

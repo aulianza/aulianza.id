@@ -1,28 +1,11 @@
-import useIsMobile from '@/common/hooks/use-is-mobile';
+import useIsMobile from '@/common/hooks/useIsMobile';
 
 import Breakline from '../../elements/Breakline';
-import ToggleMode from '../../elements/ToggleMode';
 import Navigation from '../../sidebar/Navigation';
 import Profile from '../../sidebar/Profile';
 
 const Sidebar = () => {
   const isMobile = useIsMobile();
-  // const [isSticky, setIsSticky] = useState<boolean>(false);
-
-  // useEffect(() => {
-  // 	const handleScroll = () => {
-  // 		const sidebar = document.getElementById("sidebar");
-  // 		if (sidebar) {
-  // 			const { top } = sidebar.getBoundingClientRect();
-  // 			setIsSticky(top <= 0);
-  // 		}
-  // 	};
-
-  // 	window.addEventListener("scroll", handleScroll);
-  // 	return () => {
-  // 		window.removeEventListener("scroll", handleScroll);
-  // 	};
-  // }, []);
 
   return (
     <div
@@ -35,7 +18,12 @@ const Sidebar = () => {
           <Breakline />
           <Navigation />
           <Breakline />
-          <ToggleMode />
+          <div className='flex items-center gap-1 text-sm px-4 text-neutral-700 dark:text-neutral-600'>
+            <span>©</span>
+            <span>{new Date().getFullYear()}</span>
+            <span>by</span>
+            <span>aulianza</span>
+          </div>
         </>
       )}
     </div>

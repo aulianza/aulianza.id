@@ -9,8 +9,13 @@ import 'tailwindcss/tailwind.css';
 import 'aos/dist/aos.css';
 import '@/common/styles/globals.css';
 
+import CommandPalette from '@/common/components/elements/CommandPalette';
+// import CommandMenu from '@/common/components/elements/CommandMenu';
 import Layout from '@/common/components/layouts';
+import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext';
 import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts';
+
+import defaultSEOConfig from '../../next-seo.config';
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),
@@ -36,26 +41,16 @@ const App = ({ Component, pageProps }: AppProps) => {
           }
         `}
       </style>
-      <DefaultSeo
-        title='Ryan Aulia - Personal Website'
-        description='Experienced Software Engineer, specializing in frontend development. aulianza.'
-        openGraph={{
-          type: 'website',
-          locale: 'en_EN',
-          url: 'https://aulianza.id',
-          siteName: 'Ryan Aulia',
-        }}
-        twitter={{
-          handle: '@handle',
-          site: '@aulianzaa',
-          cardType: 'summary_large_image',
-        }}
-      />
+      <DefaultSeo {...defaultSEOConfig} />
       <ThemeProvider attribute='class' defaultTheme='dark'>
-        <Layout>
-          <ProgressBar />
-          <Component {...pageProps} />
-        </Layout>
+        <CommandPaletteProvider>
+          <Layout>
+            {/* <CommandMenu /> */}
+            <CommandPalette />
+            <ProgressBar />
+            <Component {...pageProps} />
+          </Layout>
+        </CommandPaletteProvider>
       </ThemeProvider>
     </>
   );

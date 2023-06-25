@@ -1,77 +1,95 @@
-import Icon from 'supercons';
+import {
+  BiArchive as ProjectIcon,
+  BiCategoryAlt as DashboardIcon,
+  BiEditAlt as BlogIcon,
+  BiEnvelope as ContactIcon,
+  BiHomeSmile as HomeIcon,
+  BiLaugh as ProfileIcon,
+} from 'react-icons/bi';
+import {
+  BsGithub as GithubIcon,
+  BsInstagram as InstagramIcon,
+  BsLinkedin as LinkedinIcon,
+  BsTwitter as TwitterIcon,
+} from 'react-icons/bs';
 
 import { MenuItemProps } from '../types/menu';
 
-const iconSize = 26;
+const iconSize = 20;
+const iconSizeSocial = 18;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    name: 'Home',
+    title: 'Home',
     href: '/',
-    icon: <Icon glyph='home' size={iconSize} />,
-    is_show: true,
+    icon: <HomeIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
   },
   {
-    name: 'Dashboard',
+    title: 'Dashboard',
     href: '/dashboard',
-    icon: <Icon glyph='grid' size={iconSize} />,
-    is_show: true,
+    icon: <DashboardIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
   },
   {
-    name: 'Projects',
+    title: 'Projects',
     href: '/projects',
-    icon: <Icon glyph='explore' size={iconSize} />,
-    is_show: true,
+    icon: <ProjectIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
   },
   {
-    name: 'Blog',
+    title: 'Blog',
     href: '/blog',
-    icon: <Icon glyph='post' size={iconSize} />,
-    is_show: true,
+    icon: <BlogIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
   },
   {
-    name: 'Tools',
-    href: '/tools',
-    icon: <Icon glyph='bug' size={iconSize} />,
-    is_show: false,
-  },
-  {
-    name: 'About',
+    title: 'About',
     href: '/about',
-    icon: <Icon glyph='profile' size={iconSize} />,
-    is_show: true,
+    icon: <ProfileIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
   },
   {
-    name: 'Contact',
+    title: 'Contact',
     href: '/contact',
-    icon: <Icon glyph='email' size={iconSize} />,
-    is_show: true,
+    icon: <ContactIcon size={iconSize} />,
+    isShow: false,
+    isExternal: false,
   },
 ];
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
-    name: 'Linkedin',
-    href: 'https://www.linkedin.com/in/aulianza/',
-    icon: <Icon glyph='channels' size={iconSize} />,
-    is_show: true,
-  },
-  {
-    name: 'Github',
+    title: 'Github',
     href: 'https://github.com/aulianza',
-    icon: <Icon glyph='github' size={iconSize} />,
-    is_show: true,
+    icon: <GithubIcon size={iconSizeSocial} />,
+    isShow: true,
+    isExternal: true,
   },
   {
-    name: 'Instagram',
-    href: 'https://instagram.com/aulianza',
-    icon: <Icon glyph='instagram' size={iconSize} />,
-    is_show: true,
+    title: 'Linkedin',
+    href: 'https://www.linkedin.com/in/aulianza/',
+    icon: <LinkedinIcon size={iconSizeSocial} />,
+    isShow: true,
+    isExternal: true,
   },
   {
-    name: 'Twitter',
+    title: 'Twitter',
     href: 'https://twitter.com/aulianzaa',
-    icon: <Icon glyph='twitter' size={iconSize} />,
-    is_show: false,
+    icon: <TwitterIcon size={iconSizeSocial} />,
+    isShow: false,
+    isExternal: true,
+  },
+  {
+    title: 'Instagram',
+    href: 'https://instagram.com/aulianza',
+    icon: <InstagramIcon size={iconSizeSocial} />,
+    isShow: true,
+    isExternal: true,
   },
 ];

@@ -1,7 +1,8 @@
 {
-  "version": 2,
-  "name": "aulianza-id",
-  "public": true,
-  "builds": [{ "src": "src/index.ts", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/src/index.ts" }]
+  "functions": {
+    "src/pages/api/chat.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
 }

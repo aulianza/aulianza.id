@@ -5,8 +5,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://aulianza.id');
-
   const { prompt } = req.body;
 
   const endpoint = 'https://api.openai.com/v1/chat/completions';

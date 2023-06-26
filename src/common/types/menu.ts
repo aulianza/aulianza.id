@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type MenuItemProps = {
   title: string;
   href: string;
@@ -5,4 +7,6 @@ export type MenuItemProps = {
   isShow?: boolean;
   isExternal: boolean;
   onClick?: () => void;
+  className?: string;
+  children?: ReactNode;
 };

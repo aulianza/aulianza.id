@@ -6,7 +6,14 @@ import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs';
 import { MenuContext } from '@/common/context/MenuContext';
 import { MenuItemProps } from '@/common/types/menu';
 
-const MenuItem = ({ title, href, icon, onClick }: MenuItemProps) => {
+const MenuItem = ({
+  title,
+  href,
+  icon,
+  onClick,
+  className,
+  children,
+}: MenuItemProps) => {
   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
   const isExternalUrl = href?.includes('http');
@@ -33,7 +40,7 @@ const MenuItem = ({ title, href, icon, onClick }: MenuItemProps) => {
   };
 
   const elementProps = {
-    className: `${activeClasses}`,
+    className: `${activeClasses} ${className}`,
     onClick: handleClick,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
@@ -44,6 +51,7 @@ const MenuItem = ({ title, href, icon, onClick }: MenuItemProps) => {
       <div {...elementProps}>
         <div>{icon}</div>
         <div className='flex-grow ml-0.5'>{title}</div>
+        {children && <>{children}</>}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon
             size={22}

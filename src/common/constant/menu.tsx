@@ -5,6 +5,7 @@ import {
   BiEnvelope as ContactIcon,
   BiHomeSmile as HomeIcon,
   BiLaugh as ProfileIcon,
+  BiLineChart as AnalyticsIcon,
 } from 'react-icons/bi';
 import {
   BsGithub as GithubIcon,
@@ -82,13 +83,23 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     title: 'Twitter',
     href: 'https://twitter.com/aulianzaa',
     icon: <TwitterIcon size={iconSizeSocial} />,
-    isShow: false,
+    isShow: true,
     isExternal: true,
   },
   {
     title: 'Instagram',
     href: 'https://instagram.com/aulianza',
     icon: <InstagramIcon size={iconSizeSocial} />,
+    isShow: true,
+    isExternal: true,
+  },
+];
+
+export const EXTERNAL_LINKS: MenuItemProps[] = [
+  {
+    title: 'Analytics',
+    href: 'https://umami.aulianza.id/share/LK5kiRuosw9pORLa/aulianza.id',
+    icon: <AnalyticsIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
   },

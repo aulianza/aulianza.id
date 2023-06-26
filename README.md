@@ -2,7 +2,7 @@
   <h1>aulianza.id</h1>
   <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR and Prisma with MySQL</p>
 </div>
-<br /><br />
+<br />
 
 ## Introduction
 
@@ -13,11 +13,21 @@ This website was built from scratch using Next.js and was first initialized in J
 
 On this website there are several features that will continue to be updated and added in the future.
 
-### - Blogs
+###  🕗 Wakatime
+
+Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
+
+### 📝 Blogs
 
 The CMS Blog on this website utilizes the API from the dev.to platform. The displayed articles are one-to-one with the articles published on my dev.to blog and are updated in real-time.
 
 The data fetching technique used to retrieve articles from dev.to involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
+
+### 🗳 Projects
+
+The data projects on this blog are taken from the MySQL database connected through the Prisma Client. The database for this application is hosted on PlanetScale DB.
+
+The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
 <br /><br />
 
 ## Performance
@@ -26,13 +36,13 @@ The data fetching technique used to retrieve articles from dev.to involves using
 
 Report URL: https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop
 
-![image](https://github.com/aulianza/aulianza.id/assets/15605885/5175fbac-7917-408b-b824-128c388db08d)
+![image](https://github.com/aulianza/aulianza.id/assets/15605885/d87a6083-caf3-4b84-ba59-975c07193a9f)
 
 ### GTmetrix
 
 Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop](https://gtmetrix.com/reports/aulianza.id/REEiduoo/)
 
-![image](https://github.com/aulianza/aulianza.id/assets/15605885/4a1c20b0-98d3-4a10-9d2f-b464514a82b2)
+![image](https://github.com/aulianza/aulianza.id/assets/15605885/953dc131-bf52-4ef6-913c-f6eb8fb6c6a7)
 <br /><br />
 
 ## Getting Started
@@ -41,7 +51,7 @@ If you are interested in running this project on your local machine, you can do 
 
 ### 1. Clone this template using one of the three ways:
 
-1. Clonse using git
+1. Clone using git
 
    ```bash
    git clone https://github.com/aulianza/aulianza.id

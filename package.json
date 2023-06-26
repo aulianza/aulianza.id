@@ -24,6 +24,7 @@
     "@prisma/client": "^4.16.0",
     "add": "^2.0.6",
     "aos": "^3.0.0-beta.6",
+    "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.17",
     "moment": "^2.29.4",
@@ -48,6 +49,7 @@
     "swr": "^2.1.5",
     "tailwind-merge": "^1.13.2",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "typewriter-effect": "^2.20.1",
     "usehooks-ts": "^2.9.1",
     "yarn": "^1.22.19",
     "zustand": "^4.3.8"

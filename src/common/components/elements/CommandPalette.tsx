@@ -4,19 +4,24 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import {
+  BiLeftArrowCircle as BackButton,
   BiMoon as DarkModeIcon,
   BiSearch as SearchIcon,
   BiSun as LightModeIcon,
 } from 'react-icons/bi';
-import { FiExternalLink as ExternalLinkIcon } from 'react-icons/fi';
+import { BiLogoGoogle as GoogleIcon } from 'react-icons/bi';
+import { HiOutlineChat as AiIcon } from 'react-icons/hi';
+import Typewriter from 'typewriter-effect';
 import { useDebounce } from 'usehooks-ts';
 
 import { EXTERNAL_LINKS, MENU_ITEMS } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import useIsMobile from '@/common/hooks/useIsMobile';
 import { MenuItemProps } from '@/common/types/menu';
+import { sendMessage } from '@/services/chatgpt';
 
 import Button from './Button';
+import MarkdownRenderer from './MarkdownRenderer';
 
 interface MenuOptionItemProps extends MenuItemProps {
   click?: () => void;
@@ -28,53 +33,26 @@ interface MenuOptionProps {
   children: MenuOptionItemProps[];
 }
 
-export default function CommandPalette() {
+const CommandPalette = () => {
+  const [query, setQuery] = useState('');
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [askAssistantClicked, setAskAssistantClicked] = useState(false);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResponse, setAiResponse] = useState('');
+  const [aiFinished, setAiFinished] = useState(false);
+
   const router = useRouter();
   const isMobile = useIsMobile();
-
   const { isOpen, setIsOpen } = useContext(CommandPaletteContext);
-  const [query, setQuery] = useState('');
-
-  const queryDebounce = useDebounce(query, 300);
-
   const { resolvedTheme, setTheme } = useTheme();
+  const queryDebounce = useDebounce(query, 500);
 
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const placeholders = [
-    'Search...',
-    'Press Cmd + K anytime to access this command palette',
+    'Search or Ask anything...',
+    'Press Cmd + K anytime to access this command pallete',
   ];
 
-  useEffect(() => {
-    if (!isMobile) {
-      const timer = setTimeout(() => {
-        setPlaceholderIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
-      }, 3000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [placeholderIndex, isMobile]);
-
-  useEffect(() => {
-    if (isOpen === false) setQuery('');
-  }, [isOpen]);
-
   const placeholder = placeholders[placeholderIndex];
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
-        setIsOpen(!isOpen);
-      } else if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
 
   const menuOptions: MenuOptionProps[] = [
     {
@@ -127,10 +105,7 @@ export default function CommandPalette() {
 
     if (menu.closeOnSelect) setIsOpen(false);
 
-    if (menu.click) {
-      menu.click();
-      return;
-    }
+    menu.click?.();
 
     if (menu.isExternal) {
       window.open(menu.href, '_blank');
@@ -139,14 +114,70 @@ export default function CommandPalette() {
     }
   };
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setQuery(event.target.value);
+  const handleSearch = ({
+    target: { value },
+  }: React.ChangeEvent<HTMLInputElement>) => setQuery(value);
 
   const handleFindGoogle = () => {
     const url =
       'https://www.google.com/search?q=' + queryDebounce + '&ref=aulianza.id';
     window.open(url, '_blank');
   };
+
+  const handleAskAiAssistant = async () => {
+    setAskAssistantClicked(true);
+    setAiLoading(true);
+
+    const reply = await sendMessage(queryDebounce);
+
+    setAiResponse(reply);
+    setAiLoading(false);
+  };
+
+  const handleAiClose = () => {
+    setAskAssistantClicked(false);
+    setAiResponse('');
+    setAiFinished(false);
+  };
+
+  useEffect(() => {
+    if (!isMobile) {
+      const timer = setTimeout(() => {
+        setPlaceholderIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [placeholderIndex, isMobile]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setQuery('');
+      handleAiClose();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+        setIsOpen(!isOpen);
+      } else if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (aiResponse.includes('```')) {
+      setAiFinished(true);
+    }
+  }, [aiResponse]);
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -179,14 +210,21 @@ export default function CommandPalette() {
             <Combobox
               onChange={(menu: MenuOptionItemProps) => handleSelect(menu)}
               as='div'
-              className='relative mx-auto max-w-lg overflow-hidden rounded-xl border-2 border-neutral-300 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
+              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-300 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
+              disabled={askAssistantClicked}
             >
               <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
-                <SearchIcon size={22} />
+                {askAssistantClicked ? (
+                  <AiIcon size={22} />
+                ) : (
+                  <SearchIcon size={22} />
+                )}
                 <Combobox.Input
                   onChange={handleSearch}
                   className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
-                  placeholder={placeholder}
+                  placeholder={
+                    askAssistantClicked ? 'AI Responses' : placeholder
+                  }
                 />
               </div>
 
@@ -225,16 +263,114 @@ export default function CommandPalette() {
                 ))}
               </div>
 
-              {queryDebounce &&
-                filterMenuOptions.map((item) => item.children).flat(1)
-                  .length === 0 && (
-                  <div className='flex flex-col pt-5 pb-10 space-y-5 items-center'>
-                    <p className='text-neutral-500 text-center'>
-                      No result found. Find in Google instead?
+              {!askAssistantClicked &&
+                queryDebounce &&
+                filterMenuOptions.every(
+                  (item) => item.children.length === 0
+                ) && (
+                  <div className='flex flex-col pt-5 pb-10 px-5 space-y-6 items-center'>
+                    <div className='text-neutral-500 text-center space-y-2'>
+                      <p>
+                        No result found about
+                        <span className='italic text-neutral-600 dark:text-neutral-400 ml-1 mr-2'>
+                          `{queryDebounce}`
+                        </span>
+                        in this website.
+                      </p>
+                      <p className='text-neutral-600 dark:text-neutral-400'>
+                        Ask my AI Assistant or find in Google instead?
+                      </p>
+                    </div>
+                    <div className='flex flex-col lg:flex-row gap-3 w-full justify-center'>
+                      <Button
+                        onClick={handleAskAiAssistant}
+                        className='justify-center !bg-green-600'
+                      >
+                        <AiIcon size={20} /> Ask AI Assistant
+                      </Button>
+                      <Button
+                        onClick={handleFindGoogle}
+                        className='justify-center !bg-indigo-600'
+                      >
+                        <GoogleIcon size={20} />
+                        Find in Google
+                      </Button>
+                    </div>
+                    <p className='text-neutral-500 text-sm'>
+                      Press `ESC` to close this window
                     </p>
-                    <Button onClick={handleFindGoogle}>
-                      Find in Google <ExternalLinkIcon />
-                    </Button>
+                  </div>
+                )}
+
+              {askAssistantClicked &&
+                queryDebounce &&
+                filterMenuOptions.every(
+                  (item) => item.children.length === 0
+                ) && (
+                  <div className='max-h-80 overflow-y-auto px-8 pt-3 pb-8'>
+                    {aiLoading ? (
+                      <div className='flex gap-3 items-center justify-center'>
+                        <div className='animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-neutral-400'></div>
+                        <div className='dark:text-neutral-400 animate-pulse'>
+                          AI is processing...
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        {aiResponse ? (
+                          aiResponse.includes('```') ? (
+                            <MarkdownRenderer>{aiResponse}</MarkdownRenderer>
+                          ) : (
+                            <Typewriter
+                              onInit={(typewriter) => {
+                                typewriter
+                                  .typeString(aiResponse)
+                                  .callFunction(() => {
+                                    setAiFinished(true);
+                                  })
+                                  .start();
+                              }}
+                              options={{
+                                delay: 10,
+                              }}
+                            />
+                          )
+                        ) : (
+                          <Typewriter
+                            onInit={(typewriter) => {
+                              typewriter
+                                .typeString(
+                                  'Oops! The AI seems to be lost. \u00A0 😵‍💫 \u00A0\u00A0'
+                                )
+                                .pauseFor(1000)
+                                .typeString('<br/><br/>')
+                                .typeString(
+                                  `Looks like the AI has gone on an unscheduled vacation to the Land of Confusion. Hope it brings back some souvenirs of clarity!. \u00A0\u00A0`
+                                )
+                                .pauseFor(1000)
+                                .typeString('<br/><br/>')
+                                .typeString('Please try again later. \u00A0')
+                                .callFunction(() => {
+                                  setAiFinished(true);
+                                })
+                                .start();
+                            }}
+                            options={{
+                              delay: 10,
+                            }}
+                          />
+                        )}
+
+                        {aiFinished && (
+                          <div className='flex justify-center mt-6 transition-all duration-300'>
+                            <Button onClick={handleAiClose}>
+                              <BackButton />
+                              Back
+                            </Button>
+                          </div>
+                        )}
+                      </>
+                    )}
                   </div>
                 )}
             </Combobox>
@@ -243,4 +379,6 @@ export default function CommandPalette() {
       </Dialog>
     </Transition.Root>
   );
-}
+};
+
+export default CommandPalette;

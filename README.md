@@ -13,7 +13,7 @@ This website was built from scratch using Next.js and was first initialized in J
 
 On this website there are several features that will continue to be updated and added in the future.
 
-###  🕗 Wakatime
+### 🕗 Wakatime
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
 

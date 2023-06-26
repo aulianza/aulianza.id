@@ -13,7 +13,7 @@ const MobileMenuButton = ({
   return (
     <div className='lg:hidden flex items-center justify-end'>
       <div
-        className='block hover:text-gray-900 dark:text-white'
+        className='cursor-pointer block hover:text-gray-900 dark:text-white'
         onClick={() => setExpandMenu(!expandMenu)}
       >
         {!expandMenu ? <MenuIcon size={34} /> : <CloseIcon size={34} />}

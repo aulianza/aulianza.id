@@ -21,7 +21,7 @@ const Services = () => {
           <h3 className='text-xl font-medium'>Lets work together!</h3>
         </div>
         <p className='leading-loose text-neutral-800 dark:text-neutral-300 pl-2'>
-          i&apos;m open for freelance projects, feel free to email me to see how
+          I&apos;m open for freelance projects, feel free to email me to see how
           can we collaborate.
         </p>
         <Button onClick={() => Router.push('/contact')}>Contact me</Button>

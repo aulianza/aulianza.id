@@ -223,7 +223,7 @@ const CommandPalette = () => {
                   onChange={handleSearch}
                   className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
                   placeholder={
-                    askAssistantClicked ? 'AI Responses' : placeholder
+                    askAssistantClicked ? queryDebounce : placeholder
                   }
                 />
               </div>

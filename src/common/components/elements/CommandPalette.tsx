@@ -13,6 +13,7 @@ import { useDebounce } from 'usehooks-ts';
 import { MENU_ITEMS } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import { MenuItemProps } from '@/common/types/menu';
+import useIsMobile from '@/common/hooks/useIsMobile';
 
 interface MenuOptionItemProps extends MenuItemProps {
   click?: () => void;
@@ -26,12 +27,33 @@ interface MenuOptionProps {
 
 export default function CommandPalette() {
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const { isOpen, setIsOpen } = useContext(CommandPaletteContext);
   const [query, setQuery] = useState('');
 
   const queryDebounce = useDebounce(query, 300);
   const { resolvedTheme, setTheme } = useTheme();
+
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const placeholders = [
+    'Search...',
+    'Press Cmd + K anytime to access this command palette',
+  ];
+
+  useEffect(() => {
+    if (!isMobile) {
+      const timer = setTimeout(() => {
+        setPlaceholderIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [placeholderIndex, isMobile]);
+
+  const placeholder = placeholders[placeholderIndex];
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -141,7 +163,7 @@ export default function CommandPalette() {
                 <Combobox.Input
                   onChange={handleSearch}
                   className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
-                  placeholder='Press Cmd + K anytime to access this command palette'
+                  placeholder={placeholder}
                 />
               </div>
 

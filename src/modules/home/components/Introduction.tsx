@@ -1,8 +1,4 @@
 const Introduction = () => {
-  const currentyear = new Date().getFullYear();
-  const workStart = 2019;
-  const codingStart = 2014;
-
   return (
     <section className='bg-cover bg-no-repeat space-y-5'>
       <div className='flex gap-2 text-2xl lg:text-3xl font-semibold'>
@@ -20,12 +16,12 @@ const Introduction = () => {
           </ul>
         </>
         <p className='leading-loose text-neutral-800 dark:text-neutral-300'>
-          Experienced Software Engineer, specializing in frontend development,
-          with {currentyear - workStart} years of professional experience and a
-          total of {currentyear - codingStart} years in web development since{' '}
-          {codingStart}. Skilled in JavaScript, TypeScript, and PHP, with
-          proficiency in various frameworks such as React.js, Angular, Vue.js,
-          Node.js, and Laravel.
+          Seasoned Software Engineer especially in Frontend side, with a passion
+          for creating pixel-perfect web experiences. Work with JavaScript and
+          specialize in all things web. Expertise in multiple web frameworks
+          such as React, Angular and Vue. I thrive on collaborating with teams
+          to deliver efficient, scalable, and visually appealing web
+          applications.
         </p>
       </div>
     </section>

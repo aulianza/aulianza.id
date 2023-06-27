@@ -20,12 +20,12 @@ export const postChatPrompt = async (prompt: string) => {
       }),
     });
 
-    const status = response.status;
+    const status = response?.status;
 
     if (status >= 400) {
       return {
         status,
-        message: response.statusText,
+        message: response?.statusText,
       };
     }
 

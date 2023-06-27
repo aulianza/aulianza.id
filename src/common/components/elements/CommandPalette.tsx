@@ -174,7 +174,7 @@ const CommandPalette = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    if (aiResponse.includes('```')) {
+    if (aiResponse?.includes('```')) {
       setAiFinished(true);
     }
   }, [aiResponse]);
@@ -318,7 +318,7 @@ const CommandPalette = () => {
                     ) : (
                       <>
                         {aiResponse ? (
-                          aiResponse.includes('```') ? (
+                          aiResponse?.includes('```') ? (
                             <MarkdownRenderer>{aiResponse}</MarkdownRenderer>
                           ) : (
                             <Typewriter

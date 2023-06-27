@@ -10,6 +10,7 @@ export const postChatPrompt = async (prompt: string) => {
     },
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
+      max_tokens: 100,
       messages: [
         {
           role: 'user',

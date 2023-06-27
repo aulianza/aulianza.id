@@ -1,4 +1,4 @@
-const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
+const OPENAI_URL = 'https://api.openai.com/v1/completions';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 export const postChatPrompt = async (prompt: string) => {
@@ -9,14 +9,8 @@ export const postChatPrompt = async (prompt: string) => {
       Authorization: `Bearer ${OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
-      max_tokens: 100,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
+      model: 'text-curie-001',
+      prompt,
     }),
   });
 

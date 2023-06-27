@@ -2,38 +2,42 @@ const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 export const postChatPrompt = async (prompt: string) => {
-  const response = await fetch(OPENAI_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-    }),
-  });
+  try {
+    const response = await fetch(OPENAI_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'user',
+            content: prompt,
+          },
+        ],
+      }),
+    });
 
-  const status = response?.status;
+    const status = response.status;
 
-  if (status >= 400) {
+    if (status >= 400) {
+      return {
+        status,
+        message: response.statusText,
+      };
+    }
+
+    const data = await response.json();
+
     return {
       status,
-      message: response?.statusText,
+      data,
     };
+  } catch (error) {
+    throw new Error('An error occurred during the API request.');
   }
-
-  const data = await response.json();
-
-  return {
-    status,
-    data,
-  };
 };
 
 export const sendMessage = async (prompt: string) => {

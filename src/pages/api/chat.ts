@@ -14,7 +14,7 @@ export default async function handler(
     if (response?.status >= 400) {
       res.status(response?.status).json({ error: response?.message });
     } else {
-      const reply = response?.data?.choices[0]?.message?.content;
+      const reply = response?.data?.choices[0]?.text;
       res.status(200).json({ reply });
     }
   } catch (error) {

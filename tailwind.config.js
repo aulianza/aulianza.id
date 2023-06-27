@@ -30,10 +30,17 @@ module.exports = {
           '50%': { transform: 'translateY(0.8rem)' },
           '100%': { transform: 'translateY(0)' },
         },
+        badge: {
+          '100%': {
+            transform: 'scaleY(1.7) scaleX(1.25)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
+        'badge-pulse': 'badge 1.5s ease-out infinite',
       },
     },
   },

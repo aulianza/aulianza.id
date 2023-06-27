@@ -10,7 +10,7 @@ export const postChatPrompt = async (prompt: string) => {
     },
     body: JSON.stringify({
       model: 'text-davinci-003',
-      max_tokens: 100,
+      max_tokens: 200,
       prompt,
     }),
   });

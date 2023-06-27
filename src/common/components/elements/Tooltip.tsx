@@ -33,13 +33,13 @@ const Tooltip = ({ title, children }: TooltipProps) => {
       </div>
       {isTooltipVisible && (
         <motion.div
-          className='tooltip bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-200 text-neutral-700 text-sm rounded px-3 py-4 absolute bottom-full'
+          className='hidden lg:block -left-6 bottom-7 bg-neutral-500 dark:bg-neutral-100 dark:text-neutral-700 text-neutral-100 text-xs font-medium rounded px-2 py-1 absolute '
           variants={tooltipVariants}
           initial='hidden'
           animate='visible'
         >
           {title}
-          <div className='tooltip-arrow w-3 h-3 bg-neutral-100 dark:bg-neutral-900 absolute top-full left-1/2 transform -translate-x-1/2 -mt-2 rotate-45' />
+          <div className='tooltip-arrow w-3 h-3 bg-neutral-500 dark:bg-neutral-100 absolute top-full left-1/2 transform -translate-x-1/2 -mt-2 rotate-45' />
         </motion.div>
       )}
     </div>

@@ -4,7 +4,7 @@ import {
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
   BiHomeSmile as HomeIcon,
-  BiLaugh as ProfileIcon,
+  BiLeaf as ProfileIcon,
   BiLineChart as AnalyticsIcon,
 } from 'react-icons/bi';
 import {

@@ -11,12 +11,12 @@ export default async function handler(
 
     const response = await postChatPrompt(prompt);
 
-    if (response?.status >= 400)
+    if (response?.status >= 400) {
       res.status(response?.status).json({ error: response?.message });
-
-    const reply = response?.data?.choices[0]?.message?.content;
-
-    res.status(200).json({ reply });
+    } else {
+      const reply = response?.data?.choices[0]?.message?.content;
+      res.status(200).json({ reply });
+    }
   } catch (error) {
     res.status(500).json({ error: error });
   }

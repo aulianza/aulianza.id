@@ -1,12 +1,16 @@
 const yearOfBirth = 1996;
 const currentYear = new Date().getFullYear();
 const age = currentYear - yearOfBirth;
+const workStart = 2019;
+const codingStart = 2014;
 
 export const ABOUT = `
 <p>
-	My name is Ryan Aulia (he/him), also known as Ryan or aulianza in the
-	internet, and I am a ${age}-year-old individual who was born and raised
-	in Banda Aceh. Currently, I reside in Jakarta, Indonesia.
+	Hi!, I'm Ryan, also known as aulianza, an experienced software engineer, specializing in frontend development, with ${
+    currentYear - workStart
+  } years of professional experience and a total of ${
+  currentYear - codingStart
+} years in web development since ${codingStart}. Skilled in JavaScript, TypeScript, and PHP, with proficiency in various frameworks such as React, Angular, Vue, Express and Laravel. Currently, reside in Jakarta, Indonesia 🇮🇩.
 </p>
 <p>
 	Throughout my career, I have demonstrated a strong ability to

@@ -9,8 +9,8 @@ export const postChatPrompt = async (prompt: string) => {
       Authorization: `Bearer ${OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'text-davinci-003',
-      max_tokens: 200,
+      model: 'text-babbage-001',
+      max_tokens: 1000,
       temperature: 0,
       prompt: prompt + '. answer briefly',
     }),

@@ -4,24 +4,21 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import {
-  BiLeftArrowCircle as BackButton,
   BiMoon as DarkModeIcon,
   BiSearch as SearchIcon,
   BiSun as LightModeIcon,
 } from 'react-icons/bi';
-import { BiLogoGoogle as GoogleIcon } from 'react-icons/bi';
 import { HiOutlineChat as AiIcon } from 'react-icons/hi';
-import Typewriter from 'typewriter-effect';
 import { useDebounce } from 'usehooks-ts';
 
 import { EXTERNAL_LINKS, MENU_ITEMS } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import useIsMobile from '@/common/hooks/useIsMobile';
 import { MenuItemProps } from '@/common/types/menu';
+import AiLoading from '@/modules/cmdpallete/components/AiLoading';
+import AiResponses from '@/modules/cmdpallete/components/AiResponses';
+import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound';
 import { sendMessage } from '@/services/chatgpt';
-
-import Button from './Button';
-import MarkdownRenderer from './MarkdownRenderer';
 
 interface MenuOptionItemProps extends MenuItemProps {
   click?: () => void;
@@ -35,6 +32,7 @@ interface MenuOptionProps {
 
 const CommandPalette = () => {
   const [query, setQuery] = useState('');
+  const [isEmptyState, setEmptyState] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [askAssistantClicked, setAskAssistantClicked] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
@@ -56,6 +54,20 @@ const CommandPalette = () => {
 
   const menuOptions: MenuOptionProps[] = [
     {
+      title: 'PAGES',
+      children: MENU_ITEMS?.map((menu) => ({
+        ...menu,
+        closeOnSelect: true,
+      })),
+    },
+    {
+      title: 'EXTERNAL LINKS',
+      children: EXTERNAL_LINKS?.map((menu) => ({
+        ...menu,
+        closeOnSelect: true,
+      })),
+    },
+    {
       title: 'THEME',
       children: [
         {
@@ -74,20 +86,6 @@ const CommandPalette = () => {
           closeOnSelect: false,
         },
       ],
-    },
-    {
-      title: 'PAGES',
-      children: MENU_ITEMS?.map((menu) => ({
-        ...menu,
-        closeOnSelect: true,
-      })),
-    },
-    {
-      title: 'EXTERNAL LINKS',
-      children: EXTERNAL_LINKS?.map((menu) => ({
-        ...menu,
-        closeOnSelect: true,
-      })),
     },
   ];
 
@@ -125,12 +123,13 @@ const CommandPalette = () => {
   };
 
   const handleAskAiAssistant = async () => {
+    setEmptyState(true);
     setAskAssistantClicked(true);
     setAiLoading(true);
 
-    const reply = await sendMessage(queryDebounce);
+    const response = await sendMessage(queryDebounce);
 
-    setAiResponse(reply);
+    setAiResponse(response);
     setAiLoading(false);
   };
 
@@ -139,6 +138,10 @@ const CommandPalette = () => {
     setAiResponse('');
     setAiFinished(false);
   };
+
+  useEffect(() => {
+    if (query) setEmptyState(false);
+  }, [query]);
 
   useEffect(() => {
     if (!isMobile) {
@@ -155,6 +158,7 @@ const CommandPalette = () => {
   useEffect(() => {
     if (!isOpen) {
       setQuery('');
+      setEmptyState(false);
       handleAiClose();
     }
   }, [isOpen]);
@@ -171,7 +175,7 @@ const CommandPalette = () => {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, setIsOpen]);
 
   useEffect(() => {
     if (aiResponse?.includes('```')) {
@@ -210,7 +214,7 @@ const CommandPalette = () => {
             <Combobox
               onChange={(menu: MenuOptionItemProps) => handleSelect(menu)}
               as='div'
-              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-300 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
+              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-100 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
               disabled={askAssistantClicked}
             >
               <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
@@ -228,7 +232,12 @@ const CommandPalette = () => {
                 />
               </div>
 
-              <div className='max-h-80 overflow-y-auto py-2 px-1'>
+              <div
+                className={clsx(
+                  'max-h-80 overflow-y-auto py-2 px-1',
+                  isEmptyState && '!py-0'
+                )}
+              >
                 {filterMenuOptions.map((menu) => (
                   <div
                     key={menu.title}
@@ -263,43 +272,17 @@ const CommandPalette = () => {
                 ))}
               </div>
 
-              {!askAssistantClicked &&
+              {!isEmptyState &&
+                !askAssistantClicked &&
                 queryDebounce &&
                 filterMenuOptions.every(
                   (item) => item.children.length === 0
                 ) && (
-                  <div className='flex flex-col pt-5 pb-10 px-5 space-y-6 items-center'>
-                    <div className='text-neutral-500 text-center space-y-2'>
-                      <p>
-                        No result found about
-                        <span className='italic text-neutral-600 dark:text-neutral-400 ml-1 mr-2'>
-                          `{queryDebounce}`
-                        </span>
-                        in this website.
-                      </p>
-                      <p className='text-neutral-600 dark:text-neutral-400'>
-                        Ask my AI Assistant or find in Google instead?
-                      </p>
-                    </div>
-                    <div className='flex flex-col lg:flex-row gap-3 w-full justify-center'>
-                      <Button
-                        onClick={handleAskAiAssistant}
-                        className='justify-center !bg-green-600'
-                      >
-                        <AiIcon size={20} /> Ask AI Assistant
-                      </Button>
-                      <Button
-                        onClick={handleFindGoogle}
-                        className='justify-center !bg-indigo-600'
-                      >
-                        <GoogleIcon size={20} />
-                        Find in Google
-                      </Button>
-                    </div>
-                    <p className='text-neutral-500 text-sm'>
-                      Press `ESC` to close this window
-                    </p>
-                  </div>
+                  <QueryNotFound
+                    query={queryDebounce}
+                    onAskAiAssistant={handleAskAiAssistant}
+                    onFindGoogle={handleFindGoogle}
+                  />
                 )}
 
               {askAssistantClicked &&
@@ -307,69 +290,16 @@ const CommandPalette = () => {
                 filterMenuOptions.every(
                   (item) => item.children.length === 0
                 ) && (
-                  <div className='max-h-80 overflow-y-auto px-8 pt-3 pb-8'>
+                  <div className='max-h-80 overflow-y-auto px-8 py-7 text-neutral-700 dark:text-neutral-300'>
                     {aiLoading ? (
-                      <div className='flex gap-3 items-center justify-center'>
-                        <div className='animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-neutral-400'></div>
-                        <div className='dark:text-neutral-400 animate-pulse'>
-                          AI is processing...
-                        </div>
-                      </div>
+                      <AiLoading />
                     ) : (
-                      <>
-                        {aiResponse ? (
-                          aiResponse?.includes('```') ? (
-                            <MarkdownRenderer>{aiResponse}</MarkdownRenderer>
-                          ) : (
-                            <Typewriter
-                              onInit={(typewriter) => {
-                                typewriter
-                                  .typeString(aiResponse)
-                                  .callFunction(() => {
-                                    setAiFinished(true);
-                                  })
-                                  .start();
-                              }}
-                              options={{
-                                delay: 10,
-                              }}
-                            />
-                          )
-                        ) : (
-                          <Typewriter
-                            onInit={(typewriter) => {
-                              typewriter
-                                .typeString(
-                                  'Oops! The AI seems to be lost. \u00A0 😵‍💫 \u00A0\u00A0'
-                                )
-                                .pauseFor(1000)
-                                .typeString('<br/><br/>')
-                                .typeString(
-                                  `Looks like the AI has gone on an unscheduled vacation to the Land of Confusion. Hope it brings back some souvenirs of clarity!. \u00A0\u00A0`
-                                )
-                                .pauseFor(1000)
-                                .typeString('<br/><br/>')
-                                .typeString('Please try again later. \u00A0')
-                                .callFunction(() => {
-                                  setAiFinished(true);
-                                })
-                                .start();
-                            }}
-                            options={{
-                              delay: 10,
-                            }}
-                          />
-                        )}
-
-                        {aiFinished && (
-                          <div className='flex justify-center mt-6 transition-all duration-300'>
-                            <Button onClick={handleAiClose}>
-                              <BackButton />
-                              Back
-                            </Button>
-                          </div>
-                        )}
-                      </>
+                      <AiResponses
+                        response={aiResponse}
+                        isAiFinished={aiFinished}
+                        onAiFinished={() => setAiFinished(true)}
+                        onAiClose={handleAiClose}
+                      />
                     )}
                   </div>
                 )}

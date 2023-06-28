@@ -23,7 +23,7 @@ const MenuItem = ({
   const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
     router.pathname === href
       ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300'
-      : 'hover:dark:bg-neutral-800 md:hover:bg-neutral-200 md:hover:rounded-lg md:hover:scale-105 lg:transition-all lg:duration-300'
+      : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
   }`;
 
   const handleClick = () => {

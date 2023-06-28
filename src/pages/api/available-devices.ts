@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getNowPlaying } from '@/services/spotify';
+import { getAvailableDevices } from '@/services/spotify';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const response = await getNowPlaying();
+  const response = await getAvailableDevices();
 
   res.setHeader(
     'Cache-Control',

@@ -1,4 +1,6 @@
 import Image from '@/common/components/elements/Image';
+import Tooltip from '@/common/components/elements/Tooltip';
+import { STACKS } from '@/common/constant/stacks';
 import { ProjectItemProps } from '@/common/types/projects';
 
 import ProjectLink from './ProjectLink';
@@ -14,17 +16,14 @@ const ProjectDetail = ({
 
   return (
     <div className='space-y-8'>
-      <div className='flex flex-col sm:flex-row gap-5 justify-between'>
+      <div className='flex flex-col items-center sm:flex-row gap-5 justify-between'>
         <div className='flex items-center flex-wrap gap-2'>
           <span className='text-[15px]'>Tech Stack :</span>
-          <div className='flex flex-grow gap-2'>
+          <div className='flex flex-wrap items-center gap-3'>
             {stacksArray?.map((stack: string, index: number) => (
-              <span
-                key={index}
-                className='bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400 rounded-full px-3 py-1 text-xs font-medium'
-              >
-                {stack}
-              </span>
+              <div key={index}>
+                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
+              </div>
             ))}
           </div>
         </div>

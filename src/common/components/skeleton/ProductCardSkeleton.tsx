@@ -6,7 +6,7 @@ import SkeletonLoader from '../elements/SkeletonLoader';
 const ProductCardSkeleton = () => {
   return (
     <SkeletonLoader>
-      <Card className='border border-neutral-200 dark:border-neutral-800'>
+      <Card className='border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800'>
         <div className='h-48 rounded-t-xl'>
           <Skeleton
             height={192}

@@ -58,7 +58,7 @@ const BlogCard = ({
     <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
-          'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 lg:hover:scale-[102%] w-full',
+          'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full',
           viewOption === 'grid'
             ? '!flex-col sm:h-[400px] w-full'
             : '!flex-row sm:p-5 sm:px-6',

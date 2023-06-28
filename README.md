@@ -13,6 +13,10 @@ This website was built from scratch using Next.js and was first initialized in J
 
 On this website there are several features that will continue to be updated and added in the future.
 
+### 🎧 Spotify
+
+Displays song information being played on spotify in real time using the Spotify API and SWR.
+
 ### 🤖 ChatGPT AI
 
 You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for.

@@ -7,13 +7,16 @@ import Breakline from '../elements/Breakline';
 const MobileMenu: FC = () => {
   return (
     <motion.div
-      className='my-5'
+      className='h-screen flex flex-col my-5'
       initial={{ y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <Breakline className='mt-2' />
-      <Navigation />
+      <div>
+        <Breakline className='mt-2' />
+        <Navigation />
+      </div>
+      {/* <NowPlayingCard /> */}
     </motion.div>
   );
 };

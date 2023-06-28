@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MenuContext } from '@/common/context/MenuContext';
 import useIsMobile from '@/common/hooks/useIsMobile';
@@ -21,15 +21,27 @@ const Profile = () => {
     setExpandMenu(false);
   };
 
+  useEffect(() => {
+    if (expandMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [expandMenu]);
+
   return (
     <MenuContext.Provider value={{ hideNavbar }}>
       <div
         className={clsx(
           'z-10 fixed shadow-sm xl:shadow-none lg:border-none dark:border-b dark:border-neutral-800 bg-light dark:bg-dark lg:!bg-transparent w-full p-5 lg:relative lg:p-0',
-          expandMenu && 'pb-0'
+          expandMenu && 'pb-0 h-screen'
         )}
       >
-        <div className='flex items-start justify-between lg:flex-col lg:space-y-3'>
+        <div className='flex items-start justify-between lg:flex-col lg:space-y-4'>
           <ProfileHeader expandMenu={expandMenu} imageSize={imageSize} />
 
           {!isMobile && (
@@ -60,7 +72,7 @@ const Profile = () => {
           {isMobile && (
             <div
               className={clsx(
-                'flex items-center gap-5',
+                'flex items-center gap-5 mt-1',
                 expandMenu &&
                   '!items-end flex-col-reverse justify-between h-[120px]'
               )}

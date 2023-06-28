@@ -57,6 +57,7 @@ const CodeBlock = ({ className, children, inline, ...props }: CodeProps) => {
             type='button'
             aria-label='Copy to Clipboard'
             onClick={() => handleCopy(children.toString())}
+            data-umami-event='Click Copy Code'
           >
             {!isCopied ? (
               <CopyIcon size={18} className='text-neutral-400' />

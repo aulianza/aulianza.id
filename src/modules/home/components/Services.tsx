@@ -24,7 +24,12 @@ const Services = () => {
           I&apos;m open for freelance projects, feel free to email me to see how
           can we collaborate.
         </p>
-        <Button onClick={() => Router.push('/contact')}>Contact me</Button>
+        <Button
+          data-umami-event='Click Contact Button'
+          onClick={() => Router.push('/contact')}
+        >
+          Contact me
+        </Button>
       </div>
     </section>
   );

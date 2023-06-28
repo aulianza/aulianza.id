@@ -13,6 +13,7 @@ const MenuItem = ({
   onClick,
   className,
   children,
+  eventName,
 }: MenuItemProps) => {
   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -69,6 +70,7 @@ const MenuItem = ({
       href={href}
       target={isExternalUrl ? '_blank' : ''}
       onClick={handleClick}
+      data-umami-event={eventName}
     >
       {itemComponent()}
     </Link>

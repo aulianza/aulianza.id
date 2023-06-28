@@ -13,10 +13,13 @@ const ThemeToggleButton = () => {
         checked={resolvedTheme === 'dark'}
         type='checkbox'
         className='mode-toggle'
-        id='checkbox'
         onChange={toggleTheme}
+        id='switch-theme'
+        data-umami-event={`Switch to ${
+          resolvedTheme === 'light' ? 'Dark' : 'Light'
+        } Mode`}
       />
-      <label className='mode-toggle-label' htmlFor='checkbox'>
+      <label className='mode-toggle-label' htmlFor='switch-theme'>
         <svg
           width='45'
           height='25'

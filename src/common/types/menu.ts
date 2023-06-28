@@ -9,4 +9,5 @@ export type MenuItemProps = {
   onClick?: () => void;
   className?: string;
   children?: ReactNode;
+  eventName?: string;
 };

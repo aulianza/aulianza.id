@@ -9,11 +9,13 @@ const CONTACTS = [
     title: 'hello@aulianza.id',
     icon: <EmailIcon size={18} />,
     link: 'mailto:hello@aulianza.id',
+    eventName: 'Contact: Click Email Button',
   },
   {
     title: 'Telegram',
     icon: <TelegramIcon size={18} />,
     link: 'https://t.me/aulianza',
+    eventName: 'Contact: Click Telegram Button',
   },
 ];
 
@@ -21,6 +23,7 @@ interface ContactProps {
   title: string;
   icon: ReactNode;
   link: string;
+  eventName: string;
 }
 
 const Contact = () => {
@@ -38,6 +41,7 @@ const Contact = () => {
             key={index}
             onClick={() => handleAction(contact?.link)}
             icon={contact?.icon}
+            data-umami-event={contact?.eventName}
           >
             {contact?.title}
           </Button>

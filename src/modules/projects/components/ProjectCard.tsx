@@ -14,10 +14,9 @@ const ProjectCard = ({
   stacks,
 }: ProjectItemProps) => {
   const stacksArray = JSON.parse(stacks);
-  const eventName = `Project: ${title}`;
 
   return (
-    <Link href={`/projects/${slug}`} data-umami-event={eventName}>
+    <Link href={`/projects/${slug}`}>
       <Card className='border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer'>
         <Image
           src={image}

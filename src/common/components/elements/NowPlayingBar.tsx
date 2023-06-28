@@ -25,13 +25,15 @@ const NowPlayingBar = () => {
     fetcher
   );
 
+  const activeDevice = devicesData?.find((device) => device.is_active);
+
   const handleOpenSongUrl = (url?: string) => {
     url && window.open(url, '_blank');
   };
 
   return (
     <div className='hidden lg:block fixed bottom-0 w-full z-[99999]'>
-      <div className='flex justify-between bg-green-400 dark:bg-green-500 py-0.5 px-4 text-neutral-800 dark:text-neutral-900 text-[14px]'>
+      <div className='flex justify-between bg-green-400 dark:bg-green-500 pt-[2.5px] pb-0.5 px-4 text-neutral-800 dark:text-neutral-900 text-[14px]'>
         {playingData?.songUrl ? (
           <Popover className='relative'>
             <Popover.Button
@@ -42,7 +44,7 @@ const NowPlayingBar = () => {
             >
               <div className='flex items-center gap-2'>
                 <AnimatedBars />
-                <div className='pt-0.5 hidden sm:block'>Now Playing :</div>
+                <div className='hidden sm:block '>Now Playing :</div>
                 <div className='flex gap-2 items-center transition-all duration-300'>
                   {playingData?.albumImageUrl && (
                     <Image
@@ -55,7 +57,7 @@ const NowPlayingBar = () => {
                     />
                   )}
                   <div
-                    className='flex gap-1 hover:underline hover:cursor-pointer pt-0.5'
+                    className='flex gap-1 hover:underline hover:cursor-pointer'
                     onClick={() => handleOpenSongUrl(playingData?.songUrl)}
                   >
                     <span>{playingData?.artist} -</span>
@@ -69,7 +71,7 @@ const NowPlayingBar = () => {
         ) : (
           <div className='flex items-center gap-1'>
             <SpotifyIcon size={16} className='mr-1' />
-            <div className='pt-0.5'>Not Playing</div>
+            <div>Not Playing</div>
           </div>
         )}
 
@@ -83,9 +85,9 @@ const NowPlayingBar = () => {
             >
               <div className='flex items-center gap-1'>
                 <SpotifyIcon size={16} className='mr-0.5' />
-                <div className='pt-0.5'>
+                <div>
                   Listening on{' '}
-                  <span className='font-medium'>aulianza-devices</span>
+                  <span className='font-medium'>{activeDevice?.name}</span>
                 </div>
               </div>
             </Popover.Button>

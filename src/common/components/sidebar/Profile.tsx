@@ -54,7 +54,7 @@ const Profile = () => {
           {isMobile && (
             <div
               className={clsx(
-                'flex items-center gap-5 mt-2',
+                'flex lg:hidden items-center gap-5 mt-2',
                 expandMenu &&
                   '!items-end flex-col-reverse justify-between h-[120px] pb-1'
               )}
@@ -67,6 +67,7 @@ const Profile = () => {
             </div>
           )}
         </div>
+
         {isMobile && (
           <AnimatePresence>{expandMenu && <MobileMenu />}</AnimatePresence>
         )}

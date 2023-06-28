@@ -6,7 +6,7 @@ import SkeletonLoader from '../elements/SkeletonLoader';
 const BlogCardSkeleton = () => {
   return (
     <SkeletonLoader>
-      <Card className='border border-neutral-200 dark:border-neutral-800 min-w-[350px]'>
+      <Card className='border border-neutral-200 dark:border-neutral-800 min-w-[350px] dark:bg-neutral-800'>
         <div className='h-48 rounded-t-xl'>
           <Skeleton
             height={192}

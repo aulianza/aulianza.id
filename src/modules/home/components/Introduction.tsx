@@ -15,7 +15,7 @@ const Introduction = () => {
             </li>
           </ul>
         </>
-        <p className='leading-[1.8] md:leading-loose '>
+        <p>
           Seasoned Software Engineer especially in Frontend side, with a passion
           for creating pixel-perfect web experiences. I work with JavaScript and
           specialize in all-things web. I thrive on collaborating with teams to

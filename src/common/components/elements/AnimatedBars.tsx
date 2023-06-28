@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 
-const AnimatedBars = () => {
+interface AnimatedBarsProps {
+  variant?: string;
+}
+
+const AnimatedBars = ({ variant = 'bg-neutral-800' }: AnimatedBarsProps) => {
+  const color = variant ?? 'bg-neutral-800';
+
   return (
     <div className='relative flex w-auto items-end overflow-hidden pt-0.5'>
       <motion.span
@@ -13,7 +19,7 @@ const AnimatedBars = () => {
           easings: 'easeInOut',
           repeat: Infinity,
         }}
-        className='mr-[1px] h-2 w-1 bg-neutral-800 opacity-75 '
+        className={`mr-[1px] h-2 w-1 opacity-75 ${color}`}
       />
       <motion.span
         animate={{
@@ -26,7 +32,7 @@ const AnimatedBars = () => {
           repeat: Infinity,
           repeatDelay: 0.2,
         }}
-        className='mr-[1px] h-1 w-1 bg-neutral-800 '
+        className={`mr-[1px] h-1 w-1 ${color}`}
       />
       <motion.span
         animate={{
@@ -39,7 +45,7 @@ const AnimatedBars = () => {
           repeat: Infinity,
           repeatDelay: 0.2,
         }}
-        className='mr-[1px] h-3 w-1 bg-neutral-800 opacity-80 '
+        className={`mr-[1px] h-3 w-1 opacity-80 ${color}`}
       />
 
       <motion.span
@@ -53,7 +59,7 @@ const AnimatedBars = () => {
           repeat: Infinity,
           repeatDelay: 0.3,
         }}
-        className='h-3 w-1 bg-neutral-800 '
+        className={`h-3 w-1 ${color}`}
       />
     </div>
   );

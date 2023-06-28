@@ -5,20 +5,15 @@ import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
 import { MdClose as CloseIcon } from 'react-icons/md';
 import useSWR from 'swr';
 
+import { NowPlayingProps } from '@/common/types/spotify';
 import { fetcher } from '@/services/fetcher';
 
 import AnimatedBars from './AnimatedBars';
 
-const NowPlayingCard = () => {
-  const { data } = useSWR<{
-    songUrl: string;
-    albumImageUrl: string;
-    album: string;
-    title: string;
-    artist: string;
-  }>('/api/now-playing', fetcher);
+const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
+  const { data } = useSWR<NowPlayingProps>('/api/now-playing', fetcher);
 
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(isExpand);
 
   const trimmedSongTitle =
     data?.title &&
@@ -39,7 +34,7 @@ const NowPlayingCard = () => {
   return (
     <div
       className={clsx(
-        'fixed  bottom-0 p-3 z-2 w-full',
+        'fixed bottom-0 p-3 z-2 w-full',
         !expand && 'flex justify-end'
       )}
     >

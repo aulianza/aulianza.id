@@ -8,7 +8,7 @@ const ThemeToggleButton = () => {
     setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
 
   return (
-    <StyledToggle>
+    <StyledToggle className='flex'>
       <input
         checked={resolvedTheme === 'dark'}
         type='checkbox'
@@ -18,9 +18,9 @@ const ThemeToggleButton = () => {
       />
       <label className='mode-toggle-label' htmlFor='checkbox'>
         <svg
-          width='50'
-          height='30'
-          viewBox='0 0 300 180'
+          width='45'
+          height='25'
+          viewBox='0 0 300 170'
           xmlns='http://www.w3.org/2000/svg'
         >
           <defs>
@@ -50,7 +50,7 @@ const ThemeToggleButton = () => {
           <rect
             className='bg'
             width='300'
-            height='180'
+            height='170'
             rx='90'
             ry='90'
             fill='url(#bg-night)'
@@ -98,8 +98,6 @@ const ThemeToggleButton = () => {
 export default ThemeToggleButton;
 
 const StyledToggle = styled.div`
-  margin-top: 5px;
-
   .mode-toggle {
     width: 0;
     height: 0;

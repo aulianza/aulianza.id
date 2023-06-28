@@ -41,7 +41,11 @@ const CareerCard = ({
         <h6>{position}</h6>
         <div className='text-sm text-neutral-600 dark:text-neutral-400 space-y-2'>
           <div className='flex items-center gap-1 md:gap-2'>
-            <Link href={link || '#'} target='_blank'>
+            <Link
+              href={link || '#'}
+              target='_blank'
+              data-umami-event={`Click Career Company Name: ${company}`}
+            >
               <span className='underline cursor-pointer hover:text-dark hover:dark:text-white'>
                 {company}
               </span>

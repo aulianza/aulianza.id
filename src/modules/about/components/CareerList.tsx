@@ -24,6 +24,7 @@ const CareerList = () => {
             target='_blank'
             passHref
             className='flex gap-2 hover:gap-3 transition-all duration-300 items-center text-neutral-600 dark:text-neutral-500 hover:text-neutral-700 hover:dark:text-neutral-300'
+            data-umami-event='Download Resume'
           >
             <DownloadIcon />
             <span>Download Resume</span>

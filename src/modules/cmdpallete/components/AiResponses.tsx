@@ -65,7 +65,10 @@ const AiResponses = ({
 
       {isAiFinished && (
         <div className='flex justify-center mt-6 transition-all duration-300'>
-          <Button onClick={onAiClose}>
+          <Button
+            onClick={onAiClose}
+            data-umami-event='Click Back from AI Response'
+          >
             <BackButton />
             Back
           </Button>

@@ -59,7 +59,11 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
                 <span className='font-medium text-neutral-600 dark:text-neutral-300'>
                   Post URL:{' '}
                 </span>
-                <Link href={blogData?.url} target='_blank'>
+                <Link
+                  href={blogData?.url}
+                  target='_blank'
+                  data-umami-event={`Click DEV.to URL - ${blogData?.title}`}
+                >
                   <div className='text-teal-600 dark:text-teal-500 hover:underline mt-1'>
                     {blogData?.url}
                   </div>

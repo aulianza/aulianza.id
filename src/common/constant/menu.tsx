@@ -26,6 +26,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
+    eventName: 'Pages: Home',
   },
   {
     title: 'Dashboard',
@@ -33,6 +34,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
+    eventName: 'Pages: Dashboard',
   },
   {
     title: 'Projects',
@@ -40,6 +42,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
+    eventName: 'Pages: Projects',
   },
   {
     title: 'Blog',
@@ -47,6 +50,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <BlogIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
+    eventName: 'Pages: Blog',
   },
   {
     title: 'About',
@@ -54,6 +58,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ProfileIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
+    eventName: 'Pages: About',
   },
   {
     title: 'Contact',
@@ -61,6 +66,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ContactIcon size={iconSize} />,
     isShow: false,
     isExternal: false,
+    eventName: 'Pages: Contact',
   },
 ];
 
@@ -71,6 +77,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <GithubIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
+    eventName: 'Social: Github',
   },
   {
     title: 'Linkedin',
@@ -78,6 +85,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <LinkedinIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
+    eventName: 'Social: Linkedin',
   },
   {
     title: 'Twitter',
@@ -85,6 +93,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TwitterIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
+    eventName: 'Social: Twitter',
   },
   {
     title: 'Instagram',
@@ -92,6 +101,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <InstagramIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
+    eventName: 'Social: Instagram',
   },
 ];
 
@@ -102,5 +112,6 @@ export const EXTERNAL_LINKS: MenuItemProps[] = [
     icon: <AnalyticsIcon size={iconSizeSocial} />,
     isShow: true,
     isExternal: true,
+    eventName: 'External Link: Analytics',
   },
 ];

@@ -37,12 +37,12 @@ const PlayerPopover = ({ isShow, playing }: PlayerPopoverProps) => {
 
           <div className='space-y-2'>
             <div className='space-y-1 font-sora'>
-              <div className='text-green-500'>{title}</div>
-              <div className='text-neutral-700 dark:text-neutral-300 text-[15px]'>
+              <div className='text-green-500 text-[15px]'>{title}</div>
+              <div className='text-neutral-700 dark:text-neutral-300 text-sm'>
                 {artist}
               </div>
             </div>
-            <div className='flex flex-col text-sm'>
+            <div className='flex flex-col text-[13px]'>
               <span className='text-neutral-500 dark:text-neutral-500'>
                 Album:
               </span>

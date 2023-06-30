@@ -4,7 +4,7 @@ const Copyright = () => {
       <span>©</span>
       <span>{new Date().getFullYear()}</span>
       <span>by</span>
-      <span>aulianza</span>
+      <span className='hover:dark:text-neutral-400'>aulianza</span>
     </div>
   );
 };

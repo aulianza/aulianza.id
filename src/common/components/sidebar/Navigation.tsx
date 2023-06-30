@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { BiCommand as CommandIcon } from 'react-icons/bi';
+import { useWindowSize } from 'usehooks-ts';
 
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
@@ -10,6 +11,8 @@ import Breakline from '../elements/Breakline';
 
 const Navigation = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
+  const { width } = useWindowSize();
+  const isMobile = width < 480;
 
   const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow);
   const filteredSocialMedia = SOCIAL_MEDIA?.filter((item) => item?.isShow);
@@ -24,7 +27,7 @@ const Navigation = () => {
 
       <div className='pt-1'>
         <MenuItem
-          title='cmd + k'
+          title={isMobile ? 'Command' : 'cmd + k'}
           href='#'
           icon={<CommandIcon size={20} />}
           isExternal={false}

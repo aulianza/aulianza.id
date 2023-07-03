@@ -19,7 +19,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@giscus/react": "^2.2.8",
+    "@giscus/react": "^2.3.0",
     "@headlessui/react": "^1.7.15",
     "@prisma/client": "^4.16.0",
     "add": "^2.0.6",

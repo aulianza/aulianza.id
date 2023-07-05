@@ -10,6 +10,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
   SiWordpress,
 } from 'react-icons/si';
 
@@ -34,4 +35,5 @@ export const STACKS: stacksProps = {
   WordPress: <SiWordpress size={iconSize} />,
   Laravel: <SiLaravel size={iconSize} className='text-red-500' />,
   'Material UI': <SiMui size={iconSize} className='text-sky-400' />,
+  Vite: <SiVite size={iconSize} className='text-purple-500' />,
 };

@@ -1,4 +1,5 @@
 import Image from '@/common/components/elements/Image';
+import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { ProjectItemProps } from '@/common/types/projects';
@@ -11,6 +12,7 @@ const ProjectDetail = ({
   stacks,
   link_demo,
   link_github,
+  content,
 }: ProjectItemProps) => {
   const stacksArray = JSON.parse(stacks);
 
@@ -42,6 +44,11 @@ const ProjectDetail = ({
         alt={title}
         className='hover:scale-105'
       />
+      {content && (
+        <div className='space-y-6 leading-[1.8] dark:text-neutral-300 mt-5'>
+          <MarkdownRenderer>{content}</MarkdownRenderer>
+        </div>
+      )}
     </div>
   );
 };

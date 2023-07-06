@@ -73,6 +73,7 @@ const CodeBlock = ({ className, children, inline, ...props }: CodeProps) => {
               padding: '20px',
               fontSize: '14px',
               borderRadius: '8px',
+              paddingRight: '50px',
             }}
             PreTag='div'
             language={match ? match[1] : 'javascript'}

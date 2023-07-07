@@ -9,7 +9,7 @@ interface TabsProps {
   children: React.ReactElement<TabProps>[];
 }
 
-export const Tab = ({ label, children }: TabProps) => {
+export const Tab = ({ children }: TabProps) => {
   return <>{children}</>;
 };
 
@@ -23,7 +23,7 @@ export const Tabs = ({ children }: TabsProps) => {
   return (
     <div className='border-b border-x dark:border-neutral-800 rounded-lg'>
       <div className='flex gap-1'>
-        {children.map((child, index) => (
+        {children?.map((child, index) => (
           <button
             key={index}
             className={`py-3 px-4 flex-1 text-center ${
@@ -33,7 +33,7 @@ export const Tabs = ({ children }: TabsProps) => {
             }`}
             onClick={() => handleTabClick(index)}
           >
-            {child.props.label}
+            {child?.props?.label}
           </button>
         ))}
       </div>

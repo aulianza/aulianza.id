@@ -31,6 +31,7 @@ const BlogList = ({
   const { viewOption, setViewOption } = useBlogViewStore();
 
   const [page, setPage] = useState<number>(1);
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [pageSize, setPageSize] = useState<number>(perPage);
 
   const { data, isLoading } = useSWR(

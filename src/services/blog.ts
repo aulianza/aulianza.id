@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const BASE_URL = 'https://dev.to/api/';
 const BLOG_URL = `${BASE_URL}articles`;
 const COMMENT_URL = `${BASE_URL}comments`;

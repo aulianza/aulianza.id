@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 interface ContainerProps {
   children: ReactNode;
   className?: string;
-  [propName: string]: any;
+  [propName: string]: ReactNode | string | undefined;
 }
 
 const Container = ({ children, className = '', ...others }: ContainerProps) => {

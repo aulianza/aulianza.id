@@ -11,7 +11,7 @@ const MenuItem = ({
   href,
   icon,
   onClick,
-  className,
+  className = '',
   children,
 }: MenuItemProps) => {
   const { hideNavbar } = useContext(MenuContext);

@@ -12,12 +12,18 @@ const ProjectCard = ({
   description,
   image,
   stacks,
+  is_featured,
 }: ProjectItemProps) => {
   const stacksArray = JSON.parse(stacks);
 
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className='border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer'>
+      <Card className='relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer'>
+        {is_featured && (
+          <div className='absolute top-0 right-0 bg-emerald-300 text-emerald-950 text-[13px] font-medium py-1 px-2 rounded-bl-xl z-10 rounded-tr-xl'>
+            Featured
+          </div>
+        )}
         <Image
           src={image}
           width={400}

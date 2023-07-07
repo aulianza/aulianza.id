@@ -8,6 +8,7 @@ export interface ProjectItemProps {
   stacks: string;
   content?: string;
   is_show: boolean;
+  is_featured: boolean;
   updated_at: Date;
 }
 

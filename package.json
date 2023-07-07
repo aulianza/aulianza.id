@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && pnpm format",
+    "lint:fix": "eslint src --fix && yarn format",
     "typecheck": "tsc --noEmit --incremental false",
     "format": "prettier --write .",
     "format:check": "prettier -c .",
@@ -16,7 +16,6 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm",
     "postinstall": "prisma generate"
   },
   "dependencies": {

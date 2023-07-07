@@ -28,8 +28,14 @@ SyntaxHighlighter.registerLanguage(languages.diff, diff);
 SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
 SyntaxHighlighter.registerLanguage(languages.css, css);
 
-const CodeBlock = ({ className, children, inline, ...props }: CodeProps) => {
+const CodeBlock = ({
+  className = '',
+  children,
+  inline,
+  ...props
+}: CodeProps) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [value, copy] = useCopyToClipboard();
   const match = /language-(\w+)/.exec(className || '');
 

@@ -9,6 +9,7 @@ import { getGithubUser } from '@/services/github';
 import { getReadStats } from '@/services/wakatime';
 
 interface DashboardPageProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fallback: any;
 }
 

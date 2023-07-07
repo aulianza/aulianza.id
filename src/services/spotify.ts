@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import querystring from 'querystring';
 
 import { PAIR_DEVICES } from '@/common/constant/devices';

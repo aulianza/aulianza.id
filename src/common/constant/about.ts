@@ -1,6 +1,4 @@
-const yearOfBirth = 1996;
 const currentYear = new Date().getFullYear();
-const age = currentYear - yearOfBirth;
 const workStart = 2019;
 const codingStart = 2014;
 

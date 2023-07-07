@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import querystring from 'querystring';
 
 const client_id = process.env.WAKATIME_CLIENT_ID;

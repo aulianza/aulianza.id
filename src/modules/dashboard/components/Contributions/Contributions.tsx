@@ -15,7 +15,7 @@ type ContributionsProps = {
   endpoint: string;
 };
 
-const Contributions = ({ username, type, endpoint }: ContributionsProps) => {
+const Contributions = ({ username, endpoint }: ContributionsProps) => {
   const { data } = useSWR(endpoint, fetcher);
 
   const contributionCalendar =

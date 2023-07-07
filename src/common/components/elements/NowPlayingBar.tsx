@@ -38,7 +38,6 @@ const NowPlayingBar = () => {
           <Popover className='relative'>
             <Popover.Button
               as='div'
-              className='cursor-context-menu'
               onMouseEnter={() => setShowPlayingInfo(true)}
               onMouseLeave={() => setShowPlayingInfo(false)}
             >
@@ -57,7 +56,7 @@ const NowPlayingBar = () => {
                     />
                   )}
                   <div
-                    className='flex gap-1 hover:underline hover:cursor-alias'
+                    className='flex gap-1 hover:underline hover:cursor-pointer'
                     onClick={() => handleOpenSongUrl(playingData?.songUrl)}
                   >
                     <span>{playingData?.artist} -</span>
@@ -79,7 +78,6 @@ const NowPlayingBar = () => {
           <Popover className='relative'>
             <Popover.Button
               as='div'
-              className='cursor-context-menu'
               onMouseEnter={() => setShowDeviceList(true)}
               onMouseLeave={() => setShowDeviceList(false)}
             >

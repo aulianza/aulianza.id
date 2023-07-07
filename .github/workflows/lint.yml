@@ -27,7 +27,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 🔬 Lint
-        run: yarn lint
+        run: pnpm lint
 
   typecheck:
     name: ʦ TypeScript
@@ -45,7 +45,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 🔎 Type check
-        run: yarn typecheck
+        run: pnpm typecheck
 
   prettier:
     name: 💅 Prettier
@@ -63,7 +63,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 💅 Prettier check
-        run: yarn format:check
+        run: pnpm format:check
 
   test:
     name: 🃏 Test
@@ -81,4 +81,4 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: 🃏 Run jest
-        run: yarn test
+        run: pnpm test

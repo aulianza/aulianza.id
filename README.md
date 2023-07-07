@@ -90,10 +90,10 @@ If you are interested in running this project on your local machine, you can do 
 
 ### 2. Install dependencies
 
-It is encouraged to use **yarn** so the husky hooks can work properly.
+It is encouraged to use **pnpm** so the husky hooks can work properly.
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ### 3. Run the development server
@@ -101,7 +101,7 @@ yarn install
 You can start the server using this command:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.

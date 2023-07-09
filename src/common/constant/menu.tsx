@@ -1,5 +1,6 @@
 import {
   BiArchive as ProjectIcon,
+  BiBookBookmark as LearnIcon,
   BiCategoryAlt as DashboardIcon,
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
@@ -51,6 +52,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog',
+  },
+  {
+    title: 'Learn',
+    href: '/learn',
+    icon: <LearnIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Learn',
   },
   {
     title: 'About',

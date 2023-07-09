@@ -1,0 +1,104 @@
+---
+id: 2
+title: 'Duplicate Encoder'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+source_url: 'https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/javascript'
+created_at: '2023-07-09'
+updated_at: '2023-07-09'
+---
+
+> Problem
+
+The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+### Example:
+
+```tsx
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))(("
+```
+
+### Notes:
+
+Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+---
+
+> Answer
+
+The goal of this problem is to convert a given string into a new string based on the following rules:
+
+1. Each character in the new string will be replaced with "(" if that character appears only once in the original string.
+2. If a character appears more than once in the original string, it will be replaced with ")" in the new string.
+
+Here are some important points to consider:
+
+- Capitalization differences should be ignored. This means that uppercase and lowercase letters are considered the same. So, "A" and "a" are treated as the same character.
+- Spaces or non-alphabetic characters should be ignored in the counting. Only alphabetic characters are considered.
+
+For example, if we have the original string "recede", the resulting string will be "()()()". This is because the characters "r" and "d" appear only once, while the character "e" appears three times.
+
+Here are a few more examples of string conversions:
+
+- Original string: "din", converted string: "(((" because all characters ("d", "i", and "n") appear only once.
+- Original string: "recede", converted string: "()()()" because the character "e" appears three times, while the other characters appear only once.
+- Original string: "Success", converted string: ")())())" because the character "s" appears three times, the character "c" appears twice, and the other characters appear only once.
+- Original string: "(( @", converted string: "))((" because the character "(" appears twice, while the other characters appear only once.
+
+Note:
+
+- Assertion messages may not be clear in some languages. If you see a message like "...It Should encode XXX," the "XXX" is the expected result, not the input string.
+
+## Step-by-step Explanation
+
+Here are the steps in solving the "Duplicate Encoder" problem using JavaScript:
+
+1. Start by defining a function called **`duplicateEncode`** that takes a single parameter, **`word`**. This function will be used to convert the input string according to the given rules.
+2. Inside the **`duplicateEncode`** function, convert the **`word`** to lowercase using the **`.toLowerCase()`** method. Save the result in a variable called **`lowercaseWord`**. This is done to ignore capitalization differences.
+3. Create an empty variable called **`result`** to store the converted string.
+4. Begin iterating through each character in the **`lowercaseWord`** string. For each character, follow these steps:
+   - Take the character at index **`i`** using **`lowercaseWord[i]`** and store it in a variable called **`char`**.
+   - Count the number of occurrences of the **`char`** in **`lowercaseWord`** by splitting the string into an array using the **`.split()`** method and then obtaining the length of the resulting array using the **`.length`** property. Subtract 1 from the length because the split method will create an array with one extra element.
+   - If the count is greater than 1, it means the character is a duplicate. In this case, add ")" to the **`result`** variable.
+   - If the count is equal to 1, it means the character appears only once. In this case, add "(" to the **`result`** variable.
+5. After iterating through all the characters in **`lowercaseWord`**, return the value of the **`result`** variable as the converted string.
+6. Finally, you can call the **`duplicateEncode`** function by providing the input string that you want to convert and store the result in a variable for further use or print it to the console.
+
+Here's the complete implementation in JavaScript:
+
+```tsx
+function duplicateEncode(word) {
+  const lowercaseWord = word.toLowerCase();
+  let result = '';
+
+  for (let i = 0; i < lowercaseWord.length; i++) {
+    const char = lowercaseWord[i];
+    const count = lowercaseWord.split(char).length - 1;
+
+    if (count > 1) {
+      result += ')';
+    } else {
+      result += '(';
+    }
+  }
+
+  return result;
+}
+
+// Usage example:
+const input = 'Success';
+const encodedString = duplicateEncode(input);
+console.log(encodedString);
+```
+
+The resulting output will be printed to the console:
+
+```tsx
+)())())
+```
+
+In this example, the string "Success" is converted to ")())())" according to the rules given in the problem.

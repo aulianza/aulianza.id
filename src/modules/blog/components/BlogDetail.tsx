@@ -1,6 +1,6 @@
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
-import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
+import MDXComponent from '@/common/components/elements/MDXComponent';
 import { BlogItemProps } from '@/common/types/blog';
 
 import BlogHeader from './BlogHeader';
@@ -30,7 +30,7 @@ const BlogDetail = ({
           alt={title}
           className='hover:scale-105'
         />
-        {body_markdown && <MarkdownRenderer>{body_markdown}</MarkdownRenderer>}
+        {body_markdown && <MDXComponent>{body_markdown}</MDXComponent>}
       </div>
       {tags?.length >= 1 && (
         <div className='my-10 space-y-2'>

@@ -1,5 +1,5 @@
 import Image from '@/common/components/elements/Image';
-import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
+import MDXComponent from '@/common/components/elements/MDXComponent';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { ProjectItemProps } from '@/common/types/projects';
@@ -46,7 +46,7 @@ const ProjectDetail = ({
       />
       {content && (
         <div className='space-y-6 leading-[1.8] dark:text-neutral-300 mt-5'>
-          <MarkdownRenderer>{content}</MarkdownRenderer>
+          <MDXComponent>{content}</MDXComponent>
         </div>
       )}
     </div>

@@ -1,6 +1,5 @@
 import {
   BiArchive as ProjectIcon,
-  BiAt as AnalyticsIcon,
   BiAt as ThreadsIcon,
   BiBookBookmark as LearnIcon,
   BiCategoryAlt as DashboardIcon,
@@ -8,6 +7,7 @@ import {
   BiEnvelope as ContactIcon,
   BiHomeSmile as HomeIcon,
   BiLeaf as ProfileIcon,
+  BiLineChart as AnalyticsIcon,
 } from 'react-icons/bi';
 import {
   BsGithub as GithubIcon,

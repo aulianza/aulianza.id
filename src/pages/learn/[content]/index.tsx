@@ -39,7 +39,7 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
 
   return (
     <>
-      <NextSeo title={`${title} - Ryan Aulia`} />
+      <NextSeo title={`Learn ${title} - Ryan Aulia`} />
       <Container data-aos='fade-up'>
         <BackButton url='/learn' />
         <PageHeading title={title} description={description} />
@@ -53,6 +53,7 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               <LearnSubContentItem
+                parent={title}
                 contentSlug={content?.slug}
                 subContentSlug={item?.slug}
                 title={item?.frontMatter?.title as string}

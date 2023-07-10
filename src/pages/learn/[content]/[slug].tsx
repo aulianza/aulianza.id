@@ -20,7 +20,7 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
 
   return (
     <>
-      <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
+      <NextSeo title={`Learn ${meta?.category} : ${PAGE_TITLE} - Ryan Aulia`} />
       <Container data-aos='fade-up'>
         <BackButton />
         <ContentDetailHeader {...meta} />

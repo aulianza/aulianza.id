@@ -15,6 +15,7 @@ export interface ContentProps {
 }
 
 export interface SubContentProps {
+  parent: string;
   contentSlug: string;
   subContentSlug: string;
   title: string;
@@ -25,7 +26,8 @@ export interface SubContentProps {
 export interface SubContentMetaProps {
   id: number;
   title: string;
-  language: string;
+  category: string;
+  language?: string;
   difficulty?: string;
   source?: string;
   source_url?: string;

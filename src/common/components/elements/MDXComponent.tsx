@@ -7,7 +7,7 @@ interface MarkdownRendererProps {
   children: string;
 }
 
-const MarkdownRenderer = ({ children }: MarkdownRendererProps) => {
+const MDXComponent = ({ children }: MarkdownRendererProps) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -31,10 +31,19 @@ const MarkdownRenderer = ({ children }: MarkdownRendererProps) => {
             {...props}
           />
         ),
+        ul: (props) => (
+          <ol className='pl-10 space-y-3 list-disc pb-5' {...props} />
+        ),
         ol: (props) => (
           <ol className='pl-10 space-y-3 list-decimal pb-5' {...props} />
         ),
         code: (props) => <CodeBlock {...props} />,
+        blockquote: (props) => (
+          <blockquote
+            className='pl-6 py-3 text-lg border-l-[5px] border-neutral-700 border-l-cyan-500 font-medium bg-neutral-200 dark:bg-neutral-800 rounded-br-2xl text-cyan-800 dark:text-cyan-200'
+            {...props}
+          />
+        ),
       }}
     >
       {children}
@@ -42,4 +51,4 @@ const MarkdownRenderer = ({ children }: MarkdownRendererProps) => {
   );
 };
 
-export default MarkdownRenderer;
+export default MDXComponent;

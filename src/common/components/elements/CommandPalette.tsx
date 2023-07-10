@@ -11,7 +11,11 @@ import {
 import { HiOutlineChat as AiIcon } from 'react-icons/hi';
 import { useDebounce } from 'usehooks-ts';
 
-import { EXTERNAL_LINKS, MENU_ITEMS } from '@/common/constant/menu';
+import {
+  EXTERNAL_LINKS,
+  MENU_ITEMS,
+  SOCIAL_MEDIA,
+} from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import useIsMobile from '@/common/hooks/useIsMobile';
 import { MenuItemProps } from '@/common/types/menu';
@@ -56,6 +60,13 @@ const CommandPalette = () => {
     {
       title: 'PAGES',
       children: MENU_ITEMS?.map((menu) => ({
+        ...menu,
+        closeOnSelect: true,
+      })),
+    },
+    {
+      title: 'SOCIALS',
+      children: SOCIAL_MEDIA?.map((menu) => ({
         ...menu,
         closeOnSelect: true,
       })),

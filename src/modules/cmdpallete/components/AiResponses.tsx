@@ -2,7 +2,7 @@ import { BiLeftArrowCircle as BackButton } from 'react-icons/bi';
 import Typewriter from 'typewriter-effect';
 
 import Button from '@/common/components/elements/Button';
-import MarkdownRenderer from '@/common/components/elements/MarkdownRenderer';
+import MDXComponent from '@/common/components/elements/MDXComponent';
 
 interface AiResponsesProps {
   response: string;
@@ -21,7 +21,7 @@ const AiResponses = ({
     <>
       {response ? (
         response?.includes('```') ? (
-          <MarkdownRenderer>{response}</MarkdownRenderer>
+          <MDXComponent>{response}</MDXComponent>
         ) : (
           <Typewriter
             onInit={(typewriter) => {

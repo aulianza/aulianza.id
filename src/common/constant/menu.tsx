@@ -1,12 +1,13 @@
 import {
   BiArchive as ProjectIcon,
+  BiAt as AnalyticsIcon,
+  BiAt as ThreadsIcon,
   BiBookBookmark as LearnIcon,
   BiCategoryAlt as DashboardIcon,
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
   BiHomeSmile as HomeIcon,
   BiLeaf as ProfileIcon,
-  BiLineChart as AnalyticsIcon,
 } from 'react-icons/bi';
 import {
   BsGithub as GithubIcon,
@@ -18,7 +19,6 @@ import {
 import { MenuItemProps } from '../types/menu';
 
 const iconSize = 20;
-const iconSizeSocial = 18;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
@@ -83,7 +83,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Github',
     href: 'https://github.com/aulianza',
-    icon: <GithubIcon size={iconSizeSocial} />,
+    icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'Social: Github',
@@ -91,7 +91,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Linkedin',
     href: 'https://www.linkedin.com/in/aulianza/',
-    icon: <LinkedinIcon size={iconSizeSocial} />,
+    icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'Social: Linkedin',
@@ -99,7 +99,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Twitter',
     href: 'https://twitter.com/aulianzaa',
-    icon: <TwitterIcon size={iconSizeSocial} />,
+    icon: <TwitterIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'Social: Twitter',
@@ -107,10 +107,18 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Instagram',
     href: 'https://instagram.com/aulianza',
-    icon: <InstagramIcon size={iconSizeSocial} />,
+    icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'Social: Instagram',
+  },
+  {
+    title: 'Threads',
+    href: 'https://www.threads.net/@aulianza',
+    icon: <ThreadsIcon size={iconSize} />,
+    isShow: true,
+    isExternal: true,
+    eventName: 'Social: Threads',
   },
 ];
 
@@ -118,7 +126,7 @@ export const EXTERNAL_LINKS: MenuItemProps[] = [
   {
     title: 'Analytics',
     href: 'https://umami.aulianza.id/share/LK5kiRuosw9pORLa/aulianza.id',
-    icon: <AnalyticsIcon size={iconSizeSocial} />,
+    icon: <AnalyticsIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
     eventName: 'External Link: Analytics',

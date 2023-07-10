@@ -8,6 +8,7 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 import Breakline from '../elements/Breakline';
+import SocialMedia from '../elements/SocialMedia';
 
 const Navigation = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
@@ -41,7 +42,7 @@ const Navigation = () => {
       </div>
 
       <Breakline />
-      <Menu title="Let's Connect" list={filteredSocialMedia} />
+      <SocialMedia items={filteredSocialMedia} />
     </>
   );
 };

@@ -4,11 +4,15 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 
+import Tooltip from '@/common/components/elements/Tooltip';
+import { STACKS } from '@/common/constant/stacks';
 import { SubContentMetaProps } from '@/common/types/learn';
 
 const ContentDetailHeader = ({
   title,
   source,
+  difficulty,
+  language,
   source_url,
   updated_at,
 }: SubContentMetaProps) => {
@@ -57,14 +61,14 @@ const ContentDetailHeader = ({
           <h1 className='text-lg lg:text-xl font-semibold'>{title}</h1>
         </motion.div>
       )}
-      <div className='flex flex-col sm:flex-row gap-2 justify-between mb-6 pt-5 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]'>
+      <div className='flex flex-col sm:flex-row items-start lg:items-center gap-2 justify-between mb-6 pt-3 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]'>
         <div>
           Last update on
           <span className='px-1 font-medium'>
             {moment(updated_at).format('MMMM DD, YYYY')}
           </span>
         </div>
-        <div>
+        <div className='flex gap-4 items-center mt-1'>
           {source && source_url && (
             <Link href={source_url} target='_blank' passHref>
               <div className='flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 '>
@@ -75,6 +79,14 @@ const ContentDetailHeader = ({
               </div>
             </Link>
           )}
+          {difficulty && (
+            <Tooltip title={`Difficulty: ${difficulty}`}>
+              <div className='px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400'>
+                {difficulty}
+              </div>
+            </Tooltip>
+          )}
+          {language && <Tooltip title={language}>{STACKS[language]}</Tooltip>}
         </div>
       </div>
     </>

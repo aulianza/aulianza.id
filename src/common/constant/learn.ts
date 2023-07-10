@@ -6,9 +6,9 @@ export const LEARN_CONTENTS: ContentProps[] = [
     title: 'Problem Solving',
     slug: 'problem-solving',
     description:
-      'Unleash the Power of Problem Solving Skill for Software Engineers',
+      'Learn problem solving in JavaScript with detailed explanations',
     image:
-      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/projects/aulianza-next-tailwind-starter-new.png',
+      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
     is_new: true,
     level: 'all-levels',
     is_show: true,
@@ -19,7 +19,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     slug: 'js-beginners',
     description: 'Unleash the Power of JavaScript Skill for Beginners',
     image:
-      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/projects/aulianza-next-tailwind-starter-new.png',
+      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
     is_new: false,
     level: 'beginner',
     is_show: false,

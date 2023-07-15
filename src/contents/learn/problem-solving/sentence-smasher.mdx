@@ -1,0 +1,59 @@
+---
+id: 3
+title: 'Sentence Smash'
+category: 'Problem Solving'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+cover_url: ‘https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png’
+source_url: 'https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/javascript'
+created_at: '2023-07-16'
+updated_at: '2023-07-16'
+---
+
+> Problem
+
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+
+### Example : 
+```
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+```
+
+---
+
+> Solution
+
+
+```
+function smash(words) {
+  var sentence = words.join(' '); // Join the words with a space in between
+  return sentence;
+}
+
+var words = ['hello', 'world', 'this', 'is', 'great'];
+var result = smash(words);
+console.log(result);
+```
+
+
+Let me explain how the code works:
+
+1. 	We define a function called smash that takes an array of words as its parameter.
+2. 	Inside the function, we use the join method on the words array. The join method concatenates all the elements of an array into a single string, with the specified separator in between. In this case, we use a space ‘ ‘ as the separator.
+3. 	The resulting string is stored in the variable sentence.
+4. 	Finally, we return the sentence from the function.
+5. 	Outside the function, we create an array called words with the given words.
+6. 	We call the smash function with the words array as an argument and store the result in the variable result.
+7. 	Finally, we log the result to the console, which will display the sentence.
+
+
+When you run this code, the output will be:
+
+
+```
+hello world this is great
+```
+
+So, the function joins all the words in the array together with spaces and returns the resulting sentence.

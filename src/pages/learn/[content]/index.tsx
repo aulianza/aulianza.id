@@ -37,9 +37,24 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
 
   const { title, description } = content;
 
+  const canonicalUrl = `https://aulianza.id/learn/${content?.slug}`;
+
   return (
     <>
-      <NextSeo title={`Learn ${title} - Ryan Aulia`} />
+      <NextSeo
+        title={`Learn ${title} - Ryan Aulia`}
+        description={description}
+        canonical={canonicalUrl}
+        openGraph={{
+          url: canonicalUrl,
+          images: [
+            {
+              url: content?.image,
+            },
+          ],
+          siteName: 'Ryan Aulia',
+        }}
+      />
       <Container data-aos='fade-up'>
         <BackButton url='/learn' />
         <PageHeading title={title} description={description} />

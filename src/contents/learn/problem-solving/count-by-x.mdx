@@ -1,0 +1,47 @@
+---
+id: 3
+title: 'Count by X'
+category: 'Problem Solving'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+cover_url: ‘https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png’
+source_url: 'https://www.codewars.com/kata/5513795bd3fafb56c200049e/javascript'
+created_at: '2023-07-16'
+updated_at: '2023-07-16'
+---
+
+> Problem
+
+Create a function with two arguments that will return an array of the first n multiples of x.
+
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+Return the results as an array or list ( depending on language ).
+
+Examples
+
+```
+countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+countBy(2,5) === [2,4,6,8,10]
+```
+
+&nbsp;
+
+> Solution
+
+```
+const countBy = (x, n) => {
+    let result = []
+
+    for(let i = 1; i <= n; i++) {
+        result.push(x * i)
+    }
+
+    return result
+}
+```
+
+In this JavaScript implementation, we initialize an empty array result. Then, we use a for loop to iterate from 1 to n (inclusive). Inside the loop, we multiply x by the current iteration i and push the result into the result array using the push method. Finally, we return the result array.
+
+For example, `countBy(1, 10)` would return `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`, and `countBy(2, 5)` would return `[2, 4, 6, 8, 10]`.

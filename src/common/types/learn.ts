@@ -30,6 +30,7 @@ export interface SubContentMetaProps {
   language?: string;
   difficulty?: string;
   source?: string;
+  cover_url?: string;
   source_url?: string;
   created_at: string;
   updated_at: string;

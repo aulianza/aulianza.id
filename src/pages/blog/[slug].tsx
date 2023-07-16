@@ -22,11 +22,6 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
   const canonicalUrl = `https://aulianza.id/blog/${blogData?.slug}?id=${blogData?.id}`;
 
-  const repo = process.env.COMMENTS_REPO as `${string}/${string}`;
-  const repoId = process.env.COMMENTS_REPO_ID as string;
-  const category = process.env.COMMENTS_CATEGORY as string;
-  const categoryId = process.env.COMMENTS_CATEGORY_ID as string;
-
   return (
     <>
       <NextSeo
@@ -72,12 +67,7 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
               <CommentList id={blogData?.id} />
             </Tab>
             <Tab label='Github Comment'>
-              <GiscusComment
-                repo={repo}
-                repoId={repoId}
-                category={category}
-                categoryId={categoryId}
-              />
+              <GiscusComment isEnableReaction={true} />
             </Tab>
           </Tabs>
         </section>

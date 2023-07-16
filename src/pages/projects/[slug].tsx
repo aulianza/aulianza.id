@@ -16,9 +16,30 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
   const PAGE_TITLE = project?.title;
   const PAGE_DESCRIPTION = project?.description;
 
+  const canonicalUrl = `https://aulianza.id/project/${project?.slug}`;
+
   return (
     <>
-      <NextSeo title={`${PAGE_TITLE} - Projects Ryan Aulia`} />
+      <NextSeo
+        title={`${project?.title} - Project Ryan Aulia`}
+        description={project?.description}
+        canonical={canonicalUrl}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: project?.updated_at.toString(),
+            modifiedTime: project?.updated_at.toString(),
+            authors: ['Ryan Aulia'],
+          },
+          url: canonicalUrl,
+          images: [
+            {
+              url: project?.image,
+            },
+          ],
+          siteName: 'Blog Ryan Aulia',
+        }}
+      />
       <Container data-aos='fade-up'>
         <BackButton url='/projects' />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />

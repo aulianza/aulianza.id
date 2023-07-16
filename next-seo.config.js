@@ -11,7 +11,7 @@ const defaultSEOConfig = {
     type: 'website',
     images: [
       {
-        url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/public/aulianza-next-tailwind-starter.png',
+        url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/public/aulianza.id+(1).png',
         alt: 'aulianza.id og-image',
         width: 800,
         height: 600,

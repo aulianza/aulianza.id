@@ -10,12 +10,6 @@ const nextConfig = {
       'res.cloudinary.com',
     ],
   },
-  env: {
-    COMMENTS_REPO: 'aulianza/aulianza.id',
-    COMMENTS_REPO_ID: 'R_kgDOJoIhfQ',
-    COMMENTS_CATEGORY: 'General',
-    COMMENT_CATEGORY_ID: 'DIC_kwDOJoIhfc4CW6cJ',
-  },
 };
 
 module.exports = nextConfig;

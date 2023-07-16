@@ -1,8 +1,12 @@
+import { BlogItemProps } from '@/common/types/blog';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const BASE_URL = 'https://dev.to/api/';
-const BLOG_URL = `${BASE_URL}articles`;
+const BLOG_URL = `${BASE_URL}articles/`;
 const COMMENT_URL = `${BASE_URL}comments`;
 const USERNAME = 'aulianza';
+
+const DEVTO_KEY = process.env.DEVTO_KEY as string;
 
 type BlogParamsProps = {
   page?: number;
@@ -19,8 +23,11 @@ export const getBlogData = async ({
     per_page: per_page.toString(),
   });
 
-  const response = await fetch(`${BLOG_URL}?${params.toString()}`, {
+  const response = await fetch(`${BLOG_URL}me?${params.toString()}`, {
     method: 'GET',
+    headers: {
+      'api-key': DEVTO_KEY,
+    },
   });
 
   const status = response?.status;
@@ -53,6 +60,9 @@ export const getBlogDetail = async ({
 
   const response = await fetch(`${BLOG_URL}/${id}?${params.toString()}`, {
     method: 'GET',
+    headers: {
+      'api-key': DEVTO_KEY,
+    },
   });
 
   const status = response?.status;
@@ -76,6 +86,9 @@ export const getBlogComment = async ({
 }): Promise<{ status: number; data: any }> => {
   const response = await fetch(`${COMMENT_URL}/?a_id=${post_id}`, {
     method: 'GET',
+    headers: {
+      'api-key': DEVTO_KEY,
+    },
   });
 
   const status = response?.status;
@@ -89,5 +102,36 @@ export const getBlogComment = async ({
   return {
     status,
     data,
+  };
+};
+
+export const getArticleViews = async ({
+  id,
+}: {
+  id: number;
+}): Promise<{ status: number; data: any }> => {
+  const response = await fetch(`${BLOG_URL}me/all`, {
+    method: 'GET',
+    headers: {
+      'api-key': DEVTO_KEY,
+    },
+  });
+
+  const status = response?.status;
+
+  if (status >= 400) {
+    return { status, data: {} };
+  }
+
+  const data = await response.json();
+
+  const findArticle = data?.find((blog: BlogItemProps) => blog.id === id);
+  const page_views_count = findArticle?.page_views_count;
+
+  return {
+    status,
+    data: {
+      page_views_count,
+    },
   };
 };

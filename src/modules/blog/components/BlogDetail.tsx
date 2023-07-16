@@ -1,11 +1,16 @@
+import { useMemo } from 'react';
+import useSWR from 'swr';
+
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
 import MDXComponent from '@/common/components/elements/MDXComponent';
-import { BlogItemProps } from '@/common/types/blog';
+import { BlogDetailProps } from '@/common/types/blog';
+import { fetcher } from '@/services/fetcher';
 
 import BlogHeader from './BlogHeader';
 
 const BlogDetail = ({
+  id,
   cover_image,
   title,
   body_markdown,
@@ -13,7 +18,12 @@ const BlogDetail = ({
   published_at,
   tags,
   reading_time_minutes,
-}: BlogItemProps) => {
+}: BlogDetailProps) => {
+  const { data } = useSWR(`/api/blog-view?id=${id}`, fetcher);
+  const blogViewCount: number = useMemo(() => {
+    return data?.data?.page_views_count || null;
+  }, [data]);
+
   return (
     <>
       <BlogHeader
@@ -21,6 +31,7 @@ const BlogDetail = ({
         comments_count={comments_count}
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
+        page_views_count={blogViewCount}
       />
       <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
         <Image

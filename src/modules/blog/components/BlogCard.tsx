@@ -89,6 +89,10 @@ const BlogCard = ({
               </span>
             </div>
             <div className='flex gap-1 items-center'>
+              <ViewIcon size={14} />
+              <span className='text-xs ml-0.5'>{page_views_count} Views</span>
+            </div>
+            <div className='flex gap-1 items-center'>
               <CommentIcon size={16} />
               <span className='text-xs'>
                 <div className='flex gap-1'>
@@ -98,10 +102,6 @@ const BlogCard = ({
                   </span>
                 </div>
               </span>
-            </div>
-            <div className='flex gap-1 items-center'>
-              <ViewIcon size={14} />
-              <span className='text-xs ml-0.5'>{page_views_count} Views</span>
             </div>
           </div>
           {isExcerpt && (

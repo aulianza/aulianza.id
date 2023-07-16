@@ -10,16 +10,15 @@ import CommentItem from './CommentItem';
 
 type CommentListProps = {
   id: number;
+  totalComments: number;
 };
 
-const CommentList = ({ id }: CommentListProps) => {
+const CommentList = ({ id, totalComments }: CommentListProps) => {
   const { data, isLoading } = useSWR(`/api/comments?post_id=${id}`, fetcher);
 
   const commentsData: CommentItemProps[] = useMemo(() => {
     return data?.data || [];
   }, [data]);
-
-  const totalComments = commentsData?.length;
 
   if (isLoading) return <Loading />;
 

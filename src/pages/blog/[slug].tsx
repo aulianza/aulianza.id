@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo';
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import { Tab, Tabs } from '@/common/components/elements/Tabs';
-import { BlogItemProps } from '@/common/types/blog';
+import { BlogDetailProps } from '@/common/types/blog';
 import BlogDetail from '@/modules/blog/components/BlogDetail';
 import CommentList from '@/modules/blog/components/CommentList';
 import GiscusComment from '@/modules/blog/components/GiscusComment';
@@ -13,11 +13,11 @@ import { getBlogDetail } from '@/services/blog';
 
 interface BlogDetailPageProps {
   blog: {
-    data: BlogItemProps;
+    data: BlogDetailProps;
   };
 }
 
-const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
+const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   const blogData = blog?.data || {};
 
   const canonicalUrl = `https://aulianza.id/blog/${blogData?.slug}?id=${blogData?.id}`;
@@ -32,7 +32,7 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
           type: 'article',
           article: {
             publishedTime: blogData?.published_at,
-            modifiedTime: blogData?.edited_at,
+            modifiedTime: blogData?.published_at,
             authors: ['Ryan Aulia'],
           },
           url: canonicalUrl,
@@ -64,7 +64,10 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
                   </div>
                 </Link>
               </div>
-              <CommentList id={blogData?.id} />
+              <CommentList
+                id={blogData?.id}
+                totalComments={blogData?.comments_count}
+              />
             </Tab>
             <Tab label='Github Comment'>
               <GiscusComment isEnableReaction={true} />
@@ -76,7 +79,7 @@ const ProjectsDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   );
 };
 
-export default ProjectsDetailPage;
+export default BlogDetailPage;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const blogId = context.query?.id as string;

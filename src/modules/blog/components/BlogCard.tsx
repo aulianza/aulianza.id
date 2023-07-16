@@ -1,7 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
+import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { useWindowSize } from 'usehooks-ts';
 
@@ -20,9 +20,9 @@ const BlogCard = ({
   id,
   title,
   cover_image,
-  created_at,
+  published_at,
   description,
-  reading_time_minutes,
+  page_views_count,
   slug,
   comments_count,
   view = 'list',
@@ -85,12 +85,8 @@ const BlogCard = ({
           <div className='flex gap-5 text-neutral-600 dark:text-neutral-400'>
             <div className='flex gap-1 items-center '>
               <span className='text-xs'>
-                {moment(created_at).format('MMM DD, YYYY')}
+                {moment(published_at).format('MMM DD, YYYY')}
               </span>
-            </div>
-            <div className='flex gap-1 items-center'>
-              <ClockIcon size={14} />
-              <span className='text-xs'>{reading_time_minutes} min read</span>
             </div>
             <div className='flex gap-1 items-center'>
               <CommentIcon size={16} />
@@ -102,6 +98,10 @@ const BlogCard = ({
                   </span>
                 </div>
               </span>
+            </div>
+            <div className='flex gap-1 items-center'>
+              <ViewIcon size={14} />
+              <span className='text-xs ml-0.5'>{page_views_count} Views</span>
             </div>
           </div>
           {isExcerpt && (

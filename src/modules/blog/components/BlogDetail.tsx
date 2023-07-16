@@ -1,7 +1,7 @@
 import Breakline from '@/common/components/elements/Breakline';
 import Image from '@/common/components/elements/Image';
 import MDXComponent from '@/common/components/elements/MDXComponent';
-import { BlogItemProps } from '@/common/types/blog';
+import { BlogDetailProps } from '@/common/types/blog';
 
 import BlogHeader from './BlogHeader';
 
@@ -13,7 +13,7 @@ const BlogDetail = ({
   published_at,
   tags,
   reading_time_minutes,
-}: BlogItemProps) => {
+}: BlogDetailProps) => {
   return (
     <>
       <BlogHeader

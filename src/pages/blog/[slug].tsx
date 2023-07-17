@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
@@ -31,9 +32,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
   const incrementViews = async () => {
     try {
-      await fetch(`/api/views?id=${blogData?.id}&slug=${slug}`, {
-        method: 'POST',
-      });
+      await axios.post(`/api/views?id=${blogData?.id}&slug=${slug}`);
     } catch (error) {
       // console.error('Failed to update views count:', error);
     }

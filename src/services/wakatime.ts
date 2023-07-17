@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import axios from 'axios';
 import querystring from 'querystring';
 
-const client_id = process.env.WAKATIME_CLIENT_ID;
-const client_secret = process.env.WAKATIME_CLIENT_SECRET;
-const refresh_token = process.env.WAKATIME_CLIENT_REFRESH_TOKEN;
+const CLIENT_ID = process.env.WAKATIME_CLIENT_ID;
+const CLIENT_SECRET = process.env.WAKATIME_CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.WAKATIME_CLIENT_REFRESH_TOKEN;
 
 const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY =
@@ -11,20 +12,22 @@ const ALL_TIME_SINCE_TODAY =
 const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
 
 export const getAccessToken = async (): Promise<string> => {
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: querystring.stringify({
+  const response = await axios.post(
+    TOKEN_ENDPOINT,
+    querystring.stringify({
       grant_type: 'refresh_token',
-      client_id,
-      client_secret,
-      refresh_token,
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      refresh_token: REFRESH_TOKEN,
     }),
-  });
+    {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    }
+  );
 
-  return response.text();
+  return response.data;
 };
 
 export const getReadStats = async (): Promise<{
@@ -37,18 +40,17 @@ export const getReadStats = async (): Promise<{
     res.lastIndexOf('&refresh_token')
   );
 
-  const request = await fetch(`${STATS_ENDPOINT}/last_7_days`, {
-    method: 'GET',
+  const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
 
-  const status = request.status;
+  const status = response.status;
 
   if (status > 400) return { status, data: [] };
 
-  const getData = await request.json();
+  const getData = response.data;
 
   const start_date = getData?.data?.start;
   const end_date = getData?.data?.end;
@@ -94,18 +96,17 @@ export const getALLTimeSinceToday = async (): Promise<{
     res.lastIndexOf('&refresh_token')
   );
 
-  const request = await fetch(ALL_TIME_SINCE_TODAY, {
-    method: 'GET',
+  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
 
-  const status = request.status;
+  const status = response.status;
 
   if (status > 400) return { status, data: {} };
 
-  const getData = await request.json();
+  const getData = response.data;
 
   const data = {
     text: getData?.data?.text,

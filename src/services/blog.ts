@@ -1,6 +1,7 @@
+import axios from 'axios';
+
 import { BlogItemProps } from '@/common/types/blog';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const BASE_URL = 'https://dev.to/api/';
 const BLOG_URL = `${BASE_URL}articles/`;
 const COMMENT_URL = `${BASE_URL}comments`;
@@ -23,8 +24,7 @@ export const getBlogData = async ({
     per_page: per_page.toString(),
   });
 
-  const response = await fetch(`${BLOG_URL}me?${params.toString()}`, {
-    method: 'GET',
+  const response = await axios.get(`${BLOG_URL}me?${params.toString()}`, {
     headers: {
       'api-key': DEVTO_KEY,
     },
@@ -36,7 +36,7 @@ export const getBlogData = async ({
     return { status, data: {} };
   }
 
-  const getData = await response.json();
+  const getData = response.data;
 
   const data = {
     posts: getData,
@@ -58,8 +58,7 @@ export const getBlogDetail = async ({
 }): Promise<{ status: number; data: any }> => {
   const params = new URLSearchParams({ username: USERNAME });
 
-  const response = await fetch(`${BLOG_URL}/${id}?${params.toString()}`, {
-    method: 'GET',
+  const response = await axios.get(`${BLOG_URL}/${id}?${params.toString()}`, {
     headers: {
       'api-key': DEVTO_KEY,
     },
@@ -71,7 +70,7 @@ export const getBlogDetail = async ({
     return { status, data: {} };
   }
 
-  const data = await response.json();
+  const data = response.data;
 
   return {
     status,
@@ -84,8 +83,7 @@ export const getBlogComment = async ({
 }: {
   post_id: string;
 }): Promise<{ status: number; data: any }> => {
-  const response = await fetch(`${COMMENT_URL}/?a_id=${post_id}`, {
-    method: 'GET',
+  const response = await axios.get(`${COMMENT_URL}/?a_id=${post_id}`, {
     headers: {
       'api-key': DEVTO_KEY,
     },
@@ -97,7 +95,7 @@ export const getBlogComment = async ({
     return { status, data: {} };
   }
 
-  const data = await response.json();
+  const data = response.data;
 
   return {
     status,
@@ -110,8 +108,7 @@ export const getBlogViews = async ({
 }: {
   id: number;
 }): Promise<{ status: number; data: any }> => {
-  const response = await fetch(`${BLOG_URL}me/all`, {
-    method: 'GET',
+  const response = await axios.get(`${BLOG_URL}me/all`, {
     headers: {
       'api-key': DEVTO_KEY,
     },
@@ -123,7 +120,7 @@ export const getBlogViews = async ({
     return { status, data: {} };
   }
 
-  const data = await response.json();
+  const data = response.data;
 
   const findArticle = data?.find((blog: BlogItemProps) => blog.id === id);
   const page_views_count = findArticle?.page_views_count;

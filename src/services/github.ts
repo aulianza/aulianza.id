@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { GITHUB_ACCOUNTS } from '@/common/constant/github';
 
 const GITHUB_USER_ENDPOINT = 'https://api.github.com/graphql';
@@ -30,21 +32,23 @@ export const fetchGithubData = async (
   username: string,
   token: string | undefined
 ) => {
-  const response = await fetch(GITHUB_USER_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      Authorization: `bearer ${token}`,
-    },
-    body: JSON.stringify({
+  const response = await axios.post(
+    GITHUB_USER_ENDPOINT,
+    {
       query: GITHUB_USER_QUERY,
       variables: {
         username: username,
       },
-    }),
-  });
+    },
+    {
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    }
+  );
 
   const status: number = response.status;
-  const responseJson = await response.json();
+  const responseJson = response.data;
 
   if (status > 400) {
     return { status, data: {} };

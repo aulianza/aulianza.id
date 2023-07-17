@@ -1,20 +1,24 @@
+import axios from 'axios';
+
 const OPENAI_URL = 'https://api.openai.com/v1/completions';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 export const postChatPrompt = async (prompt: string) => {
-  const response = await fetch(OPENAI_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
+  const response = await axios.post(
+    OPENAI_URL,
+    {
       model: 'text-babbage-001',
       max_tokens: 1000,
       temperature: 0,
       prompt: prompt + '. answer briefly',
-    }),
-  });
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+      },
+    }
+  );
 
   const status = response?.status;
 
@@ -25,7 +29,7 @@ export const postChatPrompt = async (prompt: string) => {
     };
   }
 
-  const data = await response.json();
+  const data = response.data;
 
   return {
     status,
@@ -35,15 +39,11 @@ export const postChatPrompt = async (prompt: string) => {
 
 export const sendMessage = async (prompt: string) => {
   try {
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ prompt }),
+    const response = await axios.post('/api/chat', {
+      prompt,
     });
 
-    const data = await response.json();
+    const data = response.data;
 
     return data?.reply;
   } catch (error) {

@@ -105,7 +105,7 @@ export const getBlogComment = async ({
   };
 };
 
-export const getArticleViews = async ({
+export const getBlogViews = async ({
   id,
 }: {
   id: number;

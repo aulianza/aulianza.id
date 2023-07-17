@@ -40,7 +40,10 @@ const BlogList = ({
   );
 
   const blogData: BlogItemProps[] = useMemo(() => {
-    return data?.data?.posts || [];
+    if (data?.status && data?.data && Array.isArray(data?.data?.posts)) {
+      return data.data.posts;
+    }
+    return [];
   }, [data]);
 
   const handleNextPage = () => {

@@ -1,4 +1,3 @@
-import moment from 'moment';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
@@ -7,7 +6,7 @@ import { useWindowSize } from 'usehooks-ts';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
-import { formatBlogSlug } from '@/common/helpers';
+import { formatBlogSlug, formatDate } from '@/common/helpers';
 import clsxm from '@/common/libs/clsxm';
 import { BlogItemProps } from '@/common/types/blog';
 
@@ -85,9 +84,7 @@ const BlogCard = ({
           </h3>
           <div className='flex gap-5 text-neutral-600 dark:text-neutral-400'>
             <div className='flex gap-1 items-center '>
-              <span className='text-xs'>
-                {moment(published_at).format('MMM DD, YYYY')}
-              </span>
+              <span className='text-xs'>{formatDate(published_at)}</span>
             </div>
             <div className='flex gap-1 items-center'>
               <ViewIcon size={14} />

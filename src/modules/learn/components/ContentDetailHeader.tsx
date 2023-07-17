@@ -1,5 +1,5 @@
+import { format } from 'date-fns';
 import { motion } from 'framer-motion';
-import moment from 'moment';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
@@ -65,7 +65,7 @@ const ContentDetailHeader = ({
         <div>
           Last update on
           <span className='px-1 font-medium'>
-            {moment(updated_at).format('MMMM DD, YYYY')}
+            {format(new Date(updated_at), 'MMMM dd, yyyy')}
           </span>
         </div>
         <div className='flex gap-4 items-center mt-1'>

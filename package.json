@@ -27,6 +27,8 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
     "framer-motion": "^10.12.18",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.4",

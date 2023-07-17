@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import axios from 'axios';
 import querystring from 'querystring';
 
 import { PAIR_DEVICES } from '@/common/constant/devices';
@@ -24,40 +24,41 @@ const TOP_TRACKS_ENDPOINT = `${BASE_URL}/me/top/tracks`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async (): Promise<AccessTokenResponseProps> => {
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      Authorization: `Basic ${TOKEN}`,
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: querystring.stringify({
+  const response = await axios.post(
+    TOKEN_ENDPOINT,
+    querystring.stringify({
       grant_type: 'refresh_token',
       refresh_token: REFRESH_TOKEN,
     }),
-  });
+    {
+      headers: {
+        Authorization: `Basic ${TOKEN}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    }
+  );
 
-  return response.json();
+  return response.data;
 };
 
 export const getAvailableDevices = async (): Promise<DeviceResponseProps> => {
   const { access_token } = await getAccessToken();
 
-  const request = await fetch(AVAILABLE_DEVICES_ENDPOINT, {
-    method: 'GET',
+  const response = await axios.get(AVAILABLE_DEVICES_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
 
-  const status = request.status;
+  const status = response.status;
 
   if (status === 204 || status > 400) {
     return { status, data: [] };
   }
 
-  const response: DeviceDataProps = await request.json();
+  const responseData: DeviceDataProps = response.data;
 
-  const devices = response?.devices?.map((device) => ({
+  const devices = responseData?.devices?.map((device) => ({
     name: device.name,
     is_active: device.is_active,
     type: device.type,
@@ -74,34 +75,33 @@ export const getAvailableDevices = async (): Promise<DeviceResponseProps> => {
 export const getNowPlaying = async (): Promise<NowPlayingResponseProps> => {
   const { access_token } = await getAccessToken();
 
-  const request = await fetch(NOW_PLAYING_ENDPOINT, {
-    method: 'GET',
+  const response = await axios.get(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
 
-  const status = request.status;
+  const status = response.status;
 
   if (status === 204 || status > 400) {
     return { status, isPlaying: false, data: null };
   }
 
-  const response: SongProps = await request.json();
+  const responseData: SongProps = response.data;
 
-  if (!response.item) {
+  if (!responseData.item) {
     return { status, isPlaying: false, data: null };
   }
 
-  const isPlaying: boolean = response?.is_playing;
-  const album: string = response?.item?.album.name ?? '';
+  const isPlaying: boolean = responseData?.is_playing;
+  const album: string = responseData?.item?.album.name ?? '';
   const albumImageUrl: string | undefined =
-    response?.item?.album?.images?.find((image) => image?.width === 640)?.url ??
-    undefined;
+    responseData?.item?.album?.images?.find((image) => image?.width === 640)
+      ?.url ?? undefined;
   const artist: string =
-    response?.item?.artists?.map((artist) => artist?.name).join(', ') ?? '';
-  const songUrl: string = response?.item?.external_urls?.spotify ?? '';
-  const title: string = response?.item?.name ?? '';
+    responseData?.item?.artists?.map((artist) => artist?.name).join(', ') ?? '';
+  const songUrl: string = responseData?.item?.external_urls?.spotify ?? '';
+  const title: string = responseData?.item?.name ?? '';
 
   return {
     status,
@@ -119,22 +119,21 @@ export const getNowPlaying = async (): Promise<NowPlayingResponseProps> => {
 export const getTopTracks = async (): Promise<TopTracksResponseProps> => {
   const { access_token } = await getAccessToken();
 
-  const request = await fetch(`${TOP_TRACKS_ENDPOINT}?limit=10`, {
-    method: 'GET',
+  const response = await axios.get(`${TOP_TRACKS_ENDPOINT}?limit=10`, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
   });
 
-  const status = request.status;
+  const status = response.status;
 
   if (status === 204 || status > 400) {
     return { status, data: [] };
   }
 
-  const getData = await request.json();
+  const responseData = response.data;
 
-  const tracks: TrackProps[] = getData.items.map((track: any) => ({
+  const tracks: TrackProps[] = responseData.items.map((track: any) => ({
     album: {
       name: track.album.name,
       image: track.album.images.find(

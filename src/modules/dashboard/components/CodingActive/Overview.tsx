@@ -1,5 +1,4 @@
-import { format, parseISO } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import { formatDate } from '@/common/helpers';
 
 import OverviewItem from './OverviewItem';
 
@@ -25,23 +24,10 @@ const Overview = ({ data }: OverviewProps) => {
   const bestDayText = data?.best_day?.text || 'N/A';
   const bestDayDate = data?.best_day?.date;
   const allTimeSinceToday = data?.all_time_since_today?.text || 'N/A';
-  const startDate = data?.start_date
-    ? format(
-        utcToZonedTime(parseISO(data.start_date), 'Asia/Jakarta'),
-        'MMMM dd, yyyy'
-      )
-    : '';
-  const endDate = data?.end_date
-    ? format(
-        utcToZonedTime(parseISO(data.end_date), 'Asia/Jakarta'),
-        'MMMM dd, yyyy'
-      )
-    : '';
+  const startDate = data?.start_date ? formatDate(data.start_date) : '';
+  const endDate = data?.end_date ? formatDate(data.end_date) : '';
   const bestDay = bestDayDate
-    ? `${format(
-        utcToZonedTime(parseISO(bestDayDate), 'Asia/Jakarta'),
-        'MMMM dd, yyyy'
-      )} (${bestDayText})`
+    ? `${formatDate(bestDayDate)} (${bestDayText})`
     : 'N/A';
 
   return (

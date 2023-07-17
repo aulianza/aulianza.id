@@ -1,10 +1,11 @@
-import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { scroller } from 'react-scroll';
+
+import { formatDate } from '@/common/helpers';
 
 interface BlogHeaderProps {
   title: string;
@@ -78,9 +79,7 @@ const BlogHeader = ({
         <div>
           Published on
           <span className='px-1 font-medium'>
-            {published_at
-              ? format(new Date(published_at), 'MMMM dd, yyyy')
-              : ''}
+            {published_at ? formatDate(published_at) : ''}
           </span>
         </div>
 

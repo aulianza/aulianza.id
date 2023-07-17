@@ -1,10 +1,12 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import { Tab, Tabs } from '@/common/components/elements/Tabs';
+import { formatBlogSlug } from '@/common/helpers';
 import { BlogDetailProps } from '@/common/types/blog';
 import BlogDetail from '@/modules/blog/components/BlogDetail';
 import CommentList from '@/modules/blog/components/CommentList';
@@ -20,7 +22,29 @@ interface BlogDetailPageProps {
 const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   const blogData = blog?.data || {};
 
-  const canonicalUrl = `https://aulianza.id/blog/${blogData?.slug}?id=${blogData?.id}`;
+  const newSlug = formatBlogSlug(blogData.slug);
+  const slug = `blog/${newSlug}?id=${blogData?.id}`;
+
+  const canonicalUrl = `https://aulianza.id/${slug}`;
+
+  blogData.blog_slug = slug;
+
+  const incrementViews = async () => {
+    try {
+      await fetch(`/api/views?id=${blogData?.id}&slug=${slug}`, {
+        method: 'POST',
+      });
+    } catch (error) {
+      // console.error('Failed to update views count:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      incrementViews();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

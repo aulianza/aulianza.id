@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider     = "prisma-client-js"
 }
 
 datasource db {
@@ -21,4 +21,12 @@ model Projects {
   updated_at  DateTime @default(now())
   content     String?  @db.Text
   is_featured Boolean  @default(false)
+}
+
+model ContentMeta {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  type        String
+  views       Int      @default(0)
+  updated_at  DateTime @default(now())
 }

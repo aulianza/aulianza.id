@@ -7,6 +7,7 @@ import { useWindowSize } from 'usehooks-ts';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
+import { formatBlogSlug } from '@/common/helpers';
 import clsxm from '@/common/libs/clsxm';
 import { BlogItemProps } from '@/common/types/blog';
 
@@ -22,7 +23,7 @@ const BlogCard = ({
   cover_image,
   published_at,
   description,
-  page_views_count,
+  total_views_count,
   slug,
   comments_count,
   view = 'list',
@@ -34,7 +35,7 @@ const BlogCard = ({
   const { width } = useWindowSize();
   const isMobile = width < 468;
 
-  const newSlug = slug?.slice(0, -5);
+  const newSlug = formatBlogSlug(slug);
 
   const trimmedTitle =
     viewOption === 'grid'
@@ -90,7 +91,7 @@ const BlogCard = ({
             </div>
             <div className='flex gap-1 items-center'>
               <ViewIcon size={14} />
-              <span className='text-xs ml-0.5'>{page_views_count} Views</span>
+              <span className='text-xs ml-0.5'>{total_views_count} Views</span>
             </div>
             <div className='flex gap-1 items-center'>
               <CommentIcon size={16} />

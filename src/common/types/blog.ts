@@ -30,6 +30,8 @@ export type BlogItemProps = {
   canonical_url: string;
   reading_time_minutes: number;
   user: UserProps;
+  db_views_count: number;
+  total_views_count: number;
 };
 
 export type BlogDetailProps = {
@@ -60,6 +62,7 @@ export type BlogDetailProps = {
   body_html: string;
   body_markdown: string;
   user: UserProps;
+  blog_slug: string | null;
 };
 
 export type BlogProps = {

@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import useSWR from 'swr';
 
 import Breakline from '@/common/components/elements/Breakline';
@@ -18,11 +17,14 @@ const BlogDetail = ({
   published_at,
   tags,
   reading_time_minutes,
+  blog_slug,
 }: BlogDetailProps) => {
-  const { data } = useSWR(`/api/blog-view?id=${id}`, fetcher);
-  const blogViewCount: number = useMemo(() => {
-    return data?.data?.page_views_count || null;
-  }, [data]);
+  const { data: viewsData } = useSWR(
+    `/api/views?slug=${blog_slug}&id=${id}`,
+    fetcher
+  );
+
+  const viewsCount = viewsData?.views || 0;
 
   return (
     <>
@@ -31,7 +33,7 @@ const BlogDetail = ({
         comments_count={comments_count}
         reading_time_minutes={reading_time_minutes}
         published_at={published_at}
-        page_views_count={blogViewCount}
+        page_views_count={viewsCount}
       />
       <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
         <Image

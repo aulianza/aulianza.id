@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format } from 'date-fns-tz';
 
 import OverviewItem from './OverviewItem';
 
@@ -25,13 +25,19 @@ const Overview = ({ data }: OverviewProps) => {
   const bestDayDate = data?.best_day?.date;
   const allTimeSinceToday = data?.all_time_since_today?.text || 'N/A';
   const startDate = data?.start_date
-    ? format(new Date(data.start_date), 'MMMM dd, yyyy')
+    ? format(new Date(data.start_date), 'MMMM dd, yyyy', {
+        timeZone: 'Asia/Jakarta',
+      })
     : '';
   const endDate = data?.end_date
-    ? format(new Date(data.end_date), 'MMMM dd, yyyy')
+    ? format(new Date(data.end_date), 'MMMM dd, yyyy', {
+        timeZone: 'Asia/Jakarta',
+      })
     : '';
   const bestDay = bestDayDate
-    ? `${format(new Date(bestDayDate), 'MMMM dd, yyyy')} (${bestDayText})`
+    ? `${format(new Date(bestDayDate), 'MMMM dd, yyyy', {
+        timeZone: 'Asia/Jakarta',
+      })} (${bestDayText})`
     : 'N/A';
 
   return (

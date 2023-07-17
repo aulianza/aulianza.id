@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { format } from 'date-fns';
 import { useEffect, useRef } from 'react';
 
 import Image from '@/common/components/elements/Image';
@@ -36,7 +36,7 @@ const CommentItem = ({ body_html, created_at, user }: CommentItemProps) => {
           <div className='font-medium dark:text-neutral-300'>{user?.name}</div>
           <div className='hidden sm:block dark:text-neutral-700'>•</div>
           <div className='text-xs dark:text-neutral-500'>
-            {moment(created_at).format('MMM DD, YYYY - HH:mm')}
+            {format(new Date(created_at), 'MMM dd, yyyy - HH:mm')}
           </div>
         </div>
         <div

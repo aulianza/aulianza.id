@@ -1,5 +1,4 @@
-import moment from 'moment';
-import Link from 'next/link';
+import { differenceInMonths, differenceInYears, format } from 'date-fns';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
 import Card from '@/common/components/elements/Card';
@@ -15,11 +14,11 @@ const CareerCard = ({
   end_date,
   link,
 }: CareerProps) => {
-  const startDate = moment(start_date);
-  const endDate = end_date ? moment(end_date) : moment();
+  const startDate = new Date(start_date);
+  const endDate = end_date ? new Date(end_date) : new Date();
 
-  const durationYears = endDate.diff(startDate, 'years');
-  const durationMonths = endDate.diff(startDate, 'months') % 12;
+  const durationYears = differenceInYears(endDate, startDate);
+  const durationMonths = differenceInMonths(endDate, startDate) % 12;
 
   let durationText = '';
   if (durationYears > 0) {
@@ -41,7 +40,7 @@ const CareerCard = ({
         <h6>{position}</h6>
         <div className='text-sm text-neutral-600 dark:text-neutral-400 space-y-2'>
           <div className='flex items-center gap-1 md:gap-2'>
-            <Link
+            <a
               href={link || '#'}
               target='_blank'
               data-umami-event={`Click Career Company Name: ${company}`}
@@ -49,14 +48,14 @@ const CareerCard = ({
               <span className='underline cursor-pointer hover:text-dark hover:dark:text-white'>
                 {company}
               </span>
-            </Link>
+            </a>
             <span className='text-neutral-300 dark:text-neutral-700'>•</span>
             <span>{location}</span>
           </div>
           <div className='flex flex-col md:text-[13px]'>
             <div className='flex gap-1'>
-              <span>{startDate.format('MMM YYYY')}</span> -{' '}
-              <span>{end_date ? endDate.format('MMM YYYY') : 'Present'}</span>
+              <span>{format(startDate, 'MMM yyyy')}</span> -{' '}
+              <span>{end_date ? format(endDate, 'MMM yyyy') : 'Present'}</span>
             </div>
             <span className='text-neutral-500 dark:text-neutral-500'>
               ~ {durationText}

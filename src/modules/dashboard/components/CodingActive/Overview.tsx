@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { format } from 'date-fns';
 
 import OverviewItem from './OverviewItem';
 
@@ -24,10 +24,14 @@ const Overview = ({ data }: OverviewProps) => {
   const bestDayText = data?.best_day?.text || 'N/A';
   const bestDayDate = data?.best_day?.date;
   const allTimeSinceToday = data?.all_time_since_today?.text || 'N/A';
-  const startDate = moment(data?.start_date).format('MMMM DD, YYYY');
-  const endDate = moment(data?.end_date).format('MMMM DD, YYYY');
+  const startDate = data?.start_date
+    ? format(new Date(data.start_date), 'MMMM dd, yyyy')
+    : '';
+  const endDate = data?.end_date
+    ? format(new Date(data.end_date), 'MMMM dd, yyyy')
+    : '';
   const bestDay = bestDayDate
-    ? `${moment(bestDayDate).format('MMMM DD, YYYY')} (${bestDayText})`
+    ? `${format(new Date(bestDayDate), 'MMMM dd, yyyy')} (${bestDayText})`
     : 'N/A';
 
   return (

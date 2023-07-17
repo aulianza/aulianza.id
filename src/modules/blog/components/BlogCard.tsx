@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { format } from 'date-fns';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
@@ -86,7 +86,7 @@ const BlogCard = ({
           <div className='flex gap-5 text-neutral-600 dark:text-neutral-400'>
             <div className='flex gap-1 items-center '>
               <span className='text-xs'>
-                {moment(published_at).format('MMM DD, YYYY')}
+                {format(new Date(published_at), 'MMM dd, yyyy')}
               </span>
             </div>
             <div className='flex gap-1 items-center'>

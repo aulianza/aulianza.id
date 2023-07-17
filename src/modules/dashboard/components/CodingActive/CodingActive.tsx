@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import useSWR from 'swr';
@@ -18,9 +18,9 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR('/api/read-stats', fetcher);
 
   const formatLastUpdate = (): string => {
-    const lastUpdateDate = moment(lastUpdate || data?.last_update);
-    if (lastUpdateDate.isValid()) {
-      return lastUpdateDate.startOf('hour').fromNow();
+    const lastUpdateDate = lastUpdate || data?.last_update;
+    if (lastUpdateDate) {
+      return formatDistanceToNow(new Date(lastUpdateDate), { addSuffix: true });
     }
     return '';
   };

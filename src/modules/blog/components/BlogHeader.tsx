@@ -1,5 +1,5 @@
+import { format } from 'date-fns';
 import { motion } from 'framer-motion';
-import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
@@ -78,7 +78,9 @@ const BlogHeader = ({
         <div>
           Published on
           <span className='px-1 font-medium'>
-            {moment(published_at).format('MMMM DD, YYYY')}
+            {published_at
+              ? format(new Date(published_at), 'MMMM dd, yyyy')
+              : ''}
           </span>
         </div>
 

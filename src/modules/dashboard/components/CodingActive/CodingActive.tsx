@@ -1,5 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import useSWR from 'swr';
 
@@ -16,17 +18,27 @@ interface CodingActiveProps {
 
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR('/api/read-stats', fetcher);
+  const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
+    null
+  );
 
-  const formatLastUpdate = (): string => {
-    const lastUpdateDate = lastUpdate || data?.last_update;
-    if (lastUpdateDate) {
-      return formatDistanceToNow(new Date(lastUpdateDate), { addSuffix: true });
-    }
-    return '';
-  };
+  useEffect(() => {
+    const formatLastUpdate = (): void => {
+      const lastUpdateDate = lastUpdate || data?.last_update;
+      if (lastUpdateDate) {
+        const zonedDate = utcToZonedTime(
+          new Date(lastUpdateDate),
+          'Asia/Jakarta'
+        );
+        const distance = formatDistanceToNow(zonedDate, { addSuffix: true });
+        setFormattedLastUpdate(distance);
+      }
+    };
+
+    formatLastUpdate();
+  }, [lastUpdate, data]);
 
   const renderLastUpdate = () => {
-    const formattedLastUpdate = formatLastUpdate();
     if (formattedLastUpdate) {
       return <span>{formattedLastUpdate}</span>;
     }

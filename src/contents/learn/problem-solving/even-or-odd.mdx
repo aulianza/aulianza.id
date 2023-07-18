@@ -1,0 +1,67 @@
+---
+id: 4
+title: 'Even or Odd'
+category: 'Problem Solving'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+cover_url: ‘https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png’
+source_url: 'https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/javascript'
+created_at: '2023-07-18'
+updated_at: '2023-07-18'
+---
+
+> Problem
+
+Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+&nbsp;
+
+> Solution
+
+JavaScript Function to Check Even or Odd:
+
+```
+function even_or_odd(number) {
+  // Step 1: Check if the number is even or odd
+  if (number % 2 === 0) {
+    // Step 2: If the number is even, return "Even"
+    return "Even";
+  } else {
+    // Step 3: If the number is odd, return "Odd"
+    return "Odd";
+  }
+}
+
+```
+
+Explanation:
+
+We define a function called even_or_odd that takes a single parameter called number, which represents the integer we want to check.
+
+Inside the function, we use the modulus operator % to check if the number is even or odd. The modulus operator returns the remainder of a division operation. If a number is even, it will be perfectly divisible by 2, so its remainder when divided by 2 will be 0. If it's odd, the remainder will be 1.
+
+We check if number % 2 === 0. If the condition is true (the number is even), we execute the code inside the if block, which returns the string "Even".
+
+If the condition in Step 3 is false (the number is odd), we execute the code inside the else block, which returns the string "Odd".
+
+Examples:
+
+Let's call the function with some examples to see how it works:
+
+```
+console.log(even_or_odd(5));  // Output: "Odd"
+console.log(even_or_odd(10)); // Output: "Even"
+console.log(even_or_odd(0));  // Output: "Even"
+console.log(even_or_odd(-3)); // Output: "Odd"
+```
+
+In the first example, we pass the number 5 to the function, and it returns "Odd" because 5 is an odd number.
+
+In the second example, we pass the number 10, which is even, so the function returns "Even".
+
+In the third example, we pass 0, which is also an even number, so the function returns "Even".
+
+In the last example, we pass -3, which is an odd number, and the function returns "Odd". The function works correctly for negative integers as well.
+
+Hope this helps!

@@ -82,9 +82,11 @@ const BlogCard = ({
           <h3 className='md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300'>
             {trimmedTitle}
           </h3>
-          <div className='flex gap-5 text-neutral-600 dark:text-neutral-400'>
+          <div className='flex gap-4 text-neutral-600 dark:text-neutral-400'>
             <div className='flex gap-1 items-center '>
-              <span className='text-xs'>{formatDate(published_at)}</span>
+              <span className='text-xs'>
+                {formatDate(published_at, 'MMM dd, yyyy')}
+              </span>
             </div>
             <div className='flex gap-1 items-center'>
               <ViewIcon size={14} />

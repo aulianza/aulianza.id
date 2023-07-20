@@ -6,7 +6,7 @@ interface ContentDetailProps {
 
 const ContentDetail = ({ content }: ContentDetailProps) => {
   return (
-    <div className='space-y-6 leading-[1.8] dark:text-neutral-300 mt-5'>
+    <div className='space-y-5 leading-[1.8] dark:text-neutral-300 mt-5'>
       <MDXComponent>{content}</MDXComponent>
     </div>
   );

@@ -1,3 +1,4 @@
+import { compareDesc, parseISO } from 'date-fns';
 import { motion } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -31,9 +32,11 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
     return null;
   }
 
-  const sortedSubContents = subContents.sort(
-    (a, b) => a.frontMatter.id - b.frontMatter.id
-  );
+  const sortedSubContents = subContents.sort((a, b) => {
+    const dateA = parseISO(a.frontMatter.created_at);
+    const dateB = parseISO(b.frontMatter.created_at);
+    return compareDesc(dateA, dateB);
+  });
 
   const { title, description } = content;
 

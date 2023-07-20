@@ -1,0 +1,122 @@
+---
+id: 5
+title: 'Sum without highest and lowest number'
+category: 'Problem Solving'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+cover_url: ‘https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png’
+source_url: 'https://www.codewars.com/kata/576b93db1129fcf2200001e6/javascript'
+created_at: '2023-07-19'
+updated_at: '2023-07-19'
+---
+
+> Problem
+
+Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+Mind the input validation.
+
+Example
+
+```
+{ 6, 2, 1, 8, 10 } => 16
+{ 1, 1, 11, 2, 3 } => 6
+```
+
+Input validation
+
+If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
+&nbsp;
+
+> Solution
+
+To solve this problem in JavaScript, we'll follow these steps:
+
+1.  Input validation: The function starts by checking for input validation. If the input is not an array or the array has less than two elements (meaning it has only one element or it's empty), the function returns 0. This step ensures that the function is dealing with valid input.
+
+2.  Sorting the array: The array.sort((a, b) => a - b) part sorts the input array in ascending order. This step is necessary to ensure that the lowest and highest elements are at the beginning and end of the array, respectively.
+
+3.  Slicing the array: The slice(1, -1) part removes the first and last elements from the sorted array. Since the array is now sorted, these elements correspond to the lowest and highest values.
+
+4.  Summation: The reduce((a, b) => a + b, 0) part calculates the sum of the remaining elements in the array. It uses the reduce method to iterate through the array and accumulate the sum.
+
+5.  Returning the result: The function returns the calculated sum as the final result.
+    Let's implement the solution:
+
+```
+function sumArray(array) {
+  if (!array || array.length < 2) {
+    return 0
+  }
+
+  const result = array.sort((a, b) => a - b).slice(1, -1).reduce((a, b) => a + b, 0)
+  return result
+
+}
+
+// Test cases
+sumArray([6, 2, 1, 8, 10]);
+```
+
+### Let's break down the code step by step:
+
+1. Input validation:
+
+```
+if (!array || array.length < 2) {
+  return 0;
+}
+```
+
+This code checks the input array to see if it exists and has at least two elements. If the input array is null, undefined, or has less than two elements, the function immediately returns 0. This step is essential to handle invalid inputs and prevent errors when trying to access elements in an empty array.
+
+2.  Sorting the array:
+
+```
+const result = array.sort((a, b) => a - b)
+```
+
+This line sorts the input array in ascending order using the `sort()` method. The provided comparison `function (a, b) => a - b` ensures that the array is sorted numerically. Sorting is necessary to identify the lowest and highest elements at the edges of the array.
+
+Note: It's important to mention that this step modifies the original array. If you want to avoid modifying the original array, you can create a copy of the array before sorting.
+
+3.  Slicing the array:
+
+```
+.slice(1, -1)
+```
+
+This part of the code uses the `slice()` method to extract a portion of the sorted array. The `slice()` method returns a new array that includes elements starting from the index 1 (the second element) up to, but not including, the index -1 (the last element). Essentially, it removes the first and last elements from the sorted array, which correspond to the lowest and highest values, respectively.
+
+4.  Summation:
+
+```
+.reduce((a, b) => a + b, 0)
+```
+
+The `.reduce()` method is used to calculate the sum of the remaining elements in the array. It iterates through the sliced array, applying the provided `function (a, b) => a + b` to each element. The function accumulates the sum by adding each element b to the accumulated sum a. The initial value of the accumulator is 0, which means the summation starts from 0.
+
+Returning the result:
+
+```
+return result;
+```
+
+Finally, the function returns the calculated sum (stored in the variable result) as the final output.
+
+Example:
+Let's illustrate the process with an example:
+
+```
+sumArray([6, 2, 1, 8, 10]);
+```
+
+- Input validation: The input array [6, 2, 1, 8, 10] has five elements, so it meets the requirements.
+- Sorting the array: The sorted array is [1, 2, 6, 8, 10].
+- Slicing the array: The sliced array is [2, 6, 8], excluding the lowest (1) and highest (10) elements.
+- Summation: The sum of the remaining elements [2, 6, 8] is 2 + 6 + 8 = 16.
+- Returning the result: The function returns 16.

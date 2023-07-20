@@ -1,0 +1,42 @@
+---
+id: 6
+title: 'Grasshopper - Personalized Message'
+category: 'Problem Solving'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: 'CodeWars'
+cover_url: ‘https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png’
+source_url: 'https://www.codewars.com/kata/5772da22b89313a4d50012f7/javascript'
+created_at: '2023-07-20'
+updated_at: '2023-07-20'
+---
+
+> Problem
+
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+| Case              | Return        |
+| ----------------- | ------------- |
+| name equals owner | 'Hello boss'  |
+| otherwise         | 'Hello guest' |
+
+&nbsp;
+
+> Solution
+
+Create a function that generates a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+If name equals owner, return 'Hello boss'.
+Otherwise, return 'Hello guest'.
+
+```javascript
+function greet(name, owner) {
+  return name === owner ? 'Hello boss' : 'Hello guest';
+}
+```
+
+In this solution, the greet function uses a ternary conditional operator to check whether name === owner. If they are equal, the function returns 'Hello boss'; otherwise, it returns 'Hello guest'.

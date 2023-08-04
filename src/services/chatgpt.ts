@@ -7,7 +7,7 @@ export const postChatPrompt = async (prompt: string) => {
   const response = await axios.post(
     OPENAI_URL,
     {
-      model: 'text-babbage-001',
+      model: 'text-davinci-003',
       max_tokens: 1000,
       temperature: 0,
       prompt: prompt + '. answer briefly',

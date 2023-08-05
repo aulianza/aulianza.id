@@ -52,7 +52,7 @@
     "remark-gfm": "^3.0.1",
     "slick-carousel": "^1.8.1",
     "swr": "^2.1.5",
-    "tailwind-merge": "^1.13.2",
+    "tailwind-merge": "^1.14.0",
     "tailwind-scrollbar-hide": "^1.1.7",
     "typewriter-effect": "^2.20.1",
     "usehooks-ts": "^2.9.1",

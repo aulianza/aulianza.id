@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
-    "@headlessui/react": "^1.7.16",
+    "@headlessui/react": "^1.7.17",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@prisma/client": "^4.16.2",

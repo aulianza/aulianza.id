@@ -9,7 +9,7 @@ interface CardProps {
 const Card = ({ children, className = '', ...others }: CardProps) => {
   return (
     <div
-      className={`rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md ${className} `}
+      className={`bg-white rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md ${className} `}
       {...others}
     >
       {children}

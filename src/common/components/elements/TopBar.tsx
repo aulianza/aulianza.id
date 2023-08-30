@@ -13,7 +13,7 @@ const TopBar = () => {
       <a
         href='https://aulianza.com'
         target='_blank'
-        className='ml-0.5 underline '
+        className='ml-0.5 underline'
       >
         aulianza.com
       </a>

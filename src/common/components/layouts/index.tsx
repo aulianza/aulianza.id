@@ -8,6 +8,7 @@ import useHasMounted from '@/common/hooks/useHasMounted';
 import Sidebar from './partials/Sidebar';
 import NowPlayingBar from '../elements/NowPlayingBar';
 import NowPlayingCard from '../elements/NowPlayingCard';
+import TopBar from '../elements/TopBar';
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,6 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
+      <TopBar />
       <div
         className={clsx(
           'max-w-6xl mx-auto lg:px-8 lg:py-4 xl:py-8',

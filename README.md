@@ -4,6 +4,9 @@
 </div>
 <br />
 
+![3-devices-black](https://github.com/aulianza/aulianza.id/assets/15605885/068cae0e-7867-4767-b558-80ee049c9f1b)
+
+
 ## Introduction
 
 This website was built from scratch using Next.js and was first initialized in June 2023. It will undergo regular updates and serve as both a valuable learning resource and a platform for me to share my knowledge.

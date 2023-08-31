@@ -6,9 +6,9 @@ import Button from '@/common/components/elements/Button';
 
 const CONTACTS = [
   {
-    title: 'hello@aulianza.id',
+    title: 'aulianza.dev@gmail.com',
     icon: <EmailIcon size={18} />,
-    link: 'mailto:hello@aulianza.id',
+    link: 'mailto:aulianza.dev@gmail.com',
     eventName: 'Contact: Click Email Button',
   },
   {

@@ -29,7 +29,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
-    "framer-motion": "^10.16.1",
+    "framer-motion": "^10.16.2",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.4",
     "next": "13.4.2",

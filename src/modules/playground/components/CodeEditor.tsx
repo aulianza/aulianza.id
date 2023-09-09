@@ -4,12 +4,18 @@ interface CodeEditorProps {
   code: string;
   height?: string;
   onChange: EditorProps['onChange'];
+  isFullScreen?: boolean;
 }
 
-const CodeEditor = ({ code, onChange, height = '300px' }: CodeEditorProps) => {
+const CodeEditor = ({
+  code,
+  onChange,
+  height = '300px',
+  isFullScreen = false,
+}: CodeEditorProps) => {
   return (
     <MonacoEditor
-      height={height}
+      height={isFullScreen ? '70vh' : height}
       language='javascript'
       theme='vs-dark'
       value={code}

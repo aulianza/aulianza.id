@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { BiCommand as CommandIcon } from 'react-icons/bi';
+import { SiJavascript } from 'react-icons/si';
 import { useWindowSize } from 'usehooks-ts';
 
 import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
@@ -8,6 +9,7 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 import Breakline from '../elements/Breakline';
+import Image from '../elements/Image';
 import SocialMedia from '../elements/SocialMedia';
 
 const Navigation = () => {
@@ -25,6 +27,22 @@ const Navigation = () => {
   return (
     <>
       <Menu list={filterdMenu} />
+
+      <div className='pt-1'>
+        <MenuItem
+          title='Playground'
+          href='/playground'
+          icon={<SiJavascript size={18} />}
+          isExternal={false}
+        >
+          <Image
+            src='/images/dot_new_animated.svg'
+            width={35}
+            height={35}
+            alt='new'
+          />
+        </MenuItem>
+      </div>
 
       <div className='pt-1'>
         <MenuItem

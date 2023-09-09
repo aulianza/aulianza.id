@@ -36,13 +36,15 @@ const BlogDetail = ({
         page_views_count={viewsCount}
       />
       <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
-        <Image
-          src={cover_image}
-          width={800}
-          height={500}
-          alt={title}
-          className='hover:scale-105'
-        />
+        <div className='flex justify-center'>
+          <Image
+            src={cover_image}
+            width={1200}
+            height={500}
+            alt={title}
+            className='hover:scale-105'
+          />
+        </div>
         {body_markdown && <MDXComponent>{body_markdown}</MDXComponent>}
       </div>
       {tags?.length >= 1 && (

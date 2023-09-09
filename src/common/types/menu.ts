@@ -10,4 +10,5 @@ export type MenuItemProps = {
   className?: string;
   children?: ReactNode;
   eventName?: string;
+  hideIcon?: boolean;
 };

@@ -47,7 +47,7 @@ const HeaderTop = () => {
           </div>
 
           <div className='flex items-center gap-5'>
-            <div className='flex gap-1 items-center'>
+            <div className='flex gap-1 items-center' data-aos='flip-up'>
               {filterdMenu?.map((item, index: number) => (
                 <MenuItem key={index} {...item} hideIcon />
               ))}

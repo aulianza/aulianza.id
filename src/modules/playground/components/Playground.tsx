@@ -102,9 +102,11 @@ const Playground = ({ isHeading = false }: PlaygroundProps) => {
             </div>
           </div>
         </div>
+
+        {/* !!! PLEASE DO NOT REMOVE THIS LINE OF WATERMARK/COPYRIGHT, USE IT WISELY !!! */}
         <div className='flex justify-end bg-neutral-900 border border-neutral-700 border-t-0 py-1 px-2'>
           <span className='text-sm font-sora text-neutral-500 '>
-            by aulianza
+            by <a href='https://aulianza.id'>aulianza</a>
           </span>
         </div>
       </div>

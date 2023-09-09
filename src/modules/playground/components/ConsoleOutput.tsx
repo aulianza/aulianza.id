@@ -11,11 +11,11 @@ const ConsoleOutput = ({ output, isError, height }: ConsoleOutputProps) => {
     <div
       className={clsx(
         'bg-neutral-900 text-neutral-50 py-3 px-4 overflow-y-auto',
-        height && `h-[${height}]`,
+        height === '500px' && `h-[500px]`,
         isError && `!text-red-400`
       )}
     >
-      <pre className='text-sm'>{output}</pre>
+      <pre className={clsx('text-sm')}>{output}</pre>
     </div>
   );
 };

@@ -13,6 +13,7 @@ const MenuItem = ({
   onClick,
   className = '',
   children,
+  hideIcon = false,
 }: MenuItemProps) => {
   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -20,7 +21,7 @@ const MenuItem = ({
   const isHashLink = href === '#';
   const router = useRouter();
 
-  const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
+  const activeClasses = `flex items-center gap-2 py-2 px-4 font-medium text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
     router.pathname === href
       ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300'
       : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
@@ -49,7 +50,7 @@ const MenuItem = ({
   const itemComponent = () => {
     return (
       <div {...elementProps}>
-        <div>{icon}</div>
+        {!hideIcon && <div>{icon}</div>}
         <div className='flex-grow ml-0.5'>{title}</div>
         {children && <>{children}</>}
         {isExternalUrl && isHovered && (

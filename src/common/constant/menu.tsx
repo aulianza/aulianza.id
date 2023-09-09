@@ -15,6 +15,7 @@ import {
   BsLinkedin as LinkedinIcon,
   BsTwitter as TwitterIcon,
 } from 'react-icons/bs';
+import { SiJavascript } from 'react-icons/si';
 
 import { MenuItemProps } from '../types/menu';
 
@@ -68,6 +69,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: About',
+  },
+  {
+    title: 'Playground',
+    href: '/playground',
+    icon: <SiJavascript size={iconSize} />,
+    isShow: false,
+    isExternal: false,
+    eventName: 'Pages: Contact',
   },
   {
     title: 'Contact',

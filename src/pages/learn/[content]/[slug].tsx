@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
+import { SiJavascript } from 'react-icons/si';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Breakline from '@/common/components/elements/Breakline';
@@ -9,7 +10,7 @@ import { MdxFileContentProps } from '@/common/types/learn';
 import GiscusComment from '@/modules/blog/components/GiscusComment';
 import ContentDetail from '@/modules/learn/components/ContentDetail';
 import ContentDetailHeader from '@/modules/learn/components/ContentDetailHeader';
-
+import Playground from '@/modules/playground';
 interface ContentDetailPageProps {
   data: MdxFileContentProps;
 }
@@ -48,6 +49,14 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
         {content && (
           <>
             <ContentDetail content={content} />
+            <Breakline className='my-6' />
+            <div className='space-y-6'>
+              <div className='flex items-center gap-3'>
+                <SiJavascript size={22} className='text-yellow-400' />
+                <h5 className='text-lg font-medium'>JavaScript Playground</h5>
+              </div>
+              <Playground />
+            </div>
             <Breakline className='mt-14 mb-14' />
             <section id='comments'>
               <GiscusComment />

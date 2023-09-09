@@ -76,7 +76,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <SiJavascript size={iconSize} />,
     isShow: false,
     isExternal: false,
-    eventName: 'Pages: Contact',
+    eventName: 'Pages: Playground',
   },
   {
     title: 'Contact',

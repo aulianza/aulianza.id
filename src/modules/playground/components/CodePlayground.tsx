@@ -49,7 +49,11 @@ const CodePlayground = ({
           <PlaygroundHeader title='JavaScript'>
             <div className='flex items-center gap-5'>
               <Tooltip title='Clear Editor'>
-                <div className='cursor-pointer' onClick={handleClearCode}>
+                <div
+                  className='cursor-pointer'
+                  onClick={handleClearCode}
+                  data-umami-event='Clear Editor Playground'
+                >
                   <ClearIcon
                     size={18}
                     className={clsx('text-neutral-400', code && 'text-red-400')}
@@ -57,7 +61,11 @@ const CodePlayground = ({
                 </div>
               </Tooltip>
               <Tooltip title='Run Code'>
-                <div className='cursor-pointer' onClick={onRunCode}>
+                <div
+                  className='cursor-pointer'
+                  onClick={onRunCode}
+                  data-umami-event='Run Code Playground'
+                >
                   <PlayIcon
                     size={18}
                     className={clsx(
@@ -84,7 +92,11 @@ const CodePlayground = ({
           <PlaygroundHeader title='Console'>
             <div className='flex items-center'>
               <Tooltip title='Clear Console'>
-                <div className='cursor-pointer' onClick={handleClearOutput}>
+                <div
+                  className='cursor-pointer'
+                  onClick={handleClearOutput}
+                  data-umami-event='Clear Output Playground'
+                >
                   <ClearIcon
                     size={18}
                     className={clsx(
@@ -117,6 +129,7 @@ const CodePlayground = ({
               size={22}
               onClick={onCloseFullScreen}
               className=' text-neutral-500 cursor-pointer'
+              data-umami-event='Open Fullscreen Playground'
             />
           </Tooltip>
         ) : (
@@ -125,6 +138,7 @@ const CodePlayground = ({
               size={22}
               onClick={onFullScreen}
               className=' text-neutral-500 cursor-pointer'
+              data-umami-event='Exit Fullscreen Playground'
             />
           </Tooltip>
         )}

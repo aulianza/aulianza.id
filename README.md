@@ -25,6 +25,10 @@ If you're using Chat Completions engine model of ChatGPT, please concern about t
 
 Due this site is using free cloud hosting services (Vercel) with certain limitations (Serverless Function Execution Timeout), sometimes an error will occur if the response from the open AI API is too long, but you can change it in the vercel.json file to upgrade memory and maxDuration to be bigger according to the capabilities of your vercel plan.
 
+### 💻 JavaScript Playground
+
+A no-fuss pure JavaScript playground with a live feedback loop.
+
 ### 🎧 Spotify
 
 Displays song information being played on spotify in real time using the Spotify API and SWR.

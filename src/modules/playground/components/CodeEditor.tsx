@@ -20,7 +20,6 @@ const CodeEditor = ({
       theme='vs-dark'
       value={code}
       onChange={onChange}
-      defaultValue='// write your code here'
       options={{
         fontSize: 14,
         minimap: {

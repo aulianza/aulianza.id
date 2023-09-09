@@ -50,7 +50,10 @@ const CodePlayground = ({
             <div className='flex items-center gap-5'>
               <Tooltip title='Clear Editor'>
                 <div className='cursor-pointer' onClick={handleClearCode}>
-                  <ClearIcon size={18} className='text-red-400' />
+                  <ClearIcon
+                    size={18}
+                    className={clsx('text-neutral-400', code && 'text-red-400')}
+                  />
                 </div>
               </Tooltip>
               <Tooltip title='Run Code'>
@@ -82,7 +85,13 @@ const CodePlayground = ({
             <div className='flex items-center'>
               <Tooltip title='Clear Console'>
                 <div className='cursor-pointer' onClick={handleClearOutput}>
-                  <ClearIcon size={18} className='text-red-400' />
+                  <ClearIcon
+                    size={18}
+                    className={clsx(
+                      'text-neutral-400',
+                      output && 'text-red-400'
+                    )}
+                  />
                 </div>
               </Tooltip>
             </div>

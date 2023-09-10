@@ -5,7 +5,7 @@ const TopBar = () => {
 
   return (
     <div
-      className='hidden md:flex gap-x-2 items-center justify-center p-2 shadow-lg backdrop-blur-lg bg-no-repeat bg-cover'
+      className='hidden md:flex gap-x-2 items-center justify-center p-2.5 shadow-lg backdrop-blur-lg bg-no-repeat bg-cover text-sm dark:text-neutral-400'
       style={{ backgroundImage: bgImage }}
     >
       <span>🚀</span>
@@ -19,8 +19,8 @@ const TopBar = () => {
       </a>
       <Image
         src='/images/dot_new_animated.svg'
-        width={35}
-        height={35}
+        width={30}
+        height={30}
         alt='new'
       />
     </div>

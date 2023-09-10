@@ -10,7 +10,6 @@ import HeaderSidebar from './header/HeaderSidebar';
 import HeaderTop from './header/HeaderTop';
 import NowPlayingBar from '../elements/NowPlayingBar';
 import NowPlayingCard from '../elements/NowPlayingCard';
-import TopBar from '../elements/TopBar';
 
 interface LayoutProps {
   children: ReactNode;
@@ -35,7 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <TopBar />
+      {/* <TopBar /> */}
       <div
         className={clsx(
           'max-w-6xl mx-auto lg:px-8',

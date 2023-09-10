@@ -6,9 +6,15 @@ const Copyright = () => {
       <span>with</span>
       <span className='text-red-500 animate-pulse'>❤</span>
       <span>by</span>
-      <span className='hover:dark:text-neutral-400 cursor-pointer'>
-        aulianza
-      </span>
+      <a
+        href='http://github.com/aulianza/aulianza.id'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <span className='hover:dark:text-neutral-400 cursor-pointer'>
+          aulianza
+        </span>
+      </a>
     </div>
   );
 };

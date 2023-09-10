@@ -7,6 +7,18 @@ interface CodeEditorProps {
   isFullScreen?: boolean;
 }
 
+const editorConfig = {
+  fontSize: 14,
+  minimap: {
+    enabled: false,
+  },
+  wordWrap: 'on',
+  scrollbar: {
+    verticalScrollbarSize: 9,
+  },
+  scrollBeyondLastLine: false,
+};
+
 const CodeEditor = ({
   code,
   onChange,
@@ -20,12 +32,7 @@ const CodeEditor = ({
       theme='vs-dark'
       value={code}
       onChange={onChange}
-      options={{
-        fontSize: 14,
-        minimap: {
-          enabled: false,
-        },
-      }}
+      options={editorConfig}
     />
   );
 };

@@ -1,22 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 import { LuPlay as PlayIcon, LuTrash2 as ClearIcon } from 'react-icons/lu';
 import {
-  MdOutlineFullscreen as FullScreenIcon,
-  MdOutlineFullscreenExit as ExitFullScreenIcon,
-} from 'react-icons/md';
+  ImperativePanelHandle,
+  Panel,
+  PanelGroup,
+  PanelResizeHandle,
+} from 'react-resizable-panels';
 
-import Tooltip from '@/common/components/elements/Tooltip';
+import useIsMobile from '@/common/hooks/useIsMobile';
 
 import CodeEditor from './CodeEditor';
 import ConsoleOutput from './ConsoleOutput';
-
-interface PlaygroundHeaderProps {
-  title: string;
-  children?: ReactNode;
-}
+import PanelFooter from './PanelFooter';
+import PanelHeader from './PanelHeader';
 
 interface CodePlaygroundProps {
+  id?: string | undefined;
   code: string;
   output: string;
   isFullScreen?: boolean;
@@ -29,6 +30,7 @@ interface CodePlaygroundProps {
 }
 
 const CodePlayground = ({
+  id = undefined,
   code,
   output,
   isFullScreen,
@@ -39,16 +41,46 @@ const CodePlayground = ({
   onSetOutput,
   isError = false,
 }: CodePlaygroundProps) => {
+  const editorRef = useRef<ImperativePanelHandle>(null);
+  const isMobile = useIsMobile();
+
+  const panelDirection = isMobile ? 'vertical' : 'horizontal';
+
   const handleClearCode = () => onSetCode('');
   const handleClearOutput = () => onSetOutput('');
 
+  const onLayout = (sizes: number[]) => {
+    document.cookie = `react-resizable-panels:layout=${JSON.stringify(sizes)}`;
+  };
+
+  const handlePanelResize = () => {
+    const panel = editorRef.current;
+    if (panel !== null) {
+      isMobile && panel.resize(50);
+    }
+  };
+
+  useEffect(() => {
+    isMobile && handlePanelResize();
+  }, [isMobile]);
+
   return (
-    <div>
-      <div className='flex flex-col md:flex-row bg-neutral-900'>
-        <div className='w-full md:w-1/2 border border-neutral-700 rounded-tl-md'>
-          <PlaygroundHeader title='JavaScript'>
-            <div className='flex items-center gap-5'>
-              <Tooltip title='Clear Editor'>
+    <>
+      <div className='flex flex-auto bg-neutral-900 border border-neutral-700 rounded-t-md'>
+        <PanelGroup
+          autoSaveId={id}
+          direction={panelDirection}
+          onLayout={onLayout}
+          style={{ height: isMobile ? '100vh' : '100%' }}
+        >
+          <Panel
+            ref={editorRef}
+            defaultSize={50}
+            minSize={20}
+            collapsible={true}
+          >
+            <PanelHeader title='JavaScript'>
+              <div className='flex items-center gap-5'>
                 <div
                   className='cursor-pointer'
                   onClick={handleClearCode}
@@ -59,8 +91,6 @@ const CodePlayground = ({
                     className={clsx('text-neutral-400', code && 'text-red-400')}
                   />
                 </div>
-              </Tooltip>
-              <Tooltip title='Run Code'>
                 <div
                   className='cursor-pointer'
                   onClick={onRunCode}
@@ -74,10 +104,8 @@ const CodePlayground = ({
                     )}
                   />
                 </div>
-              </Tooltip>
-            </div>
-          </PlaygroundHeader>
-          <div>
+              </div>
+            </PanelHeader>
             <CodeEditor
               code={code}
               height='500px'
@@ -86,12 +114,11 @@ const CodePlayground = ({
                 newCode !== undefined && onSetCode(newCode)
               }
             />
-          </div>
-        </div>
-        <div className='w-full md:w-1/2 border border-neutral-700 border-t-0 md:border-l-0 md:border-t rounded-tr-md'>
-          <PlaygroundHeader title='Console'>
-            <div className='flex items-center'>
-              <Tooltip title='Clear Console'>
+          </Panel>
+          <PanelResizeHandle className='w-2 bg-neutral-700' />
+          <Panel defaultSize={50} minSize={20} collapsible={true}>
+            <PanelHeader title='Console'>
+              <div className='flex items-center'>
                 <div
                   className='cursor-pointer'
                   onClick={handleClearOutput}
@@ -105,57 +132,23 @@ const CodePlayground = ({
                     )}
                   />
                 </div>
-              </Tooltip>
-            </div>
-          </PlaygroundHeader>
-          <div>
+              </div>
+            </PanelHeader>
             <ConsoleOutput
               output={output}
               isError={isError}
               isFullScreen={isFullScreen}
             />
-          </div>
-        </div>
+          </Panel>
+        </PanelGroup>
       </div>
-
-      <div className='flex items-center justify-between bg-neutral-900 border border-neutral-700 border-t-0 py-1 px-2 rounded-b-md'>
-        {/* !!! PLEASE DO NOT REMOVE THIS LINE OF WATERMARK, USE IT WISELY !!! */}
-        <div className='text-sm font-sora items-center text-neutral-500'>
-          &copy; <a href='https://aulianza.id'>aulianza</a>
-        </div>
-        {isFullScreen ? (
-          <Tooltip title='Close'>
-            <ExitFullScreenIcon
-              size={22}
-              onClick={onCloseFullScreen}
-              className=' text-neutral-500 cursor-pointer'
-              data-umami-event='Open Fullscreen Playground'
-            />
-          </Tooltip>
-        ) : (
-          <Tooltip title='Fullscreen'>
-            <FullScreenIcon
-              size={22}
-              onClick={onFullScreen}
-              className=' text-neutral-500 cursor-pointer'
-              data-umami-event='Exit Fullscreen Playground'
-            />
-          </Tooltip>
-        )}
-      </div>
-    </div>
+      <PanelFooter
+        isFullScreen={isFullScreen}
+        onCloseFullScreen={onCloseFullScreen}
+        onFullScreen={onFullScreen}
+      />
+    </>
   );
 };
 
 export default CodePlayground;
-
-const PlaygroundHeader = ({ title, children }: PlaygroundHeaderProps) => {
-  return (
-    <div className='flex justify-between py-2 px-3 border border-b-neutral-700 border-t-0 border-x-0'>
-      <div className='py-1 px-2 bg-neutral-600 text-xs rounded-md text-neutral-50 font-sora'>
-        {title}
-      </div>
-      {children && children}
-    </div>
-  );
-};

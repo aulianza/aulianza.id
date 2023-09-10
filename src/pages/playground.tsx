@@ -12,7 +12,7 @@ const playground: NextPage = () => {
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
       <Container className='!mt-0 pt-20 md:pt-0' data-aos='fade-up'>
-        <Playground isHeading />
+        <Playground id='playground' isHeading />
       </Container>
     </>
   );

@@ -1,16 +1,17 @@
 /* eslint-disable no-console */
 import { useState } from 'react';
-import { SiJavascript } from 'react-icons/si';
 
 import ModalWrapper from '@/common/components/elements/ModalWrapper';
 
 import CodePlayground from './CodePlayground';
+import PlaygroundHeader from './PlaygroundHeader';
 
 interface PlaygroundProps {
+  id?: string | undefined;
   isHeading?: boolean;
 }
 
-const Playground = ({ isHeading = false }: PlaygroundProps) => {
+const Playground = ({ id = undefined, isHeading = false }: PlaygroundProps) => {
   const [code, setCode] = useState<string>('');
   const [output, setOutput] = useState<string>('');
   const [isError, setError] = useState<boolean>(false);
@@ -45,21 +46,10 @@ const Playground = ({ isHeading = false }: PlaygroundProps) => {
 
   return (
     <>
-      {isHeading && (
-        <div className='flex flex-col md:items-center md:justify-center py-10 space-y-2'>
-          <div className='flex items-center gap-3'>
-            <SiJavascript size={24} className='text-yellow-400' />
-            <h1 className='text-2xl font-medium font-sora'>
-              JavaScript Playground
-            </h1>
-          </div>
-          <p className='text-neutral-600 dark:text-neutral-400'>
-            A no-fuss pure JavaScript playground with a live feedback loop
-          </p>
-        </div>
-      )}
+      {isHeading && <PlaygroundHeader />}
 
       <CodePlayground
+        id={id}
         onFullScreen={handleFullScreen}
         code={code}
         output={output}
@@ -71,6 +61,7 @@ const Playground = ({ isHeading = false }: PlaygroundProps) => {
 
       <ModalWrapper isOpen={isFullScreen} onClose={handleFullScreen}>
         <CodePlayground
+          id={id}
           isFullScreen={isFullScreen}
           onCloseFullScreen={handleFullScreen}
           code={code}

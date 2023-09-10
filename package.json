@@ -44,6 +44,7 @@
     "react-icons": "^4.11.0",
     "react-loading-skeleton": "^3.3.1",
     "react-markdown": "^8.0.7",
+    "react-resizable-panels": "^0.0.55",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.8",

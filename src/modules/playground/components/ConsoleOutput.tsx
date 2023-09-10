@@ -19,7 +19,12 @@ const ConsoleOutput = ({
         isError && `!text-red-400`
       )}
     >
-      <pre className={clsx('text-sm')}>{output}</pre>
+      <code
+        className={clsx('text-sm')}
+        style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}
+      >
+        {output}
+      </code>
     </div>
   );
 };

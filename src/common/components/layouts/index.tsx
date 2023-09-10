@@ -10,6 +10,7 @@ import HeaderSidebar from './header/HeaderSidebar';
 import HeaderTop from './header/HeaderTop';
 import NowPlayingBar from '../elements/NowPlayingBar';
 import NowPlayingCard from '../elements/NowPlayingCard';
+import TopBar from '../elements/TopBar';
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      {/* <TopBar /> */}
+      <TopBar />
       <div
         className={clsx(
           'max-w-6xl mx-auto lg:px-8',
@@ -42,12 +43,12 @@ const Layout = ({ children }: LayoutProps) => {
         )}
       >
         {isFullPageHeader ? (
-          <div className='xl:pb-8'>
+          <div className='flex flex-col xl:pb-8'>
             <HeaderTop />
             <main className='transition-all duration-300'>{children}</main>
           </div>
         ) : (
-          <div className='flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:py-8'>
+          <div className='flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8'>
             <HeaderSidebar />
             <main className='lg:w-4/5 max-w-[854px] transition-all duration-300'>
               {children}

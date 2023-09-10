@@ -27,7 +27,6 @@ const Navigation = () => {
   return (
     <>
       <Menu list={filterdMenu} />
-
       <div className='pt-1'>
         <MenuItem
           title='Playground'
@@ -43,24 +42,26 @@ const Navigation = () => {
           />
         </MenuItem>
       </div>
-
-      <div className='pt-1'>
-        <MenuItem
-          title={isMobile ? 'Command' : 'cmd + k'}
-          href='#'
-          icon={<CommandIcon size={20} />}
-          isExternal={false}
-          onClick={() => handleOpenCommandPalette()}
-        >
-          <div className='relative inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-200 text-green-800 '>
-            <div className='absolute -ml-2 w-[4.5rem] rounded-full h-5 border-2 border-green-300 animate-badge-pulse'></div>
-            <span>AI Powered</span>
-          </div>
-        </MenuItem>
-      </div>
-
       <Breakline />
-      <SocialMedia items={filteredSocialMedia} />
+      <MenuItem
+        title={isMobile ? 'Command' : 'cmd + k'}
+        href='#'
+        icon={<CommandIcon size={20} />}
+        isExternal={false}
+        onClick={() => handleOpenCommandPalette()}
+      >
+        <div className='relative inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-200 text-green-800 '>
+          <div className='absolute -ml-2 w-[4.5rem] rounded-full h-5 border-2 border-green-300 animate-badge-pulse'></div>
+          <span>AI Powered</span>
+        </div>
+      </MenuItem>
+
+      {isMobile && (
+        <>
+          <Breakline />
+          <SocialMedia items={filteredSocialMedia} />
+        </>
+      )}
     </>
   );
 };

@@ -1,51 +1,39 @@
-import { ReactNode } from 'react';
-import { FaTelegramPlane as TelegramIcon } from 'react-icons/fa';
-import { HiOutlineMail as EmailIcon } from 'react-icons/hi';
+import clsx from 'clsx';
 
+import Breakline from '@/common/components/elements/Breakline';
 import Button from '@/common/components/elements/Button';
+import { SOCIAL_MEDIA } from '@/common/constant/menu';
 
-const CONTACTS = [
-  {
-    title: 'aulianza.dev@gmail.com',
-    icon: <EmailIcon size={18} />,
-    link: 'mailto:aulianza.dev@gmail.com',
-    eventName: 'Contact: Click Email Button',
-  },
-  {
-    title: 'Telegram',
-    icon: <TelegramIcon size={18} />,
-    link: 'https://t.me/aulianza',
-    eventName: 'Contact: Click Telegram Button',
-  },
-];
-
-interface ContactProps {
-  title: string;
-  icon: ReactNode;
-  link: string;
-  eventName: string;
-}
+import ContactForm from './ContactForm';
 
 const Contact = () => {
   const handleAction = (link: string) => window.open(link, '_blank');
 
   return (
-    <section className='space-y-5'>
-      <p className='dark:text-neutral-300'>
-        You can reach out to me directly by sending an email, texting on
-        Telegram, or connecting on social media.
-      </p>
-      <div className='flex gap-3'>
-        {CONTACTS?.map((contact: ContactProps, index: number) => (
-          <Button
-            key={index}
-            onClick={() => handleAction(contact?.link)}
-            icon={contact?.icon}
-            data-umami-event={contact?.eventName}
-          >
-            {contact?.title}
-          </Button>
-        ))}
+    <section className='space-y-6'>
+      <div className='space-y-5 pb-2'>
+        <h3 className='text-lg font-medium'>Find me on social media</h3>
+        <div className='flex flex-col md:flex-row justify-between gap-3'>
+          {SOCIAL_MEDIA?.map((item, index: number) => (
+            <Button
+              className={clsx(
+                'w-full md:w-1/5 flex justify-center items-center hover:scale-[101%] transition-all duration-300',
+                item?.className
+              )}
+              key={index}
+              onClick={() => handleAction(item?.href)}
+              icon={item?.icon}
+              data-umami-event={item?.eventName}
+            >
+              {item?.title}
+            </Button>
+          ))}
+        </div>
+      </div>
+      <Breakline />
+      <div className='space-y-5'>
+        <h3 className='text-lg font-medium'>Or send me a message</h3>
+        <ContactForm />
       </div>
     </section>
   );

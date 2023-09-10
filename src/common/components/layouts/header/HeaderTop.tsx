@@ -17,7 +17,8 @@ const HeaderTop = () => {
   const isMobile = useIsMobile();
   const { setIsOpen } = useContext(CommandPaletteContext);
 
-  const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow);
+  const menus = MENU_ITEMS?.filter((item) => item?.isShow);
+  const filterdMenu = menus?.filter((item) => item.title !== 'Home');
 
   return (
     <header>

@@ -5,7 +5,7 @@ import React from 'react';
 import Container from '@/common/components/elements/Container';
 import Playground from '@/modules/playground';
 
-const PAGE_TITLE = 'Javascript Playground';
+const PAGE_TITLE = 'JavaScript Playground';
 
 const playground: NextPage = () => {
   return (

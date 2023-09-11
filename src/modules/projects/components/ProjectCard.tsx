@@ -24,13 +24,18 @@ const ProjectCard = ({
             Featured
           </div>
         )}
-        <Image
-          src={image}
-          width={400}
-          height={200}
-          alt={title}
-          className='rounded-t-xl h-48 object-cover object-left'
-        />
+        <div className='relative'>
+          <Image
+            src={image}
+            width={400}
+            height={200}
+            alt={title}
+            className='rounded-t-xl h-48 object-cover object-left'
+          />
+          <div className='absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 flex justify-center items-center text-white hover:opacity-80 rounded-t-xl text-sm font-medium'>
+            View Project
+          </div>
+        </div>
         <div className='p-5 space-y-2'>
           <div className='flex justify-between'>
             <div className='text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300'>

@@ -7,14 +7,12 @@ const Introduction = () => {
       </div>
 
       <div className='space-y-4'>
-        <>
-          <ul className='flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400'>
-            <li>life-long learner</li>
-            <li>
-              Based in Jakarta <span className='ml-1'>🇮🇩</span>
-            </li>
-          </ul>
-        </>
+        <ul className='flex flex-col lg:flex-row gap-1 lg:gap-10 ml-5 list-disc text-neutral-700 dark:text-neutral-400'>
+          <li>Working Remotely</li>
+          <li>
+            Based in Jakarta <span className='ml-1'>🇮🇩</span>
+          </li>
+        </ul>
         <p className='leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300'>
           Seasoned Software Engineer especially in Frontend side, with a passion
           for creating pixel-perfect web experiences. I work with JavaScript and

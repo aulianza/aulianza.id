@@ -42,6 +42,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-loading-skeleton": "^3.3.1",
     "react-markdown": "^8.0.7",
     "react-resizable-panels": "^0.0.55",

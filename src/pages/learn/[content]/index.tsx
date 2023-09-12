@@ -9,7 +9,7 @@ import Container from '@/common/components/elements/Container';
 import Loading from '@/common/components/elements/Loading';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
-import loadMdxFiles from '@/common/libs/mdx';
+import { loadMdxFiles } from '@/common/libs/mdx';
 import { ContentProps, MdxFileContentProps } from '@/common/types/learn';
 import LearnSubContentItem from '@/modules/learn/components/LearnSubContentItem';
 

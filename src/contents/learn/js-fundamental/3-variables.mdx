@@ -1,0 +1,49 @@
+---
+id: 3
+title: 'Variables'
+category: 'JavaScript'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: null
+cover_url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp'
+source_url: null
+created_at: '2023-09-13'
+updated_at: '2023-09-13'
+is_playground: true
+is_comment: false
+---
+
+In ES6, there are three ways to declare variables: `var`, `const`, and `let`.
+
+The var keyword is used to declare variables that have either global scope or function scope. Regardless of block scope, variables declared with var are accessible throughout the entire function. For example:
+
+```
+function varTest() {
+    var x = 1;
+    if (true) {
+        var x = 2; // same variable
+        console.log(x); // 2
+    }
+    console.log(x); // 2
+}
+```
+
+The let keyword, introduced in ES6, allows you to declare variables that are scoped to the block, statement, or expression in which they are used. This means that variables declared with let are only accessible within the specific block. For example:
+
+```
+function letTest() {
+    let x = 1;
+    if (true) {
+        let x = 2;
+        console.log(x); // 2
+    }
+    console.log(x); // 1
+}
+```
+
+On the other hand, variables declared with the const keyword are immutable, meaning they cannot be reassigned once they are defined. For instance:
+
+```
+const x = "hi!";
+x = "bye"; //
+```

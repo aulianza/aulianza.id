@@ -32,13 +32,15 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
     return null;
   }
 
-  const sortedSubContents = subContents.sort((a, b) => {
-    const dateA = parseISO(a.frontMatter.created_at);
-    const dateB = parseISO(b.frontMatter.created_at);
-    return compareDesc(dateA, dateB);
-  });
+  const { title, description, is_sort } = content;
 
-  const { title, description } = content;
+  const sortedSubContents = is_sort
+    ? subContents.sort((a, b) => {
+        const dateA = parseISO(a.frontMatter.created_at);
+        const dateB = parseISO(b.frontMatter.created_at);
+        return compareDesc(dateA, dateB);
+      })
+    : subContents;
 
   const canonicalUrl = `https://aulianza.id/learn/${content?.slug}`;
 
@@ -61,26 +63,31 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
       <Container data-aos='fade-up'>
         <BackButton url='/learn' />
         <PageHeading title={title} description={description} />
-
-        <div className='flex flex-col gap-3'>
-          {sortedSubContents?.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
-              <LearnSubContentItem
-                parent={title}
-                contentSlug={content?.slug}
-                subContentSlug={item?.slug}
-                title={item?.frontMatter?.title as string}
-                language={item?.frontMatter?.language as string}
-                difficulty={item?.frontMatter?.difficulty as string}
-              />
-            </motion.div>
-          ))}
-        </div>
+        {sortedSubContents?.length > 0 ? (
+          <div className='flex flex-col gap-3'>
+            {sortedSubContents?.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <LearnSubContentItem
+                  parent={title}
+                  contentSlug={content?.slug}
+                  subContentSlug={item?.slug}
+                  title={item?.frontMatter?.title as string}
+                  language={item?.frontMatter?.language as string}
+                  difficulty={item?.frontMatter?.difficulty as string}
+                />
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className='flex justify-center items-center py-5'>
+            <div className='text-neutral-500'>No Lesson Found.</div>
+          </div>
+        )}
       </Container>
     </>
   );

@@ -10,7 +10,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     image:
       'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
     is_new: true,
-    level: 'all-levels',
+    level: 'All Levels',
     is_show: true,
   },
   {
@@ -21,7 +21,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     image:
       'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
     is_new: false,
-    level: 'beginner',
+    level: 'Beginner',
     is_show: false,
   },
 ];

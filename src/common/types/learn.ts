@@ -10,7 +10,7 @@ export interface ContentProps {
   description: string;
   image: string;
   is_new: boolean;
-  level: 'beginner' | 'intermediate' | 'advanced' | 'all-levels';
+  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
   is_show: boolean;
 }
 

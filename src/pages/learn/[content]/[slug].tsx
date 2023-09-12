@@ -5,7 +5,7 @@ import { SiJavascript } from 'react-icons/si';
 import BackButton from '@/common/components/elements/BackButton';
 import Breakline from '@/common/components/elements/Breakline';
 import Container from '@/common/components/elements/Container';
-import loadMdxFiles from '@/common/libs/mdx';
+import { loadMdxFiles } from '@/common/libs/mdx';
 import { MdxFileContentProps } from '@/common/types/learn';
 import GiscusComment from '@/modules/blog/components/GiscusComment';
 import ContentDetail from '@/modules/learn/components/ContentDetail';

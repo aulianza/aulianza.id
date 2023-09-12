@@ -9,10 +9,15 @@ import PlaygroundHeader from './PlaygroundHeader';
 interface PlaygroundProps {
   id?: string | undefined;
   isHeading?: boolean;
+  initialCode?: string;
 }
 
-const Playground = ({ id = undefined, isHeading = false }: PlaygroundProps) => {
-  const [code, setCode] = useState<string>('');
+const Playground = ({
+  id = undefined,
+  isHeading = false,
+  initialCode,
+}: PlaygroundProps) => {
+  const [code, setCode] = useState<string>(initialCode ?? '');
   const [output, setOutput] = useState<string>('');
   const [isError, setError] = useState<boolean>(false);
   const [isFullScreen, setFullScreen] = useState<boolean>(false);

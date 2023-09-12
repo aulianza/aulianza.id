@@ -6,22 +6,24 @@ export const LEARN_CONTENTS: ContentProps[] = [
     title: 'Problem Solving',
     slug: 'problem-solving',
     description:
-      'Learn problem solving in JavaScript with detailed explanations',
-    image:
-      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
-    is_new: true,
-    level: 'All Levels',
-    is_show: true,
-  },
-  {
-    id: 2,
-    title: 'JavasScript for Beginners',
-    slug: 'js-beginners',
-    description: 'Unleash the Power of JavaScript Skill for Beginners',
+      'Learn problem solving in JavaScript with detailed explanations.',
     image:
       'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/learn-problem-solving.png',
     is_new: false,
+    level: 'All Levels',
+    is_show: true,
+    is_sort: true,
+  },
+  {
+    id: 2,
+    title: 'JavasScript Fundamental',
+    slug: 'js-fundamental',
+    description: 'Master the fundamentals of programming in JavaScript.',
+    image:
+      'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp',
+    is_new: true,
     level: 'Beginner',
-    is_show: false,
+    is_show: true,
+    is_sort: false,
   },
 ];

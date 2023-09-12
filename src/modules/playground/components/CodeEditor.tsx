@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import MonacoEditor, { EditorProps } from '@monaco-editor/react';
 
 interface CodeEditorProps {
@@ -17,6 +18,8 @@ const editorConfig = {
     verticalScrollbarSize: 9,
   },
   scrollBeyondLastLine: false,
+  formatOnPaste: true,
+  formatOnType: true,
 };
 
 const CodeEditor = ({
@@ -25,6 +28,12 @@ const CodeEditor = ({
   height = '300px',
   isFullScreen = false,
 }: CodeEditorProps) => {
+  const handleEditorMount = (editor: any) => {
+    setTimeout(function () {
+      editor.getAction('editor.action.formatDocument').run();
+    }, 500);
+  };
+
   return (
     <MonacoEditor
       height={isFullScreen ? '70vh' : height}
@@ -33,6 +42,7 @@ const CodeEditor = ({
       value={code}
       onChange={onChange}
       options={editorConfig}
+      onMount={handleEditorMount}
     />
   );
 };

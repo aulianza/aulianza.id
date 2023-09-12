@@ -20,6 +20,10 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
 
   const meta = frontMatter;
 
+  const isShowPlayground = meta?.is_playground ?? false;
+  const isShowComment = meta?.is_comment ?? false;
+  const initialCode = meta?.initial_code ?? '';
+
   const PAGE_TITLE = meta?.title;
   const PAGE_DESCRIPTION = `Learn ${meta?.category} - ${PAGE_TITLE} with detailed explanations`;
 
@@ -43,24 +47,35 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
           siteName: 'Ryan Aulia',
         }}
       />
-      <Container data-aos='fade-up'>
+      <Container data-aos='fade-up' className='mb-20'>
         <BackButton />
         <ContentDetailHeader {...meta} />
         {content && (
           <>
             <ContentDetail content={content} />
-            <Breakline className='my-6' />
-            <div className='space-y-6'>
-              <div className='flex items-center gap-3'>
-                <SiJavascript size={22} className='text-yellow-400' />
-                <h5 className='text-lg font-medium'>JavaScript Playground</h5>
-              </div>
-              <Playground />
-            </div>
-            <Breakline className='mt-14 mb-14' />
-            <section id='comments'>
-              <GiscusComment />
-            </section>
+            {isShowComment ||
+              (isShowPlayground && <Breakline className='my-6' />)}
+
+            {isShowPlayground && (
+              <>
+                <div>
+                  <div className='flex items-center gap-3 mb-5'>
+                    <SiJavascript size={22} className='text-yellow-400' />
+                    <h5 className='text-lg font-medium'>
+                      JavaScript Playground
+                    </h5>
+                  </div>
+                  <Playground initialCode={initialCode} />
+                </div>
+                {isShowComment && <Breakline className='mt-14 mb-14' />}
+              </>
+            )}
+
+            {isShowComment && (
+              <section id='comments'>
+                <GiscusComment />
+              </section>
+            )}
           </>
         )}
       </Container>

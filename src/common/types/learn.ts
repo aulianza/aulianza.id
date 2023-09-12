@@ -12,6 +12,7 @@ export interface ContentProps {
   is_new: boolean;
   level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
   is_show: boolean;
+  is_sort?: boolean;
 }
 
 export interface SubContentProps {
@@ -34,6 +35,9 @@ export interface SubContentMetaProps {
   source_url?: string;
   created_at: string;
   updated_at: string;
+  is_playground: boolean;
+  is_comment: boolean;
+  initial_code?: string;
 }
 
 export interface MdxFileContentProps {

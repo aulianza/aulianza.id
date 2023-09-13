@@ -5,7 +5,7 @@ const TopBar = () => {
 
   return (
     <div
-      className='hidden md:flex gap-x-2 items-center justify-center p-2.5 shadow-lg backdrop-blur-lg bg-no-repeat bg-cover text-sm dark:text-neutral-400'
+      className='hidden xl:flex gap-x-2 items-center justify-center p-2.5 shadow-lg backdrop-blur-lg bg-no-repeat bg-cover text-sm dark:text-neutral-400'
       style={{ backgroundImage: bgImage }}
     >
       <span>🚀</span>

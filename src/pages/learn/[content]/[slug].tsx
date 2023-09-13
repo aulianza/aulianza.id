@@ -125,7 +125,7 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
           siteName: 'Ryan Aulia',
         }}
       />
-      <Container data-aos='fade-up' className='mb-20'>
+      <Container data-aos='fade-up' className='mb-10'>
         <BackButton url={`/learn/${parentSlug}`} />
         <ContentDetailHeader {...meta} />
         {content && (
@@ -140,13 +140,13 @@ const LearnContentDetailPage: NextPage<ContentDetailPageProps> = ({ data }) => {
               nextTitle={nextTitle}
             />
             {isShowPlayground && (
-              <div>
-                <div className='flex items-center gap-3 mb-5'>
+              <>
+                <div className='flex items-center gap-3 pt-6 mb-5 border-t dark:border-neutral-700 border-gray-300'>
                   <SiJavascript size={22} className='text-yellow-400' />
                   <h5 className='text-lg font-medium'>JavaScript Playground</h5>
                 </div>
                 <Playground initialCode={initialCode} />
-              </div>
+              </>
             )}
             {isShowComment && (
               <section

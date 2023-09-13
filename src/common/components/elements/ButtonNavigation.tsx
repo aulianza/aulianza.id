@@ -25,7 +25,7 @@ const ButtonNavigation = ({
       {action === 'previous' && buttonIcon}
       <div className='flex items-center gap-1'>
         {buttonText}
-        <span className='hidden md:flex'> : {title}</span>
+        <span className='hidden lg:flex'> : {title}</span>
       </div>
       {action === 'next' && buttonIcon}
     </Button>

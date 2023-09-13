@@ -23,7 +23,10 @@ const ButtonNavigation = ({
   return (
     <Button onClick={onClick}>
       {action === 'previous' && buttonIcon}
-      {buttonText} <span className='hidden md:flex'>: {title}</span>
+      <div className='flex items-center gap-1'>
+        {buttonText}
+        <span className='hidden md:flex'> : {title}</span>
+      </div>
       {action === 'next' && buttonIcon}
     </Button>
   );

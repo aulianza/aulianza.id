@@ -18,7 +18,7 @@ const NavigationSection = ({
   nextTitle,
 }: NavigationSectionProps) => {
   return (
-    <div className='flex justify-between my-6 border-t border-b dark:border-neutral-700 border-gray-300 py-5'>
+    <div className='flex justify-between mt-8 border-t dark:border-neutral-700 border-gray-300 py-5'>
       {currentIndex !== 0 && (
         <ButtonNavigation
           onClick={handlePrevious}

@@ -12,7 +12,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     is_new: false,
     level: 'All Levels',
     is_show: true,
-    is_sort: true,
+    is_sort: false,
   },
   {
     id: 2,

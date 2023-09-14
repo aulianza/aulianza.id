@@ -1,0 +1,37 @@
+---
+id: 6
+chapter_id: 1
+chapter_title: 'Chapter 1 : Basics'
+title: 'Equality'
+category: 'JavaScript'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: null
+cover_url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp'
+source_url: null
+created_at: '2023-09-15'
+updated_at: '2023-09-15'
+is_playground: true
+is_comment: false
+---
+
+When we write programs, it's common to check if variables are equal to other variables. This is where the equality operator comes into play. The most basic equality operator is `==`. It goes to great lengths to establish if two variables are equal, even if they aren't the same type.
+
+For instance, consider the following:
+
+```
+let foo = 50;
+let bar = 50;
+let baz = "50";
+let qux = "learn";
+```
+
+```
+foo == bar // Evaluates to true
+baz == qux // Evaluates to false
+foo == baz // Also evaluates to true, despite different types
+```
+
+Behind the scenes, the `==` equality operator attempts to make its operands the same type before determining their equality. This is different from the `===` equality operator.
+
+The `===` equality operator insists that two variables are only equal if they are of the same type and hold the same value. Given our earlier assumptions, this means `foo === bar` still evaluates to `true`. However, `foo === baz` will now evaluate to `false`. Similarly, baz `===` qux will still evaluate to `false`.

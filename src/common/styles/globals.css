@@ -18,6 +18,15 @@ body {
   background-position: -200px -330px;
 }
 
+input,
+textarea,
+button,
+select,
+div,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .dark {
   background-color: var(--color-dark);
   color: var(--color-light);

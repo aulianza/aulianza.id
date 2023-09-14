@@ -1,0 +1,50 @@
+---
+id: 7
+chapter_id: 2
+chapter_title: 'Chapter 2 : Numbers'
+title: 'Numbers'
+category: 'JavaScript'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: null
+cover_url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp'
+source_url: null
+created_at: '2023-09-15'
+updated_at: '2023-09-15'
+is_playground: true
+is_comment: false
+---
+
+In JavaScript, there's just **one type of number** – a 64-bit floating-point value. This aligns with Java's `double`. Unlike some other programming languages, **JavaScript doesn't have a separate integer type**. So, both 1 and 1.0 represent the same value.
+
+Creating a number is straightforward, similar to any other variable type. Just use the `var`, `let` or `const` keyword.
+
+You can define numbers using constant values:
+
+```
+// This is a float:
+let a = 3.5;
+
+// This is an integer:
+let b = 20;
+```
+
+Alternatively, you can derive a number from the value of another variable:
+
+```
+let a = 4;
+let b = a;
+```
+
+In JavaScript, integers maintain precision up to 15 digits, with the maximum number being 17.
+
+```
+let a = 123456789012345;   // m will be 123456789012345
+let b = 12345678901234567;  // n will be 12345678901234567
+```
+
+Numeric constants are recognized as hexadecimal if they are preceded by 0x.
+
+```
+let a = 0xAA; // This evaluates to 170
+```

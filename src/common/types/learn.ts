@@ -26,6 +26,8 @@ export interface SubContentProps {
 
 export interface SubContentMetaProps {
   id: number;
+  chapter_id?: number;
+  chapter_title?: string;
   title: string;
   category: string;
   language?: string;
@@ -44,4 +46,10 @@ export interface MdxFileContentProps {
   slug: string;
   frontMatter: SubContentMetaProps;
   content: string;
+}
+
+export interface ChapterGroupProps {
+  chapter_id: number | undefined;
+  chapter_title: string;
+  contents: MdxFileContentProps[];
 }

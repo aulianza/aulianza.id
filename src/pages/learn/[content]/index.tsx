@@ -1,5 +1,4 @@
 import { compareDesc, parseISO } from 'date-fns';
-import { motion } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
@@ -11,7 +10,7 @@ import PageHeading from '@/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { loadMdxFiles } from '@/common/libs/mdx';
 import { ContentProps, MdxFileContentProps } from '@/common/types/learn';
-import LearnSubContentItem from '@/modules/learn/components/LearnSubContentItem';
+import ContentList from '@/modules/learn/components/ContentList';
 
 interface ContentPageProps {
   content: ContentProps | null;
@@ -63,31 +62,11 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
       <Container data-aos='fade-up'>
         <BackButton url='/learn' />
         <PageHeading title={title} description={description} />
-        {sortedSubContents?.length > 0 ? (
-          <div className='flex flex-col gap-3'>
-            {sortedSubContents?.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <LearnSubContentItem
-                  parent={title}
-                  contentSlug={content?.slug}
-                  subContentSlug={item?.slug}
-                  title={item?.frontMatter?.title as string}
-                  language={item?.frontMatter?.language as string}
-                  difficulty={item?.frontMatter?.difficulty as string}
-                />
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className='flex justify-center items-center py-5'>
-            <div className='text-neutral-500'>No Lesson Found.</div>
-          </div>
-        )}
+        <ContentList
+          sortedSubContents={sortedSubContents}
+          content={content}
+          title={title}
+        />
       </Container>
     </>
   );

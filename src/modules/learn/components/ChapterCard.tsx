@@ -30,9 +30,9 @@ const ChapterCard = ({
       )}
       onClick={() => onToggle(chapterId)}
     >
-      <div>{chapterTitle}</div>
+      <div className='font-sora text-[15px]'>{chapterTitle}</div>
       <div className='flex items-center gap-3'>
-        <div className='hidden md:flex text-sm'>
+        <div className='hidden md:flex  text-[13px]'>
           {contents?.length} Lesson{contents?.length > 1 && 's'}
         </div>
         <div>

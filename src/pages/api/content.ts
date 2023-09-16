@@ -10,6 +10,7 @@ export default async function handler(
   const contentList = await loadMdxFiles(category as string);
 
   const data = contentList.map((item) => ({
+    id: item?.frontMatter?.id,
     parent_slug: category || '',
     slug: item.slug || '',
     title: item.frontMatter.title || '',

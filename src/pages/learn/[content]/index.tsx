@@ -1,4 +1,3 @@
-import { compareDesc, parseISO } from 'date-fns';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
@@ -31,15 +30,11 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
     return null;
   }
 
-  const { title, description, is_sort } = content;
+  const { title, description } = content;
 
-  const sortedSubContents = is_sort
-    ? subContents.sort((a, b) => {
-        const dateA = parseISO(a.frontMatter.created_at);
-        const dateB = parseISO(b.frontMatter.created_at);
-        return compareDesc(dateA, dateB);
-      })
-    : subContents;
+  const sortedSubContents = subContents.sort(
+    (a, b) => a.frontMatter.id - b.frontMatter.id
+  );
 
   const canonicalUrl = `https://aulianza.id/learn/${content?.slug}`;
 

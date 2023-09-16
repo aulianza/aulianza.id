@@ -3,6 +3,11 @@ import { utcToZonedTime } from 'date-fns-tz';
 
 import { ChapterGroupProps, MdxFileContentProps } from '../types/learn';
 
+interface ParsedUrlProps {
+  parentSlug: string;
+  contentSlug: string;
+}
+
 export const formatBlogSlug = (slug: string) => slug?.slice(0, -5);
 
 export const formatDate = (date: string, type = 'MMMM dd, yyyy') => {
@@ -34,4 +39,12 @@ export const groupContentByChapter = (
 
     return acc;
   }, {} as Record<string, ChapterGroupProps>);
+};
+
+export const parseUrl = (url: string): ParsedUrlProps => {
+  const parts = url.split('/');
+  return {
+    parentSlug: parts[2],
+    contentSlug: parts[3],
+  };
 };

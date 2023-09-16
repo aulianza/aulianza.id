@@ -1,0 +1,80 @@
+---
+id: 10
+chapter_id: 2
+chapter_title: 'Chapter 2 : Numbers'
+title: 'Advanced Operator'
+category: 'JavaScript Fundamental'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: null
+cover_url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp'
+source_url: null
+created_at: '2023-09-18'
+updated_at: '2023-09-18'
+is_playground: true
+is_comment: false
+---
+
+In JavaScript, the way operators are applied depends on their _precedence_. Multiplication `(*)` and division `(/)` take precedence over addition `(+)` and subtraction `(-)`.
+
+```
+let x = 100 + 50 * 3; // Multiplication is done first, followed by addition. Result: 250
+let y = (100 + 50) * 3; // Operations inside parentheses are computed first. Result: 450
+let z = 100 / 50 * 3; // Operations with the same precedence are computed from left to right.
+```
+
+Here are some advanced math operators that you can use while writing programs:
+
+**Modulo operator (%):**
+This operator returns the remainder of a division operation. For example:
+
+```
+console.log(10 % 3); // Result: 1
+console.log(11 % 3); // Result: 2
+console.log(12 % 3); // Result: 0
+```
+
+**Exponentiation operator (--):**
+This operator raises a number to the power of another number. It's a newer operator and may not be supported in all browsers, so you may need to use the Math.pow function instead. For example:
+
+```
+console.log(2 ** 3); // Result: 8
+console.log(3 ** 2); // Result: 9
+console.log(4 ** 3); // Result: 64
+```
+
+**Increment operator (++):**
+This operator increases a number by one. It can be used as a prefix (before the operand) or a postfix (after the operand). For example:
+
+```
+let x = 1;
+x++; // x is now 2
+++x; // x is now 3
+```
+
+**Decrement operator (--):**
+This operator decreases a number by one. It can be used as a prefix (before the operand) or a postfix (after the operand). For example:
+
+```
+let y = 3;
+y--; // y is now 2
+--y; // y is now 1
+```
+
+**Math object:**
+The Math object in JavaScript provides mathematical functions and constants. You can use its methods for advanced math operations like finding square roots, calculating sines, or generating random numbers. For example:
+
+```
+console.log(Math.sqrt(9)); // Result: 3
+console.log(Math.sin(0)); // Result: 0
+console.log(Math.random()); // A random number between 0 and 1
+```
+
+These are just a few examples of the advanced math operators and functions available in JavaScript. There are many more you can use for complex math operations in your programs.
+
+### Understanding the Nullish Coalescing Operator '??'
+
+The nullish coalescing operator returns the first argument if it's not null or undefined; otherwise, it returns the second one. It's written as two question marks `??.` The result of `x ?? y` is:
+
+If `x` is defined, then `x`.
+If `y` isn’t defined, then `y`.

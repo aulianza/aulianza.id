@@ -1,0 +1,88 @@
+---
+id: 8
+chapter_id: 2
+chapter_title: 'Chapter 2 : Numbers'
+title: 'Basic Operator'
+category: 'JavaScript Fundamental'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: null
+cover_url: 'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/learn/javascript.webp'
+source_url: null
+created_at: '2023-09-16'
+updated_at: '2023-09-16'
+is_playground: true
+is_comment: false
+---
+
+Performing mathematical operations on numbers in JavaScript involves using fundamental operators such as:
+
+- **Addition Operator (+):** This operator combines two numbers. For example:
+
+```
+console.log(3 + 4); // 7
+console.log(1 + (-5)); // -4
+```
+
+- **Subtraction Operator (-):** This operator subtracts one number from another:
+
+```
+console.log(8 - 3); // 5
+console.log(5 - (-2)); // 7
+```
+
+- **Multiplication Operator (\*):** This operator multiplies two numbers:
+
+```
+console.log(2 * 3); // 6
+console.log(2 * (-4)); // -8
+```
+
+- **Division Operator (/):** This operator divides one number by another:
+
+```
+console.log(10 / 2); // 5
+console.log(6 / (-3)); // -2
+```
+
+- **Remainder Operator (%):** This operator gives the remainder of a division:
+
+```
+console.log(11 % 3); // 2
+console.log(15 % 4); // 3
+console.log(20 % 5); // 0
+```
+
+The JavaScript interpreter reads expressions from left to right. You can use parentheses to group and prioritize operations, just like in math: `c = (a / b) + d`.
+
+In JavaScript, the + operator is used for both addition and concatenation. When you use it with numbers, it adds them; with strings, it concatenates them.
+
+The term NaN is a special value that indicates a result is "Not a Number". This happens when we try to do math with something that isn't a number, like a non-numeric string:
+
+```
+let x = 100 / "ten"; // x will be NaN
+```
+
+The `parseInt` method converts a value to a string and returns the first integer:
+
+```
+parseInt("15"); // 15
+parseInt("15.25"); // 15
+parseInt("15.75"); // 15
+parseInt("22 33 44"); // 22
+parseInt(" 80 "); // 80
+parseInt("50 years"); // 50
+parseInt("She is 30"); // NaN
+```
+
+In JavaScript, if a calculation results in a number larger than the maximum possible value, it returns Infinity:
+
+```
+let a = 1.7976931348623157E+10308; // a will be Infinity
+```
+
+And if a calculation results in a number smaller than the minimum possible value, it returns -Infinity:
+
+```
+let b = -1.7976931348623157E+10308; // b will be -Infinity
+```

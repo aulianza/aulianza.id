@@ -22,7 +22,7 @@ const NavigationSection = memo(
   }: NavigationSectionProps) => {
     return (
       <div className='flex justify-between mt-8 border-t dark:border-neutral-700 border-gray-300 py-5'>
-        {currentIndex !== 0 && (
+        {previousTitle && currentIndex !== 0 && (
           <ButtonNavigation
             onClick={handlePrevious}
             action='previous'
@@ -30,7 +30,7 @@ const NavigationSection = memo(
           />
         )}
         <div className='flex-grow'></div>
-        {currentIndex !== totalItems - 1 && (
+        {nextTitle && currentIndex !== totalItems - 1 && (
           <ButtonNavigation
             onClick={handleNext}
             action='next'

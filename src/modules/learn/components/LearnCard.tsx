@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { BiLabel as LevelIcon } from 'react-icons/bi';
 import { MdLibraryBooks as LessonIcon } from 'react-icons/md';
+import useSWR from 'swr';
 
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { ContentProps } from '@/common/types/learn';
+import { fetcher } from '@/services/fetcher';
 
 const LearnCard = ({
   title,
@@ -15,17 +16,7 @@ const LearnCard = ({
   is_new,
   level,
 }: ContentProps) => {
-  const [mdxFileCount, setMdxFileCount] = useState(0);
-
-  useEffect(() => {
-    const fetchMdxFileCount = async () => {
-      const response = await fetch(`/api/learn?slug=${slug}`);
-      const data = await response.json();
-      setMdxFileCount(data.count);
-    };
-
-    fetchMdxFileCount();
-  }, [slug]);
+  const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher);
 
   return (
     <Link href={`/learn/${slug}`}>
@@ -57,7 +48,7 @@ const LearnCard = ({
             <div className='flex gap-1 items-center'>
               <LessonIcon size={16} />
               <span className='text-sm ml-0.5'>
-                {`${mdxFileCount} ${mdxFileCount > 1 ? 'Lessons' : 'Lesson'}`}
+                {`${data?.count} ${data?.count > 1 ? 'Lessons' : 'Lesson'}`}
               </span>
             </div>
             <div className='flex gap-1 items-center'>

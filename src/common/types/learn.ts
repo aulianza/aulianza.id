@@ -12,7 +12,6 @@ export interface ContentProps {
   is_new: boolean;
   level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
   is_show: boolean;
-  is_sort?: boolean;
 }
 
 export interface SubContentProps {

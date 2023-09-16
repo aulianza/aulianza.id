@@ -21,7 +21,7 @@ const ButtonNavigation = ({
     action === 'next' ? <NextButtonIcon /> : <PreviousButtonIcon />;
 
   return (
-    <Button onClick={onClick}>
+    <Button className='transition-all duration-300' onClick={onClick}>
       {action === 'previous' && buttonIcon}
       <div className='flex items-center gap-1'>
         {buttonText}

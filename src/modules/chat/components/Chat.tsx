@@ -16,7 +16,7 @@ const Chat = () => {
   const [messages, setMessages] = useState<MessageProps[]>([]);
 
   const database = getDatabase(firebase);
-  const databaseChat = 'messages';
+  const databaseChat = 'chat';
 
   const handleSendMessage = (message: string) => {
     const messagesRef = ref(database, databaseChat);

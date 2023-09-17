@@ -9,7 +9,7 @@ import ChatUserInfo from '@/modules/chat/components/ChatUserInfo';
 
 const PAGE_TITLE = 'Chat';
 const PAGE_DESCRIPTION =
-  'Leave whatever you like to say, suggestions, appreciation, questions or anything!';
+  'Leave whatever you like to say, suggestions, questions or anything!';
 
 const ContactPage: NextPage = () => {
   return (

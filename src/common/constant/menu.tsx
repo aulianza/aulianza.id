@@ -1,3 +1,4 @@
+import { BiRocket as ContactIcon } from 'react-icons/bi';
 import {
   BsEnvelopeAtFill as EmailIcon,
   BsGithub as GithubIcon,
@@ -9,12 +10,12 @@ import {
   FiBookOpen as LearnIcon,
   FiCoffee as ProjectIcon,
   FiCpu as DashboardIcon,
-  FiMessageCircle as ContactIcon,
   FiPieChart as AnalyticsIcon,
   FiPocket as HomeIcon,
   FiRss as BlogIcon,
   FiUser as ProfileIcon,
 } from 'react-icons/fi';
+import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi';
 import { SiJavascript } from 'react-icons/si';
 
 import { MenuItemProps } from '../types/menu';
@@ -61,6 +62,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Learn',
+  },
+  {
+    title: 'Chat',
+    href: '/chat',
+    icon: <ChatIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Chat',
   },
   {
     title: 'About',

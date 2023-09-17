@@ -18,6 +18,7 @@ const ChatUserInfo = () => {
       <div
         onClick={() => signOut()}
         className='flex items-center gap-1 text-red-500 cursor-pointer font-medium'
+        data-umami-event='Sign Out from Chat Page'
       >
         <SignOutIcon size={16} className='cursor-pointer text-red-500' />
         <span>Sign Out</span>

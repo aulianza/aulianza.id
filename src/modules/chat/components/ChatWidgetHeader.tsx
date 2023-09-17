@@ -19,18 +19,21 @@ const ChatWidgetHeader = () => {
           <div
             onClick={toggleChat}
             className='group flex items-center justify-center text-black w-3.5 h-3.5 bg-red-500 rounded-full cursor-pointer'
+            data-umami-event='Chat Widget: Close'
           >
             <CloseIcon size={13} className='hidden group-hover:flex' />
           </div>
           <div
             onClick={toggleChat}
             className='group flex items-center justify-center text-black w-3.5 h-3.5 bg-yellow-500 rounded-full cursor-pointer'
+            data-umami-event='Chat Widget: Minimaze'
           >
             <MinimizeIcon size={13} className='hidden group-hover:flex' />
           </div>
           <div
             onClick={handleMaximize}
             className='group flex items-center justify-center text-black w-3.5 h-3.5 bg-green-500 rounded-full cursor-pointer'
+            data-umami-event='Chat Widget: Maximaze'
           >
             <MaximizeIcon
               size={10}
@@ -45,6 +48,7 @@ const ChatWidgetHeader = () => {
           onClick={() => signOut()}
           size={22}
           className='cursor-pointer text-red-400'
+          data-umami-event='Sign Out from Chat Widget'
         />
       )}
     </div>

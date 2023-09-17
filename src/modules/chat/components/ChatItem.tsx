@@ -42,7 +42,7 @@ const ChatItem = ({
             </div>
           </div>
         </div>
-        <p className=' w-fit text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl'>
+        <p className='w-fit text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl'>
           {message}
         </p>
         <div className='flex md:hidden'>

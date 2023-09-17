@@ -1,6 +1,6 @@
 <div align="center">
   <h1>aulianza.id</h1>
-  <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR and Prisma with MySQL</p>
+  <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with MySQL</p>
 </div>
 <br />
 
@@ -28,6 +28,10 @@ Due this site is using free cloud hosting services (Vercel) with certain limitat
 ### 💻 JavaScript Playground
 
 A no-fuss pure JavaScript playground with a live feedback loop.
+
+### 💻 Real-time Chat
+
+Real-Time Chat is powered by Firebase. Anyone can leave me a message in this website.
 
 ### 🎧 Spotify
 

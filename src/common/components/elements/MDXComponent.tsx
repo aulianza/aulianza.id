@@ -51,7 +51,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
         code: (props) => <CodeBlock {...props} />,
         blockquote: (props) => (
           <blockquote
-            className='pl-6 py-3 text-lg border-l-[5px] border-neutral-700 border-l-cyan-500 font-medium bg-neutral-200 dark:bg-neutral-800 rounded-br-2xl text-cyan-800 dark:text-cyan-200'
+            className='pl-6 py-3 text-lg border-l-[5px] border-neutral-700 border-l-cyan-500 font-medium bg-neutral-200 dark:bg-neutral-800 rounded-br-2xl text-cyan-800 dark:text-cyan-200 font-sora'
             {...props}
           />
         ),

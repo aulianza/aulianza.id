@@ -23,7 +23,7 @@ const LearnSubContentItem = ({
       >
         <div className='flex gap-3 items-center'>
           <SubContentIcon size={18} className='hidden md:flex' />
-          <h5>{title}</h5>
+          <h5 className='font-sora font-[15px]'>{title}</h5>
         </div>
         <div className='hidden md:flex gap-5 items-center'>
           {difficulty && (

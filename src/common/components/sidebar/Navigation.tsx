@@ -9,7 +9,6 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 import Breakline from '../elements/Breakline';
-import Image from '../elements/Image';
 import SocialMedia from '../elements/SocialMedia';
 
 const Navigation = () => {
@@ -27,22 +26,14 @@ const Navigation = () => {
   return (
     <>
       <Menu list={filterdMenu} />
-      <div className='pt-1'>
+      <div className='py-1'>
         <MenuItem
           title='Playground'
           href='/playground'
           icon={<SiJavascript size={18} />}
           isExternal={false}
-        >
-          <Image
-            src='/images/dot_new_animated.svg'
-            width={35}
-            height={35}
-            alt='new'
-          />
-        </MenuItem>
+        />
       </div>
-      <Breakline />
       <MenuItem
         title={isMobile ? 'Command' : 'cmd + k'}
         href='#'

@@ -8,6 +8,7 @@ const nextConfig = {
       'aulianza.com',
       'dev-to-uploads.s3.amazonaws.com',
       'res.cloudinary.com',
+      'lh3.googleusercontent.com',
     ],
   },
 };

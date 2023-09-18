@@ -9,7 +9,7 @@ const ChatAuth = () => {
       <div className='py-3 px-4 text-center text-neutral-700 dark:text-neutral-300'>
         <p className='text-sm'>Please sign in to start chatting</p>
         <Button
-          onClick={() => signIn()}
+          onClick={() => signIn('google')}
           className='flex items-center justify-center shadow-sm border hover:scale-[101%] transition duration-300 !bg-white w-full mt-2 mb-2'
           data-umami-event='Sign In to Chat: Google'
         >

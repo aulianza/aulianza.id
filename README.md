@@ -1,6 +1,6 @@
 <div align="center">
   <h1>aulianza.id</h1>
-  <p>🔥 Personal website built with Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with MySQL</p>
+  <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with MySQL</p>
 </div>
 <br />
 
@@ -8,7 +8,13 @@
 
 ## Introduction
 
-This website was built from scratch using Next.js and was first initialized in June 2023. It will undergo regular updates and serve as both a valuable learning resource and a platform for me to share my knowledge.
+This website was designed and built originally from scratch using Next.js and several technologies in it, first initialized in June 2023.
+
+This website will continue to undergo regular updates both in terms of function and content.  This website serves as my valuable learning resource and a platform for me to share my knowledge.  
+
+You are free to use this website as a reference, inspiration or template based on provided license, you can use the source code of this website according to your needs.
+
+Kindly to leave stars and reference links 😎
 <br /><br />
 
 ## Features

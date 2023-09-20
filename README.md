@@ -8,13 +8,15 @@
 
 ## Introduction
 
-This website was designed and built originally from scratch using Next.js and several technologies in it, first initialized in June 2023.
+This website was meticulously crafted from the ground up using Next.js, along with various complementary technologies. Its inception dates back to June 2023.
 
-This website will continue to undergo regular updates both in terms of function and content.  This website serves as my valuable learning resource and a platform for me to share my knowledge.  
+Ongoing enhancements, encompassing both functionality and content, are in the pipeline. This website stands as a treasured repository of my acquired knowledge, also serving as a platform for me to disseminate insights.
 
-You are free to use this website as a reference, inspiration or template based on provided license, you can use the source code of this website according to your needs.
+Feel welcome to utilize this website as a point of reference, a wellspring of inspiration, or as a template, all in accordance with the provided license. The source code is at your disposal to suit your specific requirements.
 
-Kindly to leave stars and reference links 😎
+Should you find value in this resource, your consideration of leaving a rating is greatly appreciated. 😎👍🏻
+
+If you have any questions, suggestions, input or anything else, don't hesitate to contact me🧑‍💻
 <br /><br />
 
 ## Features

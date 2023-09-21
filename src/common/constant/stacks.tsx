@@ -1,12 +1,14 @@
-import { BsFillBootstrapFill } from 'react-icons/bs';
+import { BsFillBootstrapFill, BsRobot } from 'react-icons/bs';
 import {
   SiApollographql,
+  SiFirebase,
   SiGraphql,
   SiJavascript,
   SiLaravel,
   SiMui,
   SiNextdotjs,
   SiPhp,
+  SiPrisma,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -36,4 +38,7 @@ export const STACKS: stacksProps = {
   Laravel: <SiLaravel size={iconSize} className='text-red-500' />,
   'Material UI': <SiMui size={iconSize} className='text-sky-400' />,
   Vite: <SiVite size={iconSize} className='text-purple-500' />,
+  Prisma: <SiPrisma size={iconSize} className='text-emerald-500' />,
+  Firebase: <SiFirebase size={iconSize} className='text-yellow-500' />,
+  ai: <BsRobot size={iconSize} className='text-rose-500' />,
 };

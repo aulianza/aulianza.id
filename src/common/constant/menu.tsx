@@ -21,12 +21,13 @@ import { SiJavascript } from 'react-icons/si';
 import { MenuItemProps } from '../types/menu';
 
 const iconSize = 20;
+const cn = 'group-hover:-rotate-12 transition-all duration-300';
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Home',
     href: '/',
-    icon: <HomeIcon size={iconSize} />,
+    icon: <HomeIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home',
@@ -34,7 +35,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Dashboard',
     href: '/dashboard',
-    icon: <DashboardIcon size={iconSize} />,
+    icon: <DashboardIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard',
@@ -42,7 +43,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Projects',
     href: '/projects',
-    icon: <ProjectIcon size={iconSize} />,
+    icon: <ProjectIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Projects',
@@ -50,7 +51,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Blog',
     href: '/blog',
-    icon: <BlogIcon size={iconSize} />,
+    icon: <BlogIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog',
@@ -58,7 +59,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Learn',
     href: '/learn',
-    icon: <LearnIcon size={iconSize} />,
+    icon: <LearnIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Learn',
@@ -66,7 +67,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Chat',
     href: '/chat',
-    icon: <ChatIcon size={iconSize} />,
+    icon: <ChatIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat',
@@ -74,7 +75,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'About',
     href: '/about',
-    icon: <ProfileIcon size={iconSize} />,
+    icon: <ProfileIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: About',
@@ -82,7 +83,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Contact',
     href: '/contact',
-    icon: <ContactIcon size={iconSize} />,
+    icon: <ContactIcon className={cn} size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact',
@@ -90,7 +91,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Playground',
     href: '/playground',
-    icon: <SiJavascript size={iconSize} />,
+    icon: <SiJavascript className={cn} size={iconSize} />,
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Playground',

@@ -23,21 +23,23 @@ const Navigation = () => {
     setIsOpen(true);
   };
 
+  const cn = 'group-hover:-rotate-12 transition-all duration-300';
+
   return (
-    <>
+    <div>
       <Menu list={filterdMenu} />
       <div className='py-1'>
         <MenuItem
           title='Playground'
           href='/playground'
-          icon={<SiJavascript size={18} />}
+          icon={<SiJavascript className={cn} size={18} />}
           isExternal={false}
         />
       </div>
       <MenuItem
         title={isMobile ? 'Command' : 'cmd + k'}
         href='#'
-        icon={<CommandIcon size={20} />}
+        icon={<CommandIcon className={cn} size={20} />}
         isExternal={false}
         onClick={() => handleOpenCommandPalette()}
       >
@@ -53,7 +55,7 @@ const Navigation = () => {
           <SocialMedia items={filteredSocialMedia} />
         </>
       )}
-    </>
+    </div>
   );
 };
 

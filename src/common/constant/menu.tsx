@@ -21,80 +21,88 @@ import { SiJavascript } from 'react-icons/si';
 import { MenuItemProps } from '../types/menu';
 
 const iconSize = 20;
-const cn = 'group-hover:-rotate-12 transition-all duration-300';
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Home',
     href: '/',
-    icon: <HomeIcon className={cn} size={iconSize} />,
+    icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home',
+    type: 'Pages',
   },
   {
     title: 'Dashboard',
     href: '/dashboard',
-    icon: <DashboardIcon className={cn} size={iconSize} />,
+    icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard',
+    type: 'Pages',
   },
   {
     title: 'Projects',
     href: '/projects',
-    icon: <ProjectIcon className={cn} size={iconSize} />,
+    icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Projects',
+    type: 'Pages',
   },
   {
     title: 'Blog',
     href: '/blog',
-    icon: <BlogIcon className={cn} size={iconSize} />,
+    icon: <BlogIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog',
+    type: 'Pages',
   },
   {
     title: 'Learn',
     href: '/learn',
-    icon: <LearnIcon className={cn} size={iconSize} />,
+    icon: <LearnIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Learn',
+    type: 'Pages',
   },
   {
     title: 'Chat',
     href: '/chat',
-    icon: <ChatIcon className={cn} size={iconSize} />,
+    icon: <ChatIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat',
+    type: 'Pages',
   },
   {
     title: 'About',
     href: '/about',
-    icon: <ProfileIcon className={cn} size={iconSize} />,
+    icon: <ProfileIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: About',
+    type: 'Pages',
   },
   {
     title: 'Contact',
     href: '/contact',
-    icon: <ContactIcon className={cn} size={iconSize} />,
+    icon: <ContactIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact',
+    type: 'Pages',
   },
   {
     title: 'Playground',
     href: '/playground',
-    icon: <SiJavascript className={cn} size={iconSize} />,
+    icon: <SiJavascript size={iconSize} />,
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Playground',
+    type: 'Pages',
   },
 ];
 
@@ -107,6 +115,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Contact: Email',
     className: '!bg-green-600 border border dark:border-neutral-700',
+    type: 'Link',
   },
 
   {
@@ -117,6 +126,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Linkedin',
     className: '!bg-blue-500 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Twitter',
@@ -126,6 +136,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Twitter',
     className: '!bg-sky-500 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Instagram',
@@ -135,6 +146,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Instagram',
     className: '!bg-orange-700 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Github',
@@ -144,6 +156,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Github',
     className: '!bg-black border border dark:border-neutral-700',
+    type: 'Link',
   },
 ];
 
@@ -155,5 +168,6 @@ export const EXTERNAL_LINKS: MenuItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'External Link: Analytics',
+    type: 'Link',
   },
 ];

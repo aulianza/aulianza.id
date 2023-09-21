@@ -1,13 +1,8 @@
 import Image from './Image';
 
 const TopBar = () => {
-  const bgImage = "url('/images/shiny_bar.svg')";
-
   return (
-    <div
-      className='hidden xl:flex gap-x-2 items-center justify-center p-2.5 shadow-lg backdrop-blur-lg bg-no-repeat bg-cover text-sm dark:text-neutral-400'
-      style={{ backgroundImage: bgImage }}
-    >
+    <div className='hidden xl:flex gap-x-2 items-center justify-center p-2.5 shadow-lg backdrop-blur-2xl bg-no-repeat bg-cover text-sm dark:text-neutral-300'>
       <span>🚀</span>
       <span>Just launched my landing page website. check it out :</span>
       <a

@@ -25,7 +25,7 @@ const ChapterCard = ({
     <div
       className={clsx(
         'flex justify-between items-center cursor-pointer py-3 px-5 mb-3 rounded-t-xl text-white select-none',
-        'bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-sky-500 to-sky-600 dark:from-sky-800 dark:to-sky-900',
+        'bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500 to-teal-600 dark:from-teal-900 dark:to-teal-950',
         'transition-all duration-300',
         !openAccordions.includes(chapterId) && 'rounded-b-xl'
       )}

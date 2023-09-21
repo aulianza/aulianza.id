@@ -30,6 +30,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home',
+    type: 'Pages',
   },
   {
     title: 'Dashboard',
@@ -38,6 +39,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard',
+    type: 'Pages',
   },
   {
     title: 'Projects',
@@ -46,6 +48,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Projects',
+    type: 'Pages',
   },
   {
     title: 'Blog',
@@ -54,6 +57,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog',
+    type: 'Pages',
   },
   {
     title: 'Learn',
@@ -62,6 +66,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Learn',
+    type: 'Pages',
   },
   {
     title: 'Chat',
@@ -70,6 +75,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat',
+    type: 'Pages',
   },
   {
     title: 'About',
@@ -78,6 +84,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: About',
+    type: 'Pages',
   },
   {
     title: 'Contact',
@@ -86,6 +93,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact',
+    type: 'Pages',
   },
   {
     title: 'Playground',
@@ -94,6 +102,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Playground',
+    type: 'Pages',
   },
 ];
 
@@ -106,6 +115,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Contact: Email',
     className: '!bg-green-600 border border dark:border-neutral-700',
+    type: 'Link',
   },
 
   {
@@ -116,6 +126,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Linkedin',
     className: '!bg-blue-500 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Twitter',
@@ -125,6 +136,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Twitter',
     className: '!bg-sky-500 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Instagram',
@@ -134,6 +146,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Instagram',
     className: '!bg-orange-700 border border dark:border-neutral-700',
+    type: 'Link',
   },
   {
     title: 'Github',
@@ -143,6 +156,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Github',
     className: '!bg-black border border dark:border-neutral-700',
+    type: 'Link',
   },
 ];
 
@@ -154,5 +168,6 @@ export const EXTERNAL_LINKS: MenuItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'External Link: Analytics',
+    type: 'Link',
   },
 ];

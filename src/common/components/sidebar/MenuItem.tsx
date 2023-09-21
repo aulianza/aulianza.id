@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
@@ -21,10 +22,10 @@ const MenuItem = ({
   const isHashLink = href === '#';
   const router = useRouter();
 
-  const activeClasses = `flex items-center gap-2 py-2 px-4 font-medium text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
+  const activeClasses = `flex font-sora items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg group ${
     router.pathname === href
-      ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300'
-      : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
+      ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-200'
+      : 'hover:dark:lg:bg-neutral-800 hover:dark:!text-neutral-300 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
   }`;
 
   const handleClick = () => {
@@ -47,12 +48,26 @@ const MenuItem = ({
     onMouseLeave: handleMouseLeave,
   };
 
+  const isActiveRoute = router.pathname === href;
+
   const itemComponent = () => {
     return (
       <div {...elementProps}>
-        {!hideIcon && <div>{icon}</div>}
+        {!hideIcon && (
+          <div
+            className={clsx(
+              'group-hover:-rotate-12 transition-all duration-300',
+              isActiveRoute && '-rotate-12'
+            )}
+          >
+            {icon}
+          </div>
+        )}
         <div className='flex-grow ml-0.5'>{title}</div>
         {children && <>{children}</>}
+        {isActiveRoute && (
+          <ExternalLinkIcon size={22} className='text-gray-500 animate-pulse' />
+        )}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon
             size={22}

@@ -8,8 +8,6 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 
 import Menu from './Menu';
 import MenuItem from './MenuItem';
-import Breakline from '../elements/Breakline';
-import SocialMedia from '../elements/SocialMedia';
 
 const Navigation = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
@@ -23,21 +21,23 @@ const Navigation = () => {
     setIsOpen(true);
   };
 
+  const cn = 'group-hover:-rotate-12 transition-all duration-300';
+
   return (
-    <>
+    <div>
       <Menu list={filterdMenu} />
       <div className='py-1'>
         <MenuItem
           title='Playground'
           href='/playground'
-          icon={<SiJavascript size={18} />}
+          icon={<SiJavascript className={cn} size={18} />}
           isExternal={false}
         />
       </div>
       <MenuItem
         title={isMobile ? 'Command' : 'cmd + k'}
         href='#'
-        icon={<CommandIcon size={20} />}
+        icon={<CommandIcon className={cn} size={20} />}
         isExternal={false}
         onClick={() => handleOpenCommandPalette()}
       >
@@ -46,14 +46,7 @@ const Navigation = () => {
           <span>AI Powered</span>
         </div>
       </MenuItem>
-
-      {isMobile && (
-        <>
-          <Breakline />
-          <SocialMedia items={filteredSocialMedia} />
-        </>
-      )}
-    </>
+    </div>
   );
 };
 

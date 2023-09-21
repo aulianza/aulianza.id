@@ -13,9 +13,11 @@ html {
 }
 
 body {
-  background-image: url('/images/bg.png');
-  background-repeat: no-repeat;
-  background-position: -200px -330px;
+  background: radial-gradient(
+    ellipse 50% 50% at 50% -30%,
+    rgb(45 212 191 / 20%) 0%,
+    rgb(8 0 0 / 0%)
+  );
 }
 
 input,

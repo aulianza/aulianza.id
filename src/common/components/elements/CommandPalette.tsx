@@ -79,7 +79,7 @@ const CommandPalette = () => {
       })),
     },
     {
-      title: 'THEME',
+      title: 'APPEARANCE',
       children: [
         {
           icon:
@@ -236,7 +236,7 @@ const CommandPalette = () => {
                 )}
                 <Combobox.Input
                   onChange={handleSearch}
-                  className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
+                  className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200 font-sora'
                   placeholder={
                     askAssistantClicked ? queryDebounce : placeholder
                   }
@@ -260,7 +260,7 @@ const CommandPalette = () => {
                     <div className='my-2 px-5 text-xs font-medium text-neutral-500'>
                       {menu?.title}
                     </div>
-                    <Combobox.Options static className='space-y-1'>
+                    <Combobox.Options static className='group space-y-1'>
                       {menu?.children?.map((child, index) => (
                         <Combobox.Option key={index.toString()} value={child}>
                           {({ active }) => (
@@ -269,11 +269,20 @@ const CommandPalette = () => {
                                 active
                                   ? 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700/60 dark:text-white'
                                   : 'text-neutral-600 dark:text-neutral-300',
-                                'mx-2 flex cursor-pointer items-center gap-3 rounded-md py-2 px-4'
+                                'mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md py-2 px-4'
                               )}
                             >
-                              {child?.icon && <span>{child?.icon}</span>}
-                              <span>{child?.title}</span>
+                              <div className='flex gap-5 items-center'>
+                                {child?.icon && <span>{child?.icon}</span>}
+                                <span className='font-sora'>
+                                  {child?.title}
+                                </span>
+                              </div>
+                              {child?.type && (
+                                <div className='border border-neutral-400 dark:border-neutral-500 text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
+                                  {child?.type}
+                                </div>
+                              )}
                             </div>
                           )}
                         </Combobox.Option>

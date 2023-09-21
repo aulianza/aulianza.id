@@ -79,7 +79,7 @@ const BlogCard = ({
           />
         </div>
         <article className={contentContainerClasses}>
-          <h3 className='md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300'>
+          <h3 className='md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300'>
             {trimmedTitle}
           </h3>
           <div className='flex gap-4 text-neutral-600 dark:text-neutral-400'>

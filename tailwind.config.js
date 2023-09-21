@@ -27,7 +27,7 @@ module.exports = {
         },
         flying: {
           '0%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(0.8rem)' },
+          '50%': { transform: 'translateY(0.5rem)' },
           '100%': { transform: 'translateY(0)' },
         },
         badge: {

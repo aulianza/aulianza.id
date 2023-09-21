@@ -279,7 +279,7 @@ const CommandPalette = () => {
                                 </span>
                               </div>
                               {child?.type && (
-                                <div className='border dark:border-neutral-500 dark:text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
+                                <div className='border border-neutral-400 dark:border-neutral-500 text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
                                   {child?.type}
                                 </div>
                               )}

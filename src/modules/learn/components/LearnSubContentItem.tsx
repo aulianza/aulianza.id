@@ -18,7 +18,7 @@ const LearnSubContentItem = ({
     <Link href={`/learn/${contentSlug}/${subContentSlug}`}>
       <Card
         className={clsxm(
-          'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full py-4 px-5'
+          'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-900 lg:hover:scale-[102%] w-full py-4 px-5'
         )}
       >
         <div className='flex gap-3 items-center'>

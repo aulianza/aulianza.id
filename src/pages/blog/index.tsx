@@ -7,7 +7,7 @@ import BlogList from '@/modules/blog';
 
 const PAGE_TITLE = 'Blog';
 const PAGE_DESCRIPTION =
-  'Exploring the world of code, creativity, and constant learning.';
+  'Learning to write, even though it turns out to be difficult';
 
 const BlogPage: NextPage = () => {
   return (

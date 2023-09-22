@@ -1,4 +1,6 @@
-export const CAREERS = [
+import { CareerProps } from '../types/careers';
+
+export const CAREERS: CareerProps[] = [
   {
     position: 'Lead Frontend Engineer',
     company: 'Sirka.io',
@@ -70,5 +72,29 @@ export const CAREERS = [
     end_date: '2019-09',
     industry: 'software house',
     link: 'https://www.linkedin.com/company/rencongnetwork',
+  },
+  {
+    position: 'Web Developer',
+    company: 'PT. Kuala Nanggroe',
+    logo: null,
+    location: 'Aceh',
+    location_type: 'Onsite',
+    type: 'Part-time',
+    start_date: '2016-12',
+    end_date: '2017-08',
+    industry: 'travel',
+    link: 'https://travelkuala.com',
+  },
+  {
+    position: 'Web Developer',
+    company: 'Ruhul Islam Anak Bangsa',
+    logo: '/images/careers/riab.png',
+    location: 'Aceh',
+    location_type: 'Onsite',
+    type: 'Part-time',
+    start_date: '2015-01',
+    end_date: '2016-01',
+    industry: 'school',
+    link: 'https://ruhulislam.com',
   },
 ];

@@ -150,6 +150,10 @@ const CommandPalette = () => {
     setAiFinished(false);
   };
 
+  const isActiveRoute = (href: string) => {
+    return router.pathname === href;
+  };
+
   useEffect(() => {
     if (query) setEmptyState(false);
   }, [query]);
@@ -225,7 +229,7 @@ const CommandPalette = () => {
             <Combobox
               onChange={(menu: MenuOptionItemProps) => handleSelect(menu)}
               as='div'
-              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-100 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-neutral-950'
+              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-100 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-[#1b1b1b80] backdrop-blur'
               disabled={askAssistantClicked}
             >
               <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
@@ -260,29 +264,49 @@ const CommandPalette = () => {
                     <div className='my-2 px-5 text-xs font-medium text-neutral-500'>
                       {menu?.title}
                     </div>
-                    <Combobox.Options static className='group space-y-1'>
+                    <Combobox.Options static className='space-y-1'>
                       {menu?.children?.map((child, index) => (
                         <Combobox.Option key={index.toString()} value={child}>
                           {({ active }) => (
                             <div
                               className={clsx(
-                                active
+                                active || isActiveRoute(child?.href)
                                   ? 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700/60 dark:text-white'
                                   : 'text-neutral-600 dark:text-neutral-300',
-                                'mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md py-2 px-4'
+                                'mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md py-2 px-4 group',
+                                'dark:hover:bg-[#ffffff14]'
                               )}
                             >
                               <div className='flex gap-5 items-center'>
-                                {child?.icon && <span>{child?.icon}</span>}
+                                {child?.icon && (
+                                  <div
+                                    className={clsx(
+                                      'group-hover:-rotate-12 transition-all duration-300',
+                                      isActiveRoute(child?.href) && '-rotate-12'
+                                    )}
+                                  >
+                                    {child?.icon}
+                                  </div>
+                                )}
                                 <span className='font-sora'>
-                                  {child?.title}
+                                  {child?.title} {active}
                                 </span>
                               </div>
-                              {child?.type && (
-                                <div className='border border-neutral-400 dark:border-neutral-500 text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
-                                  {child?.type}
-                                </div>
-                              )}
+                              <>
+                                {isActiveRoute(child?.href) ? (
+                                  <span className='animate-pulse text-xs font-sora text-neutral-500'>
+                                    You are here
+                                  </span>
+                                ) : (
+                                  <>
+                                    {child?.type && (
+                                      <div className='border border-neutral-400 dark:border-neutral-500 text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
+                                        {child?.type}
+                                      </div>
+                                    )}
+                                  </>
+                                )}
+                              </>
                             </div>
                           )}
                         </Combobox.Option>

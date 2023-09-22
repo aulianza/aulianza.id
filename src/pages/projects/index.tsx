@@ -14,7 +14,7 @@ interface ProjectsPageProps {
 
 const PAGE_TITLE = 'Projects';
 const PAGE_DESCRIPTION =
-  'Showcasing my passion for technology, design, and problem-solving through code.';
+  'Several projects that I have worked on, both private and open source.';
 
 const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
   const [visibleProjects, setVisibleProjects] = useState(6);

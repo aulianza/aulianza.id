@@ -29,11 +29,11 @@ const CareerCard = ({
   }
 
   return (
-    <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800'>
+    <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-900'>
       {logo ? (
         <Image src={logo} width={55} height={55} alt={company} />
       ) : (
-        <CompanyIcon size={30} />
+        <CompanyIcon size={50} />
       )}
 
       <div className='space-y-1'>

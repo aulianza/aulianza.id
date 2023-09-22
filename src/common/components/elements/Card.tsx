@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 
 interface CardProps {
@@ -8,13 +9,18 @@ interface CardProps {
 
 const Card = ({ children, className = '', ...others }: CardProps) => {
   return (
-    <div
-      className={`bg-white rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md ${className} `}
+    <StyledCard
+      className={`bg-white rounded-xl transition-all duration-300 shadow-sm ${className} `}
       {...others}
     >
       {children}
-    </div>
+    </StyledCard>
   );
 };
 
 export default Card;
+
+const StyledCard = styled.div`
+  background-color: hsla(0, 0%, 100%, 0.05);
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.05);
+`;

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { getDatabase, onValue, push, ref } from 'firebase/database';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';

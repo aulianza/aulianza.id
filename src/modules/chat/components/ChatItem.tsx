@@ -14,6 +14,18 @@ const ChatItem = ({
 }: MessageProps) => {
   const authorEmail = 'aulianza.dev@gmail.com';
 
+  const pattern = /@([^:]+):/g;
+  const modifiedMessage = message.split(pattern).map((part, index) => {
+    if (index % 2 === 1) {
+      return (
+        <span key={index} className='text-yellow-600 dark:text-yellow-400'>
+          @{part}
+        </span>
+      );
+    }
+    return part;
+  });
+
   return (
     <div className='flex items-start gap-3 px-3'>
       {image && (
@@ -43,7 +55,7 @@ const ChatItem = ({
           </div>
         </div>
         <p className='w-fit text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl'>
-          {message}
+          {modifiedMessage}
         </p>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />

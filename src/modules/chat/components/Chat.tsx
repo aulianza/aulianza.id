@@ -11,7 +11,7 @@ import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
 import ChatList from './ChatList';
 
-const Chat = () => {
+const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
   const { data: session } = useSession();
 
   const [messages, setMessages] = useState<MessageProps[]>([]);
@@ -46,7 +46,7 @@ const Chat = () => {
 
   return (
     <>
-      <ChatList messages={messages} />
+      <ChatList isWidget={isWidget} messages={messages} />
       {session ? <ChatInput onSendMessage={handleSendMessage} /> : <ChatAuth />}
     </>
   );

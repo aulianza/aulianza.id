@@ -4,9 +4,14 @@ import { ChatListProps } from '@/common/types/chat';
 
 import ChatItem from './ChatItem';
 
-const ChatList = ({ messages }: ChatListProps) => {
+interface ChatListPropsNew extends ChatListProps {
+  isWidget?: boolean;
+}
+
+const ChatList = ({ messages, isWidget = false }: ChatListPropsNew) => {
   const chatListRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
+  const [chatListHeight, setChatListHeight] = useState('500px');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,11 +43,27 @@ const ChatList = ({ messages }: ChatListProps) => {
     }
   }, [messages, hasScrolledUp]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
+      setChatListHeight(newHeight);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isWidget]);
+
   return (
     <div className='rounded-lg px-1'>
       <div
         ref={chatListRef}
-        className='overflow-y-auto h-[500px] space-y-5 py-4'
+        className='overflow-y-auto space-y-5 py-4'
+        style={{ height: chatListHeight }}
       >
         {messages.map((chat, index) => (
           <ChatItem key={index} {...chat} />

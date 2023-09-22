@@ -1,14 +1,15 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-import useChatStore from '@/common/stores/useChatStore';
-
 import Chat from './Chat';
 import ChatWidgetHeader from './ChatWidgetHeader';
 
-const ChatWidget = () => {
-  const { isOpen, toggleChat } = useChatStore();
+interface ChatWidgetProps {
+  isOpen: boolean;
+  toggleChat: () => void;
+}
 
+const ChatWidget = ({ isOpen, toggleChat }: ChatWidgetProps) => {
   return (
     <Transition
       show={isOpen}
@@ -22,12 +23,12 @@ const ChatWidget = () => {
     >
       <Dialog
         as='div'
-        className='fixed bottom-0 md:bottom-12 md:right-5 shadow-lg'
+        className='fixed z-20 bottom-0 md:bottom-12 md:right-5 shadow-lg'
         onClose={toggleChat}
       >
         <div className='bg-neutral-50 dark:bg-neutral-900 border border-neutral-400 dark:border-neutral-600 rounded-xl w-full md:w-[400px]'>
           <ChatWidgetHeader />
-          <Chat />
+          <Chat isWidget={true} />
         </div>
       </Dialog>
     </Transition>

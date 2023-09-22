@@ -5,7 +5,7 @@ import useChatStore from '@/common/stores/useChatStore';
 import ChatWidget from './ChatWidget';
 
 const ChatButton = () => {
-  const { toggleChat } = useChatStore();
+  const { isOpen, toggleChat } = useChatStore();
 
   return (
     <>
@@ -17,7 +17,7 @@ const ChatButton = () => {
         <ChatIcon size={18} />
         <span>Chat</span>
       </button>
-      <ChatWidget />
+      <ChatWidget isOpen={isOpen} toggleChat={toggleChat} />
     </>
   );
 };

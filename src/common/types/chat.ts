@@ -5,6 +5,7 @@ export interface MessageProps {
   image?: string;
   message: string;
   created_at: string;
+  is_show?: boolean;
 }
 
 export interface ChatListProps {

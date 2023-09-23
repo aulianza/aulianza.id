@@ -6,9 +6,14 @@ import ChatItem from './ChatItem';
 
 interface ChatListPropsNew extends ChatListProps {
   isWidget?: boolean;
+  onDeleteMessage: (id: string) => void;
 }
 
-const ChatList = ({ messages, isWidget = false }: ChatListPropsNew) => {
+const ChatList = ({
+  messages,
+  isWidget = false,
+  onDeleteMessage,
+}: ChatListPropsNew) => {
   const chatListRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
   const [chatListHeight, setChatListHeight] = useState('500px');
@@ -65,8 +70,8 @@ const ChatList = ({ messages, isWidget = false }: ChatListPropsNew) => {
         className='overflow-y-auto space-y-5 py-4'
         style={{ height: chatListHeight }}
       >
-        {messages.map((chat, index) => (
-          <ChatItem key={index} {...chat} />
+        {messages?.map((chat, index) => (
+          <ChatItem key={index} onDelete={onDeleteMessage} {...chat} />
         ))}
       </div>
     </div>

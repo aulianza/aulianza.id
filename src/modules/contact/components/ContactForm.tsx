@@ -11,12 +11,14 @@ interface FormDataProps {
   message: string;
 }
 
+const formInitialState: FormDataProps = {
+  name: '',
+  email: '',
+  message: '',
+};
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormDataProps>({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState<FormDataProps>(formInitialState);
 
   const [formErrors, setFormErrors] = useState<Partial<FormDataProps>>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +48,7 @@ const ContactForm = () => {
         const response = await axios.post('/api/contact', { formData });
         if (response.status === 200) {
           alert('Message sent!');
+          setFormData(formInitialState);
         }
       } catch (error) {
         alert(error);
@@ -92,7 +95,7 @@ const ContactForm = () => {
         />
         <Button
           className={clsx(
-            'py-2.5 bg-neutral-800 dark:!bg-neutral-50 dark:text-neutral-950 flex justify-center hover:dark:bg-neutral-50 hover:bg-neutral-900 hover:scale-[101%]'
+            'py-2.5 bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 flex justify-center hover:dark:bg-neutral-50 hover:bg-neutral-900 hover:scale-[101%]'
           )}
           type='submit'
           icon={<></>}

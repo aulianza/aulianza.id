@@ -72,20 +72,22 @@ const ChatItem = ({
         <div className='group flex items-center gap-3'>
           <p
             className={clsx(
-              'w-fit max-w-[90%] text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl',
+              'w-fit  text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl',
               'group-hover:dark:bg-neutral-700'
             )}
           >
             {modifiedMessage}
           </p>
-          {(session?.user?.email === email ||
-            session?.user?.email === authorEmail) && (
-            <DeleteIcon
-              size={18}
-              className='hidden group-hover:flex cursor-pointer text-red-500'
-              onClick={handleDeleteMessage}
-            />
-          )}
+          <div className='flex items-center gap-3'>
+            {(session?.user?.email === email ||
+              session?.user?.email === authorEmail) && (
+              <DeleteIcon
+                size={17}
+                className='hidden group-hover:flex cursor-pointer text-red-500'
+                onClick={handleDeleteMessage}
+              />
+            )}
+          </div>
         </div>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />

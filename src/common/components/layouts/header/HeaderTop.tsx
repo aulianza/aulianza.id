@@ -1,7 +1,13 @@
+import clsx from 'clsx';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+import { useContext, useState } from 'react';
 import { BiCommand as CommandIcon } from 'react-icons/bi';
-import { MdVerified as VerifiedIcon } from 'react-icons/md';
+import { FiMenu as MenuIcon } from 'react-icons/fi';
+import {
+  MdClose as CloseIcon,
+  MdVerified as VerifiedIcon,
+} from 'react-icons/md';
 
 import { MENU_ITEMS } from '@/common/constant/menu';
 import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
@@ -9,14 +15,17 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 import Image from '../../elements/Image';
 import ThemeToggleButton from '../../elements/ThemeToggleButton';
 import Tooltip from '../../elements/Tooltip';
-import MenuItem from '../../sidebar/MenuItem';
 import Profile from '../../sidebar/Profile';
 
 const HeaderTop = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const menus = MENU_ITEMS?.filter((item) => item?.isShow);
-  const filterdMenu = menus?.filter((item) => item.title !== 'Home');
+  const router = useRouter();
+
+  const menus = MENU_ITEMS.filter(
+    (item) => item.isShow && item.title !== 'Home'
+  );
 
   return (
     <header>
@@ -30,30 +39,61 @@ const HeaderTop = () => {
             rounded='rounded-full'
             className='lg:hover:scale-105'
           />
-          <div className='flex gap-2 items-center'>
-            <Link href='/' passHref>
-              <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>
-                Ryan Aulia
-              </h2>
-            </Link>
-            <Tooltip title='Verified'>
-              <VerifiedIcon size={18} className='text-blue-400' />
-            </Tooltip>
-          </div>
+          {!showMenu && (
+            <>
+              <Link href='/' passHref>
+                <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>
+                  Ryan Aulia
+                </h2>
+              </Link>
+              <Tooltip title='Verified'>
+                <VerifiedIcon
+                  size={18}
+                  className='text-blue-400'
+                  data-aos='flip-right'
+                />
+              </Tooltip>
+            </>
+          )}
         </div>
 
-        <div className='flex items-center gap-5'>
-          <div className='flex gap-1 items-center' data-aos='flip-up'>
-            {filterdMenu?.map((item, index: number) => (
-              <MenuItem key={index} {...item} hideIcon />
-            ))}
-          </div>
-          <CommandIcon
-            onClick={() => setIsOpen(true)}
-            className='cursor-pointer'
-            size={20}
-          />
-          <ThemeToggleButton />
+        <div className='flex justify-between items-center gap-5'>
+          {showMenu && (
+            <div className='flex gap-6 items-center' data-aos='flip-up'>
+              {menus.map((menu, index) => (
+                <Link
+                  key={index}
+                  href={menu.href}
+                  passHref
+                  className={clsx(
+                    'text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-100',
+                    router.pathname === menu?.href &&
+                      '!text-neutral-800 dark:!text-neutral-100'
+                  )}
+                >
+                  <div>{menu.title}</div>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {!showMenu && (
+            <>
+              <ThemeToggleButton />
+              <CommandIcon
+                onClick={() => setIsOpen(true)}
+                className='cursor-pointer'
+                size={20}
+              />
+            </>
+          )}
+
+          <button
+            className='flex items-center gap-2 dark:bg-neutral-900 backdrop-blur border dark:border-neutral-700 rounded-md p-2'
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            {showMenu ? <CloseIcon size={18} /> : <MenuIcon size={18} />}
+          </button>
         </div>
       </div>
       <div className='block lg:hidden'>

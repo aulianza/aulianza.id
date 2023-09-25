@@ -10,7 +10,7 @@ const ChatWidgetHeader = () => {
   const { data: session } = useSession();
   const { toggleChat } = useChatStore();
 
-  const handleMaximize = () => Router.push('/chat');
+  const handleMaximize = () => Router.push('/guestbook');
 
   return (
     <div className='flex items-center justify-between text-lg font-medium p-4 text-neutral-700 dark:text-neutral-300 border-b border-neutral-400 dark:border-neutral-600'>

@@ -33,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
     router.pathname.startsWith('/blog/') ||
     router.pathname.startsWith('/learn/');
 
-  const isShowChatButton = pageName !== 'chat';
+  const isShowChatButton = pageName !== 'guestbook';
 
   return (
     <>

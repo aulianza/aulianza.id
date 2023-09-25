@@ -40,7 +40,7 @@ const HeaderTop = () => {
             className='lg:hover:scale-105'
           />
           {!showMenu && (
-            <>
+            <div className='flex items-center gap-3'>
               <Link href='/' passHref>
                 <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>
                   Ryan Aulia
@@ -53,7 +53,7 @@ const HeaderTop = () => {
                   data-aos='flip-right'
                 />
               </Tooltip>
-            </>
+            </div>
           )}
         </div>
 

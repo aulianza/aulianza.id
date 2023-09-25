@@ -14,8 +14,8 @@ html {
 
 body {
   background: radial-gradient(
-    ellipse 50% 50% at 50% -30%,
-    rgb(45 212 191 / 20%) 0%,
+    ellipse 80% 50% at 50% -30%,
+    rgb(45 212 191 / 25%) 0%,
     rgb(8 0 0 / 0%)
   );
 }

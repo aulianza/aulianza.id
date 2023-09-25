@@ -5,11 +5,11 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Chat from '@/modules/chat';
 
-const PAGE_TITLE = 'Chat';
+const PAGE_TITLE = 'Guestbook';
 const PAGE_DESCRIPTION =
   'Leave whatever you like to say, suggestions, questions or anything!';
 
-const ContactPage: NextPage = () => {
+const GuestBookPage: NextPage = () => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
@@ -21,4 +21,4 @@ const ContactPage: NextPage = () => {
   );
 };
 
-export default ContactPage;
+export default GuestBookPage;

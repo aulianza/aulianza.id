@@ -15,7 +15,7 @@ const ChatButton = () => {
         data-umami-event='Toggle Chat Widget'
       >
         <ChatIcon size={18} />
-        <span>Chat</span>
+        <span>Guestbook</span>
       </button>
       <ChatWidget isOpen={isOpen} toggleChat={toggleChat} />
     </>

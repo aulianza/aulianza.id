@@ -37,9 +37,9 @@ Due this site is using free cloud hosting services (Vercel) with certain limitat
 
 A no-fuss pure JavaScript playground with a live feedback loop.
 
-### 💬 Real-time Chat
+### 💬 Realtime Guestbook
 
-Real-Time Chat is powered by Firebase. Anyone can leave me a message in this website.
+Realtime guestbook chat is powered by Firebase. Anyone can leave me a message in this website.
 
 ### 🎧 Spotify
 

@@ -11,9 +11,20 @@ import ProfileHeader from './ProfileHeader';
 import Status from '../elements/Status';
 import ThemeToggleButton from '../elements/ThemeToggleButton';
 
-const Profile = () => {
+interface ProfileProps {
+  isScrolled?: boolean;
+}
+
+const Profile = ({ isScrolled = false }: ProfileProps) => {
   const isMobile = useIsMobile();
-  const imageSize = isMobile ? 40 : 100;
+
+  const getImageSize = () => {
+    let size = isMobile ? 40 : 100;
+    if (!isMobile && isScrolled) {
+      size = 80;
+    }
+    return size;
+  };
 
   const [expandMenu, setExpandMenu] = useState<boolean>(false);
 
@@ -41,8 +52,8 @@ const Profile = () => {
           expandMenu && 'pb-0'
         )}
       >
-        <div className='flex items-start justify-between lg:flex-col lg:space-y-4 '>
-          <ProfileHeader expandMenu={expandMenu} imageSize={imageSize} />
+        <div className='flex items-start justify-between lg:flex-col lg:space-y-4 md:px-2'>
+          <ProfileHeader expandMenu={expandMenu} imageSize={getImageSize()} />
 
           {!isMobile && (
             <div className='flex items-center w-full justify-between'>

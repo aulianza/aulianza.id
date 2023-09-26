@@ -13,7 +13,7 @@ const ChatWidgetHeader = () => {
   const handleMaximize = () => Router.push('/guestbook');
 
   return (
-    <div className='flex items-center justify-between text-lg font-medium p-4 text-neutral-700 dark:text-neutral-300 border-b border-neutral-400 dark:border-neutral-600'>
+    <div className='flex items-center justify-between text-lg font-medium p-4 text-neutral-700 dark:text-neutral-300 border-b border-neutral-300 dark:border-neutral-700'>
       <div className='flex items-center gap-4'>
         <div className='flex gap-2'>
           <div
@@ -41,7 +41,7 @@ const ChatWidgetHeader = () => {
             />
           </div>
         </div>
-        <h3 className='font-sora'>Guestbook</h3>
+        <h4 className='font-sora text-base'>Guestbook</h4>
       </div>
       {session && (
         <SignOutIcon

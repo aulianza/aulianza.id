@@ -5,7 +5,7 @@ import Button from '@/common/components/elements/Button';
 
 const ChatAuth = () => {
   return (
-    <div className='flex flex-col border-t dark:border-neutral-600'>
+    <div className='flex flex-col border-t border-neutral-300 dark:border-neutral-900'>
       <div className='py-3 px-4 text-center text-neutral-700 dark:text-neutral-400 space-y-3 mb-1'>
         <p className='text-sm'>Please sign in to typing</p>
         <Button

@@ -9,7 +9,7 @@ const Status = () => {
         transition={{ duration: 0.5, repeat: Infinity }}
       />
       <span className='text-sm  text-neutral-600 dark:text-neutral-400 font-sora font-thin'>
-        Available for hire.
+        available for hire
       </span>
     </div>
   );

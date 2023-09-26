@@ -45,7 +45,7 @@ module.exports = {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
-        'looping-tag': 'loop 50s linear infinite',
+        'looping-tag': 'loop 100s linear infinite',
       },
     },
   },

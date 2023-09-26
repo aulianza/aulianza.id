@@ -8,6 +8,7 @@ import Tooltip from '../elements/Tooltip';
 interface ProfileHeaderProps {
   expandMenu: boolean;
   imageSize: number;
+  isScrolled?: boolean;
 }
 
 const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {

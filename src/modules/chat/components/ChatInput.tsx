@@ -41,7 +41,7 @@ const ChatInput = ({
 
   return (
     <>
-      <form className='flex items-center gap-x-1 p-4 pb-3'>
+      <form className='flex items-center gap-x-1 p-4 pb-3 border-t border-neutral-300 dark:border-neutral-800'>
         <input
           type='text'
           value={message}

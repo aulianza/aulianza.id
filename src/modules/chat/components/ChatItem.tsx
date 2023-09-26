@@ -72,7 +72,7 @@ const ChatItem = ({
         <div className='group flex items-center gap-3'>
           <p
             className={clsx(
-              'w-fit  text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl',
+              'w-fit text-neutral-800 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-800 py-2 px-3 rounded-tl-none rounded-xl',
               'group-hover:dark:bg-neutral-700'
             )}
           >

@@ -20,6 +20,8 @@ const LearnCard = ({
 }: ContentProps) => {
   const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher);
 
+  const lessonCount = data?.count ?? '0';
+
   return (
     <Link href={`/learn/${slug}`}>
       <Card className='group relative border border-neutral-200 dark:border-neutral-900 lg:hover:scale-[102%] cursor-pointer'>
@@ -57,7 +59,7 @@ const LearnCard = ({
             <div className='flex gap-1 items-center'>
               <LessonIcon size={16} />
               <span className='text-sm ml-0.5'>
-                {`${data?.count} ${data?.count > 1 ? 'Lessons' : 'Lesson'}`}
+                {`${lessonCount} ${lessonCount > 1 ? 'Lessons' : 'Lesson'}`}
               </span>
             </div>
             <div className='flex gap-1 items-center'>

@@ -8,7 +8,7 @@ export const ABOUT = `
     currentYear - workStart
   } years of professional experience and a total of ${
   currentYear - codingStart
-} years in web development since ${codingStart}. Skilled in JavaScript, TypeScript, and PHP, with proficiency in various web frameworks such as React.js, Next.js, Angular, Vue.js, Nuxt.js, Node.js, Laravel and Codeigniter.
+} years in web development since ${codingStart}. Skilled in JavaScript, TypeScript, and PHP, with proficiency in various web frameworks.
 </p>
 <p>
 	Throughout my career, I have demonstrated a strong ability to

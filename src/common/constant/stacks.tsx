@@ -1,22 +1,39 @@
 import { BsFillBootstrapFill, BsRobot } from 'react-icons/bs';
 import {
+  SiAngular,
   SiApollographql,
+  SiCss3,
+  SiExpress,
   SiFirebase,
+  SiGatsby,
   SiGraphql,
   SiJavascript,
+  SiJest,
+  SiJquery,
   SiLaravel,
   SiMui,
   SiNextdotjs,
+  SiNginx,
+  SiNodedotjs,
+  SiNuxtdotjs,
   SiPhp,
   SiPrisma,
+  SiPwa,
   SiReact,
+  SiRedux,
+  SiRemix,
+  SiSocketdotio,
+  SiStorybook,
+  SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
   SiVite,
+  SiVuedotjs,
+  SiWebpack,
   SiWordpress,
 } from 'react-icons/si';
 
-type stacksProps = {
+export type stacksProps = {
   [key: string]: JSX.Element;
 };
 
@@ -40,5 +57,26 @@ export const STACKS: stacksProps = {
   Vite: <SiVite size={iconSize} className='text-purple-500' />,
   Prisma: <SiPrisma size={iconSize} className='text-emerald-500' />,
   Firebase: <SiFirebase size={iconSize} className='text-yellow-500' />,
-  ai: <BsRobot size={iconSize} className='text-rose-500' />,
+  'Artificial Intelligence': (
+    <BsRobot size={iconSize} className='text-rose-500' />
+  ),
+  Angular: <SiAngular size={iconSize} className='text-red-500' />,
+  'Vue.js': <SiVuedotjs size={iconSize} className='text-green-500' />,
+  'Nuxt.js': <SiNuxtdotjs size={iconSize} className='text-green-400' />,
+  'Node.js': <SiNodedotjs size={iconSize} className='text-green-600' />,
+  Gatsby: <SiGatsby size={iconSize} className='text-purple-600' />,
+  Redux: <SiRedux size={iconSize} className='text-purple-500' />,
+  Webpack: <SiWebpack size={iconSize} className='text-blue-500' />,
+  'Styled Components': (
+    <SiStyledcomponents size={iconSize} className='text-pink-500' />
+  ),
+  PWA: <SiPwa size={iconSize} className='text-amber-600' />,
+  Nginx: <SiNginx size={iconSize} className='text-green-500' />,
+  Jest: <SiJest size={iconSize} className='text-red-600' />,
+  Storybook: <SiStorybook size={iconSize} className='text-amber-500' />,
+  CSS: <SiCss3 size={iconSize} className='text-blue-300' />,
+  Socket: <SiSocketdotio size={iconSize} />,
+  Remix: <SiRemix size={iconSize} />,
+  Express: <SiExpress size={iconSize} />,
+  Jquery: <SiJquery size={iconSize} />,
 };

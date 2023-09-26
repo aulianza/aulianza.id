@@ -36,11 +36,16 @@ module.exports = {
             opacity: '0',
           },
         },
+        loop: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
+        'looping-tag': 'loop 50s linear infinite',
       },
     },
   },

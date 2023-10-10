@@ -23,7 +23,7 @@
     "@headlessui/react": "^1.7.17",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
-    "@monaco-editor/react": "^4.5.2",
+    "@monaco-editor/react": "^4.6.0",
     "@prisma/client": "^4.16.2",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.5.1",

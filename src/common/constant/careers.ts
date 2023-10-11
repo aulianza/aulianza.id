@@ -26,7 +26,7 @@ export const CAREERS: CareerProps[] = [
     link: 'https://sirka.io',
   },
   {
-    position: 'Founder',
+    position: 'Co-Founder & CTO',
     company: 'FlexCode',
     logo: '/images/careers/flexcode.png',
     location: 'Jakarta',

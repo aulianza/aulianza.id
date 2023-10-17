@@ -7,7 +7,7 @@ export default function Document() {
         <script
           async
           defer
-          src='https://umami.aulianza.id/script.js'
+          src='https://analytics.aulianza.com/script.js'
           data-website-id='5a78190a-bdad-48a4-901a-c7400be41ca6'
         ></script>
         <link

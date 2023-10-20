@@ -1947,10 +1947,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-slick@^0.23.10":
-  version "0.23.10"
-  resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.10.tgz#56126e6e4e95cdce7771535b2811c2c1931a7caa"
-  integrity sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA==
+"@types/react-slick@^0.23.11":
+  version "0.23.11"
+  resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.11.tgz#d349fee6709218e7a4b7839ccf80a070862373b6"
+  integrity sha512-52AbNhYN7u0ATqAUvap2MXNG3znUsJslAWgebUHrovvnJ6EG6oic+TZyC82XiwwvijRMyL2V0C2wPJbzsSwllw==
   dependencies:
     "@types/react" "*"
 

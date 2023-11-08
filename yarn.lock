@@ -1809,10 +1809,10 @@
   dependencies:
     "@types/estree" "*"
 
-"@types/aos@^3.0.6":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@types/aos/-/aos-3.0.6.tgz#eec087fcb0d8e5d79b6e65bb49cd8dc361a99585"
-  integrity sha512-H6RbMQXco8pZWhh7Wjpqrd9ISVwH5EId0hM5vxebcDiK6HgIizbVj1718Q8PQLQ7cVBsxTK0rbVy0T3dR6eoow==
+"@types/aos@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@types/aos/-/aos-3.0.7.tgz#81c60dde68d67b7ea941a37ec3638b88ac90001c"
+  integrity sha512-sEhyFqvKauUJZDbvAB3Pggynrq6g+2PS4XB3tmUr+mDL1gfDJnwslUC4QQ7/l8UD+LWpr3RxZVR/rHoZrLqZVg==
 
 "@types/aria-query@^5.0.1":
   version "5.0.1"

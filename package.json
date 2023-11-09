@@ -26,7 +26,7 @@
     "@monaco-editor/react": "^4.6.0",
     "@prisma/client": "^4.16.2",
     "aos": "^3.0.0-beta.6",
-    "axios": "^1.6.0",
+    "axios": "^1.6.1",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",

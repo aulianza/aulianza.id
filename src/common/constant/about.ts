@@ -1,27 +1,23 @@
-const currentYear = new Date().getFullYear();
-const workStart = 2019;
-const codingStart = 2014;
-
 export const ABOUT = `
 <p>
-	Hi!, I'm Ryan, also known as aulianza, an experienced software engineer, specializing in frontend development, with ${
-    currentYear - workStart
-  } years of professional experience and a total of ${
-  currentYear - codingStart
-} years in web development since ${codingStart}. Skilled in JavaScript, TypeScript, and PHP, with proficiency in various web frameworks.
+	Hi there! Thanks for visiting my personal website.
 </p>
 <p>
-	Throughout my career, I have demonstrated a strong ability to
-	transform design concepts into seamless and interactive user
-	interfaces. With a keen eye for detail and a passion for delivering
-	exceptional user experiences, I excel at implementing responsive
-	designs that adapt to various devices and screen sizes.
+	I'm Ryan. With over 10+ years of experience in Web Development, covering both frontend and backend, I'm well-versed in Project Management methods like Waterfall and Agile. I'm particularly passionate about frontend side, where I focus on creating web applications that are not only precise but also user-friendly experiences.
 </p>
 <p>
-	Constantly staying updated with the latest industry trends and best
-	practices, I am committed to delivering cutting-edge solutions that
-	meet and exceed company expectations. My strong problem-solving skills
-	and attention to detail enable me to tackle complex challenges and
-	drive innovation in every project I undertake.
+	I specialize in JavaScript and PHP, also it's frameworks, including React (Next.js, Vite), Vue (Nuxt.js), Angular, Node.js, and PHP (Codeigniter, Laravel). I love exploring new web technologies and features.
+</p>
+<p>
+	Throughout my career, I've successfully overseen various Software Engineering Projects for different companies, from giants company like Gama Plantation, dynamic ventures like Paper.id, and forward-thinking startups like Sirka.
+</p>
+<p>
+	I firmly believe that effective communication is vital for success in any role.
+</p>
+<p>
+	I'm adaptable, think efficiently, and always strive for excellence. My experience has equipped me with strong analytical skills and leadership abilities, and I'm equally comfortable working collaboratively in a team. I'm excited about the opportunity to contribute to the team's success.
+</p>
+<p>
+	Looking forward to the possibility of collaboration!
 </p>
 `;

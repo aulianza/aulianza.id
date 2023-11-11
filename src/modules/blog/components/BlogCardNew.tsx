@@ -16,6 +16,10 @@ import Tooltip from '@/common/components/elements/Tooltip';
 import { formatBlogSlug, formatDate } from '@/common/helpers';
 import { BlogItemProps } from '@/common/types/blog';
 
+interface BlogCardProps extends BlogItemProps {
+  isExcerpt?: boolean;
+}
+
 const BlogCardNew = ({
   id,
   title,
@@ -27,7 +31,8 @@ const BlogCardNew = ({
   slug,
   tag_list,
   comments_count,
-}: BlogItemProps) => {
+  isExcerpt = true,
+}: BlogCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const newSlug = formatBlogSlug(slug);
@@ -62,7 +67,7 @@ const BlogCardNew = ({
           <div className='absolute inset-0 bg-gradient-to-b from-black/20 to-black opacity-80 transition-opacity duration-300'></div>
         </div>
 
-        <div className='absolute flex flex-col justify-between py-5 px-4 space-y-4 h-full'>
+        <div className='absolute flex flex-col justify-between p-5 space-y-4 h-full'>
           <div className='flex flex-wrap gap-2'>
             {tag_list?.map((tag) => (
               <div
@@ -83,14 +88,16 @@ const BlogCardNew = ({
               <div className='flex gap-1 items-center text-neutral-400'>
                 <DateIcon size={14} />
                 <span className='text-xs ml-0.5'>
-                  {formatDate(published_at, 'MMM dd, yyyy')}
+                  {formatDate(published_at)}
                 </span>
               </div>
-              <p className='leading-relaxed text-sm text-neutral-400'>
-                {description}
-              </p>
+              {isExcerpt && (
+                <p className='leading-relaxed text-sm text-neutral-400'>
+                  {description}
+                </p>
+              )}
             </div>
-            <Breakline />
+            <Breakline className='!border-neutral-700' />
             <div className='flex justify-between gap-4 text-neutral-400 px-0.5'>
               <Tooltip title='by aulianza'>
                 <Image

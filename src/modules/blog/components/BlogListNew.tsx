@@ -37,7 +37,7 @@ const BlogListNew = () => {
 
       <div className='space-y-5'>
         <h2 className='text-xl font-sora font-medium px-1'>Latest Article</h2>
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
           {!isLoading ? (
             <>
               {blogData?.map((item: BlogItemProps, index: number) => (

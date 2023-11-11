@@ -88,7 +88,7 @@ const BlogCardNew = ({
               <div className='flex gap-1 items-center text-neutral-400'>
                 <DateIcon size={14} />
                 <span className='text-xs ml-0.5'>
-                  {formatDate(published_at, 'MMM dd, yyyy')}
+                  {formatDate(published_at)}
                 </span>
               </div>
               {isExcerpt && (

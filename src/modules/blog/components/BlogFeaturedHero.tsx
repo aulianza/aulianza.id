@@ -6,6 +6,8 @@ import {
   BiChevronRight as NextIcon,
   BiStar as StarIcon,
 } from 'react-icons/bi';
+import { FaRegEye as ViewIcon } from 'react-icons/fa';
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 
 import Image from '@/common/components/elements/Image';
 import { formatBlogSlug } from '@/common/helpers';
@@ -82,6 +84,21 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
                 </h3>
               </Link>
               <p className='hidden sm:block'>{currentFeatured?.description}</p>
+              <div className='flex gap-x-3 pt-1 text-neutral-400'>
+                <div className='flex gap-1 items-center'>
+                  <ViewIcon size={15} />
+                  <span className='text-[13px] ml-0.5'>
+                    {currentFeatured?.total_views_count.toLocaleString()} Views
+                  </span>
+                </div>
+                <div className='flex gap-1 items-center '>
+                  <ClockIcon size={16} />
+                  <span className='text-[13px] ml-0.5'>
+                    {currentFeatured?.reading_time_minutes.toLocaleString()}{' '}
+                    Minutes Read
+                  </span>
+                </div>
+              </div>
             </div>
             <div className='flex gap-2'>
               <button

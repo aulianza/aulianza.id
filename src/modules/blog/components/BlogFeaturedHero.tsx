@@ -64,7 +64,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
       </div>
 
       <div className='absolute flex w-full justify-between inset-0 z-10'>
-        <div className='flex flex-col justify-between gap-6 p-8'>
+        <div className='flex flex-col justify-between gap-6 p-6 sm:p-8'>
           <div className='flex items-center gap-x-1 w-fit px-2.5 py-1.5 rounded-full text-xs font-sora text-black bg-lime-200'>
             <StarIcon size={16} />
             <span>Featured</span>

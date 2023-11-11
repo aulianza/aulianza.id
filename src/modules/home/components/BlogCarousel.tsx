@@ -3,9 +3,9 @@ import { useMemo, useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
 import useSWR from 'swr';
 
-import BlogCardSkeleton from '@/common/components/skeleton/BlogCardSkeleton';
+import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton';
 import { BlogItemProps } from '@/common/types/blog';
-import BlogCard from '@/modules/blog/components/BlogCard';
+import BlogCardNew from '@/modules/blog/components/BlogCardNew';
 import { fetcher } from '@/services/fetcher';
 
 const BlogCarousel = () => {
@@ -22,7 +22,7 @@ const BlogCarousel = () => {
   const renderBlogCards = () => {
     if (isLoading) {
       return Array.from({ length: 3 }, (_, index) => (
-        <BlogCardSkeleton key={index} />
+        <BlogCardNewSkeleton key={index} />
       ));
     }
 
@@ -33,8 +33,9 @@ const BlogCarousel = () => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
+        className='min-w-[326px] gap-x-5'
       >
-        <BlogCard view='grid' isExcerpt={false} isCarousel={true} {...item} />
+        <BlogCardNew {...item} />
       </motion.div>
     ));
   };

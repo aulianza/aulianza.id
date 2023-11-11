@@ -31,6 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   const isFullPageHeader =
     pageName === 'playground' ||
+    pageName === 'blog' ||
     router.pathname.startsWith('/blog/') ||
     router.pathname.startsWith('/learn/');
 

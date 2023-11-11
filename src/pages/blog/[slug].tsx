@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GetServerSideProps, NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
@@ -10,9 +11,14 @@ import { Tab, Tabs } from '@/common/components/elements/Tabs';
 import { formatBlogSlug } from '@/common/helpers';
 import { BlogDetailProps } from '@/common/types/blog';
 import BlogDetail from '@/modules/blog/components/BlogDetail';
-import CommentList from '@/modules/blog/components/CommentList';
-import GiscusComment from '@/modules/blog/components/GiscusComment';
 import { getBlogDetail } from '@/services/blog';
+
+const CommentList = dynamic(
+  () => import('@/modules/blog/components/CommentList')
+);
+const GiscusComment = dynamic(
+  () => import('@/modules/blog/components/GiscusComment')
+);
 
 interface BlogDetailPageProps {
   blog: {

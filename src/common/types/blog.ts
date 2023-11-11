@@ -69,6 +69,10 @@ export type BlogProps = {
   blogs: BlogItemProps[];
 };
 
+export type BlogFeaturedProps = {
+  data: BlogItemProps[];
+};
+
 export type CommentItemProps = {
   type_of: string;
   id_code: string;

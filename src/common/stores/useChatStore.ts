@@ -1,4 +1,4 @@
-import create, { SetState } from 'zustand';
+import { create, SetState } from 'zustand';
 
 interface ChatStoreProps {
   isOpen: boolean;

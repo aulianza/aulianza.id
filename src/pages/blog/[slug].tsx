@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
+import { formatExcerpt } from '@/common/helpers';
 import { BlogDetailProps } from '@/common/types/blog';
 import BlogDetail from '@/modules/blog/components/BlogDetail';
 import { getBlogDetail } from '@/services/blog';
@@ -41,7 +42,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
     <>
       <NextSeo
         title={`${blogData?.title?.rendered} - Blog Ryan Aulia`}
-        description={blogData?.excerpt?.rendered}
+        description={formatExcerpt(blogData?.excerpt?.rendered)}
         canonical={canonicalUrl}
         openGraph={{
           type: 'article',

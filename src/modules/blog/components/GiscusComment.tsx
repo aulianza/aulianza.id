@@ -17,7 +17,7 @@ const GiscusComment = ({ isEnableReaction = false }: GiscusComment) => {
         categoryId='DIC_kwDOJoIhfc4CW6cJ'
         mapping='pathname'
         reactionsEnabled={isEnableReaction ? '1' : '0'}
-        emitMetadata='0'
+        emitMetadata='1'
         inputPosition='top'
         theme={theme === 'dark' ? 'transparent_dark' : 'light'}
         lang='en'

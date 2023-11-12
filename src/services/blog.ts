@@ -1,135 +1,69 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { BlogItemProps } from '@/common/types/blog';
-
-const BASE_URL = 'https://dev.to/api/';
-const BLOG_URL = `${BASE_URL}articles/`;
-const COMMENT_URL = `${BASE_URL}comments`;
-const USERNAME = 'aulianza';
-
-const DEVTO_KEY = process.env.DEVTO_KEY as string;
 
 type BlogParamsProps = {
   page?: number;
   per_page?: number;
 };
 
-export const getBlogData = async ({
+interface BlogDetailResponseProps {
+  status: number;
+  data: any;
+}
+
+const BLOG_URL = process.env.BLOG_API_URL as string;
+
+const handleAxiosError = (
+  error: AxiosError<any>
+): { status: number; data: any } => {
+  if (error.response) {
+    return { status: error.response.status, data: error.response.data };
+  } else {
+    return { status: 500, data: { message: 'Internal Server Error' } };
+  }
+};
+
+const extractData = (
+  response: AxiosResponse
+): {
+  posts: BlogItemProps[];
+  page: number;
+  per_page: number;
+  total_pages: number;
+  total_posts: number;
+} => {
+  const { headers, data } = response;
+  return {
+    posts: data,
+    page: response.config.params?.page || 1,
+    per_page: response.config.params?.per_page || 6,
+    total_pages: Number(headers['x-wp-totalpages']) || 0,
+    total_posts: Number(headers['x-wp-total']) || 0,
+  };
+};
+
+export const getBlogList = async ({
   page = 1,
   per_page = 6,
 }: BlogParamsProps): Promise<{ status: number; data: any }> => {
-  const params = new URLSearchParams({
-    username: USERNAME,
-    page: page.toString(),
-    per_page: per_page.toString(),
-  });
-
-  const response = await axios.get(`${BLOG_URL}me?${params.toString()}`, {
-    headers: {
-      'api-key': DEVTO_KEY,
-    },
-  });
-
-  const status = response?.status;
-
-  if (status >= 400) {
-    return { status, data: {} };
+  try {
+    const params = { page, per_page };
+    const response = await axios.get(`${BLOG_URL}posts`, { params });
+    return { status: response.status, data: extractData(response) };
+  } catch (error) {
+    return handleAxiosError(error as AxiosError<any>);
   }
-
-  const getData = response.data;
-
-  const data = {
-    posts: getData,
-    page: page,
-    per_page: per_page,
-    has_next: getData?.length === per_page,
-  };
-
-  return {
-    status,
-    data,
-  };
 };
 
-export const getBlogDetail = async ({
-  id,
-}: {
-  id: number;
-}): Promise<{ status: number; data: any }> => {
-  const params = new URLSearchParams({ username: USERNAME });
-
-  const response = await axios.get(`${BLOG_URL}/${id}?${params.toString()}`, {
-    headers: {
-      'api-key': DEVTO_KEY,
-    },
-  });
-
-  const status = response?.status;
-
-  if (status >= 400) {
-    return { status, data: {} };
+export const getBlogDetail = async (
+  id: number
+): Promise<BlogDetailResponseProps> => {
+  try {
+    const response = await axios.get(`${BLOG_URL}posts/${id}`);
+    return { status: response.status, data: response.data };
+  } catch (error) {
+    return handleAxiosError(error as AxiosError<any>);
   }
-
-  const data = response.data;
-
-  return {
-    status,
-    data,
-  };
-};
-
-export const getBlogComment = async ({
-  post_id,
-}: {
-  post_id: string;
-}): Promise<{ status: number; data: any }> => {
-  const response = await axios.get(`${COMMENT_URL}/?a_id=${post_id}`, {
-    headers: {
-      'api-key': DEVTO_KEY,
-    },
-  });
-
-  const status = response?.status;
-
-  if (status >= 400) {
-    return { status, data: {} };
-  }
-
-  const data = response.data;
-
-  return {
-    status,
-    data,
-  };
-};
-
-export const getBlogViews = async ({
-  id,
-}: {
-  id: number;
-}): Promise<{ status: number; data: any }> => {
-  const response = await axios.get(`${BLOG_URL}me/all`, {
-    headers: {
-      'api-key': DEVTO_KEY,
-    },
-  });
-
-  const status = response?.status;
-
-  if (status >= 400) {
-    return { status, data: {} };
-  }
-
-  const data = response.data;
-
-  const findArticle = data?.find((blog: BlogItemProps) => blog.id === id);
-  const page_views_count = findArticle?.page_views_count;
-
-  return {
-    status,
-    data: {
-      page_views_count,
-    },
-  };
 };

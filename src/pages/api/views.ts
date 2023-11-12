@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import prisma from '@/common/libs/prisma';
-import { getBlogViews } from '@/services/blog';
 
 interface ResponseData {
   views: number;
@@ -11,7 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id, slug } = req.query;
+  const { slug } = req.query;
 
   if (req.method === 'GET') {
     try {
@@ -20,18 +19,10 @@ export default async function handler(
         select: { views: true },
       });
 
-      let devToViewsCount = 0;
-      if (id) {
-        const devtoViews = await getBlogViews({
-          id: Number(id),
-        });
-        devToViewsCount = devtoViews?.data?.page_views_count ?? 0;
-      }
-
       const contentViewsCount = contentMeta?.views ?? 0;
 
       const response: ResponseData = {
-        views: contentViewsCount + devToViewsCount,
+        views: contentViewsCount,
       };
 
       return res.json(response);

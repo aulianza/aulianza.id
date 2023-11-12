@@ -1,3 +1,3 @@
-import BlogList from './components/BlogList';
+import BlogListNew from './components/BlogListNew';
 
-export default BlogList;
+export default BlogListNew;

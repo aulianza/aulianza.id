@@ -53,6 +53,10 @@ const Pagination: React.FC<PaginationProps> = ({
     ));
   };
 
+  if (!totalPages) {
+    return null;
+  }
+
   return (
     <div className='flex justify-center pt-5 font-sora'>
       {currentPage !== 1 && (

@@ -14,12 +14,13 @@ export default async function handler(
       'public, s-maxage=60, stale-while-revalidate=30'
     );
 
-    const { page, per_page, categories } = req.query;
+    const { page, per_page, categories, search } = req.query;
 
     const responseData = await getBlogList({
       page: Number(page) || 1,
       per_page: Number(per_page) || 9,
       categories: categories ? Number(categories) : undefined,
+      search: search ? String(search) : undefined,
     });
 
     const blogItemsWithViews = await Promise.all(

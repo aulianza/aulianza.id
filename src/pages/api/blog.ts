@@ -1,9 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { formatBlogSlug } from '@/common/helpers';
 import prisma from '@/common/libs/prisma';
 import { BlogItemProps } from '@/common/types/blog';
-import { getBlogData } from '@/services/blog';
+import { getBlogList } from '@/services/blog';
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,35 +16,41 @@ export default async function handler(
 
     const { page, per_page } = req.query;
 
-    const blogData = await getBlogData({
+    const responseData = await getBlogList({
       page: Number(page) || 1,
-      per_page: Number(per_page) || 10,
+      per_page: Number(per_page) || 9,
     });
 
     const blogItemsWithViews = await Promise.all(
-      blogData?.data?.posts?.map(async (blogItem: BlogItemProps) => {
-        const { slug, id, page_views_count } = blogItem;
-
-        const formatSlug = formatBlogSlug(slug);
-        const modifiedSlug = `blog/${formatSlug}?id=${id}`;
+      responseData?.data?.posts?.map(async (blogItem: BlogItemProps) => {
+        const { slug } = blogItem;
 
         const contentMeta = await prisma.contentMeta.findUnique({
-          where: { slug: modifiedSlug as string },
+          where: { slug: slug as string },
           select: { views: true },
         });
 
-        const devtoViewsCount = page_views_count ?? 0;
         const viewsCount = contentMeta?.views ?? 0;
 
         return {
           ...blogItem,
-          db_views_count: viewsCount,
-          total_views_count: devtoViewsCount + viewsCount,
+          total_views_count: viewsCount,
         };
       })
     );
 
-    res.status(200).json({ status: true, data: { posts: blogItemsWithViews } });
+    const responses = {
+      status: true,
+      data: {
+        total_pages: responseData?.data?.total_pages,
+        total_posts: responseData?.data?.total_posts,
+        page: responseData?.data?.page,
+        per_page: responseData?.data?.per_page,
+        posts: blogItemsWithViews,
+      },
+    };
+
+    res.status(200).json(responses);
   } catch (error) {
     res.status(200).json({ status: false, error });
   }

@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
-import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { scroller } from 'react-scroll';
 
 import { formatDate } from '@/common/helpers';
@@ -85,39 +84,18 @@ const BlogHeader = ({
 
         <div className='flex items-center gap-5'>
           <div className='flex gap-1 items-center font-medium'>
-            <ViewIcon size={18} />
+            <ViewIcon size={16} />
             <div className='flex gap-1 ml-0.5'>
-              <span>{page_views_count || '-'}</span>
+              <span>{page_views_count?.toLocaleString() || '-'}</span>
               <span>Views</span>
             </div>
           </div>
           <div className='flex gap-1 items-center font-medium'>
-            <ClockIcon size={18} />
+            <ClockIcon size={16} />
             <div className='flex gap-1 ml-0.5'>
               <span>{reading_time_minutes}</span>
-              <span>min read</span>
+              <span>Minutes Read</span>
             </div>
-          </div>
-          <div
-            className='hidden md:flex  gap-1 items-center font-medium cursor-pointer hover:dark:text-neutral-300'
-            onClick={scrollToSection}
-          >
-            <CommentIcon size={20} />
-            <div className='flex gap-1 ml-0.5'>
-              <span>{comments_count}</span>
-              <span>Comment{comments_count > 1 && 's'}</span>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className='flex md:hidden gap-1 items-center font-medium cursor-pointer hover:dark:text-neutral-300'
-          onClick={scrollToSection}
-        >
-          <CommentIcon size={20} />
-          <div className='flex gap-1 ml-0.5'>
-            <span>{comments_count}</span>
-            <span>Comment{comments_count > 1 && 's'}</span>
           </div>
         </div>
       </div>

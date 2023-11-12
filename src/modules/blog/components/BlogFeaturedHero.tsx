@@ -7,10 +7,10 @@ import {
   BiStar as StarIcon,
 } from 'react-icons/bi';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
+import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
 
 import Image from '@/common/components/elements/Image';
-import { formatBlogSlug } from '@/common/helpers';
+import { formatDate, formatExcerpt } from '@/common/helpers';
 import { BlogFeaturedProps } from '@/common/types/blog';
 
 const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
@@ -57,9 +57,10 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
         }}
       >
         <Image
-          src={currentFeatured?.cover_image || defaultImage}
-          alt={`Featured ${currentFeatured?.id}`}
+          src={currentFeatured?.featured_image_url || defaultImage}
+          alt={currentFeatured?.title?.rendered}
           fill={true}
+          sizes='100vw'
           className='object-cover w-full h-full transform transition-transform duration-300'
         />
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70 transition-opacity duration-300'></div>
@@ -74,28 +75,27 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
           <div className='flex flex-col justify-end gap-6'>
             <div className='flex flex-col space-y-2 text-white'>
               <Link
-                href={`/blog/${formatBlogSlug(currentFeatured?.slug)}?id=${
-                  currentFeatured?.id
-                }`}
+                href={`/blog/${currentFeatured?.slug}?id=${currentFeatured?.id}`}
               >
                 <h3 className='flex w-fit text-2xl font-bold font-sora leading-normal relative group cursor-pointer'>
-                  {currentFeatured?.title}
+                  {currentFeatured?.title?.rendered}
                   <span className='absolute -bottom-0.5 left-0 w-full h-0.5 bg-white origin-left transform scale-x-0 transition-transform group-hover:scale-x-100'></span>
                 </h3>
               </Link>
-              <p className='hidden sm:block'>{currentFeatured?.description}</p>
-              <div className='flex gap-x-3 pt-1 text-neutral-400'>
+              <p className='hidden sm:block'>
+                {formatExcerpt(currentFeatured?.excerpt?.rendered)}
+              </p>
+              <div className='flex gap-x-5 pt-1 text-neutral-400'>
+                <div className='flex gap-1 items-center '>
+                  <DateIcon size={16} />
+                  <span className='text-xs ml-0.5'>
+                    {formatDate(currentFeatured?.date)}
+                  </span>
+                </div>
                 <div className='flex gap-1 items-center'>
                   <ViewIcon size={15} />
                   <span className='text-[13px] ml-0.5'>
-                    {currentFeatured?.total_views_count.toLocaleString()} Views
-                  </span>
-                </div>
-                <div className='flex gap-1 items-center '>
-                  <ClockIcon size={16} />
-                  <span className='text-[13px] ml-0.5'>
-                    {currentFeatured?.reading_time_minutes.toLocaleString()}{' '}
-                    Minutes Read
+                    {currentFeatured?.total_views_count?.toLocaleString()} Views
                   </span>
                 </div>
               </div>
@@ -120,7 +120,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
         </div>
 
         <div className='hidden sm:flex flex-col space-y-5 items-center justify-center px-8 border-l border-solid border-[#ffffff1a]'>
-          {featuredData.map((item, index: number) => (
+          {featuredData?.map((item, index: number) => (
             <button
               key={item.id}
               onClick={() => setCurrentFeaturedIndex(index)}
@@ -130,11 +130,11 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
               )}
               style={{ borderRadius: '50%' }}
             >
-              Copy code
               <Image
-                src={item.cover_image}
-                alt={`Featured ${index + 1}`}
+                src={item.featured_image_url || defaultImage}
+                alt={item?.title?.rendered}
                 fill={true}
+                sizes='100vw'
                 className='object-cover'
               />
             </button>

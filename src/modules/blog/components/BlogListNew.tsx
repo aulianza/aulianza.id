@@ -1,46 +1,60 @@
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 
+import EmptyState from '@/common/components/elements/EmptyState';
+import Pagination from '@/common/components/elements/Pagination';
 import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton';
-import BlogFeaturedHeroSkeleton from '@/common/components/skeleton/BlogFeaturedHeroSkeleton';
 import { BlogItemProps } from '@/common/types/blog';
 import { fetcher } from '@/services/fetcher';
 
 import BlogCardNew from './BlogCardNew';
-import BlogFeaturedHero from './BlogFeaturedHero';
+import BlogFeaturedSection from './BlogFeaturedSection';
 
 const BlogListNew = () => {
   const [page, setPage] = useState<number>(1);
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const [pageSize, setPageSize] = useState<number>(9);
+  const router = useRouter();
 
-  const { data, isLoading } = useSWR(
-    `/api/blog?page=${page}&per_page=${pageSize}`,
+  const { data, mutate, isLoading } = useSWR(
+    `/api/blog?page=${page}&per_page=6`,
     fetcher
   );
 
-  const blogData: BlogItemProps[] = useMemo(() => {
-    if (data?.status && data?.data && Array.isArray(data?.data?.posts)) {
-      return data.data.posts;
+  const { posts: blogData = [], total_pages: totalPages = 1 } =
+    data?.data ?? {};
+
+  const handlePageChangeAndLoadData = async (newPage: number) => {
+    await mutate();
+    router.push(`/blog?page=${newPage}`, undefined, { shallow: true });
+    setPage(newPage);
+  };
+
+  useEffect(() => {
+    const queryPage = Number(router.query.page);
+    if (!isNaN(queryPage) && queryPage !== page) {
+      setPage(queryPage);
     }
-    return [];
-  }, [data]);
+  }, [page, router.query.page]);
+
+  const renderEmptyState = () =>
+    !isLoading && data?.status === false && <EmptyState message='No Post' />;
 
   return (
-    <div className='space-y-10 sm:pb-10'>
-      {!isLoading ? (
-        <BlogFeaturedHero data={blogData} />
-      ) : (
-        <BlogFeaturedHeroSkeleton />
-      )}
+    <div className='space-y-10'>
+      <BlogFeaturedSection />
 
       <div className='space-y-5'>
-        <h2 className='text-xl font-sora font-medium px-1'>Latest Article</h2>
+        <div className='flex justify-between items-center'>
+          <h2 className='text-xl font-sora font-medium px-1'>
+            Latest Articles
+          </h2>
+        </div>
+
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
           {!isLoading ? (
             <>
-              {blogData?.map((item: BlogItemProps, index: number) => (
+              {blogData.map((item: BlogItemProps, index: number) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -59,6 +73,16 @@ const BlogListNew = () => {
             </>
           )}
         </div>
+
+        {!isLoading && data?.status && (
+          <Pagination
+            totalPages={totalPages}
+            currentPage={page}
+            onPageChange={handlePageChangeAndLoadData}
+          />
+        )}
+
+        {renderEmptyState()}
       </div>
     </div>
   );

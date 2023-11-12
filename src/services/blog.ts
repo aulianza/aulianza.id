@@ -7,6 +7,7 @@ type BlogParamsProps = {
   page?: number;
   per_page?: number;
   categories?: number | undefined;
+  search?: string;
 };
 
 interface BlogDetailResponseProps {
@@ -51,9 +52,10 @@ export const getBlogList = async ({
   page = 1,
   per_page = 6,
   categories,
+  search,
 }: BlogParamsProps): Promise<{ status: number; data: any }> => {
   try {
-    const params = { page, per_page, categories };
+    const params = { page, per_page, categories, search };
     const response = await axios.get(`${BLOG_URL}posts`, { params });
     return { status: response?.status, data: extractData(response) };
   } catch (error) {

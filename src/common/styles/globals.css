@@ -41,7 +41,7 @@ a {
 
 #nprogress .bar {
   background: #15b8a6 !important;
-  height: 2px !important;
+  height: 1px !important;
   z-index: 9999999 !important;
 }
 

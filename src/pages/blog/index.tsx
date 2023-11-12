@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
 import Container from '@/common/components/elements/Container';
-import BlogListNew from '@/modules/blog/components/BlogListNew';
+import BlogListNew from '@/modules/blog';
 
 const PAGE_TITLE = 'Blog';
 

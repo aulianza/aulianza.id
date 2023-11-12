@@ -40,9 +40,6 @@ const BlogCardNew = ({
 
   const defaultImage = '/images/placeholder.png';
 
-  // RY: NEED CHANGE
-  const comments_count = 0;
-
   const slideDownVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },

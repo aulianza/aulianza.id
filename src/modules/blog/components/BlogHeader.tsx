@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
-import { scroller } from 'react-scroll';
 
 import { formatDate } from '@/common/helpers';
 
@@ -16,20 +15,11 @@ interface BlogHeaderProps {
 
 const BlogHeader = ({
   title,
-  comments_count = 0,
   page_views_count,
   published_at,
   reading_time_minutes,
 }: BlogHeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const scrollToSection = () => {
-    scroller.scrollTo('comments', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-    });
-  };
 
   useEffect(() => {
     const handleScroll = () => {

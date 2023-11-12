@@ -27,11 +27,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
   const canonicalUrl = `https://aulianza.id/${slug}`;
 
   const incrementViews = async () => {
-    try {
-      await axios.post(`/api/views?id=${blogData?.id}&slug=${slug}`);
-    } catch (error) {
-      // console.error('Failed to update views count:', error);
-    }
+    await axios.post(`/api/views?&slug=${blogData?.slug}`);
   };
 
   useEffect(() => {

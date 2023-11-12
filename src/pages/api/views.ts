@@ -40,7 +40,6 @@ export default async function handler(
         },
         select: { views: true },
       });
-
       return res.json(contentMeta);
     } catch (error) {
       return res.status(500).json({ error: 'Failed to update views count' });

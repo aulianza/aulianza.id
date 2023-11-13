@@ -21,9 +21,12 @@ const BlogListNew = () => {
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  const { data, mutate, isLoading } = useSWR(
+  const { data, error, mutate, isValidating } = useSWR(
     `/api/blog?page=${page}&per_page=6&search=${debouncedSearchTerm}`,
-    fetcher
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   const {
@@ -82,9 +85,9 @@ const BlogListNew = () => {
   }, [page, router.query.page, searchTerm]);
 
   const renderEmptyState = () =>
-    !isLoading &&
+    !isValidating &&
     (!data?.status || blogData.length === 0) && (
-      <EmptyState message='No Post Found.' />
+      <EmptyState message={error ? 'Error loading posts' : 'No Post Found.'} />
     );
 
   return (
@@ -118,7 +121,7 @@ const BlogListNew = () => {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
-          {!isLoading ? (
+          {!isValidating ? (
             <>
               {blogData.map((item: BlogItemProps, index: number) => (
                 <motion.div
@@ -140,7 +143,7 @@ const BlogListNew = () => {
           )}
         </div>
 
-        {!isLoading && data?.status && (
+        {!isValidating && data?.status && (
           <Pagination
             totalPages={totalPages}
             currentPage={page}

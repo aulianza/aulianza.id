@@ -26,6 +26,7 @@ const BlogListNew = () => {
     fetcher,
     {
       revalidateOnFocus: false,
+      refreshInterval: 0,
     }
   );
 

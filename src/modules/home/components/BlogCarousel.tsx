@@ -9,7 +9,10 @@ import BlogCardNew from '@/modules/blog/components/BlogCardNew';
 import { fetcher } from '@/services/fetcher';
 
 const BlogCarousel = () => {
-  const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher, {
+    revalidateOnFocus: false,
+    refreshInterval: 0,
+  });
 
   const blogData: BlogItemProps[] = useMemo(() => {
     return data?.data?.posts || [];

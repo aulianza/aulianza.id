@@ -10,7 +10,11 @@ import BlogFeaturedHero from './BlogFeaturedHero';
 const BlogFeaturedSection = () => {
   const { data, isLoading } = useSWR(
     `/api/blog?page=1&per_page=4&categories=11`,
-    fetcher
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      refreshInterval: 0,
+    }
   );
 
   const featuredData: BlogItemProps[] = useMemo(() => {

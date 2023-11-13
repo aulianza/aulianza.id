@@ -24,10 +24,6 @@ const BlogFeaturedSection = () => {
     return [];
   }, [data]);
 
-  if (!featuredData || featuredData.length === 0) {
-    return null;
-  }
-
   return (
     <>
       {!isLoading ? (

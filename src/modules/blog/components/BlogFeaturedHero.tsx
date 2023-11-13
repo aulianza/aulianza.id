@@ -47,6 +47,10 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [featuredData]);
 
+  if (!data || data.length === 0) {
+    return null;
+  }
+
   return (
     <div className='relative rounded-xl overflow-hidden border dark:border-neutral-700 shadow-lg'>
       <div

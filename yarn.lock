@@ -2014,10 +2014,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-slick@^0.23.11":
-  version "0.23.11"
-  resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.11.tgz#d349fee6709218e7a4b7839ccf80a070862373b6"
-  integrity sha512-52AbNhYN7u0ATqAUvap2MXNG3znUsJslAWgebUHrovvnJ6EG6oic+TZyC82XiwwvijRMyL2V0C2wPJbzsSwllw==
+"@types/react-slick@^0.23.12":
+  version "0.23.12"
+  resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.12.tgz#41db46f837a453770123ebd84b0adc773ab8a583"
+  integrity sha512-WjY/wIjzgXCh6gXRZL75OC9n/Hn4MwKWI7ZJ4iA2OxavN9eKvkV5MPFjSgH5sofabq78Ucrl6u3okiBUNNIrDQ==
   dependencies:
     "@types/react" "*"
 

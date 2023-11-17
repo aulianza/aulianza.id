@@ -1,15 +1,13 @@
-import axios from 'axios';
-import { GetServerSideProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
-import { useEffect } from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import { formatExcerpt } from '@/common/helpers';
 import { BlogDetailProps } from '@/common/types/blog';
 import BlogDetail from '@/modules/blog/components/BlogDetail';
-import { getBlogDetail } from '@/services/blog';
+import { getBlogList } from '@/services/blog';
 
 const GiscusComment = dynamic(
   () => import('@/modules/blog/components/GiscusComment')
@@ -17,27 +15,18 @@ const GiscusComment = dynamic(
 
 interface BlogDetailPageProps {
   blog: {
-    data: BlogDetailProps;
+    data: {
+      posts: BlogDetailProps[];
+    };
   };
 }
 
 const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
-  const blogData = blog?.data || {};
+  const blogData = blog?.data?.posts?.[0] || {};
 
-  const slug = `blog/${blogData?.slug}?id=${blogData?.id}`;
+  const slug = `blog/${blogData?.slug}`;
   const canonicalUrl = `https://aulianza.id/${slug}`;
   const description = formatExcerpt(blogData?.excerpt?.rendered);
-
-  const incrementViews = async () => {
-    await axios.post(`/api/views?&slug=${blogData?.slug}`);
-  };
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      incrementViews();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
@@ -65,7 +54,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
         <BackButton url='/blog' />
         <BlogDetail {...blogData} />
         <section id='comments'>
-          <GiscusComment isEnableReaction={false} />
+          <GiscusComment />
         </section>
       </Container>
     </>
@@ -74,10 +63,22 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
 export default BlogDetailPage;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const blogId = context.query?.id as string;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allBlogPosts = await getBlogList({ page: 1, per_page: 100 });
+  const paths = allBlogPosts?.data?.posts?.map((post: BlogDetailProps) => ({
+    params: { slug: post.slug },
+  }));
 
-  if (!blogId) {
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const blogSlug = context.params?.slug as string;
+
+  if (!blogSlug) {
     return {
       redirect: {
         destination: '/',
@@ -86,7 +87,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
-  const response = await getBlogDetail(parseInt(blogId));
+  const response = await getBlogList({ slug: blogSlug });
 
   if (response?.status === 404) {
     return {
@@ -101,5 +102,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       blog: response,
     },
+    revalidate: 3600,
   };
 };

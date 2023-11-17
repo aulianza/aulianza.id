@@ -8,12 +8,8 @@ type BlogParamsProps = {
   per_page?: number;
   categories?: number | undefined;
   search?: string;
+  slug?: string;
 };
-
-interface BlogDetailResponseProps {
-  status: number;
-  data: any;
-}
 
 const BLOG_URL = process.env.BLOG_API_URL as string;
 
@@ -44,7 +40,7 @@ const extractData = (
     per_page: response?.config?.params?.per_page || 6,
     total_pages: Number(headers['x-wp-totalpages']) || 0,
     total_posts: Number(headers['x-wp-total']) || 0,
-    categories: response?.config?.params?.categories,
+    categories: response?.config?.params?.categories || '',
   };
 };
 
@@ -53,22 +49,12 @@ export const getBlogList = async ({
   per_page = 6,
   categories,
   search,
+  slug,
 }: BlogParamsProps): Promise<{ status: number; data: any }> => {
   try {
-    const params = { page, per_page, categories, search };
+    const params = { page, per_page, categories, search, slug };
     const response = await axios.get(`${BLOG_URL}posts`, { params });
     return { status: response?.status, data: extractData(response) };
-  } catch (error) {
-    return handleAxiosError(error as AxiosError<any>);
-  }
-};
-
-export const getBlogDetail = async (
-  id: number
-): Promise<BlogDetailResponseProps> => {
-  try {
-    const response = await axios.get(`${BLOG_URL}posts/${id}`);
-    return { status: response?.status, data: response?.data };
   } catch (error) {
     return handleAxiosError(error as AxiosError<any>);
   }

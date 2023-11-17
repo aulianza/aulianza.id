@@ -1,3 +1,4 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import { ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -42,10 +43,10 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
             {...props}
           />
         ),
-        ul: (props) => (
-          <ol className='pl-10 space-y-3 list-disc pb-2' {...props} />
+        ul: ({ ordered, ...props }) => (
+          <ul className='pl-10 space-y-3 list-disc pb-2' {...props} />
         ),
-        ol: (props) => (
+        ol: ({ ordered, ...props }) => (
           <ol className='pl-10 space-y-3 list-decimal pb-2' {...props} />
         ),
         code: (props) => <CodeBlock {...props} />,

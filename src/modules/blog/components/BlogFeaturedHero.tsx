@@ -64,7 +64,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
           src={currentFeatured?.featured_image_url || defaultImage}
           alt={currentFeatured?.title?.rendered}
           fill={true}
-          sizes='100vw'
+          sizes='100vw, 100vh'
           className='object-cover w-full h-full transform transition-transform duration-300'
         />
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70 transition-opacity duration-300'></div>
@@ -138,7 +138,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
                 src={item.featured_image_url || defaultImage}
                 alt={item?.title?.rendered}
                 fill={true}
-                sizes='100vw'
+                sizes='100vw, 100vh'
                 className='object-cover'
               />
             </button>

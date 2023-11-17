@@ -65,13 +65,15 @@ export const removeHtmlTags = (html: string) => {
 export const formatExcerpt = (content: string, maxLength = 100) => {
   const cleanedContent = removeHtmlTags(content);
 
-  if (cleanedContent.length <= maxLength) {
+  if (cleanedContent?.length <= maxLength) {
     return cleanedContent;
   }
 
-  const trimmed = cleanedContent.substring(0, maxLength).replace(/\s+\S*$/, '');
+  const trimmed = cleanedContent
+    ?.substring(0, maxLength)
+    ?.replace(/\s+\S*$/, '');
 
-  return trimmed + (cleanedContent.length > maxLength ? '...' : '');
+  return trimmed + (cleanedContent?.length > maxLength ? '...' : '');
 };
 
 export const calculateReadingTime = (content: string, wordsPerMinute = 5) => {

@@ -26,6 +26,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
 
   const slug = `blog/${blogData?.slug}?id=${blogData?.id}`;
   const canonicalUrl = `https://aulianza.id/${slug}`;
+  const description = formatExcerpt(blogData?.excerpt?.rendered);
 
   const incrementViews = async () => {
     await axios.post(`/api/views?&slug=${blogData?.slug}`);
@@ -42,14 +43,14 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
     <>
       <NextSeo
         title={`${blogData?.title?.rendered} - Blog Ryan Aulia`}
-        description={formatExcerpt(blogData?.excerpt?.rendered)}
+        description={description}
         canonical={canonicalUrl}
         openGraph={{
           type: 'article',
           article: {
             publishedTime: blogData?.date,
             modifiedTime: blogData?.date,
-            authors: ['Ryan Aulia'],
+            authors: ['Ryan Aulia', 'aulianza'],
           },
           url: canonicalUrl,
           images: [
@@ -57,7 +58,7 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
               url: blogData?.featured_image_url,
             },
           ],
-          siteName: 'Blog Ryan Aulia',
+          siteName: 'aulianza blog',
         }}
       />
       <Container data-aos='fade-up'>

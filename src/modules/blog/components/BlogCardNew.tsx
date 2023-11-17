@@ -46,7 +46,7 @@ const BlogCardNew = ({
   };
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/${slug}?id=${id}`}>
       <Card
         className='group relative flex flex-col border dark:border-neutral-800 shadow-sm rounded-lg h-[400px] w-full'
         onMouseEnter={() => setIsHovered(true)}

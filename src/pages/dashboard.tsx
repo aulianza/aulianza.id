@@ -6,7 +6,6 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
 import { getGithubUser } from '@/services/github';
-import { getReadStats } from '@/services/wakatime';
 
 interface DashboardPageProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -32,13 +31,13 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const readStats = await getReadStats();
+  // const readStats = await getReadStats();
   const githubUserPersonal = await getGithubUser('personal');
 
   return {
     props: {
       fallback: {
-        '/api/read-stats': readStats.data,
+        // '/api/read-stats': readStats.data,
         '/api/github?type=personal': githubUserPersonal?.data,
       },
     },

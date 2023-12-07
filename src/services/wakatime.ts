@@ -47,8 +47,9 @@ export const getReadStats = async (): Promise<{
   });
 
   const status = response.status;
+  console.log('aulianza ~ getReadStats ~ status : ', status);
 
-  if (status > 400) return { status, data: [] };
+  if (status >= 400) return { status, data: [] };
 
   const getData = response.data;
 
@@ -104,7 +105,7 @@ export const getALLTimeSinceToday = async (): Promise<{
 
   const status = response.status;
 
-  if (status > 400) return { status, data: {} };
+  if (status >= 400) return { status, data: {} };
 
   const getData = response.data;
 

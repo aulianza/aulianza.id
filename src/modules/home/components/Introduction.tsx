@@ -12,8 +12,8 @@ const Introduction = () => {
               Based in Jakarta, Indonesia <span className='ml-1'>🇮🇩</span>
             </li>
             <li>
-              Working Remotely for a Dubai-based startup
-              <span className='ml-1.5'>🇦🇪</span>
+              Working Remotely around the world
+              {/* <span className='ml-1.5'>🇦🇪</span> */}
             </li>
           </ul>
         </div>

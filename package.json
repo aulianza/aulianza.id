@@ -31,7 +31,7 @@
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "firebase": "^10.6.0",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^10.16.15",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.4",
     "next": "13.5.6",

@@ -19,7 +19,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@giscus/react": "^2.3.0",
+    "@giscus/react": "^2.4.0",
     "@headlessui/react": "^1.7.17",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",

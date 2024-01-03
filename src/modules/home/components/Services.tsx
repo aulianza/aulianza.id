@@ -16,7 +16,7 @@ const Services = () => {
           development services.
         </p>
       </div>
-      <Card className='p-8 bg-neutral-100 border dark:border-none rounded-xl space-y-4'>
+      <Card className='p-8 bg-neutral-100 border dark:border-none rounded-xl space-y-4 dark:bg-[#1e1e1e]'>
         <div className='flex gap-2 items-center'>
           <RocketIcon size={24} />
           <h3 className='text-xl font-medium'>Lets work together!</h3>

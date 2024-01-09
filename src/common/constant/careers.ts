@@ -1,18 +1,18 @@
 import { CareerProps } from '../types/careers';
 
 export const CAREERS: CareerProps[] = [
-  // {
-  //   position: 'Full Stack Engineer',
-  //   company: 'Seeru',
-  //   logo: '/images/careers/seeru.webp',
-  //   location: 'Dubai, UAE',
-  //   location_type: 'Remote',
-  //   type: 'Fulltime',
-  //   start_date: '2023-11',
-  //   end_date: null,
-  //   industry: 'ota',
-  //   link: 'https://seeru.com',
-  // },
+  {
+    position: 'Full Stack Engineer',
+    company: 'Seeru',
+    logo: '/images/careers/seeru.webp',
+    location: 'Dubai, UAE',
+    location_type: 'Remote',
+    type: 'Fulltime',
+    start_date: '2023-11',
+    end_date: null,
+    industry: 'ota',
+    link: 'https://seeru.com',
+  },
   {
     position: 'Lead Frontend Engineer',
     company: 'Sirka.io',
@@ -21,7 +21,7 @@ export const CAREERS: CareerProps[] = [
     location_type: 'Remote',
     type: 'Fulltime',
     start_date: '2022-03',
-    end_date: null,
+    end_date: '2023-12',
     industry: 'wellness',
     link: 'https://sirka.io',
   },

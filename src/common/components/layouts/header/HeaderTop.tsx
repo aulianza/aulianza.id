@@ -32,12 +32,12 @@ const HeaderTop = () => {
       <div className='hidden lg:flex gap-5 items-center justify-between py-8 mx-8'>
         <div className='flex items-center gap-5'>
           <Image
-            src='/images/aulianza.png'
+            src='/images/aulianza-new.png'
             alt='Ryan Aulia'
             width={40}
             height={40}
             rounded='rounded-full'
-            className='lg:hover:scale-105'
+            className='lg:hover:scale-105 border-2 border-neutral-400 dark:border-neutral-600 rotate-3'
           />
           {!showMenu && (
             <div className='flex items-center gap-3'>

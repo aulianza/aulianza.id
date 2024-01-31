@@ -20,12 +20,12 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
       )}
     >
       <Image
-        src='/images/aulianza.png'
+        src='/images/aulianza-new.png'
         alt='Ryan Aulia'
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         rounded='rounded-full'
-        className='lg:hover:scale-105'
+        className='lg:hover:scale-105 border-2 border-neutral-400 dark:border-neutral-600 rotate-3'
       />
       <div className='flex gap-2 items-center mt-1 lg:mt-4'>
         <Link href='/' passHref>

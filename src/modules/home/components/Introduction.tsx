@@ -11,10 +11,7 @@ const Introduction = () => {
             <li>
               Based in Jakarta, Indonesia <span className='ml-1'>🇮🇩</span>
             </li>
-            <li>
-              Working remotely around the world
-              <span className='ml-1.5'>🇦🇪</span>
-            </li>
+            <li>Working remotely</li>
           </ul>
         </div>
       </div>

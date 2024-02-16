@@ -81,7 +81,7 @@
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
     "@types/react-syntax-highlighter": "^15.5.10",
-    "@types/uuid": "^9.0.7",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",

@@ -11,6 +11,9 @@
 </div>
 <br />
 
+<img width="1359" alt="image" src="https://github.com/aulianza/aulianza.id/assets/15605885/e9665038-6e84-4c8e-a847-fb90138c0303">
+
+
 ## Introduction
 
 This website was meticulously crafted from the ground up using Next.js, along with various complementary technologies. Its inception dates back to June 2023.

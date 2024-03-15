@@ -57,7 +57,7 @@ const MenuItem = ({
           <div
             className={clsx(
               'group-hover:-rotate-12 transition-all duration-300',
-              isActiveRoute && '-rotate-12'
+              isActiveRoute && 'animate-pulse'
             )}
           >
             {icon}

@@ -35,7 +35,7 @@ const Contributions = ({ username, endpoint }: ContributionsProps) => {
           href={`https://github.com/${username}`}
           target='_blank'
           passHref
-          className='text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400'
+          className='font-code text-sm text-neutral-400 hover:text-neutral-700 dark:text-neutral-600 hover:dark:text-neutral-400'
         >
           @{username}
         </Link>

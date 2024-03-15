@@ -9,22 +9,22 @@ const BookACall = () => {
         href='https://cal.com/aulianza/schedule'
         target='_blank'
         data-aos-duration='1000'
-        className='flex flex-col space-y-5 bg-gradient-to-tr bg-white dark:from-teal-950 dark:to-teal-800 dark:text-white rounded-2xl py-5 px-6 cursor-pointer hover:scale-[101%] hover:shadow-sm transition-all duration-300 border dark:border-teal-500'
+        className='flex cursor-pointer flex-col space-y-5 rounded-2xl border bg-white bg-gradient-to-tr px-6 py-5 transition-all duration-300 hover:scale-[101%] hover:shadow-sm dark:border-teal-500 dark:from-teal-950 dark:to-teal-800 dark:text-white'
       >
-        <div className='flex gap-5 items-start justify-between'>
+        <div className='flex items-start justify-between gap-5'>
           <div className='space-y-1'>
-            <div className='flex items-center gap-2 text-base md:text-lg font-medium'>
+            <div className='flex items-center gap-2 text-base font-medium md:text-lg'>
               <span>1 on 1 Chit-chat Session</span>
             </div>
-            <p className='dark:text-neutral-300 text-sm md:text-base'>
+            <p className='text-sm dark:text-neutral-300 md:text-base'>
               Let’s find some time to talk about anything
             </p>
           </div>
-          <div className='p-3 border-2 border-neutral-400 dark:border-teal-600 dark:text-neutral-100 rounded-full'>
+          <div className='rounded-full border-2 border-neutral-400 p-3 dark:border-teal-600 dark:text-neutral-100'>
             <FiCalendar size={22} />
           </div>
         </div>
-        <div className='flex items-center gap-5 dark:text-neutral-200 text-sm'>
+        <div className='flex items-center gap-5 text-sm dark:text-neutral-200'>
           <div className='flex items-center gap-2'>
             <FiClock size={18} />
             <span>30 Minutes</span>

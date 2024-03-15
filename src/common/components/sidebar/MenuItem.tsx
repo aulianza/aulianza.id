@@ -56,22 +56,22 @@ const MenuItem = ({
         {!hideIcon && (
           <div
             className={clsx(
-              'group-hover:-rotate-12 transition-all duration-300',
-              isActiveRoute && 'animate-pulse'
+              'transition-all duration-300 group-hover:-rotate-12',
+              isActiveRoute && 'animate-pulse',
             )}
           >
             {icon}
           </div>
         )}
-        <div className='flex-grow ml-0.5'>{title}</div>
+        <div className='ml-0.5 flex-grow'>{title}</div>
         {children && <>{children}</>}
         {isActiveRoute && (
-          <ExternalLinkIcon size={22} className='text-gray-500 animate-pulse' />
+          <ExternalLinkIcon size={22} className='animate-pulse text-gray-500' />
         )}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon
             size={22}
-            className='text-gray-500 -rotate-45 lg:transition-all lg:duration-300'
+            className='-rotate-45 text-gray-500 lg:transition-all lg:duration-300'
           />
         )}
       </div>

@@ -23,7 +23,7 @@ const MobileMenuButton = ({
           key={item.index}
           className={clsx(
             'bg-neutral-950 dark:bg-neutral-100 ',
-            expandMenu && 'active'
+            expandMenu && 'active',
           )}
         />
       ))}

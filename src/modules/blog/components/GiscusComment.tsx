@@ -9,7 +9,7 @@ const GiscusComment = ({ isEnableReaction = false }: GiscusComment) => {
   const { theme } = useTheme();
 
   return (
-    <div className='mt-5 mb-2'>
+    <div className='mb-2 mt-5'>
       <Giscus
         repo='aulianza/aulianza.id'
         repoId='R_kgDOJoIhfQ'

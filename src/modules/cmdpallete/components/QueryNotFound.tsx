@@ -15,11 +15,11 @@ const QueryNotFound = ({
   onFindGoogle,
 }: QueryNotFoundProps) => {
   return (
-    <div className='flex flex-col pt-5 pb-10 px-5 space-y-6 items-center '>
-      <div className='text-neutral-500 text-center space-y-2'>
+    <div className='flex flex-col items-center space-y-6 px-5 pb-10 pt-5 '>
+      <div className='space-y-2 text-center text-neutral-500'>
         <p>
           No result found about
-          <span className='italic text-neutral-600 dark:text-neutral-400 ml-1 mr-2'>
+          <span className='ml-1 mr-2 italic text-neutral-600 dark:text-neutral-400'>
             `{query}`
           </span>
           in this website.
@@ -28,7 +28,7 @@ const QueryNotFound = ({
           Ask my AI Assistant or find in Google instead?
         </p>
       </div>
-      <div className='flex flex-col lg:flex-row gap-3 w-full justify-center'>
+      <div className='flex w-full flex-col justify-center gap-3 lg:flex-row'>
         <Button
           onClick={onAskAiAssistant}
           className='justify-center !bg-green-600'
@@ -45,7 +45,7 @@ const QueryNotFound = ({
           Find in Google
         </Button>
       </div>
-      <p className='text-neutral-500 text-sm'>
+      <p className='text-sm text-neutral-500'>
         Press `ESC` to close this window
       </p>
     </div>

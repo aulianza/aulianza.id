@@ -18,7 +18,7 @@ interface BlogDetailResponseProps {
 const BLOG_URL = process.env.BLOG_API_URL as string;
 
 const handleAxiosError = (
-  error: AxiosError<any>
+  error: AxiosError<any>,
 ): { status: number; data: any } => {
   if (error?.response) {
     return { status: error?.response?.status, data: error?.response?.data };
@@ -28,7 +28,7 @@ const handleAxiosError = (
 };
 
 const extractData = (
-  response: AxiosResponse
+  response: AxiosResponse,
 ): {
   posts: BlogItemProps[];
   page: number;
@@ -64,7 +64,7 @@ export const getBlogList = async ({
 };
 
 export const getBlogDetail = async (
-  id: number
+  id: number,
 ): Promise<BlogDetailResponseProps> => {
   try {
     const response = await axios.get(`${BLOG_URL}posts/${id}`);

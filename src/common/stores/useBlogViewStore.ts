@@ -15,7 +15,7 @@ export const useBlogViewStore = create<BlogViewState>()(
       }),
       {
         name: 'blog-view',
-      }
-    )
-  )
+      },
+    ),
+  ),
 );

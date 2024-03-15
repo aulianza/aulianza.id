@@ -7,8 +7,8 @@ interface PanelHeaderProps {
 
 const PanelHeader = ({ title, children }: PanelHeaderProps) => {
   return (
-    <div className='flex justify-between py-2 px-3 border border-b-neutral-700 border-t-0 border-x-0'>
-      <div className='py-1 px-2 bg-neutral-600 text-xs rounded-md text-neutral-50 font-sora'>
+    <div className='flex justify-between border border-x-0 border-t-0 border-b-neutral-700 px-3 py-2'>
+      <div className='rounded-md bg-neutral-600 px-2 py-1 font-sora text-xs text-neutral-50'>
         {title}
       </div>
       {children && children}

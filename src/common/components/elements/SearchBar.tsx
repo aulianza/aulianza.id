@@ -12,23 +12,23 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onClearSearch,
 }) => {
   return (
-    <div className='flex items-center w-full sm:w-auto '>
+    <div className='flex w-full items-center sm:w-auto '>
       <div className='relative w-full'>
         <SearchIcon
           size={18}
-          className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+          className='absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400'
         />
         <input
           type='text'
           placeholder='Search...'
-          className='w-full py-2 px-10 border-2 dark:border-neutral-600 rounded-lg transition-all duration-300 text-sm font-sora'
+          className='w-full rounded-lg border-2 px-10 py-2 font-sora text-sm transition-all duration-300 dark:border-neutral-600'
           value={searchTerm}
           onChange={onSearchChange}
         />
         {searchTerm && (
           <ClearIcon
             size={20}
-            className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer'
+            className='absolute right-3 top-1/2 -translate-y-1/2 transform cursor-pointer text-gray-400'
             onClick={onClearSearch}
           />
         )}

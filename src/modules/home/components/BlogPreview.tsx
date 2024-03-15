@@ -13,9 +13,9 @@ const BlogPreview = () => {
         <SectionHeading title='Latest Articles' className='ml-1' />
         <SectionSubHeading>
           <Link href='/blog'>
-            <div className='flex gap-1 hover:gap-3 transition-all duration-300 cursor-pointer text-sm text-neutral-700 dark:text-neutral-400 hover:text-neutral-700 hover:dark:text-neutral-300 mt-1'>
+            <div className='mt-1 flex cursor-pointer gap-1 text-sm text-neutral-700 transition-all duration-300 hover:gap-3 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300'>
               <div className='flex'>
-                View All <span className='hidden sm:block ml-1'>Articles</span>
+                View All <span className='ml-1 hidden sm:block'>Articles</span>
               </div>
               <ViewAllIcon size={22} />
             </div>

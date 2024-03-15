@@ -34,7 +34,7 @@ const ModalWrapper = ({ isOpen, onClose, children }: ModalWrapperProps) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='p-5 bg-transparent w-full max-w-full transform overflow-hidden shadow-xl transition-all'>
+              <Dialog.Panel className='w-full max-w-full transform overflow-hidden bg-transparent p-5 shadow-xl transition-all'>
                 {children}
               </Dialog.Panel>
             </Transition.Child>

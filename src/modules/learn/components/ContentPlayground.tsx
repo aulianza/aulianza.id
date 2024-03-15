@@ -5,7 +5,7 @@ import Playground from '@/modules/playground';
 const ContentPlayground = ({ initialCode }: { initialCode: string }) => {
   return (
     <>
-      <div className='flex items-center gap-3 pt-6 mb-5 border-t dark:border-neutral-700 border-gray-300'>
+      <div className='mb-5 flex items-center gap-3 border-t border-gray-300 pt-6 dark:border-neutral-700'>
         <SiJavascript size={22} className='text-yellow-400' />
         <h5 className='text-lg font-medium'>JavaScript Playground</h5>
       </div>

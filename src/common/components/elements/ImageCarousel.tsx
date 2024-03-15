@@ -56,11 +56,11 @@ const ImageCarousel = ({ images, interval = 3000 }: ImageCarouselProps) => {
       if (slider && slider.innerSlider && slider.innerSlider.list) {
         slider.innerSlider.list.removeEventListener(
           'mouseenter',
-          stopScrolling
+          stopScrolling,
         );
         slider.innerSlider.list.removeEventListener(
           'mouseleave',
-          startScrolling
+          startScrolling,
         );
       }
     };
@@ -88,7 +88,7 @@ const ImageCarousel = ({ images, interval = 3000 }: ImageCarouselProps) => {
             width={isMobile ? 130 : 145}
             height={50}
             rounded='rounded-full'
-            className='px-3 bg-light rounded-full hover:shadow-xl'
+            className='rounded-full bg-light px-3 hover:shadow-xl'
           />
         </div>
       ))}

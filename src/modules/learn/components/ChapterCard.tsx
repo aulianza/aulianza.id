@@ -24,16 +24,16 @@ const ChapterCard = ({
   return (
     <div
       className={clsx(
-        'flex justify-between items-center cursor-pointer py-3 px-5 mb-3 rounded-t-xl text-white select-none',
+        'mb-3 flex cursor-pointer select-none items-center justify-between rounded-t-xl px-5 py-3 text-white',
         'bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500 to-teal-600 dark:from-teal-900 dark:to-teal-950',
         'transition-all duration-300',
-        !openAccordions.includes(chapterId) && 'rounded-b-xl'
+        !openAccordions.includes(chapterId) && 'rounded-b-xl',
       )}
       onClick={() => onToggle(chapterId)}
     >
       <div className='font-sora text-[15px]'>{chapterTitle}</div>
       <div className='flex items-center gap-3'>
-        <div className='hidden md:flex  text-[13px]'>
+        <div className='hidden text-[13px]  md:flex'>
           {contents?.length} Lesson{contents?.length > 1 && 's'}
         </div>
         <div>

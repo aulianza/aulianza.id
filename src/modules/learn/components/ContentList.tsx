@@ -36,7 +36,7 @@ const ContentList = ({
     setOpenAccordions((prev) =>
       prev.includes(chapterId)
         ? prev.filter((id) => id !== chapterId)
-        : [...prev, chapterId]
+        : [...prev, chapterId],
     );
   };
 
@@ -83,11 +83,11 @@ const ContentList = ({
                   </div>
                 )}
               </motion.div>
-            )
+            ),
           )}
         </div>
       ) : (
-        <div className='flex justify-center items-center py-5'>
+        <div className='flex items-center justify-center py-5'>
           <div className='text-neutral-500'>No Lesson Found.</div>
         </div>
       )}

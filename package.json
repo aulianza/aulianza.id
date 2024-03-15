@@ -94,7 +94,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^13.3.0",
     "postcss": "8.4.31",
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   },

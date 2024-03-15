@@ -11,7 +11,7 @@ type SocialMediaProps = {
 const SocialMedia = ({ items }: SocialMediaProps) => {
   return (
     <div className='flex flex-col space-y-1'>
-      <div className='text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora'>
+      <div className='mb-2 ml-2 mt-1 font-sora text-sm text-neutral-600 dark:text-neutral-500'>
         Let's Connect
       </div>
       <div className='flex justify-between px-5 pt-2'>
@@ -23,7 +23,7 @@ const SocialMedia = ({ items }: SocialMediaProps) => {
             data-umami-event={item?.eventName}
           >
             <Tooltip title={item?.title}>
-              <div className='text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 lg:hover:scale-110 transition duration-300'>
+              <div className='text-neutral-700 transition duration-300 hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-300 lg:hover:scale-110'>
                 {item?.icon}
               </div>
             </Tooltip>

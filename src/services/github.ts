@@ -30,7 +30,7 @@ const GITHUB_USER_QUERY = `query($username: String!) {
 
 export const fetchGithubData = async (
   username: string,
-  token: string | undefined
+  token: string | undefined,
 ) => {
   const response = await axios.post(
     GITHUB_USER_ENDPOINT,
@@ -44,7 +44,7 @@ export const fetchGithubData = async (
       headers: {
         Authorization: `bearer ${token}`,
       },
-    }
+    },
   );
 
   const status: number = response.status;
@@ -59,7 +59,7 @@ export const fetchGithubData = async (
 
 export const getGithubUser = async (type: string) => {
   const account = GITHUB_ACCOUNTS.find(
-    (account) => account?.type === type && account?.is_active
+    (account) => account?.type === type && account?.is_active,
   );
 
   if (!account) {

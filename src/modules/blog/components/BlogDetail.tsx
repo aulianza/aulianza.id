@@ -18,7 +18,7 @@ const BlogDetail = ({
 }: BlogDetailProps) => {
   const { data: viewsData } = useSWR(
     `/api/views?slug=${slug}&id=${id}`,
-    fetcher
+    fetcher,
   );
 
   const viewsCount = viewsData?.views || 0;
@@ -45,9 +45,9 @@ const BlogDetail = ({
             {tagList?.map((tag) => (
               <div
                 key={tag?.term_id}
-                className='bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 rounded-full px-4 py-1 text-[14px] font-medium'
+                className='rounded-full bg-neutral-200 px-4 py-1 text-[14px] font-medium text-neutral-600 dark:bg-neutral-700 dark:text-neutral-200'
               >
-                <span className='font-semibold mr-1'>#</span>
+                <span className='mr-1 font-semibold'>#</span>
                 {tag?.name.charAt(0).toUpperCase() + tag?.name.slice(1)}
               </div>
             ))}

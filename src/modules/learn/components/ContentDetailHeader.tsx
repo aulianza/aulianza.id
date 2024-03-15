@@ -51,23 +51,23 @@ const ContentDetailHeader = ({
         </motion.h1>
       ) : (
         <motion.div
-          className='lg:sticky top-0 bg-light dark:bg-dark py-6 z-10 shadow-bottom backdrop-blur border-b border-neutral-300 dark:border-neutral-600'
+          className='shadow-bottom top-0 z-10 border-b border-neutral-300 bg-light py-6 backdrop-blur dark:border-neutral-600 dark:bg-dark lg:sticky'
           initial='initial'
           animate='animate'
           variants={titleVariants}
           transition={transition}
         >
-          <h1 className='text-lg lg:text-xl font-semibold'>{title}</h1>
+          <h1 className='text-lg font-semibold lg:text-xl'>{title}</h1>
         </motion.div>
       )}
-      <div className='flex flex-col sm:flex-row items-start lg:items-center gap-2 justify-between mb-6 pt-3 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]'>
+      <div className='mb-6 flex flex-col items-start justify-between gap-2 border-b border-dashed border-neutral-600 pb-6 pt-3 text-[14px] text-neutral-600 dark:text-neutral-400 sm:flex-row lg:items-center'>
         <div># {category}</div>
-        <div className='flex gap-4 items-center mt-1'>
+        <div className='mt-1 flex items-center gap-4'>
           {source && source_url && (
             <Link href={source_url} target='_blank' passHref>
-              <div className='flex gap-2 items-center font-medium text-neutral-700 dark:text-neutral-300 '>
+              <div className='flex items-center gap-2 font-medium text-neutral-700 dark:text-neutral-300 '>
                 <LinkIcon size={18} />
-                <span className='text-[15px] dark:text-teal-500 hover:dark:text-teal-400 transition-all duration-300'>
+                <span className='text-[15px] transition-all duration-300 dark:text-teal-500 hover:dark:text-teal-400'>
                   View in {source}
                 </span>
               </div>
@@ -75,7 +75,7 @@ const ContentDetailHeader = ({
           )}
           {difficulty && (
             <Tooltip title={`Difficulty: ${difficulty}`}>
-              <div className='px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400'>
+              <div className='rounded-full bg-neutral-200 px-2 py-1 text-xs font-medium text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'>
                 {difficulty}
               </div>
             </Tooltip>

@@ -36,7 +36,7 @@ const getAccessToken = async (): Promise<AccessTokenResponseProps> => {
         Authorization: `Basic ${TOKEN}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
 
   return response.data;
@@ -138,7 +138,7 @@ export const getTopTracks = async (): Promise<TopTracksResponseProps> => {
     album: {
       name: track.album.name,
       image: track.album.images.find(
-        (image: { width: number }) => image.width === 64
+        (image: { width: number }) => image.width === 64,
       ),
     },
     artist: track.artists

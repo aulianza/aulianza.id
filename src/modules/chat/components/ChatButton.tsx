@@ -11,7 +11,7 @@ const ChatButton = () => {
     <>
       <button
         onClick={toggleChat}
-        className='hidden lg:flex group fixed flex items-center gap-1 bottom-12 right-5 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-neutral-600 to-neutral-500 dark:from-neutral-700 dark:to-neutral-800 text-white p-2.5 rounded-full shadow-xl hover:scale-[103%] transition-all duration-300 border border-neutral-600 group-hover:!px-4'
+        className='group fixed bottom-12 right-5 flex hidden items-center gap-1 rounded-full border border-neutral-600 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-neutral-600 to-neutral-500 p-2.5 text-white shadow-xl transition-all duration-300 hover:scale-[103%] group-hover:!px-4 dark:from-neutral-700 dark:to-neutral-800 lg:flex'
         data-umami-event='Toggle Chat Widget'
       >
         <ChatIcon size={20} />

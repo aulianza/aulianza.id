@@ -67,7 +67,7 @@ const ChatList = ({
     <div className='rounded-lg px-1'>
       <div
         ref={chatListRef}
-        className='overflow-y-auto space-y-5 py-4'
+        className='space-y-5 overflow-y-auto py-4'
         style={{ height: chatListHeight }}
       >
         {messages?.map((chat, index) => (

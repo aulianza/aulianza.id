@@ -4,7 +4,7 @@ import { getMdxFileCount } from '@/common/libs/mdx';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const slug = req.query.slug as string;
   const count = await getMdxFileCount(slug);

@@ -27,7 +27,7 @@ const BlogListNew = () => {
     {
       revalidateOnFocus: false,
       refreshInterval: 0,
-    }
+    },
   );
 
   const {
@@ -44,7 +44,7 @@ const BlogListNew = () => {
         query: { page: newPage, search: debouncedSearchTerm },
       },
       undefined,
-      { shallow: true }
+      { shallow: true },
     );
     setPage(newPage);
   };
@@ -60,7 +60,7 @@ const BlogListNew = () => {
         query: searchValue ? { page: 1, search: searchValue } : { page: 1 },
       },
       undefined,
-      { shallow: true }
+      { shallow: true },
     );
   };
 
@@ -74,7 +74,7 @@ const BlogListNew = () => {
         query: { page: 1 },
       },
       undefined,
-      { shallow: true }
+      { shallow: true },
     );
   };
 
@@ -96,11 +96,11 @@ const BlogListNew = () => {
       <BlogFeaturedSection />
 
       <div className='space-y-5'>
-        <div className='flex flex-col sm:flex-row gap-3 justify-between items-center mb-6'>
-          <div className='flex items-center gap-2 text-xl font-sora font-medium px-1'>
+        <div className='mb-6 flex flex-col items-center justify-between gap-3 sm:flex-row'>
+          <div className='flex items-center gap-2 px-1 font-sora text-xl font-medium'>
             {searchTerm ? (
               <div>
-                <span className='text-neutral-600 dark:text-neutral-400 mr-2'>
+                <span className='mr-2 text-neutral-600 dark:text-neutral-400'>
                   Search:
                 </span>
                 <span className='italic'>{searchTerm}</span>
@@ -110,7 +110,7 @@ const BlogListNew = () => {
                 Latest Articles
               </h4>
             )}
-            <span className='rounded-full py-1 px-2 bg-neutral-300 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50 text-xs font-sora'>
+            <span className='rounded-full bg-neutral-300 px-2 py-1 font-sora text-xs text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50'>
               {total_posts}
             </span>
           </div>
@@ -121,7 +121,7 @@ const BlogListNew = () => {
           />
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3'>
           {!isValidating ? (
             <>
               {blogData.map((item: BlogItemProps, index: number) => (

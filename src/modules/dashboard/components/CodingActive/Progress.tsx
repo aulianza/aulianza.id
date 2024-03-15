@@ -28,7 +28,7 @@ const Progress = ({ data, className }: ProgressProps) => {
           variants={progressVariants}
           className={clsxm(
             className,
-            'absolute left-0 top-0 h-3 rounded-full px-3'
+            'absolute left-0 top-0 h-3 rounded-full px-3',
           )}
         >
           &ensp;

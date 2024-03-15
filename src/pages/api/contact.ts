@@ -6,7 +6,7 @@ const FORM_API_KEY = process.env.CONTACT_FORM_API_KEY as string;
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   try {
     const { formData } = req.body;

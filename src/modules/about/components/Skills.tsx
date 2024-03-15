@@ -8,7 +8,7 @@ import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { STACKS } from '@/common/constant/stacks';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
-  <div className='flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700'>
+  <div className='mr-3 flex w-max items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-5 py-2 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50'>
     {icon}
     <span>{title}</span>
   </div>
@@ -49,9 +49,9 @@ const Skills = () => {
       </div>
 
       <div className='flex w-full'>
-        <div className='relative flex flex-col gap-y-4 justify-start py-2 w-full overflow-hidden'>
+        <div className='relative flex w-full flex-col justify-start gap-y-4 overflow-hidden py-2'>
           {sliders}
-          <StyledFade className='hidden dark:flex fade' />
+          <StyledFade className='fade hidden dark:flex' />
         </div>
       </div>
     </div>

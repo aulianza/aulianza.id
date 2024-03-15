@@ -42,12 +42,12 @@ const AiResponses = ({
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                'Oops! The AI seems to be lost. \u00A0 😵‍💫 \u00A0\u00A0'
+                'Oops! The AI seems to be lost. \u00A0 😵‍💫 \u00A0\u00A0',
               )
               .pauseFor(1000)
               .typeString('<br/><br/>')
               .typeString(
-                `Looks like the AI has gone on an unscheduled vacation to the Land of Confusion. Hope it brings back some souvenirs of clarity!. \u00A0\u00A0`
+                `Looks like the AI has gone on an unscheduled vacation to the Land of Confusion. Hope it brings back some souvenirs of clarity!. \u00A0\u00A0`,
               )
               .pauseFor(1000)
               .typeString('<br/><br/>')
@@ -64,7 +64,7 @@ const AiResponses = ({
       )}
 
       {isAiFinished && (
-        <div className='flex justify-center mt-6 transition-all duration-300'>
+        <div className='mt-6 flex justify-center transition-all duration-300'>
           <Button
             onClick={onAiClose}
             data-umami-event='Click Back from AI Response'

@@ -19,7 +19,7 @@ const EducationList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className='grid md:grid-cols-1 gap-4'>
+      <div className='grid gap-4 md:grid-cols-1'>
         {EDUCATION?.map((item, index) => (
           <EducationCard key={index} {...item} />
         ))}

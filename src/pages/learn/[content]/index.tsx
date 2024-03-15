@@ -33,7 +33,7 @@ const LearnContentPage: NextPage<ContentPageProps> = ({
   const { title, description } = content;
 
   const sortedSubContents = subContents.sort(
-    (a, b) => a.frontMatter.id - b.frontMatter.id
+    (a, b) => a.frontMatter.id - b.frontMatter.id,
   );
 
   const canonicalUrl = `https://aulianza.id/learn/${content?.slug}`;

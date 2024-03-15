@@ -6,15 +6,15 @@ import SkeletonLoader from '../elements/SkeletonLoader';
 const BlogCardSkeleton = () => {
   return (
     <SkeletonLoader>
-      <Card className='border border-neutral-200 dark:border-neutral-800 min-w-[350px] dark:bg-neutral-800'>
+      <Card className='min-w-[350px] border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800'>
         <div className='h-48 rounded-t-xl'>
           <Skeleton
             height={192}
             containerClassName='flex'
-            className='!rounded-t-xl !rounded-b-none'
+            className='!rounded-b-none !rounded-t-xl'
           />
         </div>
-        <div className='flex flex-col p-5 space-y-3 h-[126px]'>
+        <div className='flex h-[126px] flex-col space-y-3 p-5'>
           <Skeleton count={2} />
           <div className='flex gap-4'>
             <Skeleton

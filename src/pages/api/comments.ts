@@ -4,12 +4,12 @@ import { getBlogComment } from '@/services/devto';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ): Promise<void> {
   try {
     res.setHeader(
       'Cache-Control',
-      'public, s-maxage=60, stale-while-revalidate=30'
+      'public, s-maxage=60, stale-while-revalidate=30',
     );
 
     const { post_id } = req.query;

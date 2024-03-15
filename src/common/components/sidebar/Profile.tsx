@@ -48,15 +48,15 @@ const Profile = ({ isScrolled = false }: ProfileProps) => {
     <MenuContext.Provider value={{ hideNavbar }}>
       <div
         className={clsx(
-          'z-20 fixed shadow-sm sm:shadow-none lg:border-none dark:border-b dark:border-neutral-800 bg-light dark:bg-dark lg:!bg-transparent w-full p-5 lg:relative lg:p-0',
-          expandMenu && 'pb-0'
+          'fixed z-20 w-full bg-light p-5 shadow-sm dark:border-b dark:border-neutral-800 dark:bg-dark sm:shadow-none lg:relative lg:border-none lg:!bg-transparent lg:p-0',
+          expandMenu && 'pb-0',
         )}
       >
-        <div className='flex items-start justify-between lg:flex-col lg:space-y-4 md:px-2'>
+        <div className='flex items-start justify-between md:px-2 lg:flex-col lg:space-y-4'>
           <ProfileHeader expandMenu={expandMenu} imageSize={getImageSize()} />
 
           {!isMobile && (
-            <div className='flex items-center w-full justify-between'>
+            <div className='flex w-full items-center justify-between'>
               <Status />
               <ThemeToggleButton />
             </div>
@@ -65,9 +65,9 @@ const Profile = ({ isScrolled = false }: ProfileProps) => {
           {isMobile && (
             <div
               className={clsx(
-                'flex lg:hidden items-center gap-5 mt-2',
+                'mt-2 flex items-center gap-5 lg:hidden',
                 expandMenu &&
-                  '!items-end flex-col-reverse justify-between h-[120px] pb-1'
+                  'h-[120px] flex-col-reverse !items-end justify-between pb-1',
               )}
             >
               <ThemeToggleButton />

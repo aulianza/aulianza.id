@@ -14,7 +14,7 @@ export default async function handler(
 
   if (req.method === 'GET') {
     try {
-      const contentMeta = await prisma.contentMeta.findUnique({
+      const contentMeta = await prisma.contentmeta.findUnique({
         where: { slug: slug as string },
         select: { views: true },
       });
@@ -31,7 +31,7 @@ export default async function handler(
     }
   } else if (req.method === 'POST') {
     try {
-      const contentMeta = await prisma.contentMeta.update({
+      const contentMeta = await prisma.contentmeta.update({
         where: { slug: slug as string },
         data: {
           views: {

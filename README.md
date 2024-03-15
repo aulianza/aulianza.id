@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Personal Website</h1>
+  <h1>aulianza.id</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with PostgreSQL</p>
 
   [![GitHub Repo stars](https://img.shields.io/github/stars/aulianza/aulianza.id)](https://github.com/aulianza/aulianza.id/stargazers)

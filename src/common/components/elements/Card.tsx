@@ -10,7 +10,7 @@ interface CardProps {
 const Card = ({ children, className = '', ...others }: CardProps) => {
   return (
     <StyledCard
-      className={`bg-white rounded-xl transition-all duration-300 shadow-sm ${className} `}
+      className={`rounded-xl bg-white shadow-sm transition-all duration-300 ${className} `}
       {...others}
     >
       {children}

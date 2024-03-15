@@ -49,12 +49,12 @@ const BlogCardNew = ({
   return (
     <Link href={`/blog/${slug}?id=${id}`}>
       <Card
-        className='group relative flex flex-col border dark:border-neutral-800 shadow-sm rounded-lg h-[400px] w-full'
+        className='group relative flex h-[400px] w-full flex-col rounded-lg border shadow-sm dark:border-neutral-800'
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-          className='duration-500 relative rounded-xl'
+          className='relative rounded-xl duration-500'
           style={{
             height: '400px',
             overflow: 'hidden',
@@ -65,19 +65,19 @@ const BlogCardNew = ({
             alt={title?.rendered}
             fill={true}
             sizes='100vw, 100vh'
-            className='object-cover object-left w-full h-full transform transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm'
+            className='h-full w-full transform object-cover object-left transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm'
           />
           <div className='absolute inset-0 bg-gradient-to-b from-black/20 to-black opacity-80 transition-opacity duration-300'></div>
         </div>
 
-        <div className='absolute flex flex-col justify-between p-5 space-y-4 h-full'>
+        <div className='absolute flex h-full flex-col justify-between space-y-4 p-5'>
           <div className='flex flex-wrap gap-2'>
             {tagList?.map((tag) => (
               <div
                 key={tag?.term_id}
-                className='px-2.5 py-1 rounded-full font-mono text-xs text-neutral-400 bg-neutral-900/50'
+                className='rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400'
               >
-                <span className='font-semibold mr-1'>#</span>
+                <span className='mr-1 font-semibold'>#</span>
                 {tag?.name.charAt(0).toUpperCase() + tag?.name.slice(1)}
               </div>
             ))}
@@ -88,18 +88,18 @@ const BlogCardNew = ({
               <h3 className='font-sora text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 '>
                 {title?.rendered}
               </h3>
-              <div className='flex gap-1 items-center text-neutral-400'>
+              <div className='flex items-center gap-1 text-neutral-400'>
                 <DateIcon size={14} />
-                <span className='text-xs ml-0.5'>{formatDate(date)}</span>
+                <span className='ml-0.5 text-xs'>{formatDate(date)}</span>
               </div>
               {isExcerpt && (
-                <p className='leading-relaxed text-sm text-neutral-400'>
+                <p className='text-sm leading-relaxed text-neutral-400'>
                   {formatExcerpt(excerpt?.rendered)}
                 </p>
               )}
             </div>
             <Breakline className='!border-neutral-700' />
-            <div className='flex justify-between gap-4 text-neutral-400 px-0.5'>
+            <div className='flex justify-between gap-4 px-0.5 text-neutral-400'>
               <Tooltip title='by aulianza'>
                 <Image
                   src='/images/aulianza.png'
@@ -116,18 +116,18 @@ const BlogCardNew = ({
                 animate={isHovered ? 'hidden' : 'visible'}
                 className={clsx(
                   'flex justify-between gap-4 ',
-                  isHovered && 'hidden'
+                  isHovered && 'hidden',
                 )}
               >
-                <div className='flex gap-1 items-center'>
+                <div className='flex items-center gap-1'>
                   <ViewIcon size={14} />
-                  <span className='text-xs font-medium ml-0.5'>
+                  <span className='ml-0.5 text-xs font-medium'>
                     {total_views_count.toLocaleString()} VIEWS
                   </span>
                 </div>
-                <div className='flex gap-1 items-center'>
+                <div className='flex items-center gap-1'>
                   <ClockIcon size={14} />
-                  <span className='text-xs font-medium ml-0.5'>
+                  <span className='ml-0.5 text-xs font-medium'>
                     {readingTimeMinutes.toLocaleString()} MINS READ
                   </span>
                 </div>
@@ -137,11 +137,11 @@ const BlogCardNew = ({
                 initial='hidden'
                 animate={isHovered ? 'visible' : 'hidden'}
                 className={clsx(
-                  'flex gap-1 items-center',
-                  !isHovered && 'hidden'
+                  'flex items-center gap-1',
+                  !isHovered && 'hidden',
                 )}
               >
-                <span className='text-xs font-medium mr-0.5'>READ MORE</span>
+                <span className='mr-0.5 text-xs font-medium'>READ MORE</span>
                 <MoreIcon size={16} />
               </motion.div>
             </div>

@@ -21,15 +21,15 @@ export const Tabs = ({ children }: TabsProps) => {
   };
 
   return (
-    <div className='border-b border-x dark:border-neutral-800 rounded-lg'>
+    <div className='rounded-lg border-x border-b dark:border-neutral-800'>
       <div className='flex gap-1'>
         {children?.map((child, index) => (
           <button
             key={index}
-            className={`py-3 px-4 flex-1 text-center ${
+            className={`flex-1 px-4 py-3 text-center ${
               activeTab === index
-                ? 'bg-neutral-500 dark:bg-neutral-400 text-neutral-100 dark:text-neutral-900'
-                : 'bg-neutral-200 dark:bg-neutral-800 darktext-neutral-100'
+                ? 'bg-neutral-500 text-neutral-100 dark:bg-neutral-400 dark:text-neutral-900'
+                : 'darktext-neutral-100 bg-neutral-200 dark:bg-neutral-800'
             }`}
             onClick={() => handleTabClick(index)}
           >
@@ -37,7 +37,7 @@ export const Tabs = ({ children }: TabsProps) => {
           </button>
         ))}
       </div>
-      <div className='py-5 px-8'>{children[activeTab]}</div>
+      <div className='px-8 py-5'>{children[activeTab]}</div>
     </div>
   );
 };

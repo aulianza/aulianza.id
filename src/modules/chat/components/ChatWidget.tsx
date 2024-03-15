@@ -23,10 +23,10 @@ const ChatWidget = ({ isOpen, toggleChat }: ChatWidgetProps) => {
     >
       <Dialog
         as='div'
-        className='fixed z-20 bottom-0 md:bottom-12 md:right-5 shadow-lg'
+        className='fixed bottom-0 z-20 shadow-lg md:bottom-12 md:right-5'
         onClose={toggleChat}
       >
-        <div className='bg-neutral-50 border border-neutral-300 shadow-3xl ring-1 ring-black/5 dark:divide-neutral-700 dark:border-neutral-600 rounded-xl w-full md:w-[400px] dark:border-neutral-800 dark:bg-[#1b1b1b80] backdrop-blur-2xl'>
+        <div className='shadow-3xl w-full rounded-xl border border-neutral-300 bg-neutral-50 ring-1 ring-black/5 backdrop-blur-2xl dark:divide-neutral-700 dark:border-neutral-600 dark:border-neutral-800 dark:bg-[#1b1b1b80] md:w-[400px]'>
           <ChatWidgetHeader />
           <Chat isWidget={true} />
         </div>

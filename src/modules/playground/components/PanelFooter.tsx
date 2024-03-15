@@ -17,8 +17,8 @@ const PanelFooter = ({
   onFullScreen,
 }: PanelFooterProps) => {
   return (
-    <div className='flex items-center justify-between bg-neutral-900 border border-neutral-700 border-t-0 py-1 px-2 rounded-b-md'>
-      <div className='text-sm font-sora items-center text-neutral-500'>
+    <div className='flex items-center justify-between rounded-b-md border border-t-0 border-neutral-700 bg-neutral-900 px-2 py-1'>
+      <div className='items-center font-sora text-sm text-neutral-500'>
         &copy; <a href='https://aulianza.id'>aulianza</a>
       </div>
       {isFullScreen ? (
@@ -26,7 +26,7 @@ const PanelFooter = ({
           <ExitFullScreenIcon
             size={22}
             onClick={onCloseFullScreen}
-            className=' text-neutral-500 cursor-pointer'
+            className=' cursor-pointer text-neutral-500'
             data-umami-event='Open Fullscreen Playground'
           />
         </Tooltip>
@@ -35,7 +35,7 @@ const PanelFooter = ({
           <FullScreenIcon
             size={22}
             onClick={onFullScreen}
-            className=' text-neutral-500 cursor-pointer'
+            className=' cursor-pointer text-neutral-500'
             data-umami-event='Exit Fullscreen Playground'
           />
         </Tooltip>

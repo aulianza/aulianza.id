@@ -55,16 +55,16 @@ const BlogHeader = ({
         </motion.h1>
       ) : (
         <motion.div
-          className='lg:sticky top-0 bg-light dark:bg-dark py-6 z-10 shadow-bottom backdrop-blur border-b border-neutral-300 dark:border-neutral-600'
+          className='shadow-bottom top-0 z-10 border-b border-neutral-300 bg-light py-6 backdrop-blur dark:border-neutral-600 dark:bg-dark lg:sticky'
           initial='initial'
           animate='animate'
           variants={titleVariants}
           transition={transition}
         >
-          <h1 className='text-lg lg:text-xl font-semibold'>{title}</h1>
+          <h1 className='text-lg font-semibold lg:text-xl'>{title}</h1>
         </motion.div>
       )}
-      <div className='flex flex-col sm:flex-row gap-2 justify-between mb-6 pt-5 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]'>
+      <div className='mb-6 flex flex-col justify-between gap-2 border-b border-dashed border-neutral-600 pb-6 pt-5 text-[14px] text-neutral-600 dark:text-neutral-400 sm:flex-row'>
         <div>
           Published on
           <span className='px-1 font-medium'>
@@ -73,16 +73,16 @@ const BlogHeader = ({
         </div>
 
         <div className='flex items-center gap-5'>
-          <div className='flex gap-1 items-center font-medium'>
+          <div className='flex items-center gap-1 font-medium'>
             <ViewIcon size={16} />
-            <div className='flex gap-1 ml-0.5'>
+            <div className='ml-0.5 flex gap-1'>
               <span>{page_views_count?.toLocaleString() || '-'}</span>
               <span>Views</span>
             </div>
           </div>
-          <div className='flex gap-1 items-center font-medium'>
+          <div className='flex items-center gap-1 font-medium'>
             <ClockIcon size={16} />
-            <div className='flex gap-1 ml-0.5'>
+            <div className='ml-0.5 flex gap-1'>
               <span>{reading_time_minutes}</span>
               <span>Minutes Read</span>
             </div>

@@ -19,7 +19,7 @@ export const useBlogPageStore = create<BlogPageStore>()(
       }),
       {
         name: 'blog-page-store',
-      }
-    )
-  )
+      },
+    ),
+  ),
 );

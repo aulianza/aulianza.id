@@ -35,15 +35,15 @@ const DevicePopover = ({ devices, isShow }: DevicePopoverProps) => {
       leaveTo='opacity-0 translate-y-1'
     >
       <Popover.Panel className='absolute bottom-10 right-0 z-20 w-max'>
-        <div className='flex flex-col gap-5 py-5 px-6 overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-neutral-100 dark:bg-neutral-800 dark:text-white'>
+        <div className='flex flex-col gap-5 overflow-hidden rounded-lg bg-neutral-100 px-6 py-5 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-neutral-800 dark:text-white'>
           {listDevices?.map((device, index) => (
             <div
               key={index}
-              className='flex items-center w-full justify-between gap-3'
+              className='flex w-full items-center justify-between gap-3'
             >
               {device?.icon}
-              <div className='flex flex-col flex-grow pl-0.5 pr-2'>
-                <span className='font-medium font-sora'>{device?.name}</span>
+              <div className='flex flex-grow flex-col pl-0.5 pr-2'>
+                <span className='font-sora font-medium'>{device?.name}</span>
                 <span className='text-xs font-light text-neutral-600 dark:text-neutral-400'>
                   {device?.model}
                 </span>

@@ -41,11 +41,11 @@ const Pagination: React.FC<PaginationProps> = ({
           onPageChange(typeof page === 'number' ? page : currentPage)
         }
         className={clsx(
-          'mx-1 px-4 py-1.5 rounded items-center',
-          page === '...' && '!bg-transparent !cursor-default',
+          'mx-1 items-center rounded px-4 py-1.5',
+          page === '...' && '!cursor-default !bg-transparent',
           currentPage === page
             ? 'bg-sky-600 text-white'
-            : 'bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200'
+            : 'bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200',
         )}
       >
         {page}
@@ -62,7 +62,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {currentPage !== 1 && (
         <button
           onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
-          className='mx-1 px-2 py-1.5 rounded bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200'
+          className='mx-1 rounded bg-neutral-200 px-2 py-1.5 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200'
           disabled={currentPage === 1}
         >
           <PrevIcon size={24} />
@@ -74,7 +74,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {currentPage !== totalPages && (
         <button
           onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
-          className='mx-1 px-2 py-1.5 rounded bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200'
+          className='mx-1 rounded bg-neutral-200 px-2 py-1.5 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200'
           disabled={currentPage === totalPages}
         >
           <NextIcon size={24} />

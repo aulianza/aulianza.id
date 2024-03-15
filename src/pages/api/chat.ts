@@ -4,7 +4,7 @@ import { postChatPrompt } from '@/services/chatgpt';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   try {
     const { prompt } = req.body;

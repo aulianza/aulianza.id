@@ -43,8 +43,8 @@ const Layout = ({ children }: LayoutProps) => {
       {/* <TopBar /> */}
       <div
         className={clsx(
-          'max-w-6xl mx-auto lg:px-8',
-          isDarkTheme ? 'dark:text-darkText' : ''
+          'mx-auto max-w-6xl lg:px-8',
+          isDarkTheme ? 'dark:text-darkText' : '',
         )}
       >
         {isFullPageHeader ? (
@@ -55,7 +55,7 @@ const Layout = ({ children }: LayoutProps) => {
         ) : (
           <div className='flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8'>
             <HeaderSidebar />
-            <main className='lg:w-4/5 max-w-[854px] transition-all duration-300'>
+            <main className='max-w-[854px] transition-all duration-300 lg:w-4/5'>
               {children}
             </main>
           </div>

@@ -10,12 +10,12 @@ const Loading = ({ isFullScreen = false, text }: LoadingProps) => {
   return (
     <div
       className={clsx(
-        'flex flex-col space-y-5 items-center justify-center p-40',
-        isFullScreen && 'h-screen'
+        'flex flex-col items-center justify-center space-y-5 p-40',
+        isFullScreen && 'h-screen',
       )}
     >
       <HashLoader color='#36d7b7' />
-      {text && <p className='text-[#36d7b7] pt-5'>{text}</p>}
+      {text && <p className='pt-5 text-[#36d7b7]'>{text}</p>}
     </div>
   );
 };

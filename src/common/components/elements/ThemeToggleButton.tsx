@@ -132,7 +132,9 @@ const StyledToggle = styled.div`
   }
 
   .mode-toggle + label .source {
-    transition: fill, transform 250ms ease-in-out;
+    transition:
+      fill,
+      transform 250ms ease-in-out;
   }
 
   .mode-toggle + label .bg-stop-start,

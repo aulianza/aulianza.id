@@ -66,7 +66,7 @@ const CodePlayground = ({
 
   return (
     <>
-      <div className='flex flex-auto bg-neutral-900 border border-neutral-700 rounded-t-md'>
+      <div className='flex flex-auto rounded-t-md border border-neutral-700 bg-neutral-900'>
         <PanelGroup
           autoSaveId={id}
           direction={panelDirection}
@@ -100,7 +100,7 @@ const CodePlayground = ({
                     size={18}
                     className={clsx(
                       'text-sky-500',
-                      !code && '!text-neutral-400'
+                      !code && '!text-neutral-400',
                     )}
                   />
                 </div>
@@ -128,7 +128,7 @@ const CodePlayground = ({
                     size={18}
                     className={clsx(
                       'text-neutral-400',
-                      output && 'text-red-400'
+                      output && 'text-red-400',
                     )}
                   />
                 </div>

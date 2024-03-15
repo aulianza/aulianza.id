@@ -23,10 +23,10 @@ const CommentList = ({ id, totalComments }: CommentListProps) => {
   if (isLoading) return <Loading />;
 
   return (
-    <section className='space-y-5 pt-4 pb-6'>
+    <section className='space-y-5 pb-6 pt-4'>
       {totalComments >= 1 ? (
         <>
-          <div className='font-semibold text-xl pb-5'>
+          <div className='pb-5 text-xl font-semibold'>
             {totalComments} Comment{totalComments > 1 && 's'}
           </div>
           {commentsData?.map((comment) => (

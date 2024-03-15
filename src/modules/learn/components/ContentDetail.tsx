@@ -41,14 +41,14 @@ const ContentDetail = ({ content, frontMatter }: ContentDetailProps) => {
 
   const { data: resContentData } = useSWR(
     `/api/content?category=${parentSlug}`,
-    fetcher
+    fetcher,
   );
 
   const getNextOrPreviousContent = useCallback(
     (contents: ContentListItemProps[], step: number) => {
       return contents.find((item) => item.id === currentId + step) || null;
     },
-    [currentId]
+    [currentId],
   );
 
   const handleNavigation = (step: number) => {
@@ -67,7 +67,7 @@ const ContentDetail = ({ content, frontMatter }: ContentDetailProps) => {
 
   useEffect(() => {
     const getId = contentList?.find(
-      (item: ContentListItemProps) => item.slug === contentSlug
+      (item: ContentListItemProps) => item.slug === contentSlug,
     );
     const currentContentId = getId?.id as number;
     setCurrentId(currentContentId);
@@ -98,7 +98,7 @@ const ContentDetail = ({ content, frontMatter }: ContentDetailProps) => {
       {isShowComment && (
         <section
           id='comments'
-          className='border-t dark:border-neutral-700 border-gray-300 my-10'
+          className='my-10 border-t border-gray-300 dark:border-neutral-700'
         >
           <GiscusComment />
         </section>

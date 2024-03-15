@@ -17,13 +17,13 @@ interface CodingActiveListProps {
 
 const sumTotalFromArray = <T extends { hours: number; minutes: number }>(
   data: T[],
-  key: keyof T
+  key: keyof T,
 ) => {
   return (
     data.reduce(
       (previousValue, currentValue) =>
         previousValue + (currentValue[key] as number),
-      0
+      0,
     ) ?? 0
   );
 };
@@ -31,11 +31,11 @@ const sumTotalFromArray = <T extends { hours: number; minutes: number }>(
 const CodingActiveList = ({ data }: CodingActiveListProps) => {
   const getLanguagesTotalHours = sumTotalFromArray<ItemProps>(
     data?.languages || [],
-    'hours'
+    'hours',
   );
   const getLanguagesTotalMinutes = sumTotalFromArray<ItemProps>(
     data?.languages || [],
-    'minutes'
+    'minutes',
   );
   const getLanguagesTotalTimeDisplay = `${
     Math.floor((getLanguagesTotalMinutes % 3600) / 60) + getLanguagesTotalHours
@@ -43,11 +43,11 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
 
   const getEditorTotalHours = sumTotalFromArray<ItemProps>(
     data?.categories || [],
-    'hours'
+    'hours',
   );
   const getEditorTotalMinutes = sumTotalFromArray<ItemProps>(
     data?.categories || [],
-    'minutes'
+    'minutes',
   );
   const getEditorTotalTimeDisplay = `${
     Math.floor((getEditorTotalMinutes % 3600) / 60) + getEditorTotalHours
@@ -79,7 +79,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
           key={item?.title}
           className={clsx(
             item?.styles?.bg,
-            'relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]'
+            'relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]',
           )}
         >
           <div className='h-full w-full rounded-lg bg-neutral-50 p-2 dark:bg-dark'>
@@ -87,7 +87,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
               {item?.title}
             </p>
 
-            <ul className='flex flex-col py-3 px-4 gap-1'>
+            <ul className='flex flex-col gap-1 px-4 py-3'>
               {item?.data?.map((subItem) => (
                 <li key={subItem?.name}>
                   <Progress data={subItem} className={item?.styles?.bg} />

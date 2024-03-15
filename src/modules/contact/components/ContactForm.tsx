@@ -24,7 +24,7 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -63,10 +63,10 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='flex flex-col flex-grow gap-5'>
-        <div className='flex flex-col md:flex-row gap-5'>
+      <div className='flex flex-grow flex-col gap-5'>
+        <div className='flex flex-col gap-5 md:flex-row'>
           <input
-            className='w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700'
+            className='w-full rounded-md border border-neutral-200 px-3 py-2 focus:outline-none dark:border-neutral-700'
             type='text'
             placeholder='Name*'
             name='name'
@@ -75,7 +75,7 @@ const ContactForm = () => {
             required
           />
           <input
-            className='w-full py-2 px-3 rounded-md border border-neutral-200 dark:border-neutral-700 focus:outline-none'
+            className='w-full rounded-md border border-neutral-200 px-3 py-2 focus:outline-none dark:border-neutral-700'
             type='email'
             placeholder='Email*'
             name='email'
@@ -85,7 +85,7 @@ const ContactForm = () => {
           />
         </div>
         <textarea
-          className='w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700'
+          className='w-full rounded-md border border-neutral-200 px-3 py-2 focus:outline-none dark:border-neutral-700'
           rows={5}
           placeholder='Message*'
           name='message'
@@ -95,7 +95,7 @@ const ContactForm = () => {
         />
         <Button
           className={clsx(
-            'py-2.5 bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 flex justify-center hover:dark:bg-neutral-50 hover:bg-neutral-900 hover:scale-[101%]'
+            'flex justify-center bg-neutral-800 py-2.5 hover:scale-[101%] hover:bg-neutral-900 dark:bg-neutral-50 dark:text-neutral-950 hover:dark:bg-neutral-50',
           )}
           type='submit'
           icon={<></>}
@@ -106,7 +106,7 @@ const ContactForm = () => {
         </Button>
       </div>
 
-      <div className='flex items-center gap-2 dark:text-neutral-400 my-5'>
+      <div className='my-5 flex items-center gap-2 dark:text-neutral-400'>
         <ClockIcon />
         <div className='text-sm'>
           <span className='font-medium'>Avg. response:</span> 1-2 Hours (Working

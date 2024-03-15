@@ -11,10 +11,10 @@ const ProductCardSkeleton = () => {
           <Skeleton
             height={192}
             containerClassName='flex'
-            className='!rounded-t-xl !rounded-b-none'
+            className='!rounded-b-none !rounded-t-xl'
           />
         </div>
-        <div className='flex flex-col p-5 space-y-3 h-[164px]'>
+        <div className='flex h-[164px] flex-col space-y-3 p-5'>
           <Skeleton className='h-6' containerClassName='w-4/5' />
           <Skeleton count={2} />
           <div className='flex gap-2'>

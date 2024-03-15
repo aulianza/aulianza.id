@@ -19,7 +19,7 @@ interface CodingActiveProps {
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR('/api/read-stats', fetcher);
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
-    null
+    null,
   );
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
       if (lastUpdateDate) {
         const zonedDate = utcToZonedTime(
           zonedTimeToUtc(lastUpdateDate, 'Asia/Jakarta'),
-          'Asia/Jakarta'
+          'Asia/Jakarta',
         );
         const distance = formatDistanceToNowStrict(zonedDate, {
           addSuffix: true,

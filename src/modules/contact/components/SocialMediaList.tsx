@@ -9,12 +9,12 @@ const SocialMediaList = () => {
   return (
     <div className='space-y-5 pb-2'>
       <h3 className='text-lg font-medium'>Find me on social media</h3>
-      <div className='flex flex-col md:flex-row justify-between gap-3'>
+      <div className='flex flex-col justify-between gap-3 md:flex-row'>
         {SOCIAL_MEDIA?.map((item, index: number) => (
           <Button
             className={clsx(
-              'w-full md:w-1/5 flex justify-center items-center hover:scale-105 transition-all duration-300',
-              item?.className
+              'flex w-full items-center justify-center transition-all duration-300 hover:scale-105 md:w-1/5',
+              item?.className,
             )}
             key={index}
             onClick={() => handleAction(item?.href)}

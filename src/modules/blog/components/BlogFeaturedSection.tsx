@@ -14,7 +14,7 @@ const BlogFeaturedSection = () => {
     {
       revalidateOnFocus: false,
       refreshInterval: 0,
-    }
+    },
   );
 
   const featuredData: BlogItemProps[] = useMemo(() => {

@@ -14,9 +14,9 @@ const ConsoleOutput = ({
   return (
     <div
       className={clsx(
-        'bg-neutral-900 text-neutral-50 py-3 px-4 overflow-y-auto',
+        'overflow-y-auto bg-neutral-900 px-4 py-3 text-neutral-50',
         isFullScreen ? `h-[70vh]` : 'h-[500px]',
-        isError && `!text-red-400`
+        isError && `!text-red-400`,
       )}
     >
       <code

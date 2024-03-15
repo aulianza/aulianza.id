@@ -21,7 +21,7 @@ const NavigationSection = memo(
     nextTitle,
   }: NavigationSectionProps) => {
     return (
-      <div className='flex justify-between mt-8 border-t dark:border-neutral-700 border-gray-300 py-5'>
+      <div className='mt-8 flex justify-between border-t border-gray-300 py-5 dark:border-neutral-700'>
         {previousTitle && currentIndex !== 0 && (
           <ButtonNavigation
             onClick={handlePrevious}
@@ -39,7 +39,7 @@ const NavigationSection = memo(
         )}
       </div>
     );
-  }
+  },
 );
 
 export default NavigationSection;

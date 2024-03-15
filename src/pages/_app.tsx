@@ -19,7 +19,7 @@ import defaultSEOConfig from '../../next-seo.config';
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),
-  { ssr: false }
+  { ssr: false },
 );
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {

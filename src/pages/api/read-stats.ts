@@ -4,7 +4,7 @@ import { getALLTimeSinceToday, getReadStats } from '@/services/wakatime';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ): Promise<void> {
   try {
     const readStatsResponse = await getReadStats();
@@ -12,7 +12,7 @@ export default async function handler(
 
     res.setHeader(
       'Cache-Control',
-      'public, s-maxage=60, stale-while-revalidate=30'
+      'public, s-maxage=60, stale-while-revalidate=30',
     );
 
     const data = {

@@ -11,8 +11,8 @@ const ChatUserInfo = ({ isWidget = false }: { isWidget?: boolean }) => {
   return session ? (
     <div
       className={clsx(
-        'flex flex-col md:flex-row items-start md:items-center gap-2 px-4 text-sm pb-3',
-        isWidget && 'text-xs'
+        'flex flex-col items-start gap-2 px-4 pb-3 text-sm md:flex-row md:items-center',
+        isWidget && 'text-xs',
       )}
     >
       <div className='flex flex-wrap gap-1 text-neutral-500'>
@@ -22,10 +22,10 @@ const ChatUserInfo = ({ isWidget = false }: { isWidget?: boolean }) => {
       </div>
       {!isWidget && (
         <>
-          <div className='hidden md:block text-neutral-500'>•</div>
+          <div className='hidden text-neutral-500 md:block'>•</div>
           <div
             onClick={() => signOut()}
-            className='flex items-center gap-1 text-red-500 cursor-pointer font-medium'
+            className='flex cursor-pointer items-center gap-1 font-medium text-red-500'
             data-umami-event='Sign Out from Chat Page'
           >
             <SignOutIcon size={16} className='cursor-pointer text-red-500' />

@@ -17,7 +17,7 @@ export const postChatPrompt = async (prompt: string) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
-    }
+    },
   );
 
   const status = response?.status;

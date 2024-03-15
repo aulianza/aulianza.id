@@ -59,7 +59,7 @@ const CodeBlock = ({
       {!inline ? (
         <div className='relative'>
           <button
-            className='absolute top-3 right-3 p-2 border border-neutral-700 rounded-lg hover:bg-neutral-800'
+            className='absolute right-3 top-3 rounded-lg border border-neutral-700 p-2 hover:bg-neutral-800'
             type='button'
             aria-label='Copy to Clipboard'
             onClick={() => handleCopy(children.toString())}
@@ -89,7 +89,7 @@ const CodeBlock = ({
           </SyntaxHighlighter>
         </div>
       ) : (
-        <code className='font-light bg-neutral-200 text-sky-600 dark:text-sky-300 dark:bg-neutral-700 py-1 px-2 rounded-md text-[14px]'>
+        <code className='rounded-md bg-neutral-200 px-2 py-1 text-[14px] font-light text-sky-600 dark:bg-neutral-700 dark:text-sky-300'>
           {children}
         </code>
       )}
@@ -97,7 +97,7 @@ const CodeBlock = ({
   );
 };
 
-const LoadingPlaceholder = () => <div className='w-full mt-12 mb-12 h-36' />;
+const LoadingPlaceholder = () => <div className='mb-12 mt-12 h-36 w-full' />;
 
 export default dynamic(() => Promise.resolve(CodeBlock), {
   ssr: false,

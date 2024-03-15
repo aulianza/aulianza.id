@@ -29,7 +29,7 @@ const CareerCard = ({
   }
 
   return (
-    <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-900'>
+    <Card className='flex items-center gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900'>
       {logo ? (
         <Image src={logo} width={55} height={55} alt={company} />
       ) : (
@@ -38,14 +38,14 @@ const CareerCard = ({
 
       <div className='space-y-1'>
         <h6>{position}</h6>
-        <div className='text-sm text-neutral-600 dark:text-neutral-400 space-y-2'>
+        <div className='space-y-2 text-sm text-neutral-600 dark:text-neutral-400'>
           <div className='flex items-center gap-1 md:gap-2'>
             <a
               href={link || '#'}
               target='_blank'
               data-umami-event={`Click Career Company Name: ${company}`}
             >
-              <span className='underline cursor-pointer hover:text-dark hover:dark:text-white'>
+              <span className='cursor-pointer underline hover:text-dark hover:dark:text-white'>
                 {company}
               </span>
             </a>

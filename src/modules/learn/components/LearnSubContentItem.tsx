@@ -18,17 +18,17 @@ const LearnSubContentItem = ({
     <Link href={`/learn/${contentSlug}/${subContentSlug}`}>
       <Card
         className={clsxm(
-          'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-900 lg:hover:scale-[102%] w-full py-4 px-5'
+          'flex w-full cursor-pointer flex-row items-center justify-between border border-neutral-300 px-5 py-4 dark:border-neutral-900 lg:hover:scale-[102%]',
         )}
       >
-        <div className='flex gap-3 items-center'>
+        <div className='flex items-center gap-3'>
           <SubContentIcon size={18} className='hidden md:flex' />
           <h5 className='font-sora font-[15px]'>{title}</h5>
         </div>
-        <div className='hidden md:flex gap-5 items-center'>
+        <div className='hidden items-center gap-5 md:flex'>
           {difficulty && (
             <Tooltip title={`Difficulty: ${difficulty}`}>
-              <div className='px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400'>
+              <div className='rounded-full bg-neutral-200 px-2 py-1 text-xs font-medium text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'>
                 {difficulty}
               </div>
             </Tooltip>

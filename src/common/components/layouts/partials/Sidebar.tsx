@@ -28,7 +28,7 @@ const Sidebar = () => {
   return (
     <div
       id='sidebar'
-      className='sticky transition-all duration-300 top-0 z-10 flex flex-col lg:py-8'
+      className='sticky top-0 z-10 flex flex-col transition-all duration-300 lg:py-8'
     >
       <Profile isScrolled={isScrolled} />
       {!isMobile && (

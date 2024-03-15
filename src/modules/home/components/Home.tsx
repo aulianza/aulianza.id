@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Introduction />
-      <Breakline className='mt-8 mb-7' />
+      <Breakline className='mb-7 mt-8' />
       <BlogPreview />
       <Breakline className='my-8' />
       <Services />

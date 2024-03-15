@@ -16,7 +16,7 @@ const ToggleMode = () => {
   return (
     <button
       onClick={toggleTheme}
-      className='flex items-center gap-2 py-2 px-4 w-full lg:hover:dark:bg-zinc-800 lg:hover:bg-gray-200 lg:hover:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 '
+      className='flex w-full items-center gap-2 px-4 py-2 text-neutral-700 hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-300 lg:transition-all lg:duration-300 lg:hover:scale-105 lg:hover:rounded-lg lg:hover:bg-gray-200 lg:hover:dark:bg-zinc-800 '
     >
       {resolvedTheme === 'light' ? (
         <DarkModeIcon size={22} />
@@ -24,7 +24,7 @@ const ToggleMode = () => {
         <LightModeIcon size={22} />
       )}
 
-      <div className='flex ml-0.5'>
+      <div className='ml-0.5 flex'>
         {isDarkTheme ? 'Light Mode' : 'Dark Mode'}
       </div>
     </button>

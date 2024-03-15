@@ -26,7 +26,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
       components={{
         a: (props) => (
           <a
-            className='text-teal-500 hover:text-teal-400 hover:underline cursor-pointer'
+            className='cursor-pointer text-teal-500 hover:text-teal-400 hover:underline'
             {...props}
           />
         ),
@@ -39,31 +39,31 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
         ),
         h3: (props) => (
           <h3
-            className='text-[18px] leading-snug pt-4 font-medium dark:text-neutral-300'
+            className='pt-4 text-[18px] font-medium leading-snug dark:text-neutral-300'
             {...props}
           />
         ),
         ul: ({ ordered, ...props }) => (
-          <ul className='pl-10 space-y-3 list-disc pb-2' {...props} />
+          <ul className='list-disc space-y-3 pb-2 pl-10' {...props} />
         ),
         ol: ({ ordered, ...props }) => (
-          <ol className='pl-10 space-y-3 list-decimal pb-2' {...props} />
+          <ol className='list-decimal space-y-3 pb-2 pl-10' {...props} />
         ),
         code: (props) => <CodeBlock {...props} />,
         blockquote: (props) => (
           <blockquote
-            className='pl-6 py-3 text-lg border-l-[5px] border-neutral-700 border-l-cyan-500 font-medium bg-neutral-200 dark:bg-neutral-800 rounded-br-2xl text-cyan-800 dark:text-cyan-200 font-sora'
+            className='rounded-br-2xl border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-200 py-3 pl-6 font-sora text-lg font-medium text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200'
             {...props}
           />
         ),
         table: (props) => <Table {...props} />,
         th: (props) => (
-          <th className='border dark:border-neutral-600 py-1 px-3 text-left'>
+          <th className='border px-3 py-1 text-left dark:border-neutral-600'>
             {props.children}
           </th>
         ),
         td: (props) => (
-          <td className='border dark:border-neutral-600  py-1 px-3'>
+          <td className='border px-3  py-1 dark:border-neutral-600'>
             {props.children}
           </td>
         ),

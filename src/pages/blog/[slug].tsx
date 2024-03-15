@@ -12,7 +12,7 @@ import BlogDetail from '@/modules/blog/components/BlogDetail';
 import { getBlogDetail } from '@/services/blog';
 
 const GiscusComment = dynamic(
-  () => import('@/modules/blog/components/GiscusComment')
+  () => import('@/modules/blog/components/GiscusComment'),
 );
 
 interface BlogDetailPageProps {

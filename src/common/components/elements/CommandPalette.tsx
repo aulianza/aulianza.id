@@ -104,7 +104,7 @@ const CommandPalette = () => {
     ? menuOptions.map((menu) => ({
         ...menu,
         children: menu.children.filter((item) =>
-          item.title.toLowerCase().includes(queryDebounce.toLowerCase())
+          item.title.toLowerCase().includes(queryDebounce.toLowerCase()),
         ),
       }))
     : menuOptions;
@@ -229,10 +229,10 @@ const CommandPalette = () => {
             <Combobox
               onChange={(menu: MenuOptionItemProps) => handleSelect(menu)}
               as='div'
-              className='relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-100 bg-white shadow-3xl ring-1 ring-black/5 dark:divide-neutral-600 dark:border-neutral-800 dark:bg-[#1b1b1b80] backdrop-blur'
+              className='shadow-3xl relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-neutral-100 bg-white ring-1 ring-black/5 backdrop-blur dark:divide-neutral-600 dark:border-neutral-800 dark:bg-[#1b1b1b80]'
               disabled={askAssistantClicked}
             >
-              <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
+              <div className='flex items-center gap-3 border-b border-neutral-300 px-4 dark:border-neutral-800'>
                 {askAssistantClicked ? (
                   <AiIcon size={22} />
                 ) : (
@@ -240,7 +240,7 @@ const CommandPalette = () => {
                 )}
                 <Combobox.Input
                   onChange={handleSearch}
-                  className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200 font-sora'
+                  className='h-14 w-full border-0 bg-transparent font-sora text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200'
                   placeholder={
                     askAssistantClicked ? queryDebounce : placeholder
                   }
@@ -249,8 +249,8 @@ const CommandPalette = () => {
 
               <div
                 className={clsx(
-                  'max-h-80 overflow-y-auto py-2 px-1',
-                  isEmptyState && '!py-0'
+                  'max-h-80 overflow-y-auto px-1 py-2',
+                  isEmptyState && '!py-0',
                 )}
               >
                 {filterMenuOptions.map((menu) => (
@@ -258,7 +258,7 @@ const CommandPalette = () => {
                     key={menu.title}
                     className={clsx(
                       menu?.children?.length === 0 && 'hidden',
-                      'py-1'
+                      'py-1',
                     )}
                   >
                     <div className='my-2 px-5 text-xs font-medium text-neutral-500'>
@@ -273,16 +273,17 @@ const CommandPalette = () => {
                                 active || isActiveRoute(child?.href)
                                   ? 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700/60 dark:text-white'
                                   : 'text-neutral-600 dark:text-neutral-300',
-                                'mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md py-2 px-4 group',
-                                'dark:hover:bg-[#ffffff14]'
+                                'group mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md px-4 py-2',
+                                'dark:hover:bg-[#ffffff14]',
                               )}
                             >
-                              <div className='flex gap-5 items-center'>
+                              <div className='flex items-center gap-5'>
                                 {child?.icon && (
                                   <div
                                     className={clsx(
-                                      'group-hover:-rotate-12 transition-all duration-300',
-                                      isActiveRoute(child?.href) && '-rotate-12'
+                                      'transition-all duration-300 group-hover:-rotate-12',
+                                      isActiveRoute(child?.href) &&
+                                        '-rotate-12',
                                     )}
                                   >
                                     {child?.icon}
@@ -294,13 +295,13 @@ const CommandPalette = () => {
                               </div>
                               <>
                                 {isActiveRoute(child?.href) ? (
-                                  <span className='animate-pulse text-xs font-sora text-neutral-500'>
+                                  <span className='animate-pulse font-sora text-xs text-neutral-500'>
                                     You are here
                                   </span>
                                 ) : (
                                   <>
                                     {child?.type && (
-                                      <div className='border border-neutral-400 dark:border-neutral-500 text-neutral-500 rounded-md py-0.5 px-1.5 text-xs font-sora'>
+                                      <div className='rounded-md border border-neutral-400 px-1.5 py-0.5 font-sora text-xs text-neutral-500 dark:border-neutral-500'>
                                         {child?.type}
                                       </div>
                                     )}
@@ -320,7 +321,7 @@ const CommandPalette = () => {
                 !askAssistantClicked &&
                 queryDebounce &&
                 filterMenuOptions.every(
-                  (item) => item.children.length === 0
+                  (item) => item.children.length === 0,
                 ) && (
                   <QueryNotFound
                     query={queryDebounce}
@@ -332,7 +333,7 @@ const CommandPalette = () => {
               {askAssistantClicked &&
                 queryDebounce &&
                 filterMenuOptions.every(
-                  (item) => item.children.length === 0
+                  (item) => item.children.length === 0,
                 ) && (
                   <div className='max-h-80 overflow-y-auto px-8 py-7 text-neutral-700 dark:text-neutral-300'>
                     {aiLoading ? (

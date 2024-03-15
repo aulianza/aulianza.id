@@ -20,13 +20,13 @@ const Overview = ({ data }: OverviewProps) => {
       ?.map((item) => item.contributionCount)
       ?.reduce(
         (previousValue, currentValue) => previousValue + currentValue,
-        0
+        0,
       ) || 0;
   const totalContributionList = weeks
     .map((week) =>
       week.contributionDays.map(
-        (contributionDay) => contributionDay.contributionCount
-      )
+        (contributionDay) => contributionDay.contributionCount,
+      ),
     )
     .flat();
 

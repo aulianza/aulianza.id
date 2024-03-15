@@ -4,7 +4,7 @@ import { loadMdxFiles } from '@/common/libs/mdx';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const { category } = req.query;
   const contentList = await loadMdxFiles(category as string);

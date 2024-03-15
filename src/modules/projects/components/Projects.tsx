@@ -27,7 +27,7 @@ const Projects = ({ projects, loadMore, hasMore }: ProjectsComponentProps) => {
       loader={<h4>Loading...</h4>}
       style={{ overflow: 'hidden' }}
     >
-      <div className='grid sm:grid-cols-2 gap-5 pt-2 px-1'>
+      <div className='grid gap-5 px-1 pt-2 sm:grid-cols-2'>
         {filteredProjects.map((project, index) => (
           <motion.div
             key={index}

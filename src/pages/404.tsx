@@ -6,13 +6,13 @@ import Container from '@/common/components/elements/Container';
 const Custom404: NextPage = () => {
   return (
     <Container
-      className='flex flex-col h-full justify-center items-center space-y-5 py-40 md:py-20'
+      className='flex h-full flex-col items-center justify-center space-y-5 py-40 md:py-20'
       data-aos='fade-up'
     >
-      <StyledHeading title='404' className='font-bold text-7xl font-sora'>
+      <StyledHeading title='404' className='font-sora text-7xl font-bold'>
         404
       </StyledHeading>
-      <h2 className='text-xl lg:text-xl animate-pulse text-center'>
+      <h2 className='animate-pulse text-center text-xl lg:text-xl'>
         Whoops, there doesn&apos;t seem to be anything here!
       </h2>
     </Container>

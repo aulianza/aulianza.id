@@ -34,20 +34,20 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
   return (
     <div
       className={clsx(
-        'fixed bottom-0 p-3 z-2 w-full',
-        !expand && 'flex justify-end'
+        'z-2 fixed bottom-0 w-full p-3',
+        !expand && 'flex justify-end',
       )}
     >
       {!expand ? (
         <div
-          className='bg-neutral-950 rounded-full m-2 transition-all duration-100 cursor-pointer'
+          className='m-2 cursor-pointer rounded-full bg-neutral-950 transition-all duration-100'
           onClick={handleMusicToggle}
         >
-          <SpotifyIcon size={44} className='text-green-500 animate-pulse' />
+          <SpotifyIcon size={44} className='animate-pulse text-green-500' />
         </div>
       ) : (
-        <div className='flex items-center justify-between py-2 px-3 mt-5 bg-green-400 dark:bg-green-500 text-neutral-800 dark:text-neutral-900 font-sora rounded-md '>
-          <div className='flex gap-3 items-center'>
+        <div className='mt-5 flex items-center justify-between rounded-md bg-green-400 px-3 py-2 font-sora text-neutral-800 dark:bg-green-500 dark:text-neutral-900 '>
+          <div className='flex items-center gap-3'>
             {data?.albumImageUrl && (
               <Image
                 className='rounded-md'
@@ -59,13 +59,13 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
               />
             )}
             <div
-              className='flex flex-col hover:underline hover:cursor-pointer pt-0.5'
+              className='flex flex-col pt-0.5 hover:cursor-pointer hover:underline'
               onClick={() => handleOpenSongUrl(data?.songUrl)}
             >
-              <div className='font-medium text-sm'>{trimmedSongTitle}</div>
-              <div className='flex gap-2 items-center text-xs'>
+              <div className='text-sm font-medium'>{trimmedSongTitle}</div>
+              <div className='flex items-center gap-2 text-xs'>
                 <AnimatedBars />
-                <span className='text-neutral-800 text-[14px] pt-1'>
+                <span className='pt-1 text-[14px] text-neutral-800'>
                   {trimmedSongArtist}
                 </span>
               </div>
@@ -74,7 +74,7 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
           <div className='flex gap-3 pr-0.5'>
             <CloseIcon
               size={28}
-              className='text-neutral-900 pt-0.5 cursor-pointer'
+              className='cursor-pointer pt-0.5 text-neutral-900'
               onClick={handleMusicToggle}
             />
           </div>

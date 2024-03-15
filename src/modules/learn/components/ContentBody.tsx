@@ -6,7 +6,7 @@ interface ContentBodyProps {
 
 const ContentBody = ({ content }: ContentBodyProps) => {
   return (
-    <div className='space-y-5 leading-[1.8] dark:text-neutral-300 mt-5'>
+    <div className='mt-5 space-y-5 leading-[1.8] dark:text-neutral-300'>
       <MDXComponent>{content}</MDXComponent>
     </div>
   );

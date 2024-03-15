@@ -14,7 +14,7 @@ const EducationCard = ({
   link,
 }: EducationProps) => {
   return (
-    <Card className='flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-900'>
+    <Card className='flex items-center gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900'>
       {logo ? (
         <Image src={logo} width={55} height={55} alt={school} />
       ) : (
@@ -29,10 +29,10 @@ const EducationCard = ({
         >
           <h6>{school}</h6>
         </a>
-        <div className='text-sm text-neutral-600 dark:text-neutral-400 space-y-2'>
-          <div className='flex flex-col md:flex-row gap-1 md:gap-2'>
+        <div className='space-y-2 text-sm text-neutral-600 dark:text-neutral-400'>
+          <div className='flex flex-col gap-1 md:flex-row md:gap-2'>
             <span>{degree}</span>
-            <span className='hidden md:flex text-neutral-300 dark:text-neutral-700'>
+            <span className='hidden text-neutral-300 dark:text-neutral-700 md:flex'>
               •
             </span>
             <span>{major}</span>

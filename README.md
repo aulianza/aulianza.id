@@ -30,7 +30,7 @@ If you have any questions, suggestions, input or anything else, don't hesitate t
 
 On this website there are several features that will continue to be updated and added in the future.
 
-### 🤖 ChatGPT AI
+### 🤖 ChatGPT AI (Offline)
 
 You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for.
 

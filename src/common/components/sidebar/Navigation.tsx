@@ -7,6 +7,7 @@ import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
 
 import Menu from './Menu';
 import MenuItem from './MenuItem';
+import Breakline from '../elements/Breakline';
 
 const Navigation = () => {
   const { setIsOpen } = useContext(CommandPaletteContext);
@@ -24,20 +25,19 @@ const Navigation = () => {
   return (
     <div>
       <Menu list={filterdMenu} />
-      <div className='pt-1'>
-        <MenuItem
-          title={isMobile ? 'Command' : 'cmd + k'}
-          href='#'
-          icon={<CommandIcon className={cn} size={20} />}
-          isExternal={false}
-          onClick={() => handleOpenCommandPalette()}
-        >
-          <div className='relative inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-200 text-green-800 '>
+      <Breakline className='mb-2' />
+      <MenuItem
+        title={isMobile ? 'Command' : 'cmd + k'}
+        href='#'
+        icon={<CommandIcon className={cn} size={20} />}
+        isExternal={false}
+        onClick={() => handleOpenCommandPalette()}
+      >
+        {/* <div className='relative inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-200 text-green-800 '>
             <div className='absolute -ml-2 w-[4.9rem] rounded-full h-5 border-2 border-green-300 animate-badge-pulse'></div>
             <span>AI Powered</span>
-          </div>
-        </MenuItem>
-      </div>
+          </div> */}
+      </MenuItem>
     </div>
   );
 };

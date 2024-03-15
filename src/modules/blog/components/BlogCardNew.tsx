@@ -37,6 +37,7 @@ const BlogCardNew = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0;
+  const tagList = tags_list || [];
 
   const defaultImage = '/images/placeholder.png';
 
@@ -71,7 +72,7 @@ const BlogCardNew = ({
 
         <div className='absolute flex flex-col justify-between p-5 space-y-4 h-full'>
           <div className='flex flex-wrap gap-2'>
-            {tags_list?.map((tag) => (
+            {tagList?.map((tag) => (
               <div
                 key={tag?.term_id}
                 className='px-2.5 py-1 rounded-full font-mono text-xs text-neutral-400 bg-neutral-900/50'

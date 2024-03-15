@@ -35,7 +35,7 @@ const Sidebar = () => {
         <>
           <Breakline />
           <Navigation />
-          <Breakline />
+          <Breakline className='mt-2' />
           <Copyright />
         </>
       )}

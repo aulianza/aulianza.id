@@ -22,6 +22,7 @@ const BlogDetail = ({
   );
 
   const viewsCount = viewsData?.views || 0;
+  const tagList = tags_list || [];
 
   const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0;
 
@@ -37,11 +38,11 @@ const BlogDetail = ({
       <div className='space-y-6 leading-[1.8] dark:text-neutral-300 '>
         {content?.rendered && <MDXComponent>{content?.markdown}</MDXComponent>}
       </div>
-      {tags_list?.length >= 1 && (
+      {tagList?.length >= 1 && (
         <div className='my-10 space-y-2'>
           <h6 className='text-lg font-medium'>Tags:</h6>
           <div className='flex flex-wrap gap-2 pt-2'>
-            {tags_list?.map((tag) => (
+            {tagList?.map((tag) => (
               <div
                 key={tag?.term_id}
                 className='bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 rounded-full px-4 py-1 text-[14px] font-medium'

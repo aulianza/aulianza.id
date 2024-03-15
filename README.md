@@ -2,14 +2,14 @@
   <h1>aulianza.id</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with PostgreSQL</p>
 
-  [![GitHub Repo stars](https://img.shields.io/github/stars/aulianza/aulianza.id)](https://github.com/aulianza/aulianza.id/stargazers)
-  [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/status.svg)](https://depfu.com)
-  [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/overview.svg)](https://depfu.com/github/aulianza/aulianza.id?project_id=38809)
-  [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/aulianza/aulianza.id?project_id=38809)
-  [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+[![GitHub Repo stars](https://img.shields.io/github/stars/aulianza/aulianza.id)](https://github.com/aulianza/aulianza.id/stargazers)
+[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/status.svg)](https://depfu.com)
+[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/overview.svg)](https://depfu.com/github/aulianza/aulianza.id?project_id=38809)
+[![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/aulianza/aulianza.id?project_id=38809)
+[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+
 </div>
 <br />
-
 
 ## Introduction
 

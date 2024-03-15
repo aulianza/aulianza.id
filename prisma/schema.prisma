@@ -3,12 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "postgresql"
   url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_URL")
   relationMode = "prisma"
 }
 
-model Projects {
+model projects {
   id          Int      @id @default(autoincrement())
   title       String
   slug        String   @unique
@@ -23,7 +24,7 @@ model Projects {
   is_featured Boolean  @default(false)
 }
 
-model ContentMeta {
+model contentmeta {
   id          Int      @id @default(autoincrement())
   slug        String   @unique
   type        String

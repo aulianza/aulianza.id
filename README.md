@@ -15,69 +15,83 @@
 
 ## Introduction
 
-This website was meticulously crafted from the ground up using Next.js, along with various complementary technologies. Its inception dates back to June 2023.
+This website was carefully crafted from the ground using Next.js and other helpful tools, starting in June 2023.
 
-Ongoing enhancements, encompassing both functionality and content, are in the pipeline. This website stands as a treasured repository of my acquired knowledge, also serving as a platform for me to disseminate insights.
+I'm constantly making improvements to add more features and content. This website is where I share what I've learned and offer insights to others.
 
-Feel welcome to utilize this website as a point of reference, a wellspring of inspiration, or as a template, all in accordance with the provided license. The source code is at your disposal to suit your specific requirements.
+Feel free to use this website as a reference, for inspiration, or as a template, following the provided license. You can access the source code to customize it to your needs.
 
-Should you find value in this resource, your consideration of leaving a rating is greatly appreciated. 😎👍🏻
+If you find this website helpful, please consider leaving a rating. 😎👍🏻
 
-If you have any questions, suggestions, input or anything else, don't hesitate to contact me🧑‍💻
+If you have any questions, suggestions, or anything else, don't hesitate to reach out to me! 🧑‍💻
 <br /><br />
+
+## Tech Stack
+
+This website is built using these technologies:
+
+- ◼️ Next.js 13.5.6
+- ⚛️ React 18
+- 🔰 TypeScript
+- 💠 Tailwind CSS 3
+- 🗂 Prisma Client
+- 🔥 Firebase
+- 🦫 Zustand
+- 〰️ SWR
+- ➰ Framer Motion
+- 💢 React Icons
+- 🛢 Jest
+- 🧿 Absolute Import and Path Alias 
+- 📏 ESLint
+- ✨ Prettier
+- 🐶 Husky & Lint Staged
+- 📌 Conventional Commit Lint
+
+<br />
+
 
 ## Features
 
 On this website there are several features that will continue to be updated and added in the future.
 
-### 🤖 ChatGPT AI (Offline)
+ - ### 🤖 ChatGPT AI (Unavailable)
 
-You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for.
+You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI api key)
 
-Note:
-
-If you're using Chat Completions engine model of ChatGPT, please concern about this:
-
-Due this site is using free cloud hosting services (Vercel) with certain limitations (Serverless Function Execution Timeout), sometimes an error will occur if the response from the open AI API is too long, but you can change it in the vercel.json file to upgrade memory and maxDuration to be bigger according to the capabilities of your vercel plan.
-
-### 💻 JavaScript Playground
+ - ### 💻 JavaScript Playground
 
 A no-fuss pure JavaScript playground with a live feedback loop.
 
-### 💬 Realtime Guestbook
+ - ### 💬 Realtime Guestbook
 
 Realtime guestbook chat is powered by Firebase. Anyone can leave me a message in this website.
 
-### 🎧 Spotify
+ - ### 🎧 Spotify Status
 
 Displays song information being played on spotify in real time using the Spotify API and SWR.
 
-### 🕗 Wakatime
+ - ### 🕗 Wakatime Statistics
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
 
-### 📝 Blogs
+ - ### 📝 Blogs
 
-The content on this blog is meticulously managed and sourced from a self-hosted headless CMS powered by WordPress, exemplifying our commitment to a streamlined and efficient content delivery system.
+The content on this blog is meticulously managed and sourced from a self-hosted headless CMS powered by WordPress, exemplifying our commitment to a streamlined and efficient content delivery system. The data fetching technique used to retrieve articles from WordPress CMS API involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
 
-The data fetching technique used to retrieve articles from WordPress CMS API involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
+ - ### 🗳 Projects
 
-### 🗳 Projects
-
-The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.
-
-The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
+The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
 <br /><br />
 
 ## Performance
 
-### PageSpeed Insights
+ - ### PageSpeed Insights
 
 Report URL: https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop
 
 ![image](https://github.com/aulianza/aulianza.id/assets/15605885/d87a6083-caf3-4b84-ba59-975c07193a9f)
 
-### GTmetrix
+ - ### GTmetrix
 
 Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop](https://gtmetrix.com/reports/aulianza.id/REEiduoo/)
 
@@ -88,7 +102,7 @@ Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?for
 
 If you are interested in running this project on your local machine, you can do so in just 3 easy steps below. Additionally, remember to update the ".env.example" file to ".env" and replace the variables with your own in the ".env" file.
 
-### 1. Clone this template using one of the three ways:
+  ### 1. Clone this template using one of the three ways:
 
 1. Clone using git
 
@@ -113,7 +127,7 @@ If you are interested in running this project on your local machine, you can do 
    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/aulianza/aulianza.id)
    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aulianza/aulianza.id)
 
-### 2. Install dependencies
+  ### 2. Install dependencies
 
 It is encouraged to use **yarn** so the husky hooks can work properly.
 
@@ -121,7 +135,59 @@ It is encouraged to use **yarn** so the husky hooks can work properly.
 yarn install
 ```
 
-### 3. Run the development server
+  ### 3. Config .env
+
+This repository uses several environment variables. Please copy .env.example into .env, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, Firebase, and others, please refer to the official documentation provided by each provider.
+
+```
+BUNDLE_ANALYZER=false
+SITE_URL=https://aulianza.id
+
+# Blog
+BLOG_API_URL=
+
+# OpenAI
+OPENAI_API_KEY=
+
+# DEV.to
+DEVTO_KEY=
+
+# Spotify
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_REFRESH_TOKEN=
+
+# WakaTime
+WAKATIME_API_KEY=
+
+# GitHub
+GITHUB_READ_USER_TOKEN_PERSONAL=
+GITHUB_READ_USER_TOKEN_WORK=
+
+# Prisma Database
+DATABASE_URL='postgres://USER:PASSWORD@HOST:5432/postgres'
+
+# Contact Form
+CONTACT_FORM_API_KEY=
+
+# Firebase
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_DB_URL=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+NEXT_PUBLIC_FIREBASE_CHAT_DB=
+
+# Next-Auth SSO
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+  ### 4. Run the development server
 
 You can start the server using this command:
 

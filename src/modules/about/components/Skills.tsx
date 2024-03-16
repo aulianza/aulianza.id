@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 import { ReactNode, useEffect, useState } from 'react';
-import { BiCodeAlt as SkillsIcon } from 'react-icons/bi';
 
 import InfiniteLoopSlider from '@/common/components/elements/InfiniteLoopSlider';
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { STACKS } from '@/common/constant/stacks';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
@@ -38,16 +35,6 @@ const Skills = () => {
 
   return (
     <div className='space-y-8'>
-      <div className='space-y-2'>
-        <SectionHeading
-          title='Skills'
-          icon={<SkillsIcon size={22} className='mr-1' />}
-        />
-        <SectionSubHeading>
-          <p className='dark:text-neutral-400'>My professional skills.</p>
-        </SectionSubHeading>
-      </div>
-
       <div className='flex w-full'>
         <div className='relative flex w-full flex-col justify-start gap-y-4 overflow-hidden py-2'>
           {sliders}

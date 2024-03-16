@@ -15,7 +15,7 @@ export const EDUCATION: EducationProps[] = [
     school: 'Universitas Syiah Kuala',
     major: 'Electrical and Computer Engineering, (S.T)',
     logo: '/images/education/unsyiah.svg',
-    location: 'Banda Aceh',
+    location: 'Banda Aceh, Indonesia 🇮🇩',
     degree: "Bachelor's degree",
     start_year: 2014,
     end_year: 2019,

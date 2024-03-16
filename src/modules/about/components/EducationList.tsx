@@ -1,7 +1,5 @@
-import { TbSchool as EducationIcon } from 'react-icons/tb';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { EDUCATION } from '@/common/constant/education';
 
 import EducationCard from './EducationCard';
@@ -9,20 +7,20 @@ import EducationCard from './EducationCard';
 const EducationList = () => {
   return (
     <section className='space-y-6'>
-      <div className='space-y-2'>
-        <SectionHeading
-          title='Education'
-          icon={<EducationIcon size={22} className='mr-1' />}
-        />
-        <SectionSubHeading>
-          <p className='dark:text-neutral-400'>My educational journey.</p>
-        </SectionSubHeading>
-      </div>
-
       <div className='grid gap-4 md:grid-cols-1'>
-        {EDUCATION?.map((item, index) => (
-          <EducationCard key={index} {...item} />
-        ))}
+        <AnimatePresence>
+          {EDUCATION?.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+            >
+              <EducationCard {...item} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );

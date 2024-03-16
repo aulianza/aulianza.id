@@ -72,6 +72,10 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
     },
   ];
 
+  if (!data) {
+    return null;
+  }
+
   return (
     <div className='mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4'>
       {actives.map((item) => (

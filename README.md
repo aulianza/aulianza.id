@@ -41,7 +41,7 @@ This website is built using these technologies:
 - ➰ Framer Motion
 - 💢 React Icons
 - 🛢 Jest
-- 🧿 Absolute Import and Path Alias 
+- 🧿 Absolute Import and Path Alias
 - 📏 ESLint
 - ✨ Prettier
 - 🐶 Husky & Lint Staged
@@ -49,49 +49,48 @@ This website is built using these technologies:
 
 <br />
 
-
 ## Features
 
 On this website there are several features that will continue to be updated and added in the future.
 
- - ### 🤖 ChatGPT AI (Unavailable)
+- ### 🤖 ChatGPT AI (Unavailable)
 
 You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI api key)
 
- - ### 💻 JavaScript Playground
+- ### 💻 JavaScript Playground
 
 A no-fuss pure JavaScript playground with a live feedback loop.
 
- - ### 💬 Realtime Guestbook
+- ### 💬 Realtime Guestbook
 
 Realtime guestbook chat is powered by Firebase. Anyone can leave me a message in this website.
 
- - ### 🎧 Spotify Status
+- ### 🎧 Spotify Status
 
 Displays song information being played on spotify in real time using the Spotify API and SWR.
 
- - ### 🕗 Wakatime Statistics
+- ### 🕗 Wakatime Statistics
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
 
- - ### 📝 Blogs
+- ### 📝 Blogs
 
 The content on this blog is meticulously managed and sourced from a self-hosted headless CMS powered by WordPress, exemplifying our commitment to a streamlined and efficient content delivery system. The data fetching technique used to retrieve articles from WordPress CMS API involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
 
- - ### 🗳 Projects
+- ### 🗳 Projects
 
 The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
 <br /><br />
 
 ## Performance
 
- - ### PageSpeed Insights
+- ### PageSpeed Insights
 
 Report URL: https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop
 
 ![image](https://github.com/aulianza/aulianza.id/assets/15605885/d87a6083-caf3-4b84-ba59-975c07193a9f)
 
- - ### GTmetrix
+- ### GTmetrix
 
 Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop](https://gtmetrix.com/reports/aulianza.id/REEiduoo/)
 
@@ -102,7 +101,7 @@ Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?for
 
 If you are interested in running this project on your local machine, you can do so in just 3 easy steps below. Additionally, remember to update the ".env.example" file to ".env" and replace the variables with your own in the ".env" file.
 
-  ### 1. Clone this template using one of the three ways:
+### 1. Clone this template using one of the three ways:
 
 1. Clone using git
 
@@ -127,7 +126,7 @@ If you are interested in running this project on your local machine, you can do 
    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/aulianza/aulianza.id)
    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aulianza/aulianza.id)
 
-  ### 2. Install dependencies
+### 2. Install dependencies
 
 It is encouraged to use **yarn** so the husky hooks can work properly.
 
@@ -135,7 +134,7 @@ It is encouraged to use **yarn** so the husky hooks can work properly.
 yarn install
 ```
 
-  ### 3. Config .env
+### 3. Config .env
 
 This repository uses several environment variables. Please copy .env.example into .env, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, Firebase, and others, please refer to the official documentation provided by each provider.
 
@@ -187,7 +186,7 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 ```
 
-  ### 4. Run the development server
+### 4. Run the development server
 
 You can start the server using this command:
 

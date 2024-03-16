@@ -7,7 +7,7 @@ import About from '@/modules/about';
 
 const PAGE_TITLE = 'About';
 const PAGE_DESCRIPTION =
-  'A short story of me, not important but seem better than nothing.';
+  'An insightful glimpse into who I am – because every detail adds depth to the canvas of life.';
 
 const AboutPage: NextPage = () => {
   return (

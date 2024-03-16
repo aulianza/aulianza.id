@@ -11,6 +11,7 @@ const EducationCard = ({
   degree,
   start_year,
   end_year,
+  location,
   link,
 }: EducationProps) => {
   return (
@@ -37,10 +38,14 @@ const EducationCard = ({
             </span>
             <span>{major}</span>
           </div>
-          <div className='flex flex-col md:text-[13px]'>
-            <div className='flex gap-1'>
+          <div className='flex flex-col gap-3 md:flex-row md:text-[13px]'>
+            <div className='flex gap-1 text-neutral-500'>
               <span>{start_year}</span> - <span>{end_year}</span>
             </div>
+            <span className='hidden text-neutral-300 dark:text-neutral-700 lg:block'>
+              •
+            </span>
+            <span>{location}</span>
           </div>
         </div>
       </div>

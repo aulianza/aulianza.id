@@ -1,6 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 
-import clsxm from '@/common/libs/clsxm';
+import cn from '@/common/libs/cn';
 
 interface ProgressProps {
   data: { name: string; percent?: number };
@@ -26,7 +26,7 @@ const Progress = ({ data, className }: ProgressProps) => {
           initial='initial'
           animate='animate'
           variants={progressVariants}
-          className={clsxm(
+          className={cn(
             className,
             'absolute left-0 top-0 h-3 rounded-full px-3',
           )}

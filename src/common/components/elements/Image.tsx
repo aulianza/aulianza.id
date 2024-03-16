@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { useState } from 'react';
 
-import clsxm from '@/common/libs/clsxm';
+import cn from '@/common/libs/cn';
 
 type ImageProps = {
   rounded?: string;
@@ -23,7 +23,7 @@ const Image = (props: ImageProps) => {
       )}
     >
       <NextImage
-        className={clsxm(
+        className={cn(
           'duration-700 ease-in-out',
           isLoading
             ? 'scale-[1.02] blur-xl grayscale'

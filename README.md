@@ -64,7 +64,7 @@ The data fetching technique used to retrieve articles from WordPress CMS API inv
 
 ### 🗳 Projects
 
-The data projects on this blog are taken from the MySQL database connected through the Prisma Client. The database for this application is hosted on PlanetScale DB.
+The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.
 
 The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
 <br /><br />

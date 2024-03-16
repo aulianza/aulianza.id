@@ -40,7 +40,7 @@ const EducationCard = ({
           </div>
           <div className='flex flex-col gap-3 md:flex-row md:text-[13px]'>
             <div className='flex gap-1 text-neutral-500'>
-              <span>{start_year}</span> - <span>{end_year}</span>
+              <span>{start_year}</span> - <span>{end_year || 'Present'}</span>
             </div>
             <span className='hidden text-neutral-300 dark:text-neutral-700 lg:block'>
               •

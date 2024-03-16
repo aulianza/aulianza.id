@@ -5,6 +5,6 @@ export interface EducationProps {
   location: string;
   degree: string;
   start_year: number;
-  end_year: number;
+  end_year: number | null;
   link: string;
 }

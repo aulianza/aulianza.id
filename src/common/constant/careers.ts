@@ -76,7 +76,7 @@ export const CAREERS: CareerProps[] = [
     start_date: '2021-01',
     end_date: null,
     industry: 'wellness',
-    link: 'https://flexcode.co.Indonesia 🇮🇩',
+    link: 'https://flexcode.co.id',
     responsibilities: [
       'Collaborate closely with stakeholders and internal teams to create products.',
       'Organize and facilitate meetings with clients, ensuring seamless project execution.',
@@ -96,7 +96,7 @@ export const CAREERS: CareerProps[] = [
     start_date: '2020-02',
     end_date: '2021-12',
     industry: 'financing',
-    link: 'https://paper.Indonesia 🇮🇩',
+    link: 'https://paper.id',
     responsibilities: [
       'Built functioning and smooth frontend web and mobile applications.',
       'Implemented web sockets for realtime notification needs in the frontend app.',

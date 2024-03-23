@@ -1,22 +1,21 @@
-import { motion } from 'framer-motion';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { motion } from 'framer-motion'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import { ProjectsProps } from '@/common/types/projects';
-
-import ProjectCard from './ProjectCard';
+import EmptyState from '@/common/components/elements/EmptyState'
+import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
+import ProjectCard from '@/modules/projects/components/ProjectCard'
 
 interface ProjectsComponentProps {
-  projects: ProjectsProps['projects'];
-  loadMore: () => void;
-  hasMore: boolean;
+  projects: ProjectEntryFragmentFragment[]
+  loadMore: () => void
+  hasMore: boolean
 }
 
 const Projects = ({ projects, loadMore, hasMore }: ProjectsComponentProps) => {
-  const filteredProjects = projects.filter((project) => project?.is_show);
+  const filteredProjects = projects ?? []
 
   if (filteredProjects.length === 0) {
-    return <EmptyState message='No Data' />;
+    return <EmptyState message='No Data' />
   }
 
   return (
@@ -35,12 +34,12 @@ const Projects = ({ projects, loadMore, hasMore }: ProjectsComponentProps) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
-            <ProjectCard {...project} />
+            <ProjectCard project={project} />
           </motion.div>
         ))}
       </div>
     </InfiniteScroll>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

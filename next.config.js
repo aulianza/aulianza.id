@@ -10,8 +10,9 @@ const nextConfig = {
       'res.cloudinary.com',
       'lh3.googleusercontent.com',
       'blog-api.aulianza.id',
+      'dev-assets.thijmen.dev',
     ],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

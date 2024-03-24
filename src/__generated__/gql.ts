@@ -17,8 +17,12 @@ const documents = {
     types.ProjectEntryStackCategoryFragmentFragmentDoc,
   '\n  fragment ProjectEntryFragment on projects_project_Entry {\n    id\n    title\n    slug\n    projectFeatured\n    projectDescription\n    projectHeaderImage {\n      url\n    }\n    stacks {\n      ...ProjectEntryStackCategoryFragment\n    }\n  }\n':
     types.ProjectEntryFragmentFragmentDoc,
+  '\n  fragment ProjectDetailFragment on projects_project_Entry {\n    title\n    slug\n    dateCreated\n    dateUpdated\n    projectInformation\n    projectDescription\n    projectLiveDemoLink\n    projectSourcecodeRepositoryLink\n    projectHeaderImage {\n      id\n      url\n    }\n    stacks {\n      ...ProjectEntryStackCategoryFragment\n    }\n  }\n':
+    types.ProjectDetailFragmentFragmentDoc,
   '\n  \n  \n\n  query GetProjects {\n    projectsEntries {\n      ...ProjectEntryFragment\n    }\n  }\n':
     types.GetProjectsDocument,
+  '\n  \n  \n\n  query GetProjectDetail($slug: [String]) {\n    projectsEntries(slug: $slug) {\n      ...ProjectDetailFragment\n    }\n  }\n':
+    types.GetProjectDetailDocument,
 }
 
 /**
@@ -51,8 +55,20 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
+  source: '\n  fragment ProjectDetailFragment on projects_project_Entry {\n    title\n    slug\n    dateCreated\n    dateUpdated\n    projectInformation\n    projectDescription\n    projectLiveDemoLink\n    projectSourcecodeRepositoryLink\n    projectHeaderImage {\n      id\n      url\n    }\n    stacks {\n      ...ProjectEntryStackCategoryFragment\n    }\n  }\n',
+): (typeof documents)['\n  fragment ProjectDetailFragment on projects_project_Entry {\n    title\n    slug\n    dateCreated\n    dateUpdated\n    projectInformation\n    projectDescription\n    projectLiveDemoLink\n    projectSourcecodeRepositoryLink\n    projectHeaderImage {\n      id\n      url\n    }\n    stacks {\n      ...ProjectEntryStackCategoryFragment\n    }\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
   source: '\n  \n  \n\n  query GetProjects {\n    projectsEntries {\n      ...ProjectEntryFragment\n    }\n  }\n',
 ): (typeof documents)['\n  \n  \n\n  query GetProjects {\n    projectsEntries {\n      ...ProjectEntryFragment\n    }\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  \n  \n\n  query GetProjectDetail($slug: [String]) {\n    projectsEntries(slug: $slug) {\n      ...ProjectDetailFragment\n    }\n  }\n',
+): (typeof documents)['\n  \n  \n\n  query GetProjectDetail($slug: [String]) {\n    projectsEntries(slug: $slug) {\n      ...ProjectDetailFragment\n    }\n  }\n']
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {}

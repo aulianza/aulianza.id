@@ -3002,10 +3002,12 @@ input EntryCriteriaInput {
     """
     positionedBefore: Int
     projectDescription: [QueryArgument]
-    projectLink: [QueryArgument]
     projectFeatured: Boolean
     stacks: [QueryArgument]
     projectHeaderImage: [QueryArgument]
+    projectLiveDemoLink: [QueryArgument]
+    projectSourcecodeRepositoryLink: [QueryArgument]
+    projectInformation: [QueryArgument]
 
     """Whether to only return entries that the user has permission to edit."""
     editable: Boolean
@@ -3367,10 +3369,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -3605,10 +3609,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -3841,10 +3847,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -4079,10 +4087,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -4318,10 +4328,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -4556,10 +4568,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -4794,10 +4808,12 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -5041,10 +5057,12 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -5277,10 +5295,12 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -5513,10 +5533,12 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -5749,10 +5771,12 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -8462,10 +8486,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -8700,10 +8726,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -8936,10 +8964,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -9174,10 +9204,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -9413,10 +9445,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -9651,10 +9685,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -9889,10 +9925,12 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectLink: [QueryArgument]
         projectFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
+        projectLiveDemoLink: [QueryArgument]
+        projectSourcecodeRepositoryLink: [QueryArgument]
+        projectInformation: [QueryArgument]
 
         """Whether to only return entries that the user has permission to edit."""
         editable: Boolean
@@ -9948,7 +9986,6 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
     """Whether the element is enabled for the site."""
     enabledForSite: Boolean
     projectDescription: String
-    projectLink: String
     projectFeatured: Boolean
     stacks(
         """Narrows the query results based on the elements’ IDs."""
@@ -10307,6 +10344,9 @@ type projects_project_Entry implements ElementInterface & EntryInterface {
         """
         uploader: QueryArgument
     ): [AssetInterface]!
+    projectLiveDemoLink: String
+    projectSourcecodeRepositoryLink: String
+    projectInformation: String
 }
 
 type stacks_Category implements ElementInterface & CategoryInterface {

@@ -1218,7 +1218,15 @@ export type EntryCriteriaInput = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   /** Narrows the query results based on a reference string. */
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   /**
@@ -1432,7 +1440,15 @@ export type EntryInterfaceAncestorsArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1502,7 +1518,15 @@ export type EntryInterfaceChildrenArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1572,7 +1596,15 @@ export type EntryInterfaceDescendantsArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1642,7 +1674,15 @@ export type EntryInterfaceLocalizedArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1712,7 +1752,15 @@ export type EntryInterfaceNextArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1782,7 +1830,15 @@ export type EntryInterfaceParentArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -1852,7 +1908,15 @@ export type EntryInterfacePrevArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -2239,7 +2303,15 @@ export type QueryEntriesArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -2308,7 +2380,15 @@ export type QueryEntryArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -2377,7 +2457,15 @@ export type QueryEntryCountArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -2446,7 +2534,15 @@ export type QueryProjectsEntriesArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3129,7 +3225,9 @@ export type Projects_Project_Entry = ElementInterface &
     projectDescription?: Maybe<Scalars['String']['output']>
     projectFeatured?: Maybe<Scalars['Boolean']['output']>
     projectHeaderImage: Array<Maybe<AssetInterface>>
-    projectLink?: Maybe<Scalars['String']['output']>
+    projectInformation?: Maybe<Scalars['String']['output']>
+    projectLiveDemoLink?: Maybe<Scalars['String']['output']>
+    projectSourcecodeRepositoryLink?: Maybe<Scalars['String']['output']>
     /** The revision ID (from the `revisions` table). */
     revisionId?: Maybe<Scalars['Int']['output']>
     /** The revision notes (from the `revisions` table). */
@@ -3225,7 +3323,15 @@ export type Projects_Project_EntryAncestorsArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3294,7 +3400,15 @@ export type Projects_Project_EntryChildrenArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3363,7 +3477,15 @@ export type Projects_Project_EntryDescendantsArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3432,7 +3554,15 @@ export type Projects_Project_EntryLocalizedArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3501,7 +3631,15 @@ export type Projects_Project_EntryNextArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3570,7 +3708,15 @@ export type Projects_Project_EntryParentArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -3639,7 +3785,15 @@ export type Projects_Project_EntryPrevArgs = {
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectLink?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  projectInformation?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectLiveDemoLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  projectSourcecodeRepositoryLink?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   relatedToAll?: InputMaybe<
@@ -4218,6 +4372,31 @@ export type ProjectEntryFragmentFragment = {
   >
 } & { ' $fragmentName'?: 'ProjectEntryFragmentFragment' }
 
+export type ProjectDetailFragmentFragment = {
+  __typename?: 'projects_project_Entry'
+  title?: string | null
+  slug?: string | null
+  dateCreated?: any | null
+  dateUpdated?: any | null
+  projectInformation?: string | null
+  projectDescription?: string | null
+  projectLiveDemoLink?: string | null
+  projectSourcecodeRepositoryLink?: string | null
+  projectHeaderImage: Array<{
+    __typename?: 'files_Asset'
+    id?: string | null
+    url?: string | null
+  } | null>
+  stacks: Array<
+    | ({ __typename?: 'stacks_Category' } & {
+        ' $fragmentRefs'?: {
+          ProjectEntryStackCategoryFragmentFragment: ProjectEntryStackCategoryFragmentFragment
+        }
+      })
+    | null
+  >
+} & { ' $fragmentName'?: 'ProjectDetailFragmentFragment' }
+
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetProjectsQuery = {
@@ -4226,6 +4405,25 @@ export type GetProjectsQuery = {
     | ({ __typename?: 'projects_project_Entry' } & {
         ' $fragmentRefs'?: {
           ProjectEntryFragmentFragment: ProjectEntryFragmentFragment
+        }
+      })
+    | null
+  > | null
+}
+
+export type GetProjectDetailQueryVariables = Exact<{
+  slug?: InputMaybe<
+    | Array<InputMaybe<Scalars['String']['input']>>
+    | InputMaybe<Scalars['String']['input']>
+  >
+}>
+
+export type GetProjectDetailQuery = {
+  __typename?: 'Query'
+  projectsEntries?: Array<
+    | ({ __typename?: 'projects_project_Entry' } & {
+        ' $fragmentRefs'?: {
+          ProjectDetailFragmentFragment: ProjectDetailFragmentFragment
         }
       })
     | null
@@ -4321,6 +4519,87 @@ export const ProjectEntryFragmentFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<ProjectEntryFragmentFragment, unknown>
+export const ProjectDetailFragmentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectDetailFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'projects_project_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectInformation' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectDescription' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectLiveDemoLink' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectSourcecodeRepositoryLink' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectHeaderImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'stacks' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: {
+                    kind: 'Name',
+                    value: 'ProjectEntryStackCategoryFragment',
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectEntryStackCategoryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'stacks_Category' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'stackHandle' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<ProjectDetailFragmentFragment, unknown>
 export const GetProjectsDocument = {
   kind: 'Document',
   definitions: [
@@ -4412,3 +4691,133 @@ export const GetProjectsDocument = {
     },
   ],
 } as unknown as DocumentNode<GetProjectsQuery, GetProjectsQueryVariables>
+export const GetProjectDetailDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetProjectDetail' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
+          type: {
+            kind: 'ListType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectsEntries' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'slug' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'slug' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'ProjectDetailFragment' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectEntryStackCategoryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'stacks_Category' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'stackHandle' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectDetailFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'projects_project_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectInformation' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectDescription' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectLiveDemoLink' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectSourcecodeRepositoryLink' },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectHeaderImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'stacks' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: {
+                    kind: 'Name',
+                    value: 'ProjectEntryStackCategoryFragment',
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  GetProjectDetailQuery,
+  GetProjectDetailQueryVariables
+>

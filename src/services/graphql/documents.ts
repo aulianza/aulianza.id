@@ -23,6 +23,26 @@ export const projectEntryFragment = gql(/* GraphQL */ `
   }
 `)
 
+export const projectDetailFragment = gql(/* GraphQL */ `
+  fragment ProjectDetailFragment on projects_project_Entry {
+    title
+    slug
+    dateCreated
+    dateUpdated
+    projectInformation
+    projectDescription
+    projectLiveDemoLink
+    projectSourcecodeRepositoryLink
+    projectHeaderImage {
+      id
+      url
+    }
+    stacks {
+      ...ProjectEntryStackCategoryFragment
+    }
+  }
+`)
+
 export const getProjectsDocument = gql/* GraphQL */ `
   ${projectEntryStackCategoryFragment}
   ${projectEntryFragment}
@@ -30,6 +50,16 @@ export const getProjectsDocument = gql/* GraphQL */ `
   query GetProjects {
     projectsEntries {
       ...ProjectEntryFragment
+    }
+  }
+`
+export const getProjectDetailDocument = gql/* GraphQL */ `
+  ${projectDetailFragment}
+  ${projectEntryStackCategoryFragment}
+
+  query GetProjectDetail($slug: [String]) {
+    projectsEntries(slug: $slug) {
+      ...ProjectDetailFragment
     }
   }
 `

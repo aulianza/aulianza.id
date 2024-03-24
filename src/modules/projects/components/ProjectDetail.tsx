@@ -1,21 +1,23 @@
-import Image from '@/common/components/elements/Image';
-import MDXComponent from '@/common/components/elements/MDXComponent';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { STACKS } from '@/common/constant/stacks';
-import { ProjectItemProps } from '@/common/types/projects';
+import Image from '@/common/components/elements/Image'
+import MDXComponent from '@/common/components/elements/MDXComponent'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { getStackIcon } from '@/common/constant/stacks'
 
-import ProjectLink from './ProjectLink';
+import ProjectLink from './ProjectLink'
+import {
+  ProjectDetailFragmentFragment,
+  ProjectEntryStackCategoryFragmentFragment,
+} from '@/__generated__/graphql'
 
 const ProjectDetail = ({
-  title,
-  image,
-  stacks,
-  link_demo,
-  link_github,
-  content,
-}: ProjectItemProps) => {
-  const stacksArray = JSON.parse(stacks);
+  project,
+}: {
+  project: ProjectDetailFragmentFragment
+}) => {
+  const stacks: ProjectEntryStackCategoryFragmentFragment[] = (project.stacks ||
+    []) as ProjectEntryStackCategoryFragmentFragment[]
 
+  const image = project.projectHeaderImage[0]?.url!
   return (
     <div className='space-y-8'>
       <div className='flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center'>
@@ -24,33 +26,35 @@ const ProjectDetail = ({
             Tech Stack :
           </span>
           <div className='flex flex-wrap items-center gap-3'>
-            {stacksArray?.map((stack: string, index: number) => (
-              <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
+            {stacks.map((stack) => (
+              <div key={stack.id}>
+                <Tooltip title={stack.title!}>
+                  {getStackIcon(stack.stackHandle!)}
+                </Tooltip>
               </div>
             ))}
           </div>
         </div>
         <ProjectLink
-          title={title}
-          link_demo={link_demo}
-          link_github={link_github}
+          title={project.title}
+          link_demo={project.projectLiveDemoLink}
+          link_github={project.projectSourcecodeRepositoryLink}
         />
       </div>
       <Image
         src={image}
         width={800}
         height={400}
-        alt={title}
+        alt={project.title!}
         className='hover:scale-105'
       />
-      {content && (
+      {project.projectInformation && (
         <div className='mt-5 space-y-6 leading-[1.8] dark:text-neutral-300'>
-          <MDXComponent>{content}</MDXComponent>
+          <MDXComponent>{project.projectInformation}</MDXComponent>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProjectDetail;
+export default ProjectDetail

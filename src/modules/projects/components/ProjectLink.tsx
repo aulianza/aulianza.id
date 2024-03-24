@@ -1,23 +1,23 @@
-import Link from 'next/link';
-import { ReactNode } from 'react';
-import { BsGithub as GithubIcon } from 'react-icons/bs';
-import { FiExternalLink as LinkIcon } from 'react-icons/fi';
+import Link from 'next/link'
+import { ReactNode } from 'react'
+import { BsGithub as GithubIcon } from 'react-icons/bs'
+import { FiExternalLink as LinkIcon } from 'react-icons/fi'
 
 interface LinkComponentProps {
-  url: string;
-  text: string;
-  icon?: ReactNode;
+  url: string
+  text: string
+  icon?: ReactNode
 }
 
 interface ProjectLinkProps {
-  title?: string;
-  link_github?: string;
-  link_demo?: string;
+  title?: string | null
+  link_github?: string | null
+  link_demo?: string | null
 }
 
 const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
   const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
-    const eventName = `Click ${text} - Project ${title}`;
+    const eventName = `Click ${text} - Project ${title}`
 
     return (
       <Link href={url} target='_blank' passHref data-umami-event={eventName}>
@@ -28,8 +28,8 @@ const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
           </span>
         </div>
       </Link>
-    );
-  };
+    )
+  }
 
   return (
     <div className='flex gap-4'>
@@ -51,7 +51,7 @@ const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProjectLink;
+export default ProjectLink

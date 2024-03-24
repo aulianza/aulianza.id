@@ -4,13 +4,21 @@ import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi'
 
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
-import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
+import {
+  ProjectEntryFragmentFragment,
+  ProjectEntryStackCategoryFragmentFragment,
+} from '@/__generated__/graphql'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { getStackIcon } from '@/common/constant/stacks'
 
 const ProjectCard = ({
   project,
 }: {
   project: ProjectEntryFragmentFragment
 }) => {
+  const stacks: ProjectEntryStackCategoryFragmentFragment[] = (project.stacks ||
+    []) as ProjectEntryStackCategoryFragmentFragment[]
+
   return (
     <Link href={`/projects/${project.slug}`}>
       <Card className='group relative cursor-pointer border border-neutral-200 dark:border-neutral-900 lg:hover:scale-[102%]'>
@@ -25,7 +33,7 @@ const ProjectCard = ({
             src={project.projectHeaderImage[0]?.url!}
             width={400}
             height={200}
-            alt={project.title}
+            alt={project.title!}
             className='h-48 rounded-t-xl object-cover object-left'
           />
           <div className='absolute left-0 top-0 flex flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
@@ -40,14 +48,16 @@ const ProjectCard = ({
             </div>
           </div>
           <p className='text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-400'>
-            Todo
+            {project.projectDescription}
           </p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
-            {/*{stacksArray?.map((stack: string, index: number) => (*/}
-            {/*  <div key={index}>*/}
-            {/*    <Tooltip title={stack}>{STACKS[stack]}</Tooltip>*/}
-            {/*  </div>*/}
-            {/*))}*/}
+            {stacks.map((stack: ProjectEntryStackCategoryFragmentFragment) => (
+              <div key={stack.id}>
+                <Tooltip title={stack.title!}>
+                  {getStackIcon(stack.stackHandle!)}
+                </Tooltip>
+              </div>
+            ))}
           </div>
         </div>
       </Card>

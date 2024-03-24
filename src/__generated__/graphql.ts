@@ -4190,22 +4190,32 @@ export type Stacks_CategoryPrevArgs = {
   withStructure?: InputMaybe<Scalars['Boolean']['input']>
 }
 
+export type ProjectEntryStackCategoryFragmentFragment = {
+  __typename?: 'stacks_Category'
+  id?: string | null
+  stackHandle?: string | null
+  title?: string | null
+} & { ' $fragmentName'?: 'ProjectEntryStackCategoryFragmentFragment' }
+
 export type ProjectEntryFragmentFragment = {
   __typename?: 'projects_project_Entry'
   id?: string | null
   title?: string | null
   slug?: string | null
   projectFeatured?: boolean | null
+  projectDescription?: string | null
   projectHeaderImage: Array<{
     __typename?: 'files_Asset'
     url?: string | null
   } | null>
-  stacks: Array<{
-    __typename?: 'stacks_Category'
-    id?: string | null
-    stackHandle?: string | null
-    title?: string | null
-  } | null>
+  stacks: Array<
+    | ({ __typename?: 'stacks_Category' } & {
+        ' $fragmentRefs'?: {
+          ProjectEntryStackCategoryFragmentFragment: ProjectEntryStackCategoryFragmentFragment
+        }
+      })
+    | null
+  >
 } & { ' $fragmentName'?: 'ProjectEntryFragmentFragment' }
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never }>
@@ -4222,6 +4232,27 @@ export type GetProjectsQuery = {
   > | null
 }
 
+export const ProjectEntryStackCategoryFragmentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectEntryStackCategoryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'stacks_Category' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'stackHandle' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<ProjectEntryStackCategoryFragmentFragment, unknown>
 export const ProjectEntryFragmentFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -4241,6 +4272,10 @@ export const ProjectEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'projectFeatured' } },
           {
             kind: 'Field',
+            name: { kind: 'Name', value: 'projectDescription' },
+          },
+          {
+            kind: 'Field',
             name: { kind: 'Name', value: 'projectHeaderImage' },
             selectionSet: {
               kind: 'SelectionSet',
@@ -4256,26 +4291,31 @@ export const ProjectEntryFragmentFragmentDoc = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'stacks_Category' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'stackHandle' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                    ],
+                  kind: 'FragmentSpread',
+                  name: {
+                    kind: 'Name',
+                    value: 'ProjectEntryStackCategoryFragment',
                   },
                 },
               ],
             },
           },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectEntryStackCategoryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'stacks_Category' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'stackHandle' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
         ],
       },
     },
@@ -4309,6 +4349,22 @@ export const GetProjectsDocument = {
     },
     {
       kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'ProjectEntryStackCategoryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'stacks_Category' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'stackHandle' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
       name: { kind: 'Name', value: 'ProjectEntryFragment' },
       typeCondition: {
         kind: 'NamedType',
@@ -4321,6 +4377,10 @@ export const GetProjectsDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
           { kind: 'Field', name: { kind: 'Name', value: 'projectFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'projectDescription' },
+          },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectHeaderImage' },
@@ -4338,21 +4398,10 @@ export const GetProjectsDocument = {
               kind: 'SelectionSet',
               selections: [
                 {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'stacks_Category' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'stackHandle' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                    ],
+                  kind: 'FragmentSpread',
+                  name: {
+                    kind: 'Name',
+                    value: 'ProjectEntryStackCategoryFragment',
                   },
                 },
               ],

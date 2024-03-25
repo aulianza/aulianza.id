@@ -62,7 +62,7 @@
     "typewriter-effect": "^2.21.0",
     "usehooks-ts": "^2.16.0",
     "uuid": "^9.0.1",
-    "yarn": "^1.22.21",
+    "yarn": "^1.22.22",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

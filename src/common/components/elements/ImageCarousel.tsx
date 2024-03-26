@@ -76,6 +76,7 @@ const ImageCarousel = ({ images, interval = 3000 }: ImageCarouselProps) => {
   }
 
   return (
+    // @ts-ignore
     <Slider ref={sliderRef} {...settings} className='pt-5'>
       {images?.map((image, index) => (
         <div key={index}>

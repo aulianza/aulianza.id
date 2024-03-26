@@ -24,7 +24,6 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ dataProjects }) => {
   const loadMore = () => setVisibleProjects((prev) => prev + 2)
   const hasMore = visibleProjects < projects.length
 
-  console.log(projects)
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />

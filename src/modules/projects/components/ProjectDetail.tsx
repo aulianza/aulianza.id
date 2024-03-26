@@ -17,7 +17,7 @@ const ProjectDetail = ({
   const stacks: ProjectEntryStackCategoryFragmentFragment[] = (project.stacks ||
     []) as ProjectEntryStackCategoryFragmentFragment[]
 
-  const image = project.projectHeaderImage[0]?.url!
+  const image = project.projectHeaderImage[0]?.url ?? ''
   return (
     <div className='space-y-8'>
       <div className='flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center'>

@@ -21,7 +21,7 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
 
   const canonicalUrl = `https://aulianza.id/project/${project.slug}`
 
-  const image = project.projectHeaderImage[0]?.url!
+  const image = project.projectHeaderImage[0]?.url ?? ''
 
   return (
     <>

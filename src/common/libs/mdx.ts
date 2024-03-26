@@ -26,6 +26,7 @@ export const loadMdxFiles = (slug: string): MdxFileProps[] => {
     const source = fs.readFileSync(filePath, 'utf-8')
     const { content, data } = matter(source)
 
+    // @ts-ignore
     const mdxCompiler = remark().use(remarkParse).use(remarkGfm).use(remarkMdx)
     const mdxContent = mdxCompiler.processSync(content).toString()
 

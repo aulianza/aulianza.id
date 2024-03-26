@@ -71,7 +71,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
             {...props}
           />
         ),
-        table: (props) => <Table {...props} />,
+        // table: (props) => <Table {...props} />,
         th: (props) => (
           <th className='border px-3 py-1 text-left dark:border-neutral-600'>
             {props.children}

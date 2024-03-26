@@ -4,7 +4,7 @@ import {
   HiCheckCircle as CheckIcon,
   HiOutlineClipboardCopy as CopyIcon,
 } from 'react-icons/hi'
-import { CodeProps } from 'react-markdown/lib/ast-to-react'
+
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
 import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff'
@@ -28,12 +28,7 @@ SyntaxHighlighter.registerLanguage(languages.diff, diff)
 SyntaxHighlighter.registerLanguage(languages.tsx, tsx)
 SyntaxHighlighter.registerLanguage(languages.css, css)
 
-const CodeBlock = ({
-  className = '',
-  children,
-  inline,
-  ...props
-}: CodeProps) => {
+const CodeBlock = ({ className = '', children, inline, ...props }: any) => {
   const [isCopied, setIsCopied] = useState<boolean>(false)
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [value, copy] = useCopyToClipboard()
@@ -72,6 +67,7 @@ const CodeBlock = ({
             )}
           </button>
 
+          {/*@ts-ignore*/}
           <SyntaxHighlighter
             {...props}
             style={themeColor}

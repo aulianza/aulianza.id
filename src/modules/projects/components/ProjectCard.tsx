@@ -30,7 +30,7 @@ const ProjectCard = ({
         )}
         <div className='relative'>
           <Image
-            src={project.projectHeaderImage[0]?.url!}
+            src={project.projectHeaderImage[0]?.url ?? ''}
             width={400}
             height={200}
             alt={project.title!}

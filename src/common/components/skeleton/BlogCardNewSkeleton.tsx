@@ -8,7 +8,6 @@ const BlogCardNewSkeleton = () => {
     <SkeletonLoader>
       <Card className='min-w-[326px]'>
         <Skeleton
-          suppressHydrationWarning
           height={398}
           containerClassName='flex'
           className='!rounded-xl'

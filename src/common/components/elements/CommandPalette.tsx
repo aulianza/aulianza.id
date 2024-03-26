@@ -1,8 +1,9 @@
+'use client'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import { useRouter } from 'next/router'
+import { usePathname, useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import { Fragment, useContext, useEffect, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import {
   BiMoon as DarkModeIcon,
   BiSearch as SearchIcon,
@@ -42,6 +43,7 @@ const CommandPalette = () => {
   const [aiLoading, setAiLoading] = useState(false)
   const [aiResponse, setAiResponse] = useState('')
   const [aiFinished, setAiFinished] = useState(false)
+  const pathnname = usePathname()
 
   const router = useRouter()
   const isMobile = useIsMobile()
@@ -151,7 +153,7 @@ const CommandPalette = () => {
   }
 
   const isActiveRoute = (href: string) => {
-    return router.pathname === href
+    return pathnname === href
   }
 
   useEffect(() => {

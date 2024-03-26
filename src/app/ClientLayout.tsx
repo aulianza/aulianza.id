@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import Layout from '@/common/components/layouts'
 import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext'
 import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts'
+import CommandPalette from '@/common/components/elements/CommandPalette'
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),
@@ -40,6 +41,7 @@ export default function ClientLayout({
       {/*// todo: add defaultseo*/}
       <ThemeProvider attribute='class' defaultTheme='dark'>
         <CommandPaletteProvider>
+          <CommandPalette />
           <Layout>{children}</Layout>
         </CommandPaletteProvider>
       </ThemeProvider>

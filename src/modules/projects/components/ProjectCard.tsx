@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { AiFillPushpin as PinIcon } from 'react-icons/ai'
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi'
 
-import Card from '@/common/components/elements/Card'
-import Image from '@/common/components/elements/Image'
 import {
   ProjectEntryFragmentFragment,
   ProjectEntryStackCategoryFragmentFragment,
 } from '@/__generated__/graphql'
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
 import Tooltip from '@/common/components/elements/Tooltip'
 import { getStackIcon } from '@/common/constant/stacks'
 

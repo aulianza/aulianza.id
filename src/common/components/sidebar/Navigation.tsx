@@ -1,26 +1,26 @@
-import { useContext } from 'react';
-import { BiCommand as CommandIcon } from 'react-icons/bi';
-import { useWindowSize } from 'usehooks-ts';
+import { useContext } from 'react'
+import { BiCommand as CommandIcon } from 'react-icons/bi'
+import { useWindowSize } from 'usehooks-ts'
 
-import { MENU_ITEMS } from '@/common/constant/menu';
-import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
+import { MENU_ITEMS } from '@/common/constant/menu'
+import { CommandPaletteContext } from '@/common/context/CommandPaletteContext'
 
-import Menu from './Menu';
-import MenuItem from './MenuItem';
-import Breakline from '../elements/Breakline';
+import Menu from './Menu'
+import MenuItem from './MenuItem'
+import Breakline from '../elements/Breakline'
 
 const Navigation = () => {
-  const { setIsOpen } = useContext(CommandPaletteContext);
-  const { width } = useWindowSize();
-  const isMobile = width < 480;
+  const { setIsOpen } = useContext(CommandPaletteContext)
+  const { width } = useWindowSize()
+  const isMobile = width < 480
 
-  const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow);
+  const filterdMenu = MENU_ITEMS?.filter((item) => item?.isShow)
 
   const handleOpenCommandPalette = () => {
-    setIsOpen(true);
-  };
+    setIsOpen(true)
+  }
 
-  const cn = 'group-hover:-rotate-12 transition-all duration-300';
+  const cn = 'group-hover:-rotate-12 transition-all duration-300'
 
   return (
     <div>
@@ -39,7 +39,7 @@ const Navigation = () => {
           </div> */}
       </MenuItem>
     </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

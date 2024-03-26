@@ -1,54 +1,54 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import clsx from 'clsx'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import {
   BiChevronLeft as PrevIcon,
   BiChevronRight as NextIcon,
   BiStar as StarIcon,
-} from 'react-icons/bi';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
+} from 'react-icons/bi'
+import { FaRegEye as ViewIcon } from 'react-icons/fa'
+import { TbCalendarBolt as DateIcon } from 'react-icons/tb'
 
-import Image from '@/common/components/elements/Image';
-import { formatDate, formatExcerpt } from '@/common/helpers';
-import { BlogFeaturedProps } from '@/common/types/blog';
+import Image from '@/common/components/elements/Image'
+import { formatDate, formatExcerpt } from '@/common/helpers'
+import { BlogFeaturedProps } from '@/common/types/blog'
 
 const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
-  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState<number>(0);
+  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState<number>(0)
 
-  const currentFeatured = data[currentFeaturedIndex];
+  const currentFeatured = data[currentFeaturedIndex]
 
-  const featuredData = data.slice(0, 4);
+  const featuredData = data.slice(0, 4)
 
-  const defaultImage = '/images/placeholder.png';
+  const defaultImage = '/images/placeholder.png'
 
   const nextFeatured = () => {
     setCurrentFeaturedIndex((prevIndex) =>
       prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1,
-    );
-  };
+    )
+  }
 
   const prevFeatured = () => {
     setCurrentFeaturedIndex((prevIndex) =>
       prevIndex === 0 ? featuredData.length - 1 : prevIndex - 1,
-    );
-  };
+    )
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentFeaturedIndex((prevIndex) =>
         prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1,
-      );
-    }, 5000);
+      )
+    }, 5000)
 
     return () => {
-      clearInterval(intervalId);
-    };
+      clearInterval(intervalId)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [featuredData]);
+  }, [featuredData])
 
   if (!data || data.length === 0) {
-    return null;
+    return null
   }
 
   return (
@@ -146,7 +146,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogFeaturedHero;
+export default BlogFeaturedHero

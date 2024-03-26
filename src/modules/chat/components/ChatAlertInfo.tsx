@@ -1,4 +1,4 @@
-import { FiAlertTriangle as InfoIcon } from 'react-icons/fi';
+import { FiAlertTriangle as InfoIcon } from 'react-icons/fi'
 
 const ChatAlertInfo = () => {
   return (
@@ -8,7 +8,7 @@ const ChatAlertInfo = () => {
         Messages that you have sent cannot be changed or deleted. Type wisely.
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default ChatAlertInfo;
+export default ChatAlertInfo

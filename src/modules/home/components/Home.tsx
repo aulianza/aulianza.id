@@ -1,8 +1,8 @@
-import Breakline from '@/common/components/elements/Breakline';
+import Breakline from '@/common/components/elements/Breakline'
 
-import BlogPreview from './BlogPreview';
-import Introduction from './Introduction';
-import Services from './Services';
+import BlogPreview from './BlogPreview'
+import Introduction from './Introduction'
+import Services from './Services'
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       <Breakline className='my-8' />
       <Services />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

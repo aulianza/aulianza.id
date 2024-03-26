@@ -4,7 +4,7 @@ import Home from '@/modules/home'
 const Homepage = () => {
   return (
     <>
-      <Container data-aos={'fade-up'}>
+      <Container data-aos='fade-up'>
         <Home />
       </Container>
     </>

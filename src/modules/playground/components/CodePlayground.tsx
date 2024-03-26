@@ -1,32 +1,32 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import clsx from 'clsx';
-import { useEffect, useRef } from 'react';
-import { LuPlay as PlayIcon, LuTrash2 as ClearIcon } from 'react-icons/lu';
+import clsx from 'clsx'
+import { useEffect, useRef } from 'react'
+import { LuPlay as PlayIcon, LuTrash2 as ClearIcon } from 'react-icons/lu'
 import {
   ImperativePanelHandle,
   Panel,
   PanelGroup,
   PanelResizeHandle,
-} from 'react-resizable-panels';
+} from 'react-resizable-panels'
 
-import useIsMobile from '@/common/hooks/useIsMobile';
+import useIsMobile from '@/common/hooks/useIsMobile'
 
-import CodeEditor from './CodeEditor';
-import ConsoleOutput from './ConsoleOutput';
-import PanelFooter from './PanelFooter';
-import PanelHeader from './PanelHeader';
+import CodeEditor from './CodeEditor'
+import ConsoleOutput from './ConsoleOutput'
+import PanelFooter from './PanelFooter'
+import PanelHeader from './PanelHeader'
 
 interface CodePlaygroundProps {
-  id?: string | undefined;
-  code: string;
-  output: string;
-  isFullScreen?: boolean;
-  onFullScreen?: () => void;
-  onCloseFullScreen?: () => void;
-  onRunCode?: () => void;
-  onSetCode: (code: string) => void;
-  onSetOutput: (output: string) => void;
-  isError?: boolean;
+  id?: string | undefined
+  code: string
+  output: string
+  isFullScreen?: boolean
+  onFullScreen?: () => void
+  onCloseFullScreen?: () => void
+  onRunCode?: () => void
+  onSetCode: (code: string) => void
+  onSetOutput: (output: string) => void
+  isError?: boolean
 }
 
 const CodePlayground = ({
@@ -41,28 +41,28 @@ const CodePlayground = ({
   onSetOutput,
   isError = false,
 }: CodePlaygroundProps) => {
-  const editorRef = useRef<ImperativePanelHandle>(null);
-  const isMobile = useIsMobile();
+  const editorRef = useRef<ImperativePanelHandle>(null)
+  const isMobile = useIsMobile()
 
-  const panelDirection = isMobile ? 'vertical' : 'horizontal';
+  const panelDirection = isMobile ? 'vertical' : 'horizontal'
 
-  const handleClearCode = () => onSetCode('');
-  const handleClearOutput = () => onSetOutput('');
+  const handleClearCode = () => onSetCode('')
+  const handleClearOutput = () => onSetOutput('')
 
   const onLayout = (sizes: number[]) => {
-    document.cookie = `react-resizable-panels:layout=${JSON.stringify(sizes)}`;
-  };
+    document.cookie = `react-resizable-panels:layout=${JSON.stringify(sizes)}`
+  }
 
   const handlePanelResize = () => {
-    const panel = editorRef.current;
+    const panel = editorRef.current
     if (panel !== null) {
-      isMobile && panel.resize(50);
+      isMobile && panel.resize(50)
     }
-  };
+  }
 
   useEffect(() => {
-    isMobile && handlePanelResize();
-  }, [isMobile]);
+    isMobile && handlePanelResize()
+  }, [isMobile])
 
   return (
     <>
@@ -148,7 +148,7 @@ const CodePlayground = ({
         onFullScreen={onFullScreen}
       />
     </>
-  );
-};
+  )
+}
 
-export default CodePlayground;
+export default CodePlayground

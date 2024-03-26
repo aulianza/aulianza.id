@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface PanelHeaderProps {
-  title: string;
-  children?: ReactNode;
+  title: string
+  children?: ReactNode
 }
 
 const PanelHeader = ({ title, children }: PanelHeaderProps) => {
@@ -13,7 +13,7 @@ const PanelHeader = ({ title, children }: PanelHeaderProps) => {
       </div>
       {children && children}
     </div>
-  );
-};
+  )
+}
 
-export default PanelHeader;
+export default PanelHeader

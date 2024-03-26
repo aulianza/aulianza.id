@@ -1,15 +1,15 @@
-import { Popover, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
-import { BsCpu as DeviceIcon, BsDot as DotIcon } from 'react-icons/bs';
+import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { BsCpu as DeviceIcon, BsDot as DotIcon } from 'react-icons/bs'
 
-import { PAIR_DEVICES } from '@/common/constant/devices';
-import { DeviceProps } from '@/common/types/spotify';
+import { PAIR_DEVICES } from '@/common/constant/devices'
+import { DeviceProps } from '@/common/types/spotify'
 
-import AnimatedBars from './AnimatedBars';
+import AnimatedBars from './AnimatedBars'
 
 interface DevicePopoverProps {
-  devices: DeviceProps[];
-  isShow: boolean;
+  devices: DeviceProps[]
+  isShow: boolean
 }
 
 const DevicePopover = ({ devices, isShow }: DevicePopoverProps) => {
@@ -21,7 +21,7 @@ const DevicePopover = ({ devices, isShow }: DevicePopoverProps) => {
         size={24}
       />
     ),
-  }));
+  }))
 
   return (
     <Transition
@@ -61,7 +61,7 @@ const DevicePopover = ({ devices, isShow }: DevicePopoverProps) => {
         </div>
       </Popover.Panel>
     </Transition>
-  );
-};
+  )
+}
 
-export default DevicePopover;
+export default DevicePopover

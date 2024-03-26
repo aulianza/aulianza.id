@@ -1,8 +1,8 @@
-import { BsBuildings as CompanyIcon } from 'react-icons/bs';
+import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { EducationProps } from '@/common/types/education';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { EducationProps } from '@/common/types/education'
 
 const EducationCard = ({
   school,
@@ -50,7 +50,7 @@ const EducationCard = ({
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EducationCard;
+export default EducationCard

@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { MenuItemProps } from '@/common/types/menu';
+import { MenuItemProps } from '@/common/types/menu'
 
-import Tooltip from './Tooltip';
+import Tooltip from './Tooltip'
 
 type SocialMediaProps = {
-  items: MenuItemProps[];
-};
+  items: MenuItemProps[]
+}
 
 const SocialMedia = ({ items }: SocialMediaProps) => {
   return (
@@ -31,7 +31,7 @@ const SocialMedia = ({ items }: SocialMediaProps) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SocialMedia;
+export default SocialMedia

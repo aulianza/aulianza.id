@@ -1,41 +1,41 @@
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 interface Contribution {
-  date: string;
-  contributionCount: number;
-  color: string;
+  date: string
+  contributionCount: number
+  color: string
 }
 
 interface Month {
-  name: string;
-  firstDay: string;
-  totalWeeks: number;
-  contributionsCount: number;
+  name: string
+  firstDay: string
+  totalWeeks: number
+  contributionsCount: number
 }
 
 interface CalendarProps {
   data?: {
     weeks: {
-      firstDay: string;
-      contributionDays: Contribution[];
-    }[];
-    months: Month[];
-    colors: string[];
-  };
+      firstDay: string
+      contributionDays: Contribution[]
+    }[]
+    months: Month[]
+    colors: string[]
+  }
 }
 
 const Calendar = ({ data }: CalendarProps) => {
   const [selectContribution, setSelectContribution] = useState<{
-    count: number | null;
-    date: string | null;
+    count: number | null
+    date: string | null
   }>({
     count: null,
     date: null,
-  });
+  })
 
-  const weeks = data?.weeks ?? [];
+  const weeks = data?.weeks ?? []
   const months =
     data?.months?.map((month: Month) => {
       const filterContributionDay = weeks
@@ -43,20 +43,20 @@ const Calendar = ({ data }: CalendarProps) => {
           (week) => week.firstDay.slice(0, 7) === month.firstDay.slice(0, 7),
         )
         .map((item) => item.contributionDays)
-        .flat(1);
+        .flat(1)
       const getContributionsByMonth = filterContributionDay.reduce(
         (previousValue, currentValue) =>
           previousValue + currentValue.contributionCount,
         0,
-      );
+      )
 
       return {
         ...month,
         contributionsCount: getContributionsByMonth,
-      };
-    }) ?? [];
+      }
+    }) ?? []
 
-  const contributionColors = data?.colors ?? [];
+  const contributionColors = data?.colors ?? []
 
   return (
     <>
@@ -78,10 +78,10 @@ const Calendar = ({ data }: CalendarProps) => {
             <div key={week.firstDay}>
               {week.contributionDays.map((contribution) => {
                 const backgroundColor =
-                  contribution.contributionCount > 0 && contribution.color;
+                  contribution.contributionCount > 0 && contribution.color
 
                 const getRandomDelayAnimate =
-                  Math.random() * week.contributionDays.length * 0.15;
+                  Math.random() * week.contributionDays.length * 0.15
 
                 return (
                   <motion.span
@@ -108,7 +108,7 @@ const Calendar = ({ data }: CalendarProps) => {
                       setSelectContribution({ count: null, date: null })
                     }
                   />
-                );
+                )
               })}
             </div>
           ))}
@@ -151,7 +151,7 @@ const Calendar = ({ data }: CalendarProps) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

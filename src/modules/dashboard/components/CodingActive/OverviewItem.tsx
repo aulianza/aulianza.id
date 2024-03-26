@@ -1,8 +1,8 @@
-import Card from '@/common/components/elements/Card';
+import Card from '@/common/components/elements/Card'
 
 interface OverviewItemProps {
-  label: string;
-  value: string;
+  label: string
+  value: string
 }
 
 const OverviewItem = ({ label, value }: OverviewItemProps) => (
@@ -10,6 +10,6 @@ const OverviewItem = ({ label, value }: OverviewItemProps) => (
     <span className='text-sm dark:text-neutral-400'>{label}</span>
     <span>{value || '-'}</span>
   </Card>
-);
+)
 
-export default OverviewItem;
+export default OverviewItem

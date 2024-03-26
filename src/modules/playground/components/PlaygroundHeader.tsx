@@ -1,4 +1,4 @@
-import { SiJavascript } from 'react-icons/si';
+import { SiJavascript } from 'react-icons/si'
 
 const PlaygroundHeader = () => {
   return (
@@ -13,7 +13,7 @@ const PlaygroundHeader = () => {
         A no-fuss pure JavaScript playground with a live feedback loop
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default PlaygroundHeader;
+export default PlaygroundHeader

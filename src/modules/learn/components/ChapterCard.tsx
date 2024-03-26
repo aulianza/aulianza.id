@@ -1,17 +1,17 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 import {
   BiSolidChevronDown as ChevronDownIcon,
   BiSolidChevronUp as ChevronUpIcon,
-} from 'react-icons/bi';
+} from 'react-icons/bi'
 
-import { MdxFileContentProps } from '@/common/types/learn';
+import { MdxFileContentProps } from '@/common/types/learn'
 
 interface ChapterCardProps {
-  chapterId: string;
-  chapterTitle: string;
-  contents: MdxFileContentProps[];
-  openAccordions: string[];
-  onToggle: (chapterId: string) => void;
+  chapterId: string
+  chapterTitle: string
+  contents: MdxFileContentProps[]
+  openAccordions: string[]
+  onToggle: (chapterId: string) => void
 }
 
 const ChapterCard = ({
@@ -45,7 +45,7 @@ const ChapterCard = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChapterCard;
+export default ChapterCard

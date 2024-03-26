@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import { HashLoader } from 'react-spinners';
+import clsx from 'clsx'
+import { HashLoader } from 'react-spinners'
 
 type LoadingProps = {
-  isFullScreen?: boolean;
-  text?: string;
-};
+  isFullScreen?: boolean
+  text?: string
+}
 
 const Loading = ({ isFullScreen = false, text }: LoadingProps) => {
   return (
@@ -17,7 +17,7 @@ const Loading = ({ isFullScreen = false, text }: LoadingProps) => {
       <HashLoader color='#36d7b7' />
       {text && <p className='pt-5 text-[#36d7b7]'>{text}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default Loading;
+export default Loading

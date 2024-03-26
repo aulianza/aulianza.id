@@ -1,4 +1,5 @@
 import { BsFillBootstrapFill, BsRobot } from 'react-icons/bs'
+import { MdError } from 'react-icons/md'
 import {
   SiAngular,
   SiApollographql,
@@ -32,7 +33,6 @@ import {
   SiWebpack,
   SiWordpress,
 } from 'react-icons/si'
-import { MdError } from 'react-icons/md'
 
 export type stacksProps = {
   [key: string]: JSX.Element
@@ -44,7 +44,7 @@ export const getStackIcon = (stack: string) => {
   const icon = STACKS[stack]
   // if icon is not found, return a default icon
 
-  return icon ?? <MdError size={iconSize} className={'text-red-500'} />
+  return icon ?? <MdError size={iconSize} className='text-red-500' />
 }
 export const STACKS: stacksProps = {
   PHP: <SiPhp size={iconSize} className='text-blue-500' />,

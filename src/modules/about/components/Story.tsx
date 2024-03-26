@@ -1,5 +1,5 @@
-import Image from '@/common/components/elements/Image';
-import { ABOUT } from '@/common/constant/about';
+import Image from '@/common/components/elements/Image'
+import { ABOUT } from '@/common/constant/about'
 
 const Story = () => {
   return (
@@ -19,7 +19,7 @@ const Story = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Story;
+export default Story

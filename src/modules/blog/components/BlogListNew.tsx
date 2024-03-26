@@ -1,25 +1,25 @@
-import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import useSWR from 'swr';
-import { useDebounce } from 'usehooks-ts';
+import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import useSWR from 'swr'
+import { useDebounce } from 'usehooks-ts'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import Pagination from '@/common/components/elements/Pagination';
-import SearchBar from '@/common/components/elements/SearchBar';
-import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton';
-import { BlogItemProps } from '@/common/types/blog';
-import { fetcher } from '@/services/fetcher';
+import EmptyState from '@/common/components/elements/EmptyState'
+import Pagination from '@/common/components/elements/Pagination'
+import SearchBar from '@/common/components/elements/SearchBar'
+import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton'
+import { BlogItemProps } from '@/common/types/blog'
+import { fetcher } from '@/services/fetcher'
 
-import BlogCardNew from './BlogCardNew';
-import BlogFeaturedSection from './BlogFeaturedSection';
+import BlogCardNew from './BlogCardNew'
+import BlogFeaturedSection from './BlogFeaturedSection'
 
 const BlogListNew = () => {
-  const [page, setPage] = useState<number>(1);
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const router = useRouter();
+  const [page, setPage] = useState<number>(1)
+  const [searchTerm, setSearchTerm] = useState<string>('')
+  const router = useRouter()
 
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 500)
 
   const { data, error, mutate, isValidating } = useSWR(
     `/api/blog?page=${page}&per_page=6&search=${debouncedSearchTerm}`,
@@ -28,16 +28,16 @@ const BlogListNew = () => {
       revalidateOnFocus: false,
       refreshInterval: 0,
     },
-  );
+  )
 
   const {
     posts: blogData = [],
     total_pages: totalPages = 1,
     total_posts = 0,
-  } = data?.data || {};
+  } = data?.data || {}
 
   const handlePageChange = async (newPage: number) => {
-    await mutate();
+    await mutate()
     router.push(
       {
         pathname: '/blog',
@@ -45,14 +45,14 @@ const BlogListNew = () => {
       },
       undefined,
       { shallow: true },
-    );
-    setPage(newPage);
-  };
+    )
+    setPage(newPage)
+  }
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event?.target?.value;
-    setSearchTerm(searchValue);
-    setPage(1);
+    const searchValue = event?.target?.value
+    setSearchTerm(searchValue)
+    setPage(1)
 
     router.push(
       {
@@ -61,12 +61,12 @@ const BlogListNew = () => {
       },
       undefined,
       { shallow: true },
-    );
-  };
+    )
+  }
 
   const handleClearSearch = () => {
-    setSearchTerm('');
-    setPage(1);
+    setSearchTerm('')
+    setPage(1)
 
     router.push(
       {
@@ -75,21 +75,21 @@ const BlogListNew = () => {
       },
       undefined,
       { shallow: true },
-    );
-  };
+    )
+  }
 
   useEffect(() => {
-    const queryPage = Number(router.query.page);
+    const queryPage = Number(router.query.page)
     if (!isNaN(queryPage) && queryPage !== page) {
-      setPage(queryPage);
+      setPage(queryPage)
     }
-  }, [page, router.query.page, searchTerm]);
+  }, [page, router.query.page, searchTerm])
 
   const renderEmptyState = () =>
     !isValidating &&
     (!data?.status || blogData.length === 0) && (
       <EmptyState message={error ? 'Error loading posts' : 'No Post Found.'} />
-    );
+    )
 
   return (
     <div className='space-y-10'>
@@ -155,7 +155,7 @@ const BlogListNew = () => {
         {renderEmptyState()}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogListNew;
+export default BlogListNew

@@ -1,8 +1,8 @@
-import { TbMoodSadSquint as MoodIcon } from 'react-icons/tb';
+import { TbMoodSadSquint as MoodIcon } from 'react-icons/tb'
 
 type EmptyStatePageProps = {
-  message: string;
-};
+  message: string
+}
 
 const EmptyState = ({ message }: EmptyStatePageProps) => {
   return (
@@ -10,7 +10,7 @@ const EmptyState = ({ message }: EmptyStatePageProps) => {
       <MoodIcon size={48} />
       <p>{message}</p>
     </div>
-  );
-};
+  )
+}
 
-export default EmptyState;
+export default EmptyState

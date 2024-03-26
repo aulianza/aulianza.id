@@ -1,6 +1,6 @@
 interface PageHeadingProps {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
 const PageHeading = ({ title, description }: PageHeadingProps) => {
@@ -11,7 +11,7 @@ const PageHeading = ({ title, description }: PageHeadingProps) => {
         {description}
       </p>
     </>
-  );
-};
+  )
+}
 
-export default PageHeading;
+export default PageHeading

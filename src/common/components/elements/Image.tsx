@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import clsx from 'clsx';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import { useState } from 'react';
+import clsx from 'clsx'
+import NextImage, { ImageProps as NextImageProps } from 'next/image'
+import { useState } from 'react'
 
-import cn from '@/common/libs/cn';
+import cn from '@/common/libs/cn'
 
 type ImageProps = {
-  rounded?: string;
-} & NextImageProps;
+  rounded?: string
+} & NextImageProps
 
 const Image = (props: ImageProps) => {
-  const { alt, src, className, rounded, ...rest } = props;
-  const [isLoading, setLoading] = useState(true);
+  const { alt, src, className, rounded, ...rest } = props
+  const [isLoading, setLoading] = useState(true)
 
   return (
     <div
@@ -40,6 +40,6 @@ const Image = (props: ImageProps) => {
         {...rest}
       />
     </div>
-  );
-};
-export default Image;
+  )
+}
+export default Image

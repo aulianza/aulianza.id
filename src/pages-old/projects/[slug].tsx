@@ -1,14 +1,14 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 
+import { ProjectDetailFragmentFragment } from '@/__generated__/graphql'
 import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { ProjectItemProps } from '@/common/types/projects'
 import ProjectDetail from '@/modules/projects/components/ProjectDetail'
-import { client } from '@/services/graphql/graphql'
 import { getProjectDetailDocument } from '@/services/graphql/documents'
-import { ProjectDetailFragmentFragment } from '@/__generated__/graphql'
+import { client } from '@/services/graphql/graphql'
 
 interface ProjectsDetailPageProps {
   projectOld: ProjectItemProps

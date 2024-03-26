@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-import { ContentProps } from '@/common/types/learn';
+import { ContentProps } from '@/common/types/learn'
 
-import LearnCard from './components/LearnCard';
+import LearnCard from './components/LearnCard'
 
 interface LearnModuleProps {
-  contents: ContentProps[];
+  contents: ContentProps[]
 }
 
 const LearnModule = ({ contents }: LearnModuleProps) => {
@@ -22,7 +22,7 @@ const LearnModule = ({ contents }: LearnModuleProps) => {
         </motion.div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default LearnModule;
+export default LearnModule

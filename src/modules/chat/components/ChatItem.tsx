@@ -1,15 +1,15 @@
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useSession } from 'next-auth/react';
-import { FiTrash2 as DeleteIcon } from 'react-icons/fi';
-import { MdAdminPanelSettings as AdminIcon } from 'react-icons/md';
+import clsx from 'clsx'
+import Image from 'next/image'
+import { useSession } from 'next-auth/react'
+import { FiTrash2 as DeleteIcon } from 'react-icons/fi'
+import { MdAdminPanelSettings as AdminIcon } from 'react-icons/md'
 
-import { MessageProps } from '@/common/types/chat';
+import { MessageProps } from '@/common/types/chat'
 
-import ChatTime from './ChatTime';
+import ChatTime from './ChatTime'
 
 interface ChatItemProps extends MessageProps {
-  onDelete: (id: string) => void;
+  onDelete: (id: string) => void
 }
 
 const ChatItem = ({
@@ -21,25 +21,25 @@ const ChatItem = ({
   created_at,
   onDelete,
 }: ChatItemProps) => {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
-  const authorEmail = 'aulianza.dev@gmail.com';
+  const authorEmail = 'aulianza.dev@gmail.com'
 
-  const pattern = /@([^:]+):/g;
+  const pattern = /@([^:]+):/g
   const modifiedMessage = message?.split(pattern).map((part, index) => {
     if (index % 2 === 1) {
       return (
         <span key={index} className='text-yellow-600 dark:text-yellow-400'>
           @{part}
         </span>
-      );
+      )
     }
-    return part;
-  });
+    return part
+  })
 
   const handleDeleteMessage = () => {
-    onDelete(id);
-  };
+    onDelete(id)
+  }
 
   return (
     <div className='flex items-start gap-3 px-3'>
@@ -94,7 +94,7 @@ const ChatItem = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChatItem;
+export default ChatItem

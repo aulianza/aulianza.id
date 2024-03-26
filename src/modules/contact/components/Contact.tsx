@@ -1,8 +1,8 @@
-import Breakline from '@/common/components/elements/Breakline';
+import Breakline from '@/common/components/elements/Breakline'
 
-import BookACall from './BookACall';
-import ContactForm from './ContactForm';
-import SocialMediaList from './SocialMediaList';
+import BookACall from './BookACall'
+import ContactForm from './ContactForm'
+import SocialMediaList from './SocialMediaList'
 
 const Contact = () => {
   return (
@@ -16,7 +16,7 @@ const Contact = () => {
         <ContactForm />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

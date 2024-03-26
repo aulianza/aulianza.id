@@ -1,10 +1,10 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from 'zustand'
+import { devtools, persist } from 'zustand/middleware'
 
 type BlogViewState = {
-  viewOption: string;
-  setViewOption: (option: string) => void;
-};
+  viewOption: string
+  setViewOption: (option: string) => void
+}
 
 export const useBlogViewStore = create<BlogViewState>()(
   devtools(
@@ -18,4 +18,4 @@ export const useBlogViewStore = create<BlogViewState>()(
       },
     ),
   ),
-);
+)

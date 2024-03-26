@@ -1,12 +1,12 @@
-import useSWR from 'swr';
+import useSWR from 'swr'
 
-import Breakline from '@/common/components/elements/Breakline';
-import MDXComponent from '@/common/components/elements/MDXComponent';
-import { calculateReadingTime } from '@/common/helpers';
-import { BlogDetailProps } from '@/common/types/blog';
-import { fetcher } from '@/services/fetcher';
+import Breakline from '@/common/components/elements/Breakline'
+import MDXComponent from '@/common/components/elements/MDXComponent'
+import { calculateReadingTime } from '@/common/helpers'
+import { BlogDetailProps } from '@/common/types/blog'
+import { fetcher } from '@/services/fetcher'
 
-import BlogHeader from './BlogHeader';
+import BlogHeader from './BlogHeader'
 
 const BlogDetail = ({
   id,
@@ -19,12 +19,12 @@ const BlogDetail = ({
   const { data: viewsData } = useSWR(
     `/api/views?slug=${slug}&id=${id}`,
     fetcher,
-  );
+  )
 
-  const viewsCount = viewsData?.views || 0;
-  const tagList = tags_list || [];
+  const viewsCount = viewsData?.views || 0
+  const tagList = tags_list || []
 
-  const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0;
+  const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0
 
   return (
     <>
@@ -56,7 +56,7 @@ const BlogDetail = ({
       )}
       <Breakline className='!my-10' />
     </>
-  );
-};
+  )
+}
 
-export default BlogDetail;
+export default BlogDetail

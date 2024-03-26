@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { BsArrowRightShort as ViewAllIcon } from 'react-icons/bs';
+import Link from 'next/link'
+import { BsArrowRightShort as ViewAllIcon } from 'react-icons/bs'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 
-import BlogCarousel from './BlogCarousel';
+import BlogCarousel from './BlogCarousel'
 
 const BlogPreview = () => {
   return (
@@ -24,7 +24,7 @@ const BlogPreview = () => {
       </div>
       <BlogCarousel />
     </section>
-  );
-};
+  )
+}
 
-export default BlogPreview;
+export default BlogPreview

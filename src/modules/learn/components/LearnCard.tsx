@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { AiFillFire as NewIcon } from 'react-icons/ai';
-import { BiLabel as LevelIcon } from 'react-icons/bi';
-import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
-import { MdLibraryBooks as LessonIcon } from 'react-icons/md';
-import useSWR from 'swr';
+import Link from 'next/link'
+import { AiFillFire as NewIcon } from 'react-icons/ai'
+import { BiLabel as LevelIcon } from 'react-icons/bi'
+import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi'
+import { MdLibraryBooks as LessonIcon } from 'react-icons/md'
+import useSWR from 'swr'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { ContentProps } from '@/common/types/learn';
-import { fetcher } from '@/services/fetcher';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { ContentProps } from '@/common/types/learn'
+import { fetcher } from '@/services/fetcher'
 
 const LearnCard = ({
   title,
@@ -18,9 +18,9 @@ const LearnCard = ({
   is_new,
   level,
 }: ContentProps) => {
-  const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher);
+  const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher)
 
-  const lessonCount = data?.count ?? '0';
+  const lessonCount = data?.count ?? '0'
 
   return (
     <Link href={`/learn/${slug}`}>
@@ -70,7 +70,7 @@ const LearnCard = ({
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default LearnCard;
+export default LearnCard

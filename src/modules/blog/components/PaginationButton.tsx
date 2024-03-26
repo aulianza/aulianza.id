@@ -1,10 +1,10 @@
-import { MouseEvent } from 'react';
+import { MouseEvent } from 'react'
 
 type PaginationButtonProps = {
-  onClick: (event: MouseEvent<HTMLDivElement>) => void;
-  text: string;
-  icon?: JSX.Element;
-};
+  onClick: (event: MouseEvent<HTMLDivElement>) => void
+  text: string
+  icon?: JSX.Element
+}
 
 const PaginationButton = ({ onClick, text, icon }: PaginationButtonProps) => {
   return (
@@ -16,7 +16,7 @@ const PaginationButton = ({ onClick, text, icon }: PaginationButtonProps) => {
       <span>{text}</span>
       {text === 'Next' && <span>{icon}</span>}
     </div>
-  );
-};
+  )
+}
 
-export default PaginationButton;
+export default PaginationButton

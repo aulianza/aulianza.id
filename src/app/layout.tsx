@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import ClientLayout from '@/app/ClientLayout'
 
 import 'tailwindcss/tailwind.css'
 import 'aos/dist/aos.css'
 import '@/common/styles/globals.css'
+
+import ClientLayout from '@/app/ClientLayout'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

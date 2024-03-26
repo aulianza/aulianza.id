@@ -1,8 +1,8 @@
-const canonicalUrl = 'https://aulianza.id';
+const canonicalUrl = 'https://aulianza.id'
 const metaImage =
-  'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/public/aulianza-id.png';
+  'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/public/aulianza-id.png'
 const metaDescription =
-  'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences';
+  'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences'
 
 const defaultSEOConfig = {
   defaultTitle: 'Ryan Aulia - Personal Website',
@@ -40,6 +40,6 @@ const defaultSEOConfig = {
     site: '@site',
     cardType: 'summary_large_image',
   },
-};
+}
 
-export default defaultSEOConfig;
+export default defaultSEOConfig

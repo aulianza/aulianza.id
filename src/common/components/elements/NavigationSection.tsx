@@ -1,14 +1,14 @@
-import { memo } from 'react';
+import { memo } from 'react'
 
-import ButtonNavigation from './ButtonNavigation';
+import ButtonNavigation from './ButtonNavigation'
 
 interface NavigationSectionProps {
-  currentIndex: number;
-  totalItems: number;
-  handleNext: () => void;
-  handlePrevious: () => void;
-  previousTitle: string | null;
-  nextTitle: string | null;
+  currentIndex: number
+  totalItems: number
+  handleNext: () => void
+  handlePrevious: () => void
+  previousTitle: string | null
+  nextTitle: string | null
 }
 
 const NavigationSection = memo(
@@ -38,8 +38,8 @@ const NavigationSection = memo(
           />
         )}
       </div>
-    );
+    )
   },
-);
+)
 
-export default NavigationSection;
+export default NavigationSection

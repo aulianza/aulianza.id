@@ -1,6 +1,6 @@
-import { EDUCATION } from '@/common/constant/education';
+import { EDUCATION } from '@/common/constant/education'
 
-import EducationCard from './EducationCard';
+import EducationCard from './EducationCard'
 
 const EducationList = () => {
   return (
@@ -11,7 +11,7 @@ const EducationList = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default EducationList;
+export default EducationList

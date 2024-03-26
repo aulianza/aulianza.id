@@ -6,7 +6,7 @@ const AiLoading = () => {
         AI is processing...
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AiLoading;
+export default AiLoading

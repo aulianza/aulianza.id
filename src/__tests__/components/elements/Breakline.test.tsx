@@ -1,43 +1,43 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
 
-import Breakline from '@/common/components/elements/Breakline';
+import Breakline from '@/common/components/elements/Breakline'
 
 describe('Breakline', () => {
   test('renders Breakline component with default styles', () => {
-    render(<Breakline />);
+    render(<Breakline />)
 
-    const breakline = screen.getByTestId('breakline');
-    expect(breakline).toBeInTheDocument();
-    expect(breakline).toHaveClass('border-t');
-    expect(breakline).toHaveClass('dark:border-neutral-700');
-    expect(breakline).toHaveClass('border-gray-300');
-    expect(breakline).toHaveClass('my-4');
-  });
+    const breakline = screen.getByTestId('breakline')
+    expect(breakline).toBeInTheDocument()
+    expect(breakline).toHaveClass('border-t')
+    expect(breakline).toHaveClass('dark:border-neutral-700')
+    expect(breakline).toHaveClass('border-gray-300')
+    expect(breakline).toHaveClass('my-4')
+  })
 
   test('renders Breakline component with custom className', () => {
-    const customClassName = 'custom-class';
-    render(<Breakline className={customClassName} />);
+    const customClassName = 'custom-class'
+    render(<Breakline className={customClassName} />)
 
-    const breakline = screen.getByTestId('breakline');
-    expect(breakline).toBeInTheDocument();
-    expect(breakline).toHaveClass('border-t');
-    expect(breakline).toHaveClass('dark:border-neutral-700');
-    expect(breakline).toHaveClass('border-gray-300');
-    expect(breakline).toHaveClass('my-4');
-    expect(breakline).toHaveClass(customClassName);
-  });
+    const breakline = screen.getByTestId('breakline')
+    expect(breakline).toBeInTheDocument()
+    expect(breakline).toHaveClass('border-t')
+    expect(breakline).toHaveClass('dark:border-neutral-700')
+    expect(breakline).toHaveClass('border-gray-300')
+    expect(breakline).toHaveClass('my-4')
+    expect(breakline).toHaveClass(customClassName)
+  })
 
   test('renders Breakline component with additional props', () => {
-    const dataTestId = 'custom-breakline';
+    const dataTestId = 'custom-breakline'
     const additionalProps = {
       'data-testid': dataTestId,
       'aria-label': 'Custom Breakline',
-    };
+    }
 
-    render(<Breakline {...additionalProps} />);
+    render(<Breakline {...additionalProps} />)
 
-    const breakline = screen.getByTestId(dataTestId);
-    expect(breakline).toBeInTheDocument();
-    expect(breakline).toHaveAttribute('aria-label', 'Custom Breakline');
-  });
-});
+    const breakline = screen.getByTestId(dataTestId)
+    expect(breakline).toBeInTheDocument()
+    expect(breakline).toHaveAttribute('aria-label', 'Custom Breakline')
+  })
+})

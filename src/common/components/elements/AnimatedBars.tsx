@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 interface AnimatedBarsProps {
-  variant?: string;
+  variant?: string
 }
 
 const AnimatedBars = ({ variant = 'bg-neutral-800' }: AnimatedBarsProps) => {
-  const color = variant ?? 'bg-neutral-800';
+  const color = variant ?? 'bg-neutral-800'
 
   return (
     <div className='relative flex w-auto items-end overflow-hidden pt-0.5'>
@@ -62,7 +62,7 @@ const AnimatedBars = ({ variant = 'bg-neutral-800' }: AnimatedBarsProps) => {
         className={`h-3 w-1 ${color}`}
       />
     </div>
-  );
-};
+  )
+}
 
-export default AnimatedBars;
+export default AnimatedBars

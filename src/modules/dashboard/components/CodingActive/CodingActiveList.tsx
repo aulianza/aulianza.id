@@ -1,18 +1,18 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import Progress from './Progress';
+import Progress from './Progress'
 
 interface ItemProps {
-  name: string;
-  hours: number;
-  minutes: number;
+  name: string
+  hours: number
+  minutes: number
 }
 
 interface CodingActiveListProps {
   data?: {
-    languages?: ItemProps[];
-    categories?: ItemProps[];
-  };
+    languages?: ItemProps[]
+    categories?: ItemProps[]
+  }
 }
 
 const sumTotalFromArray = <T extends { hours: number; minutes: number }>(
@@ -25,33 +25,33 @@ const sumTotalFromArray = <T extends { hours: number; minutes: number }>(
         previousValue + (currentValue[key] as number),
       0,
     ) ?? 0
-  );
-};
+  )
+}
 
 const CodingActiveList = ({ data }: CodingActiveListProps) => {
   const getLanguagesTotalHours = sumTotalFromArray<ItemProps>(
     data?.languages || [],
     'hours',
-  );
+  )
   const getLanguagesTotalMinutes = sumTotalFromArray<ItemProps>(
     data?.languages || [],
     'minutes',
-  );
+  )
   const getLanguagesTotalTimeDisplay = `${
     Math.floor((getLanguagesTotalMinutes % 3600) / 60) + getLanguagesTotalHours
-  } hrs ${getLanguagesTotalMinutes} mins`;
+  } hrs ${getLanguagesTotalMinutes} mins`
 
   const getEditorTotalHours = sumTotalFromArray<ItemProps>(
     data?.categories || [],
     'hours',
-  );
+  )
   const getEditorTotalMinutes = sumTotalFromArray<ItemProps>(
     data?.categories || [],
     'minutes',
-  );
+  )
   const getEditorTotalTimeDisplay = `${
     Math.floor((getEditorTotalMinutes % 3600) / 60) + getEditorTotalHours
-  } hrs ${getEditorTotalMinutes} mins`;
+  } hrs ${getEditorTotalMinutes} mins`
 
   const actives = [
     {
@@ -70,10 +70,10 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
         bg: 'bg-gradient-to-r from-blue-400 to-purple-600',
       },
     },
-  ];
+  ]
 
   if (!data) {
-    return null;
+    return null
   }
 
   return (
@@ -102,7 +102,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CodingActiveList;
+export default CodingActiveList

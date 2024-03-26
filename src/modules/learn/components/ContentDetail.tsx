@@ -1,87 +1,87 @@
-import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
-import useSWR from 'swr';
+import { useRouter } from 'next/router'
+import { useCallback, useEffect, useState } from 'react'
+import useSWR from 'swr'
 
-import NavigationSection from '@/common/components/elements/NavigationSection';
-import { parseUrl } from '@/common/helpers';
-import { SubContentMetaProps } from '@/common/types/learn';
-import GiscusComment from '@/modules/blog/components/GiscusComment';
-import { fetcher } from '@/services/fetcher';
+import NavigationSection from '@/common/components/elements/NavigationSection'
+import { parseUrl } from '@/common/helpers'
+import { SubContentMetaProps } from '@/common/types/learn'
+import GiscusComment from '@/modules/blog/components/GiscusComment'
+import { fetcher } from '@/services/fetcher'
 
-import ContentBody from './ContentBody';
-import ContentPlayground from './ContentPlayground';
+import ContentBody from './ContentBody'
+import ContentPlayground from './ContentPlayground'
 
 interface ContentListItemProps {
-  id: number;
-  parent_slug: string;
-  slug: string;
-  title: string;
+  id: number
+  parent_slug: string
+  slug: string
+  title: string
 }
 
 interface ContentDetailProps {
-  content: string;
-  frontMatter: SubContentMetaProps;
+  content: string
+  frontMatter: SubContentMetaProps
 }
 
 const ContentDetail = ({ content, frontMatter }: ContentDetailProps) => {
-  const [contentList, setContentList] = useState<ContentListItemProps[]>([]);
+  const [contentList, setContentList] = useState<ContentListItemProps[]>([])
 
-  const [currentId, setCurrentId] = useState<number>(0);
-  const [nextTitle, setNextTitle] = useState<string | null>(null);
-  const [previousTitle, setPreviousTitle] = useState<string | null>(null);
+  const [currentId, setCurrentId] = useState<number>(0)
+  const [nextTitle, setNextTitle] = useState<string | null>(null)
+  const [previousTitle, setPreviousTitle] = useState<string | null>(null)
 
-  const router = useRouter();
-  const currentUrl = router.asPath;
-  const { parentSlug, contentSlug } = parseUrl(currentUrl);
+  const router = useRouter()
+  const currentUrl = router.asPath
+  const { parentSlug, contentSlug } = parseUrl(currentUrl)
 
-  const meta = frontMatter;
-  const isShowPlayground = meta?.is_playground ?? false;
-  const isShowComment = meta?.is_comment ?? false;
-  const initialCode = meta?.initial_code ?? '';
+  const meta = frontMatter
+  const isShowPlayground = meta?.is_playground ?? false
+  const isShowComment = meta?.is_comment ?? false
+  const initialCode = meta?.initial_code ?? ''
 
   const { data: resContentData } = useSWR(
     `/api/content?category=${parentSlug}`,
     fetcher,
-  );
+  )
 
   const getNextOrPreviousContent = useCallback(
     (contents: ContentListItemProps[], step: number) => {
-      return contents.find((item) => item.id === currentId + step) || null;
+      return contents.find((item) => item.id === currentId + step) || null
     },
     [currentId],
-  );
+  )
 
   const handleNavigation = (step: number) => {
-    const targetContent = getNextOrPreviousContent(contentList, step);
+    const targetContent = getNextOrPreviousContent(contentList, step)
 
     if (targetContent) {
-      const { slug: targetSlug } = targetContent;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      router.push(`/learn/${parentSlug}/${targetSlug}`);
+      const { slug: targetSlug } = targetContent
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      router.push(`/learn/${parentSlug}/${targetSlug}`)
     }
-  };
+  }
 
   useEffect(() => {
-    resContentData && setContentList(resContentData.data);
-  }, [resContentData]);
+    resContentData && setContentList(resContentData.data)
+  }, [resContentData])
 
   useEffect(() => {
     const getId = contentList?.find(
       (item: ContentListItemProps) => item.slug === contentSlug,
-    );
-    const currentContentId = getId?.id as number;
-    setCurrentId(currentContentId);
+    )
+    const currentContentId = getId?.id as number
+    setCurrentId(currentContentId)
 
     if (currentContentId > 0) {
-      const previousContent = getNextOrPreviousContent(contentList, -1);
-      previousContent && setPreviousTitle(previousContent.title);
+      const previousContent = getNextOrPreviousContent(contentList, -1)
+      previousContent && setPreviousTitle(previousContent.title)
     }
 
     if (currentContentId < contentList.length - 1) {
-      const nextContent = getNextOrPreviousContent(contentList, 1);
-      nextContent && setNextTitle(nextContent?.title);
+      const nextContent = getNextOrPreviousContent(contentList, 1)
+      nextContent && setNextTitle(nextContent?.title)
     }
-  }, [contentList, contentSlug, getNextOrPreviousContent]);
+  }, [contentList, contentSlug, getNextOrPreviousContent])
 
   return (
     <>
@@ -104,7 +104,7 @@ const ContentDetail = ({ content, frontMatter }: ContentDetailProps) => {
         </section>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ContentDetail;
+export default ContentDetail

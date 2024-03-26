@@ -2,12 +2,12 @@ import { GetStaticProps, NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 import { useState } from 'react'
 
+import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import Projects from '@/modules/projects'
-import { client } from '@/services/graphql/graphql'
 import { getProjectsDocument } from '@/services/graphql/documents'
-import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
+import { client } from '@/services/graphql/graphql'
 
 interface ProjectsPageProps {
   dataProjects: ProjectEntryFragmentFragment[]

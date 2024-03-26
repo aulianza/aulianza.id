@@ -1,7 +1,7 @@
-import MDXComponent from '@/common/components/elements/MDXComponent';
+import MDXComponent from '@/common/components/elements/MDXComponent'
 
 interface ContentBodyProps {
-  content: string;
+  content: string
 }
 
 const ContentBody = ({ content }: ContentBodyProps) => {
@@ -9,7 +9,7 @@ const ContentBody = ({ content }: ContentBodyProps) => {
     <div className='mt-5 space-y-5 leading-[1.8] dark:text-neutral-300'>
       <MDXComponent>{content}</MDXComponent>
     </div>
-  );
-};
+  )
+}
 
-export default ContentBody;
+export default ContentBody

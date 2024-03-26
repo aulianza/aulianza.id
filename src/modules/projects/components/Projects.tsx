@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-import EmptyState from '@/common/components/elements/EmptyState'
 import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
+import EmptyState from '@/common/components/elements/EmptyState'
 import ProjectCard from '@/modules/projects/components/ProjectCard'
 
 interface ProjectsComponentProps {

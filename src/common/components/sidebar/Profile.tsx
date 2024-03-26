@@ -1,48 +1,48 @@
-import clsx from 'clsx';
-import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import clsx from 'clsx'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
-import { MenuContext } from '@/common/context/MenuContext';
-import useIsMobile from '@/common/hooks/useIsMobile';
+import { MenuContext } from '@/common/context/MenuContext'
+import useIsMobile from '@/common/hooks/useIsMobile'
 
-import MobileMenu from './MobileMenu';
-import MobileMenuButton from './MobileMenuButton';
-import ProfileHeader from './ProfileHeader';
-import Status from '../elements/Status';
-import ThemeToggleButton from '../elements/ThemeToggleButton';
+import MobileMenu from './MobileMenu'
+import MobileMenuButton from './MobileMenuButton'
+import ProfileHeader from './ProfileHeader'
+import Status from '../elements/Status'
+import ThemeToggleButton from '../elements/ThemeToggleButton'
 
 interface ProfileProps {
-  isScrolled?: boolean;
+  isScrolled?: boolean
 }
 
 const Profile = ({ isScrolled = false }: ProfileProps) => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile()
 
   const getImageSize = () => {
-    let size = isMobile ? 40 : 100;
+    let size = isMobile ? 40 : 100
     if (!isMobile && isScrolled) {
-      size = 80;
+      size = 80
     }
-    return size;
-  };
+    return size
+  }
 
-  const [expandMenu, setExpandMenu] = useState<boolean>(false);
+  const [expandMenu, setExpandMenu] = useState<boolean>(false)
 
   const hideNavbar = () => {
-    setExpandMenu(false);
-  };
+    setExpandMenu(false)
+  }
 
   useEffect(() => {
     if (expandMenu) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto'
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [expandMenu]);
+      document.body.style.overflow = 'auto'
+    }
+  }, [expandMenu])
 
   return (
     <MenuContext.Provider value={{ hideNavbar }}>
@@ -84,7 +84,7 @@ const Profile = ({ isScrolled = false }: ProfileProps) => {
         )}
       </div>
     </MenuContext.Provider>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

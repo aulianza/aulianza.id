@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { FiCalendar, FiClock, FiVideo } from 'react-icons/fi';
+import Link from 'next/link'
+import { FiCalendar, FiClock, FiVideo } from 'react-icons/fi'
 
 const BookACall = () => {
   return (
@@ -36,7 +36,7 @@ const BookACall = () => {
         </div>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default BookACall;
+export default BookACall

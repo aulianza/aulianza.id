@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 const useLoading = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true)
+  const router = useRouter()
 
   useEffect(() => {
-    router.isReady && setIsLoading(false);
-  }, [router.isReady]);
+    router.isReady && setIsLoading(false)
+  }, [router.isReady])
 
-  return isLoading;
-};
+  return isLoading
+}
 
-export default useLoading;
+export default useLoading

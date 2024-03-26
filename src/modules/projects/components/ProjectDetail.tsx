@@ -1,13 +1,13 @@
+import {
+  ProjectDetailFragmentFragment,
+  ProjectEntryStackCategoryFragmentFragment,
+} from '@/__generated__/graphql'
 import Image from '@/common/components/elements/Image'
 import MDXComponent from '@/common/components/elements/MDXComponent'
 import Tooltip from '@/common/components/elements/Tooltip'
 import { getStackIcon } from '@/common/constant/stacks'
 
 import ProjectLink from './ProjectLink'
-import {
-  ProjectDetailFragmentFragment,
-  ProjectEntryStackCategoryFragmentFragment,
-} from '@/__generated__/graphql'
 
 const ProjectDetail = ({
   project,

@@ -1,12 +1,13 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { useEffect } from 'react'
 import AOS from 'aos'
-import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts'
+import dynamic from 'next/dynamic'
 import { ThemeProvider } from 'next-themes'
-import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext'
+import { useEffect } from 'react'
+
 import Layout from '@/common/components/layouts'
+import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext'
+import { firaCode, jakartaSans, soraSans } from '@/common/styles/fonts'
 
 const ProgressBar = dynamic(
   () => import('src/common/components/elements/ProgressBar'),

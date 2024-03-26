@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { FaRegEye as ViewIcon } from 'react-icons/fa'
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi'
 
-import { formatDate } from '@/common/helpers';
+import { formatDate } from '@/common/helpers'
 
 interface BlogHeaderProps {
-  title: string;
-  comments_count?: number;
-  reading_time_minutes?: number;
-  page_views_count?: number | null;
-  published_at?: string;
+  title: string
+  comments_count?: number
+  reading_time_minutes?: number
+  page_views_count?: number | null
+  published_at?: string
 }
 
 const BlogHeader = ({
@@ -19,27 +19,26 @@ const BlogHeader = ({
   published_at,
   reading_time_minutes,
 }: BlogHeaderProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      setIsScrolled(scrollTop > 250);
-    };
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      setIsScrolled(scrollTop > 250)
+    }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  const transition = { duration: 0.3, ease: 'easeInOut' };
+  const transition = { duration: 0.3, ease: 'easeInOut' }
   const titleVariants = {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
-  };
+  }
 
   return (
     <>
@@ -90,7 +89,7 @@ const BlogHeader = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BlogHeader;
+export default BlogHeader

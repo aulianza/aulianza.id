@@ -1,4 +1,4 @@
-import { CareerProps } from '../types/careers';
+import { CareerProps } from '../types/careers'
 
 export const CAREERS: CareerProps[] = [
   {
@@ -194,4 +194,4 @@ export const CAREERS: CareerProps[] = [
       'Built a school landing page and student registration web app using Laravel.',
     ],
   },
-];
+]

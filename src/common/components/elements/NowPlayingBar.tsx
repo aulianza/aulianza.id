@@ -1,37 +1,37 @@
-import { Popover } from '@headlessui/react';
-import Image from 'next/image';
-import { useState } from 'react';
-import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
-import useSWR from 'swr';
+import { Popover } from '@headlessui/react'
+import Image from 'next/image'
+import { useState } from 'react'
+import { BsSpotify as SpotifyIcon } from 'react-icons/bs'
+import useSWR from 'swr'
 
-import { DeviceProps, NowPlayingProps } from '@/common/types/spotify';
-import { fetcher } from '@/services/fetcher';
+import { DeviceProps, NowPlayingProps } from '@/common/types/spotify'
+import { fetcher } from '@/services/fetcher'
 
-import AnimatedBars from './AnimatedBars';
-import DevicePopover from './DevicePopover';
-import PlayerPopover from './PlayerPopover';
+import AnimatedBars from './AnimatedBars'
+import DevicePopover from './DevicePopover'
+import PlayerPopover from './PlayerPopover'
 
 const NowPlayingBar = () => {
-  const [isShowDeviceList, setShowDeviceList] = useState(false);
-  const [isShowPlayingInfo, setShowPlayingInfo] = useState(false);
+  const [isShowDeviceList, setShowDeviceList] = useState(false)
+  const [isShowPlayingInfo, setShowPlayingInfo] = useState(false)
 
   const { data: playingData } = useSWR<NowPlayingProps>(
     '/api/now-playing',
     fetcher,
-  );
+  )
 
   const { data: devicesData = [] } = useSWR<DeviceProps[]>(
     '/api/available-devices',
     fetcher,
-  );
+  )
 
-  const activeDevice = devicesData?.find((device) => device.is_active);
+  const activeDevice = devicesData?.find((device) => device.is_active)
 
   const handleOpenSongUrl = (url?: string) => {
-    url && window.open(url, '_blank');
-  };
+    url && window.open(url, '_blank')
+  }
 
-  if (!playingData?.songUrl) return null;
+  if (!playingData?.songUrl) return null
 
   return (
     <div className='fixed bottom-0 z-[99999] hidden w-full lg:block'>
@@ -96,7 +96,7 @@ const NowPlayingBar = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NowPlayingBar;
+export default NowPlayingBar

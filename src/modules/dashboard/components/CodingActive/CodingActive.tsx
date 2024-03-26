@@ -1,51 +1,51 @@
-import { formatDistanceToNowStrict } from 'date-fns';
-import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { SiWakatime as WakatimeIcon } from 'react-icons/si';
-import useSWR from 'swr';
+import { formatDistanceToNowStrict } from 'date-fns'
+import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { SiWakatime as WakatimeIcon } from 'react-icons/si'
+import useSWR from 'swr'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { fetcher } from '@/services/fetcher';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { fetcher } from '@/services/fetcher'
 
-import CodingActiveList from './CodingActiveList';
-import Overview from './Overview';
+import CodingActiveList from './CodingActiveList'
+import Overview from './Overview'
 
 interface CodingActiveProps {
-  lastUpdate?: string;
+  lastUpdate?: string
 }
 
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
-  const { data } = useSWR('/api/read-stats', fetcher);
+  const { data } = useSWR('/api/read-stats', fetcher)
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
     null,
-  );
+  )
 
   useEffect(() => {
     const formatLastUpdate = (): void => {
-      const lastUpdateDate = lastUpdate || data?.last_update;
+      const lastUpdateDate = lastUpdate || data?.last_update
       if (lastUpdateDate) {
         const zonedDate = utcToZonedTime(
           zonedTimeToUtc(lastUpdateDate, 'Asia/Jakarta'),
           'Asia/Jakarta',
-        );
+        )
         const distance = formatDistanceToNowStrict(zonedDate, {
           addSuffix: true,
-        });
-        setFormattedLastUpdate(distance);
+        })
+        setFormattedLastUpdate(distance)
       }
-    };
+    }
 
-    formatLastUpdate();
-  }, [lastUpdate, data]);
+    formatLastUpdate()
+  }, [lastUpdate, data])
 
   const renderLastUpdate = () => {
     if (formattedLastUpdate) {
-      return <span>{formattedLastUpdate}</span>;
+      return <span>{formattedLastUpdate}</span>
     }
-    return null;
-  };
+    return null
+  }
 
   return (
     <section className='flex flex-col gap-y-2'>
@@ -72,7 +72,7 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
       <Overview data={data} />
       <CodingActiveList data={data} />
     </section>
-  );
-};
+  )
+}
 
-export default CodingActive;
+export default CodingActive

@@ -2,12 +2,13 @@
 import { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { PluggableList } from 'unified'
+
+import { rehypeCode } from '@/common/components/elements/mdx/rehype-code'
+import { remarkCode } from '@/common/components/elements/mdx/remark-code'
+import { remarkHeading } from '@/common/components/elements/mdx/remark-heading'
 
 import CodeBlock from './CodeBlock'
-import { PluggableList } from 'unified'
-import { remarkHeading } from '@/common/components/elements/mdx/remark-heading'
-import { remarkCode } from '@/common/components/elements/mdx/remark-code'
-import { rehypeCode } from '@/common/components/elements/mdx/rehype-code'
 
 interface MarkdownRendererProps {
   children: string

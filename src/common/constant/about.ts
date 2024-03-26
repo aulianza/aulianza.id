@@ -20,4 +20,4 @@ export const ABOUT = `
 <p>
     I'm looking forward to the possibility of working with you!
 </p>
-`;
+`

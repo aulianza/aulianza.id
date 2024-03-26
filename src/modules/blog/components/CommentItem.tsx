@@ -1,23 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
 
-import Image from '@/common/components/elements/Image';
-import { formatDate } from '@/common/helpers';
-import { CommentItemProps } from '@/common/types/blog';
+import Image from '@/common/components/elements/Image'
+import { formatDate } from '@/common/helpers'
+import { CommentItemProps } from '@/common/types/blog'
 
 const CommentItem = ({ body_html, created_at, user }: CommentItemProps) => {
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (contentRef.current) {
-      const codeElements = contentRef.current.getElementsByTagName('code');
+      const codeElements = contentRef.current.getElementsByTagName('code')
       for (let i = 0; i < codeElements.length; i++) {
-        const codeElement = codeElements[i];
-        codeElement.classList.add('break-words');
-        codeElement.classList.add('text-xs');
-        codeElement.classList.add('whitespace-pre-wrap');
+        const codeElement = codeElements[i]
+        codeElement.classList.add('break-words')
+        codeElement.classList.add('text-xs')
+        codeElement.classList.add('whitespace-pre-wrap')
       }
     }
-  }, [body_html]);
+  }, [body_html])
 
   return (
     <div className='flex gap-5 break-all dark:text-neutral-400'>
@@ -46,7 +46,7 @@ const CommentItem = ({ body_html, created_at, user }: CommentItemProps) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CommentItem;
+export default CommentItem

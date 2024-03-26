@@ -1,12 +1,12 @@
-import { BiLogoGoogle as GoogleIcon } from 'react-icons/bi';
-import { HiOutlineChat as AiIcon } from 'react-icons/hi';
+import { BiLogoGoogle as GoogleIcon } from 'react-icons/bi'
+import { HiOutlineChat as AiIcon } from 'react-icons/hi'
 
-import Button from '@/common/components/elements/Button';
+import Button from '@/common/components/elements/Button'
 
 interface QueryNotFoundProps {
-  query: string;
-  onAskAiAssistant: () => void;
-  onFindGoogle: () => void;
+  query: string
+  onAskAiAssistant: () => void
+  onFindGoogle: () => void
 }
 
 const QueryNotFound = ({
@@ -49,7 +49,7 @@ const QueryNotFound = ({
         Press `ESC` to close this window
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default QueryNotFound;
+export default QueryNotFound

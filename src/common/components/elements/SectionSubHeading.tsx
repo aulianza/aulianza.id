@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface SectionSubHeadingProps {
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 const SectionSubHeading = ({ children }: SectionSubHeadingProps) => {
@@ -9,7 +9,7 @@ const SectionSubHeading = ({ children }: SectionSubHeadingProps) => {
     <div className='flex flex-col justify-between gap-2 text-neutral-600 dark:text-neutral-400 lg:flex-row lg:items-center'>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default SectionSubHeading;
+export default SectionSubHeading

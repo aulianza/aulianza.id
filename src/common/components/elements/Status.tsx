@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const Status = () => {
   return (
@@ -12,7 +12,7 @@ const Status = () => {
         Open for collabs!
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default Status;
+export default Status

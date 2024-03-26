@@ -1,12 +1,12 @@
-import Giscus from '@giscus/react';
-import { useTheme } from 'next-themes';
+import Giscus from '@giscus/react'
+import { useTheme } from 'next-themes'
 
 interface GiscusComment {
-  isEnableReaction?: boolean;
+  isEnableReaction?: boolean
 }
 
 const GiscusComment = ({ isEnableReaction = false }: GiscusComment) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
     <div className='mb-2 mt-5'>
@@ -24,7 +24,7 @@ const GiscusComment = ({ isEnableReaction = false }: GiscusComment) => {
         loading='lazy'
       />
     </div>
-  );
-};
+  )
+}
 
-export default GiscusComment;
+export default GiscusComment

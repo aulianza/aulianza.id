@@ -16,7 +16,7 @@ const Copyright = () => {
         </span>
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default Copyright;
+export default Copyright

@@ -1,20 +1,20 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 
-import { groupContentByChapter } from '@/common/helpers';
+import { groupContentByChapter } from '@/common/helpers'
 import {
   ChapterGroupProps,
   ContentProps,
   MdxFileContentProps,
-} from '@/common/types/learn';
+} from '@/common/types/learn'
 
-import ChapterCard from './ChapterCard';
-import LearnSubContentItem from './LearnSubContentItem';
+import ChapterCard from './ChapterCard'
+import LearnSubContentItem from './LearnSubContentItem'
 
 interface ContentListProps {
-  sortedSubContents: MdxFileContentProps[];
-  content: ContentProps | null;
-  title: string;
+  sortedSubContents: MdxFileContentProps[]
+  content: ContentProps | null
+  title: string
 }
 
 const ContentList = ({
@@ -22,23 +22,23 @@ const ContentList = ({
   content,
   title,
 }: ContentListProps) => {
-  const contentSlug: string = content?.slug ?? '';
+  const contentSlug: string = content?.slug ?? ''
 
   const groupedContent: Record<string, ChapterGroupProps> =
-    groupContentByChapter(sortedSubContents);
+    groupContentByChapter(sortedSubContents)
 
   const [openAccordions, setOpenAccordions] = useState<string[]>(() => {
-    const groupKeys = Object.keys(groupedContent);
-    return groupKeys.length === 1 ? [groupKeys[0]] : [];
-  });
+    const groupKeys = Object.keys(groupedContent)
+    return groupKeys.length === 1 ? [groupKeys[0]] : []
+  })
 
   const toggleAccordion = (chapterId: string) => {
     setOpenAccordions((prev) =>
       prev.includes(chapterId)
         ? prev.filter((id) => id !== chapterId)
         : [...prev, chapterId],
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -92,7 +92,7 @@ const ContentList = ({
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ContentList;
+export default ContentList

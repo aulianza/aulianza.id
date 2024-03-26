@@ -1,4 +1,4 @@
-import Image from './Image';
+import Image from './Image'
 
 const TopBar = () => {
   return (
@@ -19,7 +19,7 @@ const TopBar = () => {
         alt='new'
       />
     </div>
-  );
-};
+  )
+}
 
-export default TopBar;
+export default TopBar

@@ -1,14 +1,14 @@
 import {
   MdOutlineFullscreen as FullScreenIcon,
   MdOutlineFullscreenExit as ExitFullScreenIcon,
-} from 'react-icons/md';
+} from 'react-icons/md'
 
-import Tooltip from '@/common/components/elements/Tooltip';
+import Tooltip from '@/common/components/elements/Tooltip'
 
 interface PanelFooterProps {
-  isFullScreen?: boolean;
-  onCloseFullScreen?: () => void;
-  onFullScreen?: () => void;
+  isFullScreen?: boolean
+  onCloseFullScreen?: () => void
+  onFullScreen?: () => void
 }
 
 const PanelFooter = ({
@@ -41,7 +41,7 @@ const PanelFooter = ({
         </Tooltip>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default PanelFooter;
+export default PanelFooter

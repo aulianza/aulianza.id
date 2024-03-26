@@ -4,15 +4,15 @@ import {
   HiOutlineBriefcase as CareerIcon,
   HiOutlineDocumentText as ResumeIcon,
   HiOutlineSparkles as SkillsIcon,
-} from 'react-icons/hi';
+} from 'react-icons/hi'
 
-import { Tabs } from '@/common/components/elements/Tabs';
+import { Tabs } from '@/common/components/elements/Tabs'
 
-import CareerList from './CareerList';
-import EducationList from './EducationList';
-import Resume from './Resume';
-import Skills from './Skills';
-import Story from './Story';
+import CareerList from './CareerList'
+import EducationList from './EducationList'
+import Resume from './Resume'
+import Skills from './Skills'
+import Story from './Story'
 
 const About = () => {
   const TABS = [
@@ -56,12 +56,12 @@ const About = () => {
       ),
       children: <EducationList />,
     },
-  ];
-  return <Tabs tabs={TABS} />;
-};
+  ]
+  return <Tabs tabs={TABS} />
+}
 
-export default About;
+export default About
 
 const TabLabel = ({ children }: { children: React.ReactNode }) => (
   <div className='flex items-center justify-center gap-1.5'>{children}</div>
-);
+)

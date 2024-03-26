@@ -1,8 +1,8 @@
-import Breakline from '@/common/components/elements/Breakline';
-import { GITHUB_ACCOUNTS } from '@/common/constant/github';
+import Breakline from '@/common/components/elements/Breakline'
+import { GITHUB_ACCOUNTS } from '@/common/constant/github'
 
-import CodingActive from './CodingActive';
-import Contributions from './Contributions';
+import CodingActive from './CodingActive'
+import Contributions from './Contributions'
 
 const Dashboard = () => {
   return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

@@ -9,4 +9,4 @@ export const CLIENT_IMAGES = [
   '/images/clients/phe.png',
   '/images/clients/fixature.png',
   '/images/clients/negeriantara.png',
-];
+]

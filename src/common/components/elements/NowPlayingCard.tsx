@@ -1,35 +1,35 @@
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useState } from 'react';
-import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
-import { MdClose as CloseIcon } from 'react-icons/md';
-import useSWR from 'swr';
+import clsx from 'clsx'
+import Image from 'next/image'
+import { useState } from 'react'
+import { BsSpotify as SpotifyIcon } from 'react-icons/bs'
+import { MdClose as CloseIcon } from 'react-icons/md'
+import useSWR from 'swr'
 
-import { NowPlayingProps } from '@/common/types/spotify';
-import { fetcher } from '@/services/fetcher';
+import { NowPlayingProps } from '@/common/types/spotify'
+import { fetcher } from '@/services/fetcher'
 
-import AnimatedBars from './AnimatedBars';
+import AnimatedBars from './AnimatedBars'
 
 const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
-  const { data } = useSWR<NowPlayingProps>('/api/now-playing', fetcher);
+  const { data } = useSWR<NowPlayingProps>('/api/now-playing', fetcher)
 
-  const [expand, setExpand] = useState(isExpand);
+  const [expand, setExpand] = useState(isExpand)
 
   const trimmedSongTitle =
     data?.title &&
-    data?.title.slice(0, 40) + (data?.title?.length > 40 ? '...' : '');
+    data?.title.slice(0, 40) + (data?.title?.length > 40 ? '...' : '')
 
   const trimmedSongArtist =
     data?.artist &&
-    data?.artist.slice(0, 20) + (data?.artist?.length > 20 ? '...' : '');
+    data?.artist.slice(0, 20) + (data?.artist?.length > 20 ? '...' : '')
 
   const handleOpenSongUrl = (url?: string) => {
-    url && window.open(url, '_blank');
-  };
+    url && window.open(url, '_blank')
+  }
 
-  const handleMusicToggle = () => setExpand(!expand);
+  const handleMusicToggle = () => setExpand(!expand)
 
-  if (!data?.songUrl) return null;
+  if (!data?.songUrl) return null
 
   return (
     <div
@@ -81,7 +81,7 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NowPlayingCard;
+export default NowPlayingCard

@@ -1,14 +1,14 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import { MdVerified as VerifiedIcon } from 'react-icons/md';
+import clsx from 'clsx'
+import Link from 'next/link'
+import { MdVerified as VerifiedIcon } from 'react-icons/md'
 
-import Image from '../elements/Image';
-import Tooltip from '../elements/Tooltip';
+import Image from '../elements/Image'
+import Tooltip from '../elements/Tooltip'
 
 interface ProfileHeaderProps {
-  expandMenu: boolean;
-  imageSize: number;
-  isScrolled?: boolean;
+  expandMenu: boolean
+  imageSize: number
+  isScrolled?: boolean
 }
 
 const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
@@ -41,7 +41,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         @aulianza
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfileHeader;
+export default ProfileHeader

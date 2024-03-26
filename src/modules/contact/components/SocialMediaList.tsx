@@ -1,10 +1,10 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import Button from '@/common/components/elements/Button';
-import { SOCIAL_MEDIA } from '@/common/constant/menu';
+import Button from '@/common/components/elements/Button'
+import { SOCIAL_MEDIA } from '@/common/constant/menu'
 
 const SocialMediaList = () => {
-  const handleAction = (link: string) => window.open(link, '_blank');
+  const handleAction = (link: string) => window.open(link, '_blank')
 
   return (
     <div className='space-y-5 pb-2'>
@@ -26,7 +26,7 @@ const SocialMediaList = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SocialMediaList;
+export default SocialMediaList

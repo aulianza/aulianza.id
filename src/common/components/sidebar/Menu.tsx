@@ -1,11 +1,11 @@
-import { MenuItemProps } from '@/common/types/menu';
+import { MenuItemProps } from '@/common/types/menu'
 
-import MenuItem from './MenuItem';
+import MenuItem from './MenuItem'
 
 type MenuProps = {
-  title?: string;
-  list: MenuItemProps[];
-};
+  title?: string
+  list: MenuItemProps[]
+}
 
 const Menu = ({ title, list }: MenuProps) => {
   return (
@@ -19,7 +19,7 @@ const Menu = ({ title, list }: MenuProps) => {
         <MenuItem key={index} {...item} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

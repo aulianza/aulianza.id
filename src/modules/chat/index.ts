@@ -1,3 +1,3 @@
-import Chat from './components/Chat';
+import Chat from './components/Chat'
 
-export default Chat;
+export default Chat

@@ -1,7 +1,7 @@
-import { signIn } from 'next-auth/react';
-import { FcGoogle as GoogleIcon } from 'react-icons/fc';
+import { signIn } from 'next-auth/react'
+import { FcGoogle as GoogleIcon } from 'react-icons/fc'
 
-import Button from '@/common/components/elements/Button';
+import Button from '@/common/components/elements/Button'
 
 const ChatAuth = () => {
   return (
@@ -18,7 +18,7 @@ const ChatAuth = () => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChatAuth;
+export default ChatAuth

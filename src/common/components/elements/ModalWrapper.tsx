@@ -1,10 +1,10 @@
-import { Dialog, Transition } from '@headlessui/react';
-import React, { Fragment, ReactNode } from 'react';
+import { Dialog, Transition } from '@headlessui/react'
+import React, { Fragment, ReactNode } from 'react'
 
 interface ModalWrapperProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
+  isOpen: boolean
+  onClose: () => void
+  children: ReactNode
 }
 
 const ModalWrapper = ({ isOpen, onClose, children }: ModalWrapperProps) => {
@@ -42,7 +42,7 @@ const ModalWrapper = ({ isOpen, onClose, children }: ModalWrapperProps) => {
         </div>
       </Dialog>
     </Transition>
-  );
-};
+  )
+}
 
-export default ModalWrapper;
+export default ModalWrapper

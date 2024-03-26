@@ -1,12 +1,12 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
 
-import Chat from './Chat';
-import ChatWidgetHeader from './ChatWidgetHeader';
+import Chat from './Chat'
+import ChatWidgetHeader from './ChatWidgetHeader'
 
 interface ChatWidgetProps {
-  isOpen: boolean;
-  toggleChat: () => void;
+  isOpen: boolean
+  toggleChat: () => void
 }
 
 const ChatWidget = ({ isOpen, toggleChat }: ChatWidgetProps) => {
@@ -32,7 +32,7 @@ const ChatWidget = ({ isOpen, toggleChat }: ChatWidgetProps) => {
         </div>
       </Dialog>
     </Transition>
-  );
-};
+  )
+}
 
-export default ChatWidget;
+export default ChatWidget

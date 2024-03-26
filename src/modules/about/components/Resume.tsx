@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { LuDownload as DownloadIcon } from 'react-icons/lu';
+import Link from 'next/link'
+import { LuDownload as DownloadIcon } from 'react-icons/lu'
 
-import GoogleDocsEmbed from '@/common/components/elements/GoogleDocsEmbed';
+import GoogleDocsEmbed from '@/common/components/elements/GoogleDocsEmbed'
 
 const Resume = () => {
-  const RESUME_URL = 'https://bit.ly/cv-aulianza';
+  const RESUME_URL = 'https://bit.ly/cv-aulianza'
 
   return (
     <div className='space-y-5'>
@@ -21,7 +21,7 @@ const Resume = () => {
 
       <GoogleDocsEmbed src='https://docs.google.com/document/d/1Ug6V5cI9D3hBPD8t5qrsvC3Zr2H1-EKlu4I_q7fcigw/edit' />
     </div>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume

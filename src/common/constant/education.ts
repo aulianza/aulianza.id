@@ -1,4 +1,4 @@
-import { EducationProps } from '../types/education';
+import { EducationProps } from '../types/education'
 
 export const EDUCATION: EducationProps[] = [
   // {
@@ -21,4 +21,4 @@ export const EDUCATION: EducationProps[] = [
     end_year: 2019,
     link: 'https://usk.ac.id',
   },
-];
+]

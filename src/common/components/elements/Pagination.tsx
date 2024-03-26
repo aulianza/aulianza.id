@@ -1,13 +1,13 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 import {
   BiChevronLeft as PrevIcon,
   BiChevronRight as NextIcon,
-} from 'react-icons/bi';
+} from 'react-icons/bi'
 
 interface PaginationProps {
-  totalPages: number;
-  currentPage: number;
-  onPageChange: (page: number) => void;
+  totalPages: number
+  currentPage: number
+  onPageChange: (page: number) => void
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -16,22 +16,22 @@ const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
 }) => {
   const renderPageNumbers = () => {
-    const visiblePages = 3;
-    const firstPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
-    const lastPage = Math.min(totalPages, firstPage + visiblePages - 1);
+    const visiblePages = 3
+    const firstPage = Math.max(1, currentPage - Math.floor(visiblePages / 2))
+    const lastPage = Math.min(totalPages, firstPage + visiblePages - 1)
 
-    const pageNumbers: (number | '...')[] = [];
+    const pageNumbers: (number | '...')[] = []
 
     if (firstPage > 1) {
-      pageNumbers.push(1, '...');
+      pageNumbers.push(1, '...')
     }
 
     for (let i = firstPage; i <= lastPage; i++) {
-      pageNumbers.push(i);
+      pageNumbers.push(i)
     }
 
     if (lastPage < totalPages) {
-      pageNumbers.push('...', totalPages);
+      pageNumbers.push('...', totalPages)
     }
 
     return pageNumbers.map((page, index) => (
@@ -50,11 +50,11 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         {page}
       </button>
-    ));
-  };
+    ))
+  }
 
   if (!totalPages) {
-    return null;
+    return null
   }
 
   return (
@@ -81,7 +81,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

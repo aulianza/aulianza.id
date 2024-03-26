@@ -23,7 +23,7 @@ const Introduction = () => {
         deliver efficient, scalable, and visually appealing web applications.
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default Introduction;
+export default Introduction

@@ -1,25 +1,25 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
 
 interface TabProps {
-  label: React.ReactNode;
-  children: React.ReactNode;
+  label: React.ReactNode
+  children: React.ReactNode
 }
 
 interface TabsProps {
-  tabs: TabProps[];
+  tabs: TabProps[]
 }
 
 export const Tab = ({ children }: TabProps) => {
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
 export const Tabs = ({ tabs }: TabsProps) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(0)
 
   const handleTabClick = (index: number) => {
-    setActiveTab(index);
-  };
+    setActiveTab(index)
+  }
 
   return (
     <div className='rounded border-x border-b dark:border-neutral-800'>
@@ -58,5 +58,5 @@ export const Tabs = ({ tabs }: TabsProps) => {
         </AnimatePresence>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,60 +1,60 @@
-import { Combobox, Dialog, Transition } from '@headlessui/react';
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
-import { Fragment, useContext, useEffect, useState } from 'react';
+import { Combobox, Dialog, Transition } from '@headlessui/react'
+import clsx from 'clsx'
+import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
+import { Fragment, useContext, useEffect, useState } from 'react'
 import {
   BiMoon as DarkModeIcon,
   BiSearch as SearchIcon,
   BiSun as LightModeIcon,
-} from 'react-icons/bi';
-import { HiOutlineChat as AiIcon } from 'react-icons/hi';
-import { useDebounce } from 'usehooks-ts';
+} from 'react-icons/bi'
+import { HiOutlineChat as AiIcon } from 'react-icons/hi'
+import { useDebounce } from 'usehooks-ts'
 
 import {
   EXTERNAL_LINKS,
   MENU_ITEMS,
   SOCIAL_MEDIA,
-} from '@/common/constant/menu';
-import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
-import useIsMobile from '@/common/hooks/useIsMobile';
-import { MenuItemProps } from '@/common/types/menu';
-import AiLoading from '@/modules/cmdpallete/components/AiLoading';
-import AiResponses from '@/modules/cmdpallete/components/AiResponses';
-import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound';
-import { sendMessage } from '@/services/chatgpt';
+} from '@/common/constant/menu'
+import { CommandPaletteContext } from '@/common/context/CommandPaletteContext'
+import useIsMobile from '@/common/hooks/useIsMobile'
+import { MenuItemProps } from '@/common/types/menu'
+import AiLoading from '@/modules/cmdpallete/components/AiLoading'
+import AiResponses from '@/modules/cmdpallete/components/AiResponses'
+import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound'
+import { sendMessage } from '@/services/chatgpt'
 
 interface MenuOptionItemProps extends MenuItemProps {
-  click?: () => void;
-  closeOnSelect: boolean;
+  click?: () => void
+  closeOnSelect: boolean
 }
 
 interface MenuOptionProps {
-  title: string;
-  children: MenuOptionItemProps[];
+  title: string
+  children: MenuOptionItemProps[]
 }
 
 const CommandPalette = () => {
-  const [query, setQuery] = useState('');
-  const [isEmptyState, setEmptyState] = useState(false);
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [askAssistantClicked, setAskAssistantClicked] = useState(false);
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiResponse, setAiResponse] = useState('');
-  const [aiFinished, setAiFinished] = useState(false);
+  const [query, setQuery] = useState('')
+  const [isEmptyState, setEmptyState] = useState(false)
+  const [placeholderIndex, setPlaceholderIndex] = useState(0)
+  const [askAssistantClicked, setAskAssistantClicked] = useState(false)
+  const [aiLoading, setAiLoading] = useState(false)
+  const [aiResponse, setAiResponse] = useState('')
+  const [aiFinished, setAiFinished] = useState(false)
 
-  const router = useRouter();
-  const isMobile = useIsMobile();
-  const { isOpen, setIsOpen } = useContext(CommandPaletteContext);
-  const { resolvedTheme, setTheme } = useTheme();
-  const queryDebounce = useDebounce(query, 500);
+  const router = useRouter()
+  const isMobile = useIsMobile()
+  const { isOpen, setIsOpen } = useContext(CommandPaletteContext)
+  const { resolvedTheme, setTheme } = useTheme()
+  const queryDebounce = useDebounce(query, 500)
 
   const placeholders = [
     'Search or Ask anything...',
     'Press Cmd + K anytime to access this command pallete',
-  ];
+  ]
 
-  const placeholder = placeholders[placeholderIndex];
+  const placeholder = placeholders[placeholderIndex]
 
   const menuOptions: MenuOptionProps[] = [
     {
@@ -98,7 +98,7 @@ const CommandPalette = () => {
         },
       ],
     },
-  ];
+  ]
 
   const filterMenuOptions: MenuOptionProps[] = queryDebounce
     ? menuOptions.map((menu) => ({
@@ -107,96 +107,96 @@ const CommandPalette = () => {
           item.title.toLowerCase().includes(queryDebounce.toLowerCase()),
         ),
       }))
-    : menuOptions;
+    : menuOptions
 
   const handleSelect = (menu: MenuOptionItemProps) => {
-    setQuery('');
+    setQuery('')
 
-    if (menu.closeOnSelect) setIsOpen(false);
+    if (menu.closeOnSelect) setIsOpen(false)
 
-    menu.click?.();
+    menu.click?.()
 
     if (menu.isExternal) {
-      window.open(menu.href, '_blank');
+      window.open(menu.href, '_blank')
     } else {
-      router.push(menu?.href as string);
+      router.push(menu?.href as string)
     }
-  };
+  }
 
   const handleSearch = ({
     target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) => setQuery(value);
+  }: React.ChangeEvent<HTMLInputElement>) => setQuery(value)
 
   const handleFindGoogle = () => {
     const url =
-      'https://www.google.com/search?q=' + queryDebounce + '&ref=aulianza.id';
-    window.open(url, '_blank');
-  };
+      'https://www.google.com/search?q=' + queryDebounce + '&ref=aulianza.id'
+    window.open(url, '_blank')
+  }
 
   const handleAskAiAssistant = async () => {
-    setEmptyState(true);
-    setAskAssistantClicked(true);
-    setAiLoading(true);
+    setEmptyState(true)
+    setAskAssistantClicked(true)
+    setAiLoading(true)
 
-    const response = await sendMessage(queryDebounce);
+    const response = await sendMessage(queryDebounce)
 
-    setAiResponse(response);
-    setAiLoading(false);
-  };
+    setAiResponse(response)
+    setAiLoading(false)
+  }
 
   const handleAiClose = () => {
-    setAskAssistantClicked(false);
-    setAiResponse('');
-    setAiFinished(false);
-  };
+    setAskAssistantClicked(false)
+    setAiResponse('')
+    setAiFinished(false)
+  }
 
   const isActiveRoute = (href: string) => {
-    return router.pathname === href;
-  };
+    return router.pathname === href
+  }
 
   useEffect(() => {
-    if (query) setEmptyState(false);
-  }, [query]);
+    if (query) setEmptyState(false)
+  }, [query])
 
   useEffect(() => {
     if (!isMobile) {
       const timer = setTimeout(() => {
-        setPlaceholderIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
-      }, 3000);
+        setPlaceholderIndex((prevIndex) => (prevIndex === 0 ? 1 : 0))
+      }, 3000)
 
       return () => {
-        clearTimeout(timer);
-      };
+        clearTimeout(timer)
+      }
     }
-  }, [placeholderIndex, isMobile]);
+  }, [placeholderIndex, isMobile])
 
   useEffect(() => {
     if (!isOpen) {
-      setQuery('');
-      setEmptyState(false);
-      handleAiClose();
+      setQuery('')
+      setEmptyState(false)
+      handleAiClose()
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen)
       } else if (event.key === 'Escape') {
-        setIsOpen(false);
+        setIsOpen(false)
       }
-    };
+    }
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown)
 
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, setIsOpen]);
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, setIsOpen])
 
   useEffect(() => {
     if (aiResponse?.includes('```')) {
-      setAiFinished(true);
+      setAiFinished(true)
     }
-  }, [aiResponse]);
+  }, [aiResponse])
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -353,7 +353,7 @@ const CommandPalette = () => {
         </Dialog.Panel>
       </Dialog>
     </Transition.Root>
-  );
-};
+  )
+}
 
-export default CommandPalette;
+export default CommandPalette

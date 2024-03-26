@@ -1,6 +1,6 @@
-import { SiJavascript } from 'react-icons/si';
+import { SiJavascript } from 'react-icons/si'
 
-import Playground from '@/modules/playground';
+import Playground from '@/modules/playground'
 
 const ContentPlayground = ({ initialCode }: { initialCode: string }) => {
   return (
@@ -11,7 +11,7 @@ const ContentPlayground = ({ initialCode }: { initialCode: string }) => {
       </div>
       <Playground initialCode={initialCode} />
     </>
-  );
-};
+  )
+}
 
-export default ContentPlayground;
+export default ContentPlayground

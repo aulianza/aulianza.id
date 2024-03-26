@@ -1,7 +1,7 @@
 type BreaklineProps = {
-  className?: string;
-  [propName: string]: string | undefined;
-};
+  className?: string
+  [propName: string]: string | undefined
+}
 
 const Breakline = ({ className = '', ...others }: BreaklineProps) => {
   return (
@@ -10,7 +10,7 @@ const Breakline = ({ className = '', ...others }: BreaklineProps) => {
       data-testid='breakline'
       {...others}
     ></div>
-  );
-};
+  )
+}
 
-export default Breakline;
+export default Breakline

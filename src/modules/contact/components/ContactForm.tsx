@@ -1,65 +1,65 @@
-import axios from 'axios';
-import clsx from 'clsx';
-import { useState } from 'react';
-import { FiClock as ClockIcon } from 'react-icons/fi';
+import axios from 'axios'
+import clsx from 'clsx'
+import { useState } from 'react'
+import { FiClock as ClockIcon } from 'react-icons/fi'
 
-import Button from '@/common/components/elements/Button';
+import Button from '@/common/components/elements/Button'
 
 interface FormDataProps {
-  name: string;
-  email: string;
-  message: string;
+  name: string
+  email: string
+  message: string
 }
 
 const formInitialState: FormDataProps = {
   name: '',
   email: '',
   message: '',
-};
+}
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormDataProps>(formInitialState);
+  const [formData, setFormData] = useState<FormDataProps>(formInitialState)
 
-  const [formErrors, setFormErrors] = useState<Partial<FormDataProps>>({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [formErrors, setFormErrors] = useState<Partial<FormDataProps>>({})
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
+    })
     setFormErrors({
       ...formErrors,
       [name]: value ? undefined : `${name} is required`,
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const hasErrors = Object.values(formErrors).some((error) => error);
+    const hasErrors = Object.values(formErrors).some((error) => error)
 
     if (!hasErrors) {
-      setIsLoading(true);
+      setIsLoading(true)
       try {
-        const response = await axios.post('/api/contact', { formData });
+        const response = await axios.post('/api/contact', { formData })
         if (response.status === 200) {
-          alert('Message sent!');
-          setFormData(formInitialState);
+          alert('Message sent!')
+          setFormData(formInitialState)
         }
       } catch (error) {
-        alert(error);
+        alert(error)
       }
-      setIsLoading(false);
+      setIsLoading(false)
     } else {
-      alert('Error!');
+      alert('Error!')
     }
-  };
+  }
 
-  const isSubmitDisabled = Object.values(formErrors).some((error) => error);
+  const isSubmitDisabled = Object.values(formErrors).some((error) => error)
 
   return (
     <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ const ContactForm = () => {
         </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const OPENAI_URL = 'https://api.openai.com/v1/completions';
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_URL = 'https://api.openai.com/v1/completions'
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY
 
 export const postChatPrompt = async (prompt: string) => {
   const response = await axios.post(
@@ -18,35 +18,35 @@ export const postChatPrompt = async (prompt: string) => {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
     },
-  );
+  )
 
-  const status = response?.status;
+  const status = response?.status
 
   if (status >= 400) {
     return {
       status,
       message: response?.statusText,
-    };
+    }
   }
 
-  const data = response.data;
+  const data = response.data
 
   return {
     status,
     data,
-  };
-};
+  }
+}
 
 export const sendMessage = async (prompt: string) => {
   try {
     const response = await axios.post('/api/chat', {
       prompt,
-    });
+    })
 
-    const data = response.data;
+    const data = response.data
 
-    return data?.reply;
+    return data?.reply
   } catch (error) {
-    return '';
+    return ''
   }
-};
+}

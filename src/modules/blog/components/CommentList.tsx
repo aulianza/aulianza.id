@@ -1,26 +1,26 @@
-import { useMemo } from 'react';
-import useSWR from 'swr';
+import { useMemo } from 'react'
+import useSWR from 'swr'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import Loading from '@/common/components/elements/Loading';
-import { CommentItemProps } from '@/common/types/blog';
-import { fetcher } from '@/services/fetcher';
+import EmptyState from '@/common/components/elements/EmptyState'
+import Loading from '@/common/components/elements/Loading'
+import { CommentItemProps } from '@/common/types/blog'
+import { fetcher } from '@/services/fetcher'
 
-import CommentItem from './CommentItem';
+import CommentItem from './CommentItem'
 
 type CommentListProps = {
-  id: number;
-  totalComments: number;
-};
+  id: number
+  totalComments: number
+}
 
 const CommentList = ({ id, totalComments }: CommentListProps) => {
-  const { data, isLoading } = useSWR(`/api/comments?post_id=${id}`, fetcher);
+  const { data, isLoading } = useSWR(`/api/comments?post_id=${id}`, fetcher)
 
   const commentsData: CommentItemProps[] = useMemo(() => {
-    return data?.data || [];
-  }, [data]);
+    return data?.data || []
+  }, [data])
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading />
 
   return (
     <section className='space-y-5 pb-6 pt-4'>
@@ -37,7 +37,7 @@ const CommentList = ({ id, totalComments }: CommentListProps) => {
         <EmptyState message='No Comment.' />
       )}
     </section>
-  );
-};
+  )
+}
 
-export default CommentList;
+export default CommentList

@@ -1,11 +1,11 @@
-import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi';
+import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi'
 
-import useChatStore from '@/common/stores/useChatStore';
+import useChatStore from '@/common/stores/useChatStore'
 
-import ChatWidget from './ChatWidget';
+import ChatWidget from './ChatWidget'
 
 const ChatButton = () => {
-  const { isOpen, toggleChat } = useChatStore();
+  const { isOpen, toggleChat } = useChatStore()
 
   return (
     <>
@@ -18,7 +18,7 @@ const ChatButton = () => {
       </button>
       <ChatWidget isOpen={isOpen} toggleChat={toggleChat} />
     </>
-  );
-};
+  )
+}
 
-export default ChatButton;
+export default ChatButton

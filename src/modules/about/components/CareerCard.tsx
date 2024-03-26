@@ -1,13 +1,13 @@
-import { differenceInMonths, differenceInYears, format } from 'date-fns';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
-import { BsBuildings as CompanyIcon } from 'react-icons/bs';
-import { HiChevronRight } from 'react-icons/hi';
+import { differenceInMonths, differenceInYears, format } from 'date-fns'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { BsBuildings as CompanyIcon } from 'react-icons/bs'
+import { HiChevronRight } from 'react-icons/hi'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import cn from '@/common/libs/cn';
-import { CareerProps } from '@/common/types/careers';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import cn from '@/common/libs/cn'
+import { CareerProps } from '@/common/types/careers'
 
 const CareerCard = ({
   position,
@@ -23,26 +23,26 @@ const CareerCard = ({
   responsibilities,
 }: CareerProps) => {
   const [isShowResponsibility, setIsShowResponsibility] =
-    useState<boolean>(false);
+    useState<boolean>(false)
 
-  const startDateFormatted = format(new Date(start_date), 'MMM yyyy');
+  const startDateFormatted = format(new Date(start_date), 'MMM yyyy')
   const endDateFormatted = end_date
     ? format(new Date(end_date), 'MMM yyyy')
-    : 'Present';
+    : 'Present'
 
   const durationYears = differenceInYears(
     new Date(end_date || Date.now()),
     new Date(start_date),
-  );
+  )
   const durationMonths =
     (differenceInMonths(
       new Date(end_date || Date.now()),
       new Date(start_date),
     ) %
       12) +
-    1;
+    1
 
-  const durationText = `${durationYears > 0 ? `${durationYears} Year${durationYears > 1 ? 's' : ''}, ` : ''}${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
+  const durationText = `${durationYears > 0 ? `${durationYears} Year${durationYears > 1 ? 's' : ''}, ` : ''}${durationMonths} Month${durationMonths > 1 ? 's' : ''}`
 
   return (
     <Card className='flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900'>
@@ -136,7 +136,7 @@ const CareerCard = ({
         </AnimatePresence>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CareerCard;
+export default CareerCard

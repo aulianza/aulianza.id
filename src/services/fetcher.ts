@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export const fetcher = (url: string) =>
-  axios.get(url).then((response) => response.data);
+  axios.get(url).then((response) => response.data)

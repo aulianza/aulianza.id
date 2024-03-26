@@ -1,15 +1,15 @@
-import { Popover, Transition } from '@headlessui/react';
-import Image from 'next/image';
-import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react'
+import Image from 'next/image'
+import { Fragment } from 'react'
 
-import { NowPlayingProps } from '@/common/types/spotify';
+import { NowPlayingProps } from '@/common/types/spotify'
 
 interface PlayerPopoverProps {
-  isShow: boolean;
-  playing: NowPlayingProps;
+  isShow: boolean
+  playing: NowPlayingProps
 }
 const PlayerPopover = ({ isShow, playing }: PlayerPopoverProps) => {
-  const { albumImageUrl, album, title, artist } = playing;
+  const { albumImageUrl, album, title, artist } = playing
 
   return (
     <Transition
@@ -54,7 +54,7 @@ const PlayerPopover = ({ isShow, playing }: PlayerPopoverProps) => {
         </div>
       </Popover.Panel>
     </Transition>
-  );
-};
+  )
+}
 
-export default PlayerPopover;
+export default PlayerPopover

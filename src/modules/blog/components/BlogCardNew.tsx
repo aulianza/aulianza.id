@@ -1,25 +1,25 @@
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-import { BsArrowRight as MoreIcon } from 'react-icons/bs';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
-import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useState } from 'react'
+import { BsArrowRight as MoreIcon } from 'react-icons/bs'
+import { FaRegEye as ViewIcon } from 'react-icons/fa'
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi'
+import { TbCalendarBolt as DateIcon } from 'react-icons/tb'
 
-import Breakline from '@/common/components/elements/Breakline';
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import Tooltip from '@/common/components/elements/Tooltip';
+import Breakline from '@/common/components/elements/Breakline'
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import Tooltip from '@/common/components/elements/Tooltip'
 import {
   calculateReadingTime,
   formatDate,
   formatExcerpt,
-} from '@/common/helpers';
-import { BlogItemProps } from '@/common/types/blog';
+} from '@/common/helpers'
+import { BlogItemProps } from '@/common/types/blog'
 
 interface BlogCardProps extends BlogItemProps {
-  isExcerpt?: boolean;
+  isExcerpt?: boolean
 }
 
 const BlogCardNew = ({
@@ -34,17 +34,17 @@ const BlogCardNew = ({
   tags_list,
   isExcerpt = true,
 }: BlogCardProps) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false)
 
-  const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0;
-  const tagList = tags_list || [];
+  const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0
+  const tagList = tags_list || []
 
-  const defaultImage = '/images/placeholder.png';
+  const defaultImage = '/images/placeholder.png'
 
   const slideDownVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
-  };
+  }
 
   return (
     <Link href={`/blog/${slug}?id=${id}`}>
@@ -150,7 +150,7 @@ const BlogCardNew = ({
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default BlogCardNew;
+export default BlogCardNew

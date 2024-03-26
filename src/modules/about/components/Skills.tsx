@@ -1,37 +1,37 @@
-import styled from '@emotion/styled';
-import { ReactNode, useEffect, useState } from 'react';
+import styled from '@emotion/styled'
+import { ReactNode, useEffect, useState } from 'react'
 
-import InfiniteLoopSlider from '@/common/components/elements/InfiniteLoopSlider';
-import { STACKS } from '@/common/constant/stacks';
+import InfiniteLoopSlider from '@/common/components/elements/InfiniteLoopSlider'
+import { STACKS } from '@/common/constant/stacks'
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
   <div className='mr-3 flex w-max items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-5 py-2 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50'>
     {icon}
     <span>{title}</span>
   </div>
-);
+)
 
 const Skills = () => {
   const [shuffledSkills, setShuffledSkills] = useState<
     Array<[string, ReactNode]>
-  >([]);
+  >([])
 
   useEffect(() => {
-    const skillsArray = Object.entries(STACKS);
-    const shuffledArray = [...skillsArray].sort(() => Math.random() - 0.5);
-    setShuffledSkills(shuffledArray);
-  }, []);
+    const skillsArray = Object.entries(STACKS)
+    const shuffledArray = [...skillsArray].sort(() => Math.random() - 0.5)
+    setShuffledSkills(shuffledArray)
+  }, [])
 
   const sliders = Array.from({ length: 3 }, (_, index) => {
-    const sliderSkills = [...shuffledSkills].sort(() => Math.random() - 0.5);
+    const sliderSkills = [...shuffledSkills].sort(() => Math.random() - 0.5)
     return (
       <InfiniteLoopSlider key={index} isReverse={index === 1}>
         {sliderSkills.map(([title, icon], index) => (
           <Tag key={index} icon={icon} title={title} />
         ))}
       </InfiniteLoopSlider>
-    );
-  });
+    )
+  })
 
   return (
     <div className='space-y-8'>
@@ -42,10 +42,10 @@ const Skills = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills
 
 const StyledFade = styled.div`
   pointer-events: none;
@@ -58,4 +58,4 @@ const StyledFade = styled.div`
   );
   position: absolute;
   inset: 0;
-`;
+`

@@ -1,9 +1,9 @@
-import { BiSearchAlt as SearchIcon, BiX as ClearIcon } from 'react-icons/bi';
+import { BiSearchAlt as SearchIcon, BiX as ClearIcon } from 'react-icons/bi'
 
 interface SearchBarProps {
-  searchTerm: string;
-  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onClearSearch: () => void;
+  searchTerm: string
+  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onClearSearch: () => void
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -34,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

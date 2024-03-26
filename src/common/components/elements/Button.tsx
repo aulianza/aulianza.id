@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: ReactNode;
-  isLoading?: boolean;
+  icon?: ReactNode
+  isLoading?: boolean
 }
 
 const Button = ({
@@ -26,7 +26,7 @@ const Button = ({
         </>
       )}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

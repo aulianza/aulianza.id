@@ -1,17 +1,17 @@
-import { useTheme } from 'next-themes';
-import { BiMoon as DarkModeIcon, BiSun as LightModeIcon } from 'react-icons/bi';
+import { useTheme } from 'next-themes'
+import { BiMoon as DarkModeIcon, BiSun as LightModeIcon } from 'react-icons/bi'
 
-import useHasMounted from '@/common/hooks/useHasMounted';
+import useHasMounted from '@/common/hooks/useHasMounted'
 
 const ToggleMode = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const hasMounted = useHasMounted();
+  const { resolvedTheme, setTheme } = useTheme()
+  const hasMounted = useHasMounted()
 
   const isDarkTheme =
-    hasMounted && (resolvedTheme === 'dark' || resolvedTheme === 'system');
+    hasMounted && (resolvedTheme === 'dark' || resolvedTheme === 'system')
 
   const toggleTheme = () =>
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
 
   return (
     <button
@@ -28,7 +28,7 @@ const ToggleMode = () => {
         {isDarkTheme ? 'Light Mode' : 'Dark Mode'}
       </div>
     </button>
-  );
-};
+  )
+}
 
-export default ToggleMode;
+export default ToggleMode

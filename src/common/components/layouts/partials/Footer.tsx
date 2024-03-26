@@ -6,7 +6,7 @@ const Footer = () => {
         <div>Built with Next.js</div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

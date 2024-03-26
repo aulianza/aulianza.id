@@ -1,28 +1,42 @@
 /* eslint-disable unused-imports/no-unused-vars */
-import { ReactNode } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { ReactNode } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from './CodeBlock'
+import { PluggableList } from 'unified'
+import { remarkHeading } from '@/common/components/elements/mdx/remark-heading'
+import { remarkCode } from '@/common/components/elements/mdx/remark-code'
+import { rehypeCode } from '@/common/components/elements/mdx/rehype-code'
 
 interface MarkdownRendererProps {
-  children: string;
+  children: string
 }
 
 interface TableProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Table = ({ children }: TableProps) => (
   <div className='table-container'>
     <table className='table w-full'>{children}</table>
   </div>
-);
+)
 
+export const remarkPlugins: PluggableList = [
+  remarkGfm,
+  remarkHeading,
+  remarkCode,
+]
+
+const rehypePlugins: PluggableList = [rehypeCode]
+//rehypeInlineCode
+// ]
 const MDXComponent = ({ children }: MarkdownRendererProps) => {
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={remarkPlugins}
+      //rehypePlugins={rehypePlugins}
       components={{
         a: (props) => (
           <a
@@ -43,10 +57,10 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
             {...props}
           />
         ),
-        ul: ({ ordered, ...props }) => (
+        ul: ({ ...props }) => (
           <ul className='list-disc space-y-3 pb-2 pl-10' {...props} />
         ),
-        ol: ({ ordered, ...props }) => (
+        ol: ({ ...props }) => (
           <ol className='list-decimal space-y-3 pb-2 pl-10' {...props} />
         ),
         code: (props) => <CodeBlock {...props} />,
@@ -71,7 +85,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
     >
       {children}
     </ReactMarkdown>
-  );
-};
+  )
+}
 
-export default MDXComponent;
+export default MDXComponent

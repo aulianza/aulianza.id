@@ -50,6 +50,15 @@ export const fetchGithubData = async (
   const status: number = response.status
   const responseJson = response.data
 
+  const hasError = responseJson.errors && responseJson.errors.length > 0
+
+  if (hasError) {
+    const upstreamError = responseJson.errors[0]
+    return {
+      status: 500,
+      error: upstreamError.message,
+    }
+  }
   if (status > 400) {
     return { status, data: {} }
   }

@@ -1,5 +1,7 @@
-module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+import type { Config } from 'tailwindcss'
+
+const config: Partial<Config> = {
+  content: ['./src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -49,5 +51,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwind-scrollbar-hide')],
 }
+
+export default config

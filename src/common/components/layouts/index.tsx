@@ -1,42 +1,42 @@
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
-import { ReactNode } from 'react';
-import { useWindowSize } from 'usehooks-ts';
+import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
+import { useTheme } from 'next-themes'
+import { ReactNode } from 'react'
+import { useWindowSize } from 'usehooks-ts'
 
-import useHasMounted from '@/common/hooks/useHasMounted';
-import ChatButton from '@/modules/chat/components/ChatButton';
+import useHasMounted from '@/common/hooks/useHasMounted'
+import ChatButton from '@/modules/chat/components/ChatButton'
 
-import HeaderSidebar from './header/HeaderSidebar';
-import HeaderTop from './header/HeaderTop';
-import NowPlayingBar from '../elements/NowPlayingBar';
-import NowPlayingCard from '../elements/NowPlayingCard';
+import HeaderSidebar from './header/HeaderSidebar'
+import HeaderTop from './header/HeaderTop'
+import NowPlayingBar from '../elements/NowPlayingBar'
+import NowPlayingCard from '../elements/NowPlayingCard'
 
 // import TopBar from '../elements/TopBar';
 
 interface LayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { resolvedTheme } = useTheme();
-  const hasMounted = useHasMounted();
-  const { width } = useWindowSize();
-  const isMobile = width < 480;
+  const { resolvedTheme } = useTheme()
+  const hasMounted = useHasMounted()
+  const pathname = usePathname()
+  const { width } = useWindowSize()
+  const isMobile = width < 480
 
   const isDarkTheme =
-    hasMounted && (resolvedTheme === 'dark' || resolvedTheme === 'system');
+    hasMounted && (resolvedTheme === 'dark' || resolvedTheme === 'system')
 
-  const router = useRouter();
-  const pageName = router.pathname.split('/')[1];
+  const pageName = pathname.split('/')[1]
 
   const isFullPageHeader =
     pageName === 'playground' ||
     pageName === 'blog' ||
-    router.pathname.startsWith('/blog/') ||
-    router.pathname.startsWith('/learn/');
+    pathname.startsWith('/blog/') ||
+    pathname.startsWith('/learn/')
 
-  const isShowChatButton = pageName !== 'guestbook';
+  const isShowChatButton = pageName !== 'guestbook'
 
   return (
     <>
@@ -64,7 +64,7 @@ const Layout = ({ children }: LayoutProps) => {
       {isShowChatButton && <ChatButton />}
       {isMobile ? <NowPlayingCard /> : <NowPlayingBar />}
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang='en'>
       <head>
-        <script
-          async
-          defer
-          src='https://analytics.aulianza.com/script.js'
-          data-website-id='5a78190a-bdad-48a4-901a-c7400be41ca6'
-        ></script>
+        {/*<script*/}
+        {/*  async*/}
+        {/*  defer*/}
+        {/*  src='https://analytics.aulianza.com/script.js'*/}
+        {/*  data-website-id='5a78190a-bdad-48a4-901a-c7400be41ca6'*/}
+        {/*></script>*/}
         <link
           rel='apple-touch-icon'
           sizes='180x180'

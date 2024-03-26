@@ -1,15 +1,16 @@
-import styled from '@emotion/styled';
-import { useTheme } from 'next-themes';
+import styled from '@emotion/styled'
+import { useTheme } from 'next-themes'
 
 const ThemeToggleButton = () => {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme()
 
   const toggleTheme = () =>
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
 
   return (
     <StyledToggle className='flex'>
       <input
+        suppressHydrationWarning
         checked={resolvedTheme === 'dark'}
         type='checkbox'
         className='mode-toggle'
@@ -95,10 +96,10 @@ const ThemeToggleButton = () => {
         </svg>
       </label>
     </StyledToggle>
-  );
-};
+  )
+}
 
-export default ThemeToggleButton;
+export default ThemeToggleButton
 
 const StyledToggle = styled.div`
   .mode-toggle {
@@ -213,4 +214,4 @@ const StyledToggle = styled.div`
       opacity: 0.25;
     }
   }
-`;
+`

@@ -20,8 +20,8 @@ export const PAIR_DEVICES: Record<string, DeviceInfoProps> = {
   },
   Smartphone: {
     icon: <BsPhone className={iconClassName} size={iconSize} />,
-    model: 'iPhone 13 Pro',
-    id: 'aulianza-iphone',
+    model: 'Samsung S23 Ultra',
+    id: 'thijmen-phone',
   },
   Tablet: {
     icon: <BsTablet className={iconClassName} size={iconSize} />,

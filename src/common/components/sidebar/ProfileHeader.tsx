@@ -21,7 +21,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
     >
       <Image
         src='/images/aulianza-new.png'
-        alt='Ryan Aulia'
+        alt='Thijmen Stavenuiter'
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         rounded='rounded-full'
@@ -30,7 +30,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
       <div className='mt-1 flex items-center gap-2 lg:mt-4'>
         <Link href='/' passHref>
           <h2 className='flex-grow font-sora text-lg font-medium lg:text-xl'>
-            Ryan Aulia
+            Thijmen Stavenuiter
           </h2>
         </Link>
         <Tooltip title='Verified'>

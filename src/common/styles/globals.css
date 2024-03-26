@@ -146,7 +146,7 @@ a {
 
 pre.shiki .line {
   font-size: 13px;
-  padding: 0 1rem;
+  padding: 0 theme(spacing.4);
 }
 
 pre.shiki .highlighted {

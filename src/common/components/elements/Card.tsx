@@ -1,9 +1,11 @@
+'use client'
 import styled from '@emotion/styled'
 import { ReactNode } from 'react'
 
 interface CardProps {
   children: ReactNode
   className?: string
+
   [propName: string]: unknown
 }
 

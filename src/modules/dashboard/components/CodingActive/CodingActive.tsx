@@ -1,3 +1,4 @@
+'use client'
 import { formatDistanceToNowStrict } from 'date-fns'
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz'
 import Link from 'next/link'

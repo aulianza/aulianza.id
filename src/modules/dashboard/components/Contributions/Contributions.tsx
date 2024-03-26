@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { BsGithub as GithubIcon } from 'react-icons/bs'
 import useSWR from 'swr'

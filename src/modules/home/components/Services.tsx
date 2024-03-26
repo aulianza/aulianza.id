@@ -1,9 +1,10 @@
-import Router from 'next/router';
-import { BiRocket as RocketIcon } from 'react-icons/bi';
+'use client'
+import Router from 'next/router'
+import { BiRocket as RocketIcon } from 'react-icons/bi'
 
-import Button from '@/common/components/elements/Button';
-import Card from '@/common/components/elements/Card';
-import SectionHeading from '@/common/components/elements/SectionHeading';
+import Button from '@/common/components/elements/Button'
+import Card from '@/common/components/elements/Card'
+import SectionHeading from '@/common/components/elements/SectionHeading'
 
 const Services = () => {
   return (
@@ -33,7 +34,7 @@ const Services = () => {
         </Button>
       </Card>
     </section>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

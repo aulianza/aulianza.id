@@ -3,11 +3,11 @@ import {
   ProjectEntryStackCategoryFragmentFragment,
 } from '@/__generated__/graphql'
 import Image from '@/common/components/elements/Image'
-import MDXComponent from '@/common/components/elements/MDXComponent'
 import Tooltip from '@/common/components/elements/Tooltip'
 import { getStackIcon } from '@/common/constant/stacks'
 
 import ProjectLink from './ProjectLink'
+import Mdx from '@/common/components/elements/mdx/Mdx'
 
 const ProjectDetail = ({
   project,
@@ -50,7 +50,7 @@ const ProjectDetail = ({
       />
       {project.projectInformation && (
         <div className='mt-5 space-y-6 leading-[1.8] dark:text-neutral-300'>
-          <MDXComponent>{project.projectInformation}</MDXComponent>
+          <Mdx content={project.projectInformation} />
         </div>
       )}
     </div>

@@ -60,3 +60,22 @@ a {
 ::-webkit-scrollbar-thumb {
   @apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-400;
 }
+
+.shiki span {
+  color: var(--shiki-light);
+}
+
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+
+pre.shiki .line {
+  font-size: 13px;
+  /*padding: 0 theme(spacing .4);*/
+}
+
+pre.shiki .highlighted {
+  width: 100%;
+  display: inline-block;
+  /*background-color: theme('colors.primary.DEFAULT / 10%');*/
+}

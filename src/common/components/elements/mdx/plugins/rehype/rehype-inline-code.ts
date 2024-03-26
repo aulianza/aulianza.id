@@ -1,3 +1,8 @@
+/**
+ * Adapted from:
+ * - https://github.com/wevm/vocs/blob/75e0cfc874e7abe8648be139a8554e1fe87a18d1/src/vite/plugins/rehype/inline-shiki.ts
+ * - https://github.com/shikijs/shiki/blob/481135b16287d7dabc2e155f427af63d3ff3536d/packages/rehype/src/index.ts
+ */
 import type { RehypeShikiCoreOptions } from '@shikijs/rehype/core'
 import type { Root } from 'hast'
 import { bundledLanguages, getHighlighter, type Highlighter } from 'shiki'

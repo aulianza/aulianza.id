@@ -2,13 +2,9 @@ import Slugger from 'github-slugger'
 import { type Plugin } from 'unified'
 import { visit } from 'unist-util-visit'
 
-const slugger = new Slugger()
+import { type TOC } from '../../types'
 
-export interface TOC {
-  title: string
-  url: string
-  depth: number
-}
+const slugger = new Slugger()
 
 export const remarkHeading: Plugin = () => {
   return (tree, file) => {

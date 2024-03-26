@@ -1,12 +1,6 @@
 /* eslint-disable unused-imports/no-unused-vars */
 import { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import { PluggableList } from 'unified'
-
-import { rehypeCode } from '@/common/components/elements/mdx/rehype-code'
-import { remarkCode } from '@/common/components/elements/mdx/remark-code'
-import { remarkHeading } from '@/common/components/elements/mdx/remark-heading'
 
 import CodeBlock from './CodeBlock'
 
@@ -24,19 +18,10 @@ const Table = ({ children }: TableProps) => (
   </div>
 )
 
-export const remarkPlugins: PluggableList = [
-  remarkGfm,
-  remarkHeading,
-  remarkCode,
-]
-
-const rehypePlugins: PluggableList = [rehypeCode]
-//rehypeInlineCode
-// ]
 const MDXComponent = ({ children }: MarkdownRendererProps) => {
   return (
     <ReactMarkdown
-      remarkPlugins={remarkPlugins}
+      //remarkPlugins={remarkPlugins}
       //rehypePlugins={rehypePlugins}
       components={{
         a: (props) => (

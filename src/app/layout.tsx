@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ClientLayout from '@/app/ClientLayout'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html suppressHydrationWarning lang='en'>
       <head>
         <script
           async
@@ -44,7 +45,9 @@ export default function RootLayout({
         />
         <meta name='theme-color' content='#121212' />
       </head>
-      <body>{children}</body>
+      <body>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   )
 }

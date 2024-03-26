@@ -22,15 +22,18 @@ type CopyButtonProps = {
 const getLanguageIcon = (lang: string): React.ReactNode => {
   switch (lang) {
     case 'js': {
+      // @ts-ignore
       return <SiJavascript className='size-3.5' />
     }
 
     case 'ts': {
+      // @ts-ignore
       return <SiTypescript className='size-3.5' />
     }
 
     case 'jsx':
     case 'tsx': {
+      // @ts-ignore
       return <SiReact className='size-3.5' />
     }
 
@@ -60,13 +63,13 @@ const Pre = (props: PreProps) => {
   }, [])
 
   return (
-    <figure className='not-prose bg-secondary/50 group relative my-6 overflow-hidden rounded-lg border text-sm'>
+    <figure className='not-prose group relative my-6 overflow-hidden rounded-lg border bg-secondary/50 text-sm'>
       {title ? (
-        <div className='bg-muted flex flex-row items-center gap-2 border-b px-4 py-1.5'>
+        <div className='flex flex-row items-center gap-2 border-b bg-muted px-4 py-1.5'>
           {lang && (
             <div className='text-muted-foreground'>{getLanguageIcon(lang)}</div>
           )}
-          <figcaption className='text-muted-foreground flex-1 truncate'>
+          <figcaption className='flex-1 truncate text-muted-foreground'>
             {title}
           </figcaption>
           <CopyButton text={text} />

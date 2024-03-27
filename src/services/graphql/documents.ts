@@ -8,7 +8,7 @@ export const projectEntryStackCategoryFragment = gql(/* GraphQL */ `
   }
 `)
 export const projectEntryFragment = gql(/* GraphQL */ `
-  fragment ProjectEntryFragment on projects_project_Entry {
+  fragment ProjectEntryFragment on project_Entry {
     id
     title
     slug
@@ -24,7 +24,7 @@ export const projectEntryFragment = gql(/* GraphQL */ `
 `)
 
 export const projectDetailFragment = gql(/* GraphQL */ `
-  fragment ProjectDetailFragment on projects_project_Entry {
+  fragment ProjectDetailFragment on project_Entry {
     title
     slug
     dateCreated

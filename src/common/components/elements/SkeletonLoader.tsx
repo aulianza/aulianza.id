@@ -1,3 +1,4 @@
+'use client'
 import { useTheme } from 'next-themes'
 import { ReactNode } from 'react'
 import { SkeletonTheme } from 'react-loading-skeleton'

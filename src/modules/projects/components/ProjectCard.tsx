@@ -22,7 +22,7 @@ const ProjectCard = ({
   return (
     <Link href={`/projects/${project.slug}`}>
       <Card className='group relative cursor-pointer border border-neutral-200 dark:border-neutral-900 lg:hover:scale-[102%]'>
-        {project.projectFeatured && (
+        {project.isFeatured && (
           <div className='absolute right-0 top-0 z-[2] flex items-center gap-1 rounded-bl-xl rounded-tr-xl bg-lime-300 px-2 py-1 text-[13px] font-medium text-emerald-950'>
             <PinIcon size={15} />
             <span>Featured</span>
@@ -48,7 +48,7 @@ const ProjectCard = ({
             </div>
           </div>
           <p className='text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-400'>
-            {project.projectDescription}
+            {project.description}
           </p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
             {stacks.map((stack: ProjectEntryStackCategoryFragmentFragment) => (

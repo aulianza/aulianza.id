@@ -13,7 +13,7 @@ export const projectEntryFragment = gql(/* GraphQL */ `
     title
     slug
     isFeatured
-    projectDescription
+    description
     projectHeaderImage {
       url
     }
@@ -30,7 +30,7 @@ export const projectDetailFragment = gql(/* GraphQL */ `
     dateCreated
     dateUpdated
     projectInformation
-    projectDescription
+    description
     projectLiveDemoLink
     projectSourcecodeRepositoryLink
     projectHeaderImage {

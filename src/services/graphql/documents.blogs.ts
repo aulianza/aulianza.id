@@ -5,11 +5,16 @@ export const blogOverviewFragment = gql(/* GraphQL */ `
     id
     title
     slug
+    dateCreated
+    description
     isFeatured
+    featuredImage {
+      url
+    }
   }
 `)
 
-export const getBlogOverviewDocument = gql(/* GraphQL */ `
+export const getBlogOverviewDocument = gql/* GraphQL */ `
   ${blogOverviewFragment}
 
   query GetBlogs {
@@ -17,4 +22,4 @@ export const getBlogOverviewDocument = gql(/* GraphQL */ `
       ...BlogOverviewEntryFragment
     }
   }
-`)
+`

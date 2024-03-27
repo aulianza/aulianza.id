@@ -17,7 +17,7 @@ interface ProjectsDetailPageProps {
 
 const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
   const PAGE_TITLE = project.title!
-  const PAGE_DESCRIPTION = project.projectDescription!
+  const PAGE_DESCRIPTION = project.description!
 
   const canonicalUrl = `https://aulianza.id/project/${project.slug}`
 

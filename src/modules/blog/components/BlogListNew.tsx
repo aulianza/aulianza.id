@@ -73,9 +73,11 @@ const BlogListNew = (props: Props) => {
 
   const total_posts = props.blogs.length
 
+  const featuredBlogs = [...props.blogs].filter((blog) => blog.isFeatured)
+
   return (
     <div className='space-y-10'>
-      <BlogFeaturedSection />
+      <BlogFeaturedSection featuredBlogs={featuredBlogs} />
 
       <div className='space-y-5'>
         <div className='mb-6 flex flex-col items-center justify-between gap-3 sm:flex-row'>

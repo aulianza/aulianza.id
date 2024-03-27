@@ -1188,6 +1188,7 @@ export type EntryCriteriaInput = {
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   /** Narrows the query results to only elements that are descendants of another element in its structure provided by its ID. */
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1195,6 +1196,9 @@ export type EntryCriteriaInput = {
   editable?: InputMaybe<Scalars['Boolean']['input']>
   /** Narrows the query results based on the entries’ expiry dates. */
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   /** Narrows the query results based on the field the entries are contained by. */
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   /** Narrows the query results based on the field the entries are contained by, per the fields’ IDs. */
@@ -1242,9 +1246,6 @@ export type EntryCriteriaInput = {
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   /** Narrows the query results based on the primary owner element of the entries, per the owners’ IDs. */
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1456,11 +1457,15 @@ export type EntryInterfaceAncestorsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1482,9 +1487,6 @@ export type EntryInterfaceAncestorsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1544,11 +1546,15 @@ export type EntryInterfaceChildrenArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1570,9 +1576,6 @@ export type EntryInterfaceChildrenArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1632,11 +1635,15 @@ export type EntryInterfaceDescendantsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1658,9 +1665,6 @@ export type EntryInterfaceDescendantsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1720,11 +1724,15 @@ export type EntryInterfaceLocalizedArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1746,9 +1754,6 @@ export type EntryInterfaceLocalizedArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1808,11 +1813,15 @@ export type EntryInterfaceNextArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1834,9 +1843,6 @@ export type EntryInterfaceNextArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1896,11 +1902,15 @@ export type EntryInterfaceParentArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -1922,9 +1932,6 @@ export type EntryInterfaceParentArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -1984,11 +1991,15 @@ export type EntryInterfacePrevArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -2010,9 +2021,6 @@ export type EntryInterfacePrevArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2246,11 +2254,15 @@ export type QueryBlogBlockFieldEntriesArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
@@ -2270,9 +2282,6 @@ export type QueryBlogBlockFieldEntriesArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2329,11 +2338,15 @@ export type QueryBlogsEntriesArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
@@ -2352,9 +2365,6 @@ export type QueryBlogsEntriesArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2564,11 +2574,15 @@ export type QueryEntriesArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -2590,9 +2604,6 @@ export type QueryEntriesArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2651,11 +2662,15 @@ export type QueryEntryArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -2677,9 +2692,6 @@ export type QueryEntryArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2738,11 +2750,15 @@ export type QueryEntryCountArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -2764,9 +2780,6 @@ export type QueryEntryCountArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -2825,11 +2838,15 @@ export type QueryProjectsEntriesArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
@@ -2848,9 +2865,6 @@ export type QueryProjectsEntriesArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3400,11 +3414,15 @@ export type BlogSection_EntryAncestorsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3426,9 +3444,6 @@ export type BlogSection_EntryAncestorsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3487,11 +3502,15 @@ export type BlogSection_EntryChildrenArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3513,9 +3532,6 @@ export type BlogSection_EntryChildrenArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3574,11 +3590,15 @@ export type BlogSection_EntryDescendantsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3600,9 +3620,6 @@ export type BlogSection_EntryDescendantsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3661,11 +3678,15 @@ export type BlogSection_EntryLocalizedArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3687,9 +3708,6 @@ export type BlogSection_EntryLocalizedArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3748,11 +3766,15 @@ export type BlogSection_EntryNextArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3774,9 +3796,6 @@ export type BlogSection_EntryNextArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3835,11 +3854,15 @@ export type BlogSection_EntryParentArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3861,9 +3884,6 @@ export type BlogSection_EntryParentArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -3922,11 +3942,15 @@ export type BlogSection_EntryPrevArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -3948,9 +3972,6 @@ export type BlogSection_EntryPrevArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4017,6 +4038,7 @@ export type Blog_Entry = ElementInterface &
     dateUpdated?: Maybe<Scalars['DateTime']['output']>
     /** The entry’s descendants, if the section is a structure. Accepts the same arguments as the `entries` query. */
     descendants: Array<EntryInterface>
+    description?: Maybe<Scalars['String']['output']>
     /** The draft ID (from the `drafts` table). */
     draftId?: Maybe<Scalars['Int']['output']>
     /** The name of the draft. */
@@ -4029,6 +4051,7 @@ export type Blog_Entry = ElementInterface &
     enabledForSite?: Maybe<Scalars['Boolean']['output']>
     /** The expiry date of the entry. */
     expiryDate?: Maybe<Scalars['DateTime']['output']>
+    featuredImage: Array<Maybe<AssetInterface>>
     /** The handle of the field that contains the entry. */
     fieldHandle?: Maybe<Scalars['String']['output']>
     /** The ID of the field that contains the entry. */
@@ -4132,11 +4155,15 @@ export type Blog_EntryAncestorsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4158,9 +4185,6 @@ export type Blog_EntryAncestorsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4219,11 +4243,15 @@ export type Blog_EntryBlogBlockArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4245,9 +4273,6 @@ export type Blog_EntryBlogBlockArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4306,11 +4331,15 @@ export type Blog_EntryChildrenArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4332,9 +4361,6 @@ export type Blog_EntryChildrenArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4393,11 +4419,15 @@ export type Blog_EntryDescendantsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4419,9 +4449,6 @@ export type Blog_EntryDescendantsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4466,6 +4493,53 @@ export type Blog_EntryDescendantsArgs = {
   withStructure?: InputMaybe<Scalars['Boolean']['input']>
 }
 
+export type Blog_EntryFeaturedImageArgs = {
+  dateCreated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  dateModified?: InputMaybe<Scalars['String']['input']>
+  dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  filename?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
+  folderId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  hasAlt?: InputMaybe<Scalars['Boolean']['input']>
+  height?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  includeSubfolders?: InputMaybe<Scalars['Boolean']['input']>
+  kind?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  limit?: InputMaybe<Scalars['Int']['input']>
+  offset?: InputMaybe<Scalars['Int']['input']>
+  orderBy?: InputMaybe<Scalars['String']['input']>
+  preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  ref?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  relatedTo?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  relatedToAll?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  relatedToAssets?: InputMaybe<Array<InputMaybe<AssetCriteriaInput>>>
+  relatedToCategories?: InputMaybe<Array<InputMaybe<CategoryCriteriaInput>>>
+  relatedToEntries?: InputMaybe<Array<InputMaybe<EntryCriteriaInput>>>
+  relatedToTags?: InputMaybe<Array<InputMaybe<TagCriteriaInput>>>
+  relatedToUsers?: InputMaybe<Array<InputMaybe<UserCriteriaInput>>>
+  search?: InputMaybe<Scalars['String']['input']>
+  site?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  siteId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  siteSettingsId?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
+  size?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  slug?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  title?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  uid?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  unique?: InputMaybe<Scalars['Boolean']['input']>
+  uploader?: InputMaybe<Scalars['QueryArgument']['input']>
+  uri?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  volume?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  volumeId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
+  width?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  withTransforms?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+}
+
 export type Blog_EntryLocalizedArgs = {
   after?: InputMaybe<Scalars['String']['input']>
   ancestorDist?: InputMaybe<Scalars['Int']['input']>
@@ -4480,11 +4554,15 @@ export type Blog_EntryLocalizedArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4506,9 +4584,6 @@ export type Blog_EntryLocalizedArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4567,11 +4642,15 @@ export type Blog_EntryNextArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4593,9 +4672,6 @@ export type Blog_EntryNextArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4654,11 +4730,15 @@ export type Blog_EntryParentArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4680,9 +4760,6 @@ export type Blog_EntryParentArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -4741,11 +4818,15 @@ export type Blog_EntryPrevArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -4767,9 +4848,6 @@ export type Blog_EntryPrevArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5070,6 +5148,7 @@ export type Project_Entry = ElementInterface &
     dateUpdated?: Maybe<Scalars['DateTime']['output']>
     /** The entry’s descendants, if the section is a structure. Accepts the same arguments as the `entries` query. */
     descendants: Array<EntryInterface>
+    description?: Maybe<Scalars['String']['output']>
     /** The draft ID (from the `drafts` table). */
     draftId?: Maybe<Scalars['Int']['output']>
     /** The name of the draft. */
@@ -5113,7 +5192,6 @@ export type Project_Entry = ElementInterface &
     postDate?: Maybe<Scalars['DateTime']['output']>
     /** Returns the previous element relative to this one, from a given set of criteria. */
     prev?: Maybe<EntryInterface>
-    projectDescription?: Maybe<Scalars['String']['output']>
     projectHeaderImage: Array<Maybe<AssetInterface>>
     projectInformation?: Maybe<Scalars['String']['output']>
     projectLiveDemoLink?: Maybe<Scalars['String']['output']>
@@ -5191,11 +5269,15 @@ export type Project_EntryAncestorsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5217,9 +5299,6 @@ export type Project_EntryAncestorsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5278,11 +5357,15 @@ export type Project_EntryChildrenArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5304,9 +5387,6 @@ export type Project_EntryChildrenArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5365,11 +5445,15 @@ export type Project_EntryDescendantsArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5391,9 +5475,6 @@ export type Project_EntryDescendantsArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5452,11 +5533,15 @@ export type Project_EntryLocalizedArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5478,9 +5563,6 @@ export type Project_EntryLocalizedArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5539,11 +5621,15 @@ export type Project_EntryNextArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5565,9 +5651,6 @@ export type Project_EntryNextArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5626,11 +5709,15 @@ export type Project_EntryParentArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5652,9 +5739,6 @@ export type Project_EntryParentArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -5713,11 +5797,15 @@ export type Project_EntryPrevArgs = {
   dateUpdated?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   descendantDist?: InputMaybe<Scalars['Int']['input']>
   descendantOf?: InputMaybe<Scalars['Int']['input']>
+  description?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   doxterContent?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   editable?: InputMaybe<Scalars['Boolean']['input']>
   expiryDate?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  featuredImage?: InputMaybe<
+    Array<InputMaybe<Scalars['QueryArgument']['input']>>
+  >
   field?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   fieldId?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   fixedOrder?: InputMaybe<Scalars['Boolean']['input']>
@@ -5739,9 +5827,6 @@ export type Project_EntryPrevArgs = {
   preferSites?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   prevSiblingOf?: InputMaybe<Scalars['Int']['input']>
   primaryOwnerId?: InputMaybe<
-    Array<InputMaybe<Scalars['QueryArgument']['input']>>
-  >
-  projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
   projectHeaderImage?: InputMaybe<
@@ -6322,7 +6407,13 @@ export type BlogOverviewEntryFragmentFragment = {
   id?: string | null
   title?: string | null
   slug?: string | null
+  dateCreated?: any | null
+  description?: string | null
   isFeatured?: boolean | null
+  featuredImage: Array<{
+    __typename?: 'files_Asset'
+    url?: string | null
+  } | null>
 } & { ' $fragmentName'?: 'BlogOverviewEntryFragmentFragment' }
 
 export type GetBlogsQueryVariables = Exact<{ [key: string]: never }>
@@ -6352,7 +6443,7 @@ export type ProjectEntryFragmentFragment = {
   title?: string | null
   slug?: string | null
   isFeatured?: boolean | null
-  projectDescription?: string | null
+  description?: string | null
   projectHeaderImage: Array<{
     __typename?: 'files_Asset'
     url?: string | null
@@ -6374,7 +6465,7 @@ export type ProjectDetailFragmentFragment = {
   dateCreated?: any | null
   dateUpdated?: any | null
   projectInformation?: string | null
-  projectDescription?: string | null
+  description?: string | null
   projectLiveDemoLink?: string | null
   projectSourcecodeRepositoryLink?: string | null
   projectHeaderImage: Array<{
@@ -6441,7 +6532,19 @@ export const BlogOverviewEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'featuredImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
         ],
       },
     },
@@ -6485,10 +6588,7 @@ export const ProjectEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'projectDescription' },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectHeaderImage' },
@@ -6557,10 +6657,7 @@ export const ProjectDetailFragmentFragmentDoc = {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectInformation' },
           },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'projectDescription' },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectLiveDemoLink' },
@@ -6656,7 +6753,19 @@ export const GetBlogsDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'featuredImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
         ],
       },
     },
@@ -6718,10 +6827,7 @@ export const GetProjectsDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'projectDescription' },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectHeaderImage' },
@@ -6836,10 +6942,7 @@ export const GetProjectDetailDocument = {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectInformation' },
           },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'projectDescription' },
-          },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectLiveDemoLink' },

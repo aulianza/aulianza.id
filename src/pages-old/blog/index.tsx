@@ -11,7 +11,7 @@ const BlogPage: NextPage = () => {
     <>
       <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
       <Container className='xl:!-mt-5' data-aos='fade-up'>
-        <BlogListNew />
+        <BlogListNew blogs={[]} />
       </Container>
     </>
   )

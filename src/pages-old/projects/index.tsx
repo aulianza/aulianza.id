@@ -6,7 +6,7 @@ import { ProjectEntryFragmentFragment } from '@/__generated__/graphql'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import Projects from '@/modules/projects'
-import { getProjectsDocument } from '@/services/graphql/documents'
+import { getProjectsDocument } from '@/services/graphql/documents.projects'
 import { client } from '@/services/graphql/graphql'
 
 interface ProjectsPageProps {

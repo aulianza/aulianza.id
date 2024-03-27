@@ -1207,6 +1207,7 @@ export type EntryCriteriaInput = {
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   /** Causes the query results to be returned in reverse order. */
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   /** Determines which site(s) the elements should be queried in, based on their language. */
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   /** Narrows the query results based on whether the elements are “leaves” in their structure (element with no descendants). */
@@ -1246,7 +1247,6 @@ export type EntryCriteriaInput = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1467,6 +1467,7 @@ export type EntryInterfaceAncestorsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1486,7 +1487,6 @@ export type EntryInterfaceAncestorsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1555,6 +1555,7 @@ export type EntryInterfaceChildrenArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1574,7 +1575,6 @@ export type EntryInterfaceChildrenArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1643,6 +1643,7 @@ export type EntryInterfaceDescendantsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1662,7 +1663,6 @@ export type EntryInterfaceDescendantsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1731,6 +1731,7 @@ export type EntryInterfaceLocalizedArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1750,7 +1751,6 @@ export type EntryInterfaceLocalizedArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1819,6 +1819,7 @@ export type EntryInterfaceNextArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1838,7 +1839,6 @@ export type EntryInterfaceNextArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1907,6 +1907,7 @@ export type EntryInterfaceParentArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -1926,7 +1927,6 @@ export type EntryInterfaceParentArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -1995,6 +1995,7 @@ export type EntryInterfacePrevArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2014,7 +2015,6 @@ export type EntryInterfacePrevArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2255,6 +2255,7 @@ export type QueryBlogBlockFieldEntriesArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2274,7 +2275,6 @@ export type QueryBlogBlockFieldEntriesArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2338,6 +2338,7 @@ export type QueryBlogsEntriesArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2356,7 +2357,6 @@ export type QueryBlogsEntriesArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2575,6 +2575,7 @@ export type QueryEntriesArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2594,7 +2595,6 @@ export type QueryEntriesArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2662,6 +2662,7 @@ export type QueryEntryArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2681,7 +2682,6 @@ export type QueryEntryArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2749,6 +2749,7 @@ export type QueryEntryCountArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2768,7 +2769,6 @@ export type QueryEntryCountArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -2834,6 +2834,7 @@ export type QueryProjectsEntriesArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -2852,7 +2853,6 @@ export type QueryProjectsEntriesArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3411,6 +3411,7 @@ export type BlogSection_EntryAncestorsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3430,7 +3431,6 @@ export type BlogSection_EntryAncestorsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3498,6 +3498,7 @@ export type BlogSection_EntryChildrenArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3517,7 +3518,6 @@ export type BlogSection_EntryChildrenArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3585,6 +3585,7 @@ export type BlogSection_EntryDescendantsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3604,7 +3605,6 @@ export type BlogSection_EntryDescendantsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3672,6 +3672,7 @@ export type BlogSection_EntryLocalizedArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3691,7 +3692,6 @@ export type BlogSection_EntryLocalizedArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3759,6 +3759,7 @@ export type BlogSection_EntryNextArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3778,7 +3779,6 @@ export type BlogSection_EntryNextArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3846,6 +3846,7 @@ export type BlogSection_EntryParentArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3865,7 +3866,6 @@ export type BlogSection_EntryParentArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -3933,6 +3933,7 @@ export type BlogSection_EntryPrevArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -3952,7 +3953,6 @@ export type BlogSection_EntryPrevArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4037,6 +4037,7 @@ export type Blog_Entry = ElementInterface &
     id?: Maybe<Scalars['ID']['output']>
     /** Returns whether this is a draft. */
     isDraft?: Maybe<Scalars['Boolean']['output']>
+    isFeatured?: Maybe<Scalars['Boolean']['output']>
     /** Returns whether this is a revision. */
     isRevision?: Maybe<Scalars['Boolean']['output']>
     /** Returns whether this is an unpublished draft. */
@@ -4142,6 +4143,7 @@ export type Blog_EntryAncestorsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4161,7 +4163,6 @@ export type Blog_EntryAncestorsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4229,6 +4230,7 @@ export type Blog_EntryBlogBlockArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4248,7 +4250,6 @@ export type Blog_EntryBlogBlockArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4316,6 +4317,7 @@ export type Blog_EntryChildrenArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4335,7 +4337,6 @@ export type Blog_EntryChildrenArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4403,6 +4404,7 @@ export type Blog_EntryDescendantsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4422,7 +4424,6 @@ export type Blog_EntryDescendantsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4490,6 +4491,7 @@ export type Blog_EntryLocalizedArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4509,7 +4511,6 @@ export type Blog_EntryLocalizedArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4577,6 +4578,7 @@ export type Blog_EntryNextArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4596,7 +4598,6 @@ export type Blog_EntryNextArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4664,6 +4665,7 @@ export type Blog_EntryParentArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4683,7 +4685,6 @@ export type Blog_EntryParentArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -4751,6 +4752,7 @@ export type Blog_EntryPrevArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -4770,7 +4772,6 @@ export type Blog_EntryPrevArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5089,6 +5090,7 @@ export type Project_Entry = ElementInterface &
     id?: Maybe<Scalars['ID']['output']>
     /** Returns whether this is a draft. */
     isDraft?: Maybe<Scalars['Boolean']['output']>
+    isFeatured?: Maybe<Scalars['Boolean']['output']>
     /** Returns whether this is a revision. */
     isRevision?: Maybe<Scalars['Boolean']['output']>
     /** Returns whether this is an unpublished draft. */
@@ -5112,7 +5114,6 @@ export type Project_Entry = ElementInterface &
     /** Returns the previous element relative to this one, from a given set of criteria. */
     prev?: Maybe<EntryInterface>
     projectDescription?: Maybe<Scalars['String']['output']>
-    projectFeatured?: Maybe<Scalars['Boolean']['output']>
     projectHeaderImage: Array<Maybe<AssetInterface>>
     projectInformation?: Maybe<Scalars['String']['output']>
     projectLiveDemoLink?: Maybe<Scalars['String']['output']>
@@ -5201,6 +5202,7 @@ export type Project_EntryAncestorsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5220,7 +5222,6 @@ export type Project_EntryAncestorsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5288,6 +5289,7 @@ export type Project_EntryChildrenArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5307,7 +5309,6 @@ export type Project_EntryChildrenArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5375,6 +5376,7 @@ export type Project_EntryDescendantsArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5394,7 +5396,6 @@ export type Project_EntryDescendantsArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5462,6 +5463,7 @@ export type Project_EntryLocalizedArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5481,7 +5483,6 @@ export type Project_EntryLocalizedArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5549,6 +5550,7 @@ export type Project_EntryNextArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5568,7 +5570,6 @@ export type Project_EntryNextArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5636,6 +5637,7 @@ export type Project_EntryParentArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5655,7 +5657,6 @@ export type Project_EntryParentArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -5723,6 +5724,7 @@ export type Project_EntryPrevArgs = {
   hasDescendants?: InputMaybe<Scalars['Boolean']['input']>
   id?: InputMaybe<Array<InputMaybe<Scalars['QueryArgument']['input']>>>
   inReverse?: InputMaybe<Scalars['Boolean']['input']>
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>
   language?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
   leaves?: InputMaybe<Scalars['Boolean']['input']>
   level?: InputMaybe<Scalars['Int']['input']>
@@ -5742,7 +5744,6 @@ export type Project_EntryPrevArgs = {
   projectDescription?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
-  projectFeatured?: InputMaybe<Scalars['Boolean']['input']>
   projectHeaderImage?: InputMaybe<
     Array<InputMaybe<Scalars['QueryArgument']['input']>>
   >
@@ -6316,6 +6317,28 @@ export type Stacks_CategoryPrevArgs = {
   withStructure?: InputMaybe<Scalars['Boolean']['input']>
 }
 
+export type BlogOverviewEntryFragmentFragment = {
+  __typename?: 'blog_Entry'
+  id?: string | null
+  title?: string | null
+  slug?: string | null
+  isFeatured?: boolean | null
+} & { ' $fragmentName'?: 'BlogOverviewEntryFragmentFragment' }
+
+export type GetBlogsQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetBlogsQuery = {
+  __typename?: 'Query'
+  blogsEntries?: Array<
+    | ({ __typename?: 'blog_Entry' } & {
+        ' $fragmentRefs'?: {
+          BlogOverviewEntryFragmentFragment: BlogOverviewEntryFragmentFragment
+        }
+      })
+    | null
+  > | null
+}
+
 export type ProjectEntryStackCategoryFragmentFragment = {
   __typename?: 'stacks_Category'
   id?: string | null
@@ -6328,7 +6351,7 @@ export type ProjectEntryFragmentFragment = {
   id?: string | null
   title?: string | null
   slug?: string | null
-  projectFeatured?: boolean | null
+  isFeatured?: boolean | null
   projectDescription?: string | null
   projectHeaderImage: Array<{
     __typename?: 'files_Asset'
@@ -6402,6 +6425,28 @@ export type GetProjectDetailQuery = {
   > | null
 }
 
+export const BlogOverviewEntryFragmentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogOverviewEntryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blog_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<BlogOverviewEntryFragmentFragment, unknown>
 export const ProjectEntryStackCategoryFragmentFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -6439,7 +6484,7 @@ export const ProjectEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'projectFeatured' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectDescription' },
@@ -6572,6 +6617,51 @@ export const ProjectDetailFragmentFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<ProjectDetailFragmentFragment, unknown>
+export const GetBlogsDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetBlogs' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'blogsEntries' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'BlogOverviewEntryFragment' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogOverviewEntryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blog_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetBlogsQuery, GetBlogsQueryVariables>
 export const GetProjectsDocument = {
   kind: 'Document',
   definitions: [
@@ -6627,7 +6717,7 @@ export const GetProjectsDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'projectFeatured' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'projectDescription' },

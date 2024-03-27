@@ -7,7 +7,7 @@ import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { ProjectItemProps } from '@/common/types/projects'
 import ProjectDetail from '@/modules/projects/components/ProjectDetail'
-import { getProjectDetailDocument } from '@/services/graphql/documents'
+import { getProjectDetailDocument } from '@/services/graphql/documents.projects'
 import { client } from '@/services/graphql/graphql'
 
 interface ProjectsDetailPageProps {

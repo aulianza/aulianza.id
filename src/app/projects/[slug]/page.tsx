@@ -1,5 +1,5 @@
 import { client } from '@/services/graphql/graphql'
-import { getProjectDetailDocument } from '@/services/graphql/documents'
+import { getProjectDetailDocument } from '@/services/graphql/documents.projects'
 import { redirect } from 'next/navigation'
 import Container from '@/common/components/elements/Container'
 import BackButton from '@/common/components/elements/BackButton'

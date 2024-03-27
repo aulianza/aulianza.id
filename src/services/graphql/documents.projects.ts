@@ -12,7 +12,7 @@ export const projectEntryFragment = gql(/* GraphQL */ `
     id
     title
     slug
-    projectFeatured
+    isFeatured
     projectDescription
     projectHeaderImage {
       url

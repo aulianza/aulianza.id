@@ -3068,7 +3068,7 @@ input EntryCriteriaInput {
     """
     positionedBefore: Int
     projectDescription: [QueryArgument]
-    projectFeatured: Boolean
+    isFeatured: Boolean
     stacks: [QueryArgument]
     projectHeaderImage: [QueryArgument]
     projectLiveDemoLink: [QueryArgument]
@@ -3473,7 +3473,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -3739,7 +3739,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -4003,7 +4003,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -4269,7 +4269,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -4536,7 +4536,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -4802,7 +4802,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -5068,7 +5068,7 @@ interface EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -5343,7 +5343,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -5607,7 +5607,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -5871,7 +5871,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -6135,7 +6135,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -6374,7 +6374,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -6613,7 +6613,7 @@ type Query {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -8832,7 +8832,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -9098,7 +9098,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -9362,7 +9362,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -9628,7 +9628,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -9895,7 +9895,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -10161,7 +10161,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -10427,7 +10427,7 @@ type blogSection_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -10836,7 +10836,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -11102,7 +11102,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -11366,7 +11366,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -11632,7 +11632,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -11899,7 +11899,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -12165,7 +12165,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -12431,7 +12431,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -12512,6 +12512,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
 
     """Whether the element is enabled for the site."""
     enabledForSite: Boolean
+    isFeatured: Boolean
     blogBlock(
         """Narrows the query results based on the elements’ IDs."""
         id: [QueryArgument]
@@ -12696,7 +12697,7 @@ type blog_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -13689,7 +13690,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -13955,7 +13956,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -14219,7 +14220,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -14485,7 +14486,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -14752,7 +14753,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -15018,7 +15019,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -15284,7 +15285,7 @@ type project_Entry implements ElementInterface & EntryInterface {
         """
         positionedBefore: Int
         projectDescription: [QueryArgument]
-        projectFeatured: Boolean
+        isFeatured: Boolean
         stacks: [QueryArgument]
         projectHeaderImage: [QueryArgument]
         projectLiveDemoLink: [QueryArgument]
@@ -15366,7 +15367,7 @@ type project_Entry implements ElementInterface & EntryInterface {
     """Whether the element is enabled for the site."""
     enabledForSite: Boolean
     projectDescription: String
-    projectFeatured: Boolean
+    isFeatured: Boolean
     stacks(
         """Narrows the query results based on the elements’ IDs."""
         id: [QueryArgument]

@@ -1,5 +1,5 @@
 import { client } from '@/services/graphql/graphql'
-import { getProjectsDocument } from '@/services/graphql/documents'
+import { getProjectsDocument } from '@/services/graphql/documents.projects'
 import ProjectsClientsComponent from '@/app/projects/client-component'
 
 const ProjectsPage = async () => {

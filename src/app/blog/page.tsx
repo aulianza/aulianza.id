@@ -11,7 +11,7 @@ const BlogPage = async () => {
 
   return (
     <>
-      <Container className='xl:!-mt-5' data-aos='fade-up'>
+      <Container addPaddingTop className='xl:!-mt-5 ' data-aos='fade-up'>
         <BlogListNew blogs={blogEntries} />
       </Container>
     </>

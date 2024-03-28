@@ -1,10 +1,10 @@
 'use client'
-import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton'
 import BlogFeaturedSection from './BlogFeaturedSection'
 import { BlogOverviewEntryFragmentFragment } from '@/__generated__/graphql'
 import { motion } from 'framer-motion'
 import React from 'react'
 import BlogCardNew from '@/modules/blog/components/BlogCardNew'
+import { PageHeader } from '@/common/components/layouts/header/PageHeader'
 
 interface Props {
   blogs: BlogOverviewEntryFragmentFragment[]
@@ -81,6 +81,7 @@ const BlogListNew = (props: Props) => {
 
   return (
     <div className='space-y-10'>
+      <PageHeader title={'Blog'} description={'Welcome to my blog'} />
       <BlogFeaturedSection featuredBlogs={featuredBlogs} />
 
       <div className='space-y-5'>
@@ -126,11 +127,11 @@ const BlogListNew = (props: Props) => {
           )}
           {/*  </>*/}
           {/*) : (*/}
-          <>
-            {new Array(3).fill(0).map((_, index) => (
-              <BlogCardNewSkeleton key={index} />
-            ))}
-          </>
+          {/*<>*/}
+          {/*  {new Array(3).fill(0).map((_, index) => (*/}
+          {/*    <BlogCardNewSkeleton key={index} />*/}
+          {/*  ))}*/}
+          {/*</>*/}
           {/*)}*/}
         </div>
 

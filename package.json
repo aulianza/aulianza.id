@@ -67,6 +67,7 @@
     "react-use-draggable-scroll": "^0.4.7",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
+    "sharp": "^0.33.3",
     "shiki": "^1.2.0",
     "slick-carousel": "^1.8.1",
     "swr": "^2.2.5",

@@ -1,3 +1,4 @@
+'use client'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -17,27 +18,21 @@ import {
   formatExcerpt,
 } from '@/common/helpers'
 import { BlogItemProps } from '@/common/types/blog'
+import { BlogOverviewEntryFragmentFragment } from '@/__generated__/graphql'
 
 interface BlogCardProps extends BlogItemProps {
   isExcerpt?: boolean
 }
 
 const BlogCardNew = ({
-  id,
-  title,
-  featured_image_url,
-  date,
-  slug,
-  content,
-  excerpt,
-  total_views_count,
-  tags_list,
-  isExcerpt = true,
-}: BlogCardProps) => {
+  blogItem,
+}: {
+  blogItem: BlogOverviewEntryFragmentFragment
+}) => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
 
-  const readingTimeMinutes = calculateReadingTime(content?.rendered) ?? 0
-  const tagList = tags_list || []
+  const readingTimeMinutes = calculateReadingTime('@TODO: fixme') ?? 0
+  const tagList = []
 
   const defaultImage = '/images/placeholder.png'
 
@@ -47,7 +42,7 @@ const BlogCardNew = ({
   }
 
   return (
-    <Link href={`/blog/${slug}?id=${id}`}>
+    <Link href={`/blog/${blogItem.slug}`}>
       <Card
         className='group relative flex h-[400px] w-full flex-col rounded-lg border shadow-sm dark:border-neutral-800'
         onMouseEnter={() => setIsHovered(true)}
@@ -61,8 +56,8 @@ const BlogCardNew = ({
           }}
         >
           <Image
-            src={featured_image_url || defaultImage}
-            alt={title?.rendered}
+            src={blogItem.featuredImage[0]?.url || defaultImage}
+            alt={blogItem.title || ''}
             fill={true}
             sizes='100vw, 100vh'
             className='h-full w-full transform object-cover object-left transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm'
@@ -72,31 +67,32 @@ const BlogCardNew = ({
 
         <div className='absolute flex h-full flex-col justify-between space-y-4 p-5'>
           <div className='flex flex-wrap gap-2'>
-            {tagList?.map((tag) => (
-              <div
-                key={tag?.term_id}
-                className='rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400'
-              >
-                <span className='mr-1 font-semibold'>#</span>
-                {tag?.name.charAt(0).toUpperCase() + tag?.name.slice(1)}
-              </div>
-            ))}
+            {/*{tagList?.map((tag) => (*/}
+            {/*  <div*/}
+            {/*    key={tag?.term_id}*/}
+            {/*    className='rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400'*/}
+            {/*  >*/}
+            {/*    <span className='mr-1 font-semibold'>#</span>*/}
+            {/*    {tag?.name.charAt(0).toUpperCase() + tag?.name.slice(1)}*/}
+            {/*  </div>*/}
+            {/*))}*/}
           </div>
 
           <div className='flex flex-col justify-end'>
             <div className='flex flex-col space-y-3'>
               <h3 className='font-sora text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 '>
-                {title?.rendered}
+                {blogItem.title}
               </h3>
               <div className='flex items-center gap-1 text-neutral-400'>
                 <DateIcon size={14} />
-                <span className='ml-0.5 text-xs'>{formatDate(date)}</span>
+                <span className='ml-0.5 text-xs'>
+                  {formatDate(blogItem.dateCreated)}
+                </span>
               </div>
-              {isExcerpt && (
-                <p className='text-sm leading-relaxed text-neutral-400'>
-                  {formatExcerpt(excerpt?.rendered)}
-                </p>
-              )}
+
+              <p className='text-sm leading-relaxed text-neutral-400'>
+                {formatExcerpt(blogItem.description ?? '')}
+              </p>
             </div>
             <Breakline className='!border-neutral-700' />
             <div className='flex justify-between gap-4 px-0.5 text-neutral-400'>
@@ -123,7 +119,7 @@ const BlogCardNew = ({
                 <div className='flex items-center gap-1'>
                   <ViewIcon size={14} />
                   <span className='ml-0.5 text-xs font-medium'>
-                    {total_views_count.toLocaleString()} VIEWS
+                    @TODO VIEWS
                   </span>
                 </div>
                 <div className='flex items-center gap-1'>

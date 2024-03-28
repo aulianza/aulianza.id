@@ -6,7 +6,6 @@ import useSWR from 'swr'
 
 import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton'
 import { BlogItemProps } from '@/common/types/blog'
-import BlogCardNew from '@/modules/blog/components/BlogCardNew'
 import { fetcher } from '@/services/fetcher'
 
 const BlogCarousel = () => {
@@ -39,14 +38,14 @@ const BlogCarousel = () => {
         transition={{ duration: 0.5 }}
         className='min-w-[326px] gap-x-5'
       >
-        <BlogCardNew {...item} />
+        {/*<BlogCardNew {...item} />*/}
       </motion.div>
     ))
   }
 
   return (
     <div
-      className='flex gap-4 overflow-x-scroll p-1 scrollbar-hide'
+      className='scrollbar-hide flex gap-4 overflow-x-scroll p-1'
       {...events}
       ref={ref}
     >

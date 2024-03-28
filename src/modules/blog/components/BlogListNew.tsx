@@ -1,6 +1,10 @@
+'use client'
 import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton'
 import BlogFeaturedSection from './BlogFeaturedSection'
 import { BlogOverviewEntryFragmentFragment } from '@/__generated__/graphql'
+import { motion } from 'framer-motion'
+import React from 'react'
+import BlogCardNew from '@/modules/blog/components/BlogCardNew'
 
 interface Props {
   blogs: BlogOverviewEntryFragmentFragment[]
@@ -108,16 +112,18 @@ const BlogListNew = (props: Props) => {
         <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3'>
           {/*{!isValidating ? (*/}
           {/*  <>*/}
-          {/*    {blogData.map((item: BlogItemProps, index: number) => (*/}
-          {/*      <motion.div*/}
-          {/*        key={item.id}*/}
-          {/*        initial={{ opacity: 0, scale: 0.8 }}*/}
-          {/*        animate={{ opacity: 1, scale: 1 }}*/}
-          {/*        transition={{ duration: 0.3, delay: index * 0.1 }}*/}
-          {/*      >*/}
-          {/*        <BlogCardNew {...item} />*/}
-          {/*      </motion.div>*/}
-          {/*    ))}*/}
+          {props.blogs.map(
+            (item: BlogOverviewEntryFragmentFragment, index: number) => (
+              <motion.div
+                key={item.slug}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <BlogCardNew blogItem={item} />
+              </motion.div>
+            ),
+          )}
           {/*  </>*/}
           {/*) : (*/}
           <>

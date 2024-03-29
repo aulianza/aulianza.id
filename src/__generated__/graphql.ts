@@ -7255,6 +7255,33 @@ export type GetBlogsQuery = {
   > | null
 }
 
+export type PagesDocumentEntryFragment = {
+  __typename?: 'pages_Entry'
+  id?: string | null
+  title?: string | null
+  slug?: string | null
+  doxterContent?: string | null
+} & { ' $fragmentName'?: 'PagesDocumentEntryFragment' }
+
+export type GetPageDetailQueryVariables = Exact<{
+  slug?: InputMaybe<
+    | Array<InputMaybe<Scalars['String']['input']>>
+    | InputMaybe<Scalars['String']['input']>
+  >
+}>
+
+export type GetPageDetailQuery = {
+  __typename?: 'Query'
+  pagesEntries?: Array<
+    | ({ __typename?: 'pages_Entry' } & {
+        ' $fragmentRefs'?: {
+          PagesDocumentEntryFragment: PagesDocumentEntryFragment
+        }
+      })
+    | null
+  > | null
+}
+
 export type ProjectEntryStackCategoryFragmentFragment = {
   __typename?: 'stacks_Category'
   id?: string | null
@@ -7375,6 +7402,28 @@ export const BlogOverviewEntryFragmentFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<BlogOverviewEntryFragmentFragment, unknown>
+export const PagesDocumentEntryFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'PagesDocumentEntry' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'pages_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'doxterContent' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<PagesDocumentEntryFragment, unknown>
 export const ProjectEntryStackCategoryFragmentFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -7596,6 +7645,74 @@ export const GetBlogsDocument = {
     },
   ],
 } as unknown as DocumentNode<GetBlogsQuery, GetBlogsQueryVariables>
+export const GetPageDetailDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetPageDetail' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
+          type: {
+            kind: 'ListType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'pagesEntries' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'slug' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'slug' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'PagesDocumentEntry' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'PagesDocumentEntry' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'pages_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'doxterContent' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetPageDetailQuery, GetPageDetailQueryVariables>
 export const GetProjectsDocument = {
   kind: 'Document',
   definitions: [

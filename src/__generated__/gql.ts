@@ -17,6 +17,10 @@ const documents = {
     types.BlogOverviewEntryFragmentFragmentDoc,
   '\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n':
     types.GetBlogsDocument,
+  '\n  fragment PagesDocumentEntry on pages_Entry {\n    id\n    title\n    slug\n    doxterContent\n  }\n':
+    types.PagesDocumentEntryFragmentDoc,
+  '\n  \n\n  query GetPageDetail($slug: [String]) {\n    pagesEntries(slug: $slug) {\n      ...PagesDocumentEntry\n    }\n  }\n':
+    types.GetPageDetailDocument,
   '\n  fragment ProjectEntryStackCategoryFragment on stacks_Category {\n    id\n    stackHandle\n    title\n  }\n':
     types.ProjectEntryStackCategoryFragmentFragmentDoc,
   '\n  fragment ProjectEntryFragment on project_Entry {\n    id\n    title\n    slug\n    isFeatured\n    description\n    projectHeaderImage {\n      url\n    }\n    stacks {\n      ...ProjectEntryStackCategoryFragment\n    }\n  }\n':
@@ -55,6 +59,18 @@ export function gql(
 export function gql(
   source: '\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n',
 ): (typeof documents)['\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  fragment PagesDocumentEntry on pages_Entry {\n    id\n    title\n    slug\n    doxterContent\n  }\n',
+): (typeof documents)['\n  fragment PagesDocumentEntry on pages_Entry {\n    id\n    title\n    slug\n    doxterContent\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  \n\n  query GetPageDetail($slug: [String]) {\n    pagesEntries(slug: $slug) {\n      ...PagesDocumentEntry\n    }\n  }\n',
+): (typeof documents)['\n  \n\n  query GetPageDetail($slug: [String]) {\n    pagesEntries(slug: $slug) {\n      ...PagesDocumentEntry\n    }\n  }\n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -27,6 +27,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@monaco-editor/react": "^4.6.0",
+    "@next/bundle-analyzer": "^14.1.4",
     "@prisma/client": "^4.16.2",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@shikijs/rehype": "^1.2.0",

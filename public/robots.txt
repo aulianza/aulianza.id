@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow: /
+Allow: /
+
+# Host
+Host: https://aulianza.id
+
+# Sitemaps
+Sitemap: https://aulianza.id/sitemap.xml

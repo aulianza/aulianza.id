@@ -1,0 +1,11 @@
+[data-rmiz-modal-overlay='visible'] {
+  background-color: rgb(0, 0, 0, 0.8) !important;
+}
+
+[data-rmiz-btn-unzoom] {
+  visibility: hidden;
+}
+
+[data-rmiz-modal-img] {
+  border-radius: 8px;
+}

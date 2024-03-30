@@ -60,6 +60,7 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-loading-skeleton": "^3.4.0",
     "react-markdown": "^9.0.1",
+    "react-medium-image-zoom": "^5.1.11",
     "react-resizable-panels": "^0.0.55",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.29.0",

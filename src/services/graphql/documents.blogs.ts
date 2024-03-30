@@ -31,6 +31,9 @@ export const blogEntryFragment = gql(/* GraphQL */ `
     dateCreated
     dateUpdated
     isFeatured
+    featuredImage {
+      url
+    }
     blogBlock {
       ...BlogBlockFragment
     }

@@ -7257,6 +7257,10 @@ export type BlogEntryFragmentFragment = {
   dateCreated?: any | null
   dateUpdated?: any | null
   isFeatured?: boolean | null
+  featuredImage: Array<{
+    __typename?: 'files_Asset'
+    url?: string | null
+  } | null>
   blogBlock: Array<
     | ({ __typename?: 'blogSection_Entry' } & {
         ' $fragmentRefs'?: {
@@ -7488,6 +7492,16 @@ export const BlogEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'featuredImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'blogBlock' },
@@ -7847,6 +7861,16 @@ export const GetBlogDetailDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'featuredImage' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'url' } },
+              ],
+            },
+          },
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'blogBlock' },

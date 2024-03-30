@@ -7241,6 +7241,31 @@ export type BlogOverviewEntryFragmentFragment = {
   } | null>
 } & { ' $fragmentName'?: 'BlogOverviewEntryFragmentFragment' }
 
+export type BlogBlockFragmentFragment = {
+  __typename?: 'blogSection_Entry'
+  id?: string | null
+  title?: string | null
+  doxterContent?: string | null
+} & { ' $fragmentName'?: 'BlogBlockFragmentFragment' }
+
+export type BlogEntryFragmentFragment = {
+  __typename?: 'blog_Entry'
+  id?: string | null
+  title?: string | null
+  slug?: string | null
+  dateCreated?: any | null
+  dateUpdated?: any | null
+  isFeatured?: boolean | null
+  blogBlock: Array<
+    | ({ __typename?: 'blogSection_Entry' } & {
+        ' $fragmentRefs'?: {
+          BlogBlockFragmentFragment: BlogBlockFragmentFragment
+        }
+      })
+    | null
+  >
+} & { ' $fragmentName'?: 'BlogEntryFragmentFragment' }
+
 export type GetBlogsQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetBlogsQuery = {
@@ -7249,6 +7274,25 @@ export type GetBlogsQuery = {
     | ({ __typename?: 'blog_Entry' } & {
         ' $fragmentRefs'?: {
           BlogOverviewEntryFragmentFragment: BlogOverviewEntryFragmentFragment
+        }
+      })
+    | null
+  > | null
+}
+
+export type GetBlogDetailQueryVariables = Exact<{
+  slug?: InputMaybe<
+    | Array<InputMaybe<Scalars['String']['input']>>
+    | InputMaybe<Scalars['String']['input']>
+  >
+}>
+
+export type GetBlogDetailQuery = {
+  __typename?: 'Query'
+  blogsEntries?: Array<
+    | ({ __typename?: 'blog_Entry' } & {
+        ' $fragmentRefs'?: {
+          BlogEntryFragmentFragment: BlogEntryFragmentFragment
         }
       })
     | null
@@ -7402,6 +7446,80 @@ export const BlogOverviewEntryFragmentFragmentDoc = {
     },
   ],
 } as unknown as DocumentNode<BlogOverviewEntryFragmentFragment, unknown>
+export const BlogBlockFragmentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogBlockFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blogSection_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'doxterContent' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<BlogBlockFragmentFragment, unknown>
+export const BlogEntryFragmentFragmentDoc = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogEntryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blog_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'blogBlock' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'BlogBlockFragment' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogBlockFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blogSection_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'doxterContent' } },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<BlogEntryFragmentFragment, unknown>
 export const PagesDocumentEntryFragmentDoc = {
   kind: 'Document',
   definitions: [
@@ -7645,6 +7763,105 @@ export const GetBlogsDocument = {
     },
   ],
 } as unknown as DocumentNode<GetBlogsQuery, GetBlogsQueryVariables>
+export const GetBlogDetailDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetBlogDetail' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
+          type: {
+            kind: 'ListType',
+            type: {
+              kind: 'NamedType',
+              name: { kind: 'Name', value: 'String' },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'blogsEntries' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'slug' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'slug' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'BlogEntryFragment' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogBlockFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blogSection_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'doxterContent' } },
+        ],
+      },
+    },
+    {
+      kind: 'FragmentDefinition',
+      name: { kind: 'Name', value: 'BlogEntryFragment' },
+      typeCondition: {
+        kind: 'NamedType',
+        name: { kind: 'Name', value: 'blog_Entry' },
+      },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'blogBlock' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  kind: 'FragmentSpread',
+                  name: { kind: 'Name', value: 'BlogBlockFragment' },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetBlogDetailQuery, GetBlogDetailQueryVariables>
 export const GetPageDetailDocument = {
   kind: 'Document',
   definitions: [

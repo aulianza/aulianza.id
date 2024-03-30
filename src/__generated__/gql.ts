@@ -15,8 +15,14 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
   '\n  fragment BlogOverviewEntryFragment on blog_Entry {\n    id\n    title\n    slug\n    dateCreated\n    description\n    isFeatured\n    featuredImage {\n      url\n    }\n  }\n':
     types.BlogOverviewEntryFragmentFragmentDoc,
+  '\n  fragment BlogBlockFragment on blogSection_Entry {\n    id\n    title\n    doxterContent\n  }\n':
+    types.BlogBlockFragmentFragmentDoc,
+  '\n  \n  fragment BlogEntryFragment on blog_Entry {\n    id\n    title\n    slug\n    dateCreated\n    dateUpdated\n    isFeatured\n    blogBlock {\n      ...BlogBlockFragment\n    }\n  }\n':
+    types.BlogEntryFragmentFragmentDoc,
   '\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n':
     types.GetBlogsDocument,
+  '\n  \n\n  query GetBlogDetail($slug: [String]) {\n    blogsEntries(slug: $slug) {\n      ...BlogEntryFragment\n    }\n  }\n':
+    types.GetBlogDetailDocument,
   '\n  fragment PagesDocumentEntry on pages_Entry {\n    id\n    title\n    slug\n    doxterContent\n  }\n':
     types.PagesDocumentEntryFragmentDoc,
   '\n  \n\n  query GetPageDetail($slug: [String]) {\n    pagesEntries(slug: $slug) {\n      ...PagesDocumentEntry\n    }\n  }\n':
@@ -57,8 +63,26 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
+  source: '\n  fragment BlogBlockFragment on blogSection_Entry {\n    id\n    title\n    doxterContent\n  }\n',
+): (typeof documents)['\n  fragment BlogBlockFragment on blogSection_Entry {\n    id\n    title\n    doxterContent\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  \n  fragment BlogEntryFragment on blog_Entry {\n    id\n    title\n    slug\n    dateCreated\n    dateUpdated\n    isFeatured\n    blogBlock {\n      ...BlogBlockFragment\n    }\n  }\n',
+): (typeof documents)['\n  \n  fragment BlogEntryFragment on blog_Entry {\n    id\n    title\n    slug\n    dateCreated\n    dateUpdated\n    isFeatured\n    blogBlock {\n      ...BlogBlockFragment\n    }\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
   source: '\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n',
 ): (typeof documents)['\n  \n\n  query GetBlogs {\n    blogsEntries {\n      ...BlogOverviewEntryFragment\n    }\n  }\n']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  \n\n  query GetBlogDetail($slug: [String]) {\n    blogsEntries(slug: $slug) {\n      ...BlogEntryFragment\n    }\n  }\n',
+): (typeof documents)['\n  \n\n  query GetBlogDetail($slug: [String]) {\n    blogsEntries(slug: $slug) {\n      ...BlogEntryFragment\n    }\n  }\n']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

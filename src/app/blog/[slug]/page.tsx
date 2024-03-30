@@ -2,6 +2,7 @@ import { fetchBlogInfo } from '@/services/graphql/data-fetching'
 import { Metadata } from 'next'
 import { generateSiteTitle } from '@/core/metadata'
 import BlogItemHeader from '@/app/blog/[slug]/components/BlogItemHeader'
+import { BlogItemContent } from '@/app/blog/[slug]/components/BlogItemContent'
 
 export const revalidate = 300
 
@@ -14,6 +15,7 @@ const BlogPage = async ({ params: { slug } }: { params: { slug: string } }) => {
   return (
     <>
       <BlogItemHeader blog={blog} />
+      <BlogItemContent blog={blog} />
     </>
   )
 }

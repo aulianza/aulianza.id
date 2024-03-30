@@ -36,7 +36,7 @@ const Header = (props: HeaderProps) => {
           </div>
           <div className='space-y-1 md:mx-auto'>
             <div className='text-muted-foreground'>Views</div>
-            150 views
+            -150 views
           </div>
           <div className='space-y-1 md:mx-auto'>
             <div className='text-muted-foreground'>Comments</div>

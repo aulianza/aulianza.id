@@ -27,6 +27,7 @@ export const blogEntryFragment = gql(/* GraphQL */ `
     id
     title
     slug
+    description
     dateCreated
     dateUpdated
     isFeatured

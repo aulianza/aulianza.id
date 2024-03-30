@@ -7253,6 +7253,7 @@ export type BlogEntryFragmentFragment = {
   id?: string | null
   title?: string | null
   slug?: string | null
+  description?: string | null
   dateCreated?: any | null
   dateUpdated?: any | null
   isFeatured?: boolean | null
@@ -7483,6 +7484,7 @@ export const BlogEntryFragmentFragmentDoc = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },
@@ -7841,6 +7843,7 @@ export const GetBlogDetailDocument = {
           { kind: 'Field', name: { kind: 'Name', value: 'id' } },
           { kind: 'Field', name: { kind: 'Name', value: 'title' } },
           { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
+          { kind: 'Field', name: { kind: 'Name', value: 'description' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateCreated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'dateUpdated' } },
           { kind: 'Field', name: { kind: 'Name', value: 'isFeatured' } },

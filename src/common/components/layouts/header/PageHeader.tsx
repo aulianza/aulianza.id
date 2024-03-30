@@ -1,5 +1,3 @@
-'use client'
-
 import Mdx from '@/common/components/elements/mdx/Mdx'
 
 interface Props {

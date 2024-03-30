@@ -4,22 +4,16 @@ import { getBlogOverviewDocument } from '@/services/graphql/documents.blogs'
 import { client } from '@/services/graphql/graphql'
 import { Metadata } from 'next'
 import { generateSiteTitle } from '@/core/metadata'
-import { getPageDetailDocument } from '@/services/graphql/documents.pages'
+import { fetchPageInfo } from '@/services/graphql/data-fetching'
 
-const getPageInfo = async () => {
-  const pageInfo = await client.query({
-    query: getPageDetailDocument,
-    variables: { slug: ['blog'] },
-  })
-
-  return pageInfo.data.pagesEntries[0]
-}
 const BlogPage = async () => {
+  const pageInfo = await fetchPageInfo('blog')
+
+  if (pageInfo === null) return null
+
   const blogEntriesResponse = await client.query({
     query: getBlogOverviewDocument,
   })
-
-  const pageInfo = await getPageInfo()
 
   const blogEntries = blogEntriesResponse.data.blogsEntries
 
@@ -32,17 +26,12 @@ const BlogPage = async () => {
   )
 }
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPageInfo()
+  const page = await fetchPageInfo('blog')
 
   return {
     title: generateSiteTitle({
-      title: page.title,
+      title: page?.title ?? 'unknown',
     }),
   }
 }

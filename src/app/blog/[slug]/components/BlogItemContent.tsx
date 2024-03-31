@@ -7,6 +7,7 @@ import Mdx from '@/common/components/elements/mdx/Mdx'
 import TableOfContents from '@/app/blog/[slug]/components/BlogToc'
 import { BlogProgress } from '@/app/blog/[slug]/components/BlogProgress'
 import Heading from '@/common/components/elements/mdx/elements/Heading'
+import slugify from 'slugify'
 
 type Props = {
   blog: BlogEntryFragmentFragment
@@ -19,11 +20,15 @@ export const BlogItemContent = (props: Props) => {
   const blocks: BlogBlockFragmentFragment[] =
     blog.blogBlock as BlogBlockFragmentFragment[]
 
+  const createSlug = (title: string) => {
+    return slugify(title, { lower: true })
+  }
+
   const toc: TOC[] = blocks.map((block, index) => {
     return {
       title: block.title ?? '',
-      url: 'test',
-      depth: index,
+      url: createSlug(block.title ?? ''),
+      depth: 0,
     }
   })
   return (
@@ -33,7 +38,9 @@ export const BlogItemContent = (props: Props) => {
           {blocks.map((block, index) => {
             return (
               <>
-                <Heading as={'h2'}>{block.title}</Heading>
+                <Heading id={createSlug(block.title ?? '')} as={'h2'}>
+                  {block.title}
+                </Heading>
 
                 <Mdx key={index} content={block.doxterContent ?? ''} />
               </>

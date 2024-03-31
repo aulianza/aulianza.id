@@ -14,6 +14,7 @@ import {
 } from 'react-icons/fi'
 
 import { MenuItemProps } from '../types/menu'
+import { SiJavascript } from 'react-icons/si'
 
 const iconSize = 20
 
@@ -90,15 +91,15 @@ export const MENU_ITEMS: MenuItemProps[] = [
   //   eventName: 'Pages: Chat',
   //   type: 'Pages',
   // },
-  // {
-  //   title: 'Playground',
-  //   href: '/playground',
-  //   icon: <SiJavascript size={iconSize} />,
-  //   isShow: true,
-  //   isExternal: false,
-  //   eventName: 'Pages: Playground',
-  //   type: 'Pages',
-  // },
+  {
+    title: 'Playground',
+    href: '/playground',
+    icon: <SiJavascript size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Playground',
+    type: 'Pages',
+  },
 ]
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [

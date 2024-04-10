@@ -1,6 +1,5 @@
 const canonicalUrl = 'https://aulianza.id';
-const metaImage =
-  'https://aulianza.s3.ap-southeast-1.amazonaws.com/images/public/aulianza-id.png';
+const metaImage = 'https://cloud.aulianza.com/public/images/aulianza-id.png';
 const metaDescription =
   'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences';
 

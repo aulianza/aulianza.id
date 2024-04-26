@@ -68,7 +68,7 @@ const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
       {session ? (
         <ChatInput onSendMessage={handleSendMessage} isWidget={isWidget} />
       ) : (
-        <ChatAuth />
+        <ChatAuth isWidget={isWidget} />
       )}
     </>
   );

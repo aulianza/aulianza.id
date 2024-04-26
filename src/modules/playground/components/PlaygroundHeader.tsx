@@ -10,7 +10,7 @@ const PlaygroundHeader = () => {
         </h1>
       </div>
       <p className='text-neutral-600 dark:text-neutral-400'>
-        A no-fuss pure JavaScript playground with a live feedback loop
+        A no-fuss pure JavaScript playground with feedback
       </p>
     </div>
   );

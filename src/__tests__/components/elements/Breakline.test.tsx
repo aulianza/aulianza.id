@@ -9,7 +9,7 @@ describe('Breakline', () => {
     const breakline = screen.getByTestId('breakline');
     expect(breakline).toBeInTheDocument();
     expect(breakline).toHaveClass('border-t');
-    expect(breakline).toHaveClass('dark:border-neutral-700');
+    expect(breakline).toHaveClass('dark:border-neutral-800');
     expect(breakline).toHaveClass('border-gray-300');
     expect(breakline).toHaveClass('my-4');
   });
@@ -21,7 +21,7 @@ describe('Breakline', () => {
     const breakline = screen.getByTestId('breakline');
     expect(breakline).toBeInTheDocument();
     expect(breakline).toHaveClass('border-t');
-    expect(breakline).toHaveClass('dark:border-neutral-700');
+    expect(breakline).toHaveClass('dark:border-neutral-800');
     expect(breakline).toHaveClass('border-gray-300');
     expect(breakline).toHaveClass('my-4');
     expect(breakline).toHaveClass(customClassName);

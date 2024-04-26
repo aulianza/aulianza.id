@@ -43,7 +43,7 @@ const Layout = ({ children }: LayoutProps) => {
       {/* <TopBar /> */}
       <div
         className={clsx(
-          'mx-auto max-w-6xl lg:px-8',
+          'mx-auto max-w-6xl',
           isDarkTheme ? 'dark:text-darkText' : '',
         )}
       >
@@ -53,9 +53,9 @@ const Layout = ({ children }: LayoutProps) => {
             <main className='transition-all duration-300'>{children}</main>
           </div>
         ) : (
-          <div className='flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8'>
+          <div className='flex flex-col lg:flex-row lg:gap-2 lg:py-4 xl:pb-8'>
             <HeaderSidebar />
-            <main className='max-w-[854px] transition-all duration-300 lg:w-4/5'>
+            <main className='transition-all duration-300 lg:w-4/5'>
               {children}
             </main>
           </div>

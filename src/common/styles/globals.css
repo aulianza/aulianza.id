@@ -12,13 +12,9 @@ html {
   letter-spacing: 0.3px;
 }
 
-body {
-  background: radial-gradient(
-    ellipse 60% 50% at 50% -30%,
-    rgb(45 212 191 / 15%) 0%,
-    rgb(8 0 0 / 0%)
-  );
-}
+/* body {
+  background: #121212;
+} */
 
 input,
 textarea,
@@ -40,7 +36,7 @@ a {
 }
 
 #nprogress .bar {
-  background: #15b8a6 !important;
+  background: #aaaaaa !important;
   height: 2px !important;
   z-index: 9999999 !important;
 }

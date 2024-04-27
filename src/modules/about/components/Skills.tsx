@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
-import { ReactNode, useEffect, useState } from 'react';
+import { memo, ReactNode, useEffect, useState } from 'react';
 
 import InfiniteLoopSlider from '@/common/components/elements/InfiniteLoopSlider';
 import { STACKS } from '@/common/constant/stacks';
 
-const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
-  <div className='mr-3 flex w-max items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-5 py-2 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50'>
+const Tag = memo(({ icon, title }: { icon: ReactNode; title: string }) => (
+  <div className='mr-3 flex w-max items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-5 py-2 text-[15px] shadow-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50'>
     {icon}
     <span>{title}</span>
   </div>
-);
+));
 
 const Skills = () => {
   const [shuffledSkills, setShuffledSkills] = useState<

@@ -3,7 +3,6 @@ import {
   HiOutlineBookmark as AboutIcon,
   HiOutlineBriefcase as CareerIcon,
   HiOutlineDocumentText as ResumeIcon,
-  HiOutlineSparkles as SkillsIcon,
 } from 'react-icons/hi';
 
 import { Tabs } from '@/common/components/elements/Tabs';
@@ -11,7 +10,6 @@ import { Tabs } from '@/common/components/elements/Tabs';
 import CareerList from './CareerList';
 import EducationList from './EducationList';
 import Resume from './Resume';
-import Skills from './Skills';
 import Story from './Story';
 
 const About = () => {
@@ -31,14 +29,6 @@ const About = () => {
         </TabLabel>
       ),
       children: <Resume />,
-    },
-    {
-      label: (
-        <TabLabel>
-          <SkillsIcon size={17} /> Skills
-        </TabLabel>
-      ),
-      children: <Skills />,
     },
     {
       label: (

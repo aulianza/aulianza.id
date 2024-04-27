@@ -97,7 +97,7 @@ const BlogListNew = () => {
 
       <div className='space-y-5'>
         <div className='mb-6 flex flex-col items-center justify-between gap-3 sm:flex-row'>
-          <div className='flex items-center gap-2 px-1 font-sora text-xl font-medium'>
+          <div className='flex items-center gap-2 px-1  text-xl font-medium'>
             {searchTerm ? (
               <div>
                 <span className='mr-2 text-neutral-600 dark:text-neutral-400'>
@@ -110,7 +110,7 @@ const BlogListNew = () => {
                 Latest Articles
               </h4>
             )}
-            <span className='rounded-full bg-neutral-300 px-2 py-1 font-sora text-xs text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50'>
+            <span className='rounded-full bg-neutral-300 px-2 py-1  text-xs text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50'>
               {total_posts}
             </span>
           </div>

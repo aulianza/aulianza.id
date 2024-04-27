@@ -9,7 +9,7 @@ const Custom404: NextPage = () => {
       className='flex h-full flex-col items-center justify-center space-y-5 py-40 md:py-20'
       data-aos='fade-up'
     >
-      <StyledHeading title='404' className='font-sora text-7xl font-bold'>
+      <StyledHeading title='404' className=' text-7xl font-bold'>
         404
       </StyledHeading>
       <h2 className='animate-pulse text-center text-xl lg:text-xl'>

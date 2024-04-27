@@ -58,7 +58,7 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   return (
-    <div className='flex justify-center pt-5 font-sora'>
+    <div className='flex justify-center pt-5 '>
       {currentPage !== 1 && (
         <button
           onClick={() => onPageChange(Math.max(currentPage - 1, 1))}

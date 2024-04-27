@@ -46,7 +46,7 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
           <SpotifyIcon size={44} className='animate-pulse text-green-500' />
         </div>
       ) : (
-        <div className='mt-5 flex items-center justify-between rounded-md bg-green-400 px-3 py-2 font-sora text-neutral-800 dark:bg-green-500 dark:text-neutral-900 '>
+        <div className='mt-5 flex items-center justify-between rounded-md bg-green-400 px-3 py-2  text-neutral-800 dark:bg-green-500 dark:text-neutral-900 '>
           <div className='flex items-center gap-3'>
             {data?.albumImageUrl && (
               <Image

@@ -18,8 +18,8 @@ const ThemeSwitcher = () => {
 
   return (
     <Listbox>
-      <div className='relative mt-1 font-sora'>
-        <Listbox.Button className='group relative w-full cursor-pointer rounded-lg border-[1.8px] bg-white py-2.5 pl-4 pr-10 text-left text-neutral-600 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 sm:text-[15px]'>
+      <div className='relative mt-1 '>
+        <Listbox.Button className='group relative w-full cursor-pointer rounded-lg border-[1.8px] bg-white py-2 pl-4 pr-10 text-left text-neutral-600 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 sm:text-[15px]'>
           <span className='flex items-center gap-2 truncate'>
             {resolvedTheme === 'dark' ? (
               <>
@@ -43,7 +43,7 @@ const ThemeSwitcher = () => {
         <Transition as={Fragment} leaveFrom='opacity-100' leaveTo='opacity-0'>
           <Listbox.Options className='absolute mt-1.5 max-h-60 w-full overflow-auto rounded-md border border-neutral-200 bg-white py-1 text-base ring-1 ring-black/5 focus:outline-none dark:border-neutral-800 dark:bg-neutral-900 sm:text-sm'>
             <Listbox.Option
-              className='relative cursor-pointer select-none py-2 pl-11 pr-4 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300'
+              className='relative cursor-pointer select-none py-1.5 pl-11 pr-4 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300'
               value={`theme-${resolvedTheme}`}
               onClick={toggleTheme}
             >

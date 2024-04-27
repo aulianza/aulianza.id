@@ -36,7 +36,7 @@ const PlayerPopover = ({ isShow, playing }: PlayerPopoverProps) => {
           )}
 
           <div className='space-y-2'>
-            <div className='space-y-1 font-sora'>
+            <div className='space-y-1 '>
               <div className='text-[15px] text-green-500'>{title}</div>
               <div className='text-sm text-neutral-700 dark:text-neutral-300'>
                 {artist}

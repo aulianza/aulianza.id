@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--jakartaSans-font)'],
+        sans: ['var(--onestSans-font)'],
         sora: ['var(--soraSans-font)'],
+        onest: ['var(--onestSans-font)'],
         code: ['var(--firaCode-font)'],
         emoji: ['Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'],
       },

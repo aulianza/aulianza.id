@@ -21,7 +21,6 @@ import {
   SiPwa,
   SiReact,
   SiRedux,
-  SiRemix,
   SiSocketdotio,
   SiStorybook,
   SiStyledcomponents,
@@ -76,7 +75,6 @@ export const STACKS: stacksProps = {
   Storybook: <SiStorybook size={iconSize} className='text-amber-500' />,
   CSS: <SiCss3 size={iconSize} className='text-blue-300' />,
   Socket: <SiSocketdotio size={iconSize} />,
-  Remix: <SiRemix size={iconSize} />,
   Express: <SiExpress size={iconSize} />,
   Jquery: <SiJquery size={iconSize} />,
 };

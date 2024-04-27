@@ -8,7 +8,7 @@ const Status = () => {
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 0.5, repeat: Infinity }}
       />
-      <span className='font-sora  text-sm font-thin text-neutral-600 dark:text-neutral-400'>
+      <span className='  text-sm font-thin text-neutral-600 dark:text-neutral-400'>
         Open for collabs!
       </span>
     </div>

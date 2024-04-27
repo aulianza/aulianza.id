@@ -41,7 +41,7 @@ const ChatWidgetHeader = () => {
             />
           </div>
         </div>
-        <h4 className='font-sora text-base'>Guestbook</h4>
+        <h4 className=' text-base'>Guestbook</h4>
       </div>
       {session && (
         <SignOutIcon

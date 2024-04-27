@@ -72,7 +72,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
 
       <div className='absolute inset-0 z-10 flex w-full justify-between'>
         <div className='flex flex-col justify-between gap-6 p-6 sm:p-8'>
-          <div className='flex w-fit items-center gap-x-1 rounded-full bg-lime-200 px-2.5 py-1.5 font-sora text-xs text-black'>
+          <div className='flex w-fit items-center gap-x-1 rounded-full bg-lime-200 px-2.5 py-1.5  text-xs text-black'>
             <StarIcon size={16} />
             <span>Featured</span>
           </div>
@@ -81,7 +81,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
               <Link
                 href={`/blog/${currentFeatured?.slug}?id=${currentFeatured?.id}`}
               >
-                <h3 className='group relative flex w-fit cursor-pointer font-sora text-2xl font-bold leading-normal'>
+                <h3 className='group relative flex w-fit cursor-pointer  text-2xl font-bold leading-normal'>
                   {currentFeatured?.title?.rendered}
                   <span className='absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-white transition-transform group-hover:scale-x-100'></span>
                 </h3>

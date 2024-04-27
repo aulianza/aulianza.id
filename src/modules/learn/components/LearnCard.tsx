@@ -34,12 +34,12 @@ const LearnCard = ({
         <div className='relative'>
           <Image
             src={image}
-            width={400}
-            height={200}
+            width={600}
+            height={300}
             alt={title}
             className='h-48 rounded-t-xl object-cover object-left'
           />
-          <div className='absolute left-0 top-0 flex flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
+          <div className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
             <span>View Lessons</span>
             <ViewIcon size={20} />
           </div>
@@ -47,7 +47,7 @@ const LearnCard = ({
         <div className='flex flex-col justify-between space-y-3 p-5'>
           <div className='space-y-2'>
             <div className='flex justify-between'>
-              <div className='cursor-pointer font-sora text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:group-hover:text-teal-400 lg:group-hover:text-teal-600'>
+              <div className='cursor-pointer  text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:group-hover:text-teal-400 lg:group-hover:text-teal-600'>
                 {title}
               </div>
             </div>

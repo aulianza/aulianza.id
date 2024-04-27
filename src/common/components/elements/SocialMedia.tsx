@@ -11,7 +11,7 @@ type SocialMediaProps = {
 const SocialMedia = ({ items }: SocialMediaProps) => {
   return (
     <div className='flex flex-col space-y-1'>
-      <div className='mb-2 ml-2 mt-1 font-sora text-sm text-neutral-600 dark:text-neutral-500'>
+      <div className='mb-2 ml-2 mt-1  text-sm text-neutral-600 dark:text-neutral-500'>
         Let's Connect
       </div>
       <div className='flex justify-between px-5 pt-2'>

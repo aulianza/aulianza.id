@@ -42,7 +42,7 @@ const HeaderTop = () => {
           {!showMenu && (
             <div className='flex items-center gap-3'>
               <Link href='/' passHref>
-                <h2 className='flex-grow font-sora text-lg font-medium lg:text-xl'>
+                <h2 className='flex-grow  text-lg font-medium lg:text-xl'>
                   Ryan Aulia
                 </h2>
               </Link>

@@ -85,7 +85,7 @@ const BlogCardNew = ({
 
           <div className='flex flex-col justify-end'>
             <div className='flex flex-col space-y-3'>
-              <h3 className='font-sora text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 '>
+              <h3 className=' text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 '>
                 {title?.rendered}
               </h3>
               <div className='flex items-center gap-1 text-neutral-400'>

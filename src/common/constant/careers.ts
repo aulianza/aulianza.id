@@ -2,7 +2,7 @@ import { CareerProps } from '../types/careers';
 
 export const CAREERS: CareerProps[] = [
   {
-    position: 'Software Engineer',
+    position: 'Full Stack Engineer',
     company: 'Seeru',
     company_legal_name: 'Seeru Portal LLC',
     logo: '/images/careers/seeru.webp',

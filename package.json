@@ -30,7 +30,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.1",
-    "firebase": "^10.12.3",
+    "firebase": "^10.12.4",
     "framer-motion": "^10.18.0",
     "gray-matter": "^4.0.3",
     "moment": "^2.30.1",

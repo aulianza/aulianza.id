@@ -63,7 +63,7 @@
     "usehooks-ts": "^2.16.0",
     "uuid": "^9.0.1",
     "yarn": "^1.22.22",
-    "zustand": "^4.5.4"
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",

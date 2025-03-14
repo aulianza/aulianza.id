@@ -7590,10 +7590,10 @@ react-resizable-panels@^0.0.55:
   resolved "https://registry.yarnpkg.com/react-resizable-panels/-/react-resizable-panels-0.0.55.tgz#adf06d35ae09748ab7051a4bd2c5be8087ef1a66"
   integrity sha512-J/LTFzUEjJiqwSjVh8gjUXkQDA8MRPjARASfn++d2+KOgA+9UcRYUfE3QBJixer2vkk+ffQ4cq3QzWzzHgqYpQ==
 
-react-scroll@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.9.2.tgz#b8457b28bef321b81d4d0bdfa6865663a8932b1e"
-  integrity sha512-+TX9qmQiTjE6o3rz3Uxzh2abEKwTxmOMv/HGfsYeQrpwNUj3Md9LSTsg0oMVK1+89o4+g6KkPPpDDJ2g8bg/aQ==
+react-scroll@^1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.9.3.tgz#8312831244a7a8f86036e72c71de155a454a78c0"
+  integrity sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==
   dependencies:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"

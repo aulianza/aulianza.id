@@ -35,7 +35,7 @@
     "gray-matter": "^4.0.3",
     "moment": "^2.30.1",
     "next": "15.3.2",
-    "next-auth": "^4.24.11",
+    "next-auth": "^4.24.13",
     "next-seo": "^6.8.0",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",

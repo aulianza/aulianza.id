@@ -1971,10 +1971,10 @@
   dependencies:
     "@types/estree" "*"
 
-"@types/aos@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@types/aos/-/aos-3.0.7.tgz#81c60dde68d67b7ea941a37ec3638b88ac90001c"
-  integrity sha512-sEhyFqvKauUJZDbvAB3Pggynrq6g+2PS4XB3tmUr+mDL1gfDJnwslUC4QQ7/l8UD+LWpr3RxZVR/rHoZrLqZVg==
+"@types/aos@^3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@types/aos/-/aos-3.0.8.tgz#d98535488fdc08d9afdd5c8581c26eb6ae1612fb"
+  integrity sha512-Wydvt0OnVYO5YZxroBOYITIkAKtKmni9GUQRKuWMK3doplBSaHU11HIIweGwqF/ycmbHQGoLUQzuXFRVY+Ougg==
 
 "@types/aria-query@^5.0.1":
   version "5.0.1"
